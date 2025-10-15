@@ -34,3 +34,5 @@ window.addEventListener('scroll', function() {
     // Ajoute la classe 'scrolled' si on a défilé de plus de 50px, sinon la retire
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+
