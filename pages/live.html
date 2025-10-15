@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live</title>
+    <style>
+        :root {
+            --bg: #f2f2f2; /* gris clair */
+            --black: #000000;
+            --white: #ffffff;
+            --red: #e53935;
+        }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 900px;
+            padding: 40px 20px 60px;
+        }
+        .countdown-box {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 24px 32px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: clamp(24px, 5vw, 48px);
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        .countdown-box .value { display: inline-block; min-width: 2ch; }
+        .live-box {
+            margin-top: 24px;
+            background: var(--black);
+            color: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            aspect-ratio: 16/9; /* écran noir responsive */
+            border-radius: 8px;
+            font-size: clamp(18px, 4vw, 36px);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="countdown-box" aria-label="Compte à rebours">
+            <span class="value" id="days">0</span> Jours :
+            <span class="value" id="hours">0</span> Heures :
+            <span class="value" id="minutes">0</span> Minutes :
+            <span class="value" id="seconds">0</span> Secondes
+        </div>
+
+        <div class="live-box">
+            <iframe
+                src="https://player.twitch.tv/?channel=riotgames&parent=localhost&parent=127.0.0.1&muted=true"
+                allowfullscreen
+                scrolling="no"
+                frameborder="0"
+                width="100%"
+                height="100%">
+            </iframe>
+        </div>
+    </div>
+</body>
+<script>
+    const targetDate = new Date("January 30, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = Math.max(days, 0);
+        document.getElementById("hours").textContent = Math.max(hours, 0);
+        document.getElementById("minutes").textContent = Math.max(minutes, 0);
+        document.getElementById("seconds").textContent = Math.max(seconds, 0);
+
+        if (distance < 0) {
+            clearInterval(interval);
+            document.querySelector(".countdown-box").style.color = "#e53935";
+            document.querySelector(".live-box").innerHTML = "<p>LIVE EN DIRECT !</p>";
+        }
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+</html>
