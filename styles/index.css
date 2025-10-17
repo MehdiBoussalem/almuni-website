@@ -507,93 +507,94 @@ footer p {
     }
 }
 
+/******FOOTER********************/
 footer {
-  position: relative;
-  background-color: #3e5c91;
-  color: #fff;
-  padding: 28px 5% 22px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  row-gap: 14px;
-}
-
+    position: relative;
+    background-color: #3e5c91;
+    color: #fff;
+    padding: 28px 5%;
+    display: grid;
+    /* Crée une grille à 3 colonnes : gauche, centre, droite */
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center; /* Aligne verticalement tous les éléments au centre */
+    gap: 20px; /* Ajoute un espacement entre les colonnes */
+  }
+  
+  /* --- Colonne de Gauche (Contact) --- */
 .footer-left {
-  grid-column: 1;
-  justify-self: start;
-  text-align: left;
-  max-width: 280px;
-}
+    grid-column: 1; /* Place dans la 1ère colonne */
+    justify-self: start; /* Aligne à gauche de la colonne */
+  }
+  
+.footer-left .footer-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
 
+  /* --- Colonne du Milieu (Réseaux sociaux et Copyright) --- */
+.footer-middle {
+    grid-column: 2; /* Place dans la 2ème colonne */
+    justify-self: center; /* Aligne au centre de la colonne */
+    text-align: center; /* Centre le texte à l'intérieur de ce bloc */
+  }
+  
+.footer-middle ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    margin: 0 0 15px 0; /* Espace entre les icônes et le copyright */
+    padding: 0;
+  }
+  
+.footer-middle p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+  
+  /* --- Colonne de Droite (Logo Université) --- */
+.footer-right {
+    grid-column: 3; /* Place dans la 3ème colonne */
+    justify-self: end; /* Aligne à droite de la colonne */
+  }
+  
 .footer-utln-logo {
-  width: 160px;
-  height: auto;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* Contact list inside footer-left */
-.footer-left .footer-contact {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 0.95;
-}
-
-/* Social icons block (existing <ul> in footer) */
-footer > ul {
-  grid-column: 2;
-  justify-self: center;
-  list-style: none;
-  display: flex;
-  gap: 26px;
-  margin: 0;
-  padding: 0;
-}
-
-/* Copyright line */
-footer > p {
-  grid-column: 1 / -1;
-  justify-self: center;
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Responsive footer: stack columns on small screens */
-@media (max-width: 700px) {
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
+    width: 160px;
+    height: auto;
+    display: block;
   }
-  .footer-left {
-    justify-self: center;
-  }
-  footer > ul {
-    justify-self: center;
-    margin-top: 8px;
-  }
-  footer > p {
-    margin-top: 6px;
-  }
-}
 
-.footer-left .footer-contact {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  opacity: 0.95;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: #fff;
-  text-align: left;
-}
 
+  /* --- Responsive pour le Footer --- */
+@media (max-width: 800px) {
+    footer {
+      /* Passe à une seule colonne sur les petits écrans */
+      grid-template-columns: 1fr;
+      justify-items: center; /* Centre tous les blocs horizontalement */
+      text-align: center;
+      gap: 25px; /* Augmente l'écart vertical */
+    }
+  
+    /* Réinitialise le positionnement de chaque bloc */
+    .footer-left, .footer-middle, .footer-right {
+      grid-column: 1;
+      justify-self: center;
+    }
+  
+    .footer-left .footer-contact {
+      text-align: center;
+    }
+  }
+/*******************************************************************************************************/
 .avatar {
   background-size: cover;
   background-position: center;
@@ -663,3 +664,4 @@ footer > p {
   object-fit: cover;
   transform: none;
 }
+
