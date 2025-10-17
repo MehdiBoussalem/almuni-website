@@ -626,6 +626,9 @@ footer > p {
   height: 100%;
   object-fit: cover;
   display: block;
+/* zoom dans le cercle */
+  transform: scale(1.30);
+  transform-origin: center;
 }
 
 /* Responsive */
@@ -639,4 +642,24 @@ footer > p {
     width: 72px !important;
     height: 72px !important;
   }
+}
+/* === Overrides to remove avatar circles and keep only images === */
+#reseau .avatar {
+  border-radius: 0;
+  overflow: visible;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#reseau .avatar::after {
+  display: none !important; /* remove circular overlay */
+}
+
+#reseau .avatar-img {
+  position: static;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: none;
 }
