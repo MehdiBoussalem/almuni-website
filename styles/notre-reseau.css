@@ -1,0 +1,60 @@
+:root {
+  --map-height: clamp(560px, 72vh, 86vh);  /* + grand qu’avant */
+  --map-min-height: 560px;                 /* + grand qu’avant (était 520px) */
+}
+
+/* Centrer le titre dans la section .reseau */
+.reseau {
+  padding: 40px 0;
+  margin: 0 auto;
+  width: 100%;
+}
+.reseau h1 {
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.map-intro {
+  text-align: center;
+  margin: 0 auto 24px;
+  max-width: 800px;
+}
+
+/* Footer collé en bas de la page */
+html { height: 100%; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer { margin-top: auto; }
+
+/* Conteneur centré */
+.network-container {
+  width: 100%;
+  padding: 0;
+}
+
+/* Supprime la grille, utilise juste le conteneur */
+.network-layout {
+  width: 100%;
+}
+
+/* Carte: largeur fixe centrée */
+#alumni-map {
+  width: 1600px;
+  max-width: 90%;
+  margin: 0 auto;          /* centrage automatique */
+  display: block;
+  box-sizing: border-box;
+  height: var(--map-height);
+  min-height: var(--map-min-height);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Mobile: pleine largeur sur petits écrans */
+@media (max-width: 1024px) {
+  .network-container { max-width: 100%; padding: 0 12px; }
+  .network-layout { grid-template-columns: 1fr; }
+}
