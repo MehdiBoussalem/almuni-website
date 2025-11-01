@@ -74,6 +74,41 @@ let circlesGroup = null;    // sera construit après le parsing
 // Ajouter un groupe pour les points par ville (cluster si dispo)
 let cityPointsGroup = null;
 
+// Références au panneau
+const panelEl = document.getElementById('city-panel');
+const panelTitleEl = document.getElementById('city-panel-title');
+const panelBodyEl = document.getElementById('city-panel-body');
+const panelCloseBtn = panelEl?.querySelector('.city-panel-close');
+
+// Fermer le panneau
+if (panelCloseBtn) {
+  panelCloseBtn.addEventListener('click', () => {
+    panelEl.classList.remove('open');
+  });
+}
+
+// Fonction pour afficher les alumni d'une ville
+function showCityPanel(city) {
+  if (!panelEl || !panelTitleEl || !panelBodyEl) return;
+
+  panelTitleEl.textContent = `${city.label} — ${city.count} alumni`;
+  
+  const list = city.items.map(p => `
+    <li class="alumni-item">
+      <img src="${p.photo || `https://i.pravatar.cc/64?u=${encodeURIComponent(p.nom + p.prenom)}`}" 
+           alt="${p.prenom} ${p.nom}" class="alumni-thumb" loading="lazy"/>
+      <div class="alumni-meta">
+        <strong>${p.prenom} ${p.nom}</strong>
+        <div>${p.job || ''}${p.entreprise ? ` <span class="at">chez</span> ${p.entreprise}` : ''}</div>
+        ${p.linkedin ? `<a href="${p.linkedin}" target="_blank" rel="noopener" class="alumni-link"><i class="mdi mdi-linkedin"></i> LinkedIn</a>` : ''}
+      </div>
+    </li>
+  `).join('');
+
+  panelBodyEl.innerHTML = `<ul class="alumni-list">${list}</ul>`;
+  panelEl.classList.add('open');
+}
+
 // 5) Popup
 function popupHtml(a) {
   const photo = a.photo || `https://i.pravatar.cc/120?u=${encodeURIComponent(a.nom + a.prenom)}`;
@@ -184,10 +219,11 @@ function parseCsv(useWorker = true) {
         .addTo(circlesGroup);
       });
 
-      // Construire Points (un marqueur par ville, SANS popup)
+      // Construire Points (un marqueur par ville avec clic)
       const cityMarkers = [];
       Array.from(cityAgg.values()).forEach(city => {
         const m = L.marker(city.coords);
+        m.on('click', () => showCityPanel(city));  // Ouvre le panneau au clic
         cityMarkers.push(m);
       });
 
