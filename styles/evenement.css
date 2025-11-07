@@ -1,0 +1,119 @@
+@import url('index.css'); /* Pour garder le style global de base */
+
+/* Styles spécifiques à la page Événements */
+.event-section {
+  background: linear-gradient(to bottom, #e4407e, #b0366a);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+
+/* ===============================
+   PAGE ÉVÉNEMENTS – Styles dédiés
+   =============================== */
+
+/* Bandeau d'en‑tête de la page événements */
+.event-hero {
+  background: linear-gradient(135deg, var(--bordeau), var(--rouge));
+  color: #fff;
+  padding: 80px 5%;
+  text-align: center;
+}
+.event-hero h1 {
+  font-family: var(--font-titre);
+  letter-spacing: 1px;
+  font-size: 2.8rem;
+  margin: 0 0 10px 0;
+}
+.event-hero p {
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: .95;
+  line-height: 1.7;
+}
+
+/* Liste des cartes événements */
+.event-list {
+  max-width: 1200px;
+  margin: 48px auto 80px;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.06);
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 240px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-info {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.event-info h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--bleu-fonce);
+}
+.event-info p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Boutons */
+.event-info .btn {
+  align-self: start;
+  margin-top: 6px;
+  background-color: var(--bleu-fonce);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.event-info .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  background-color: #2b4e80; /* léger assombrissement */
+}
+
+/* Séparateurs et titres génériques si besoin */
+.section-title { font-family: var(--font-titre); }
+.mini-divider {
+  width: 140px; height: 4px; border-radius: 2px; margin: 8px 0 20px 0;
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.15) 20%, rgba(0,0,0,.15) 80%, rgba(0,0,0,0));
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .event-list { grid-template-columns: 1fr; }
+  .event-card { grid-template-columns: 40% 60%; }
+}
+@media (max-width: 700px) {
+  .event-hero { padding: 60px 6%; }
+  .event-hero h1 { font-size: 2.2rem; }
+  .event-list { gap: 22px; }
+  .event-card { grid-template-columns: 1fr; }
+  .event-info { padding: 16px 18px; }
+  .event-info .btn { align-self: stretch; text-align: center; }
+}
