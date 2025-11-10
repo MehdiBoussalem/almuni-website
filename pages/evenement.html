@@ -1,56 +1,163 @@
-<link rel="stylesheet" href="../styles/evenement.css">
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Événements - Alumni Ingémédia</title>
-  <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/evenement.css">
-</head>
-<body>
-  <header class="main-header">
-    <nav class="navbar">
-      <img src="../assets/logo_alumni.png" alt="Logo Ingémédia Alumni" class="logo">
-      <ul class="nav-links">
-        <li><a href="../index.html">Accueil</a></li>
-        <li><a href="#">Actualités</a></li>
-        <li><a href="#">Notre réseau</a></li>
-        <li><a href="#">Offres de stage</a></li>
-        <li><a href="#">Archives</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="event-hero">
-      <h1>Les Événements Alumni</h1>
-      <p>Découvrez tous les moments forts de la communauté Ingémédia : conférences, ateliers, soirées et rencontres entre générations.</p>
-    </section>
-
-    <section class="event-list">
-      <div class="event-card">
-        <img src="../assets/event1.jpg" alt="Événement 1">
-        <div class="event-info">
-          <h2>Alumni Day 2025</h2>
-          <p>Une journée exceptionnelle de retrouvailles et d’échanges entre étudiants, anciens diplômés et enseignants.</p>
-          <a href="#" class="btn">En savoir plus</a>
+  <head>
+    <title>Programme - Journée Alumni Ingémédia</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Styles globaux du site -->
+    <link rel="stylesheet" href="../styles/index.css" />
+    <!-- Icônes MDI (chevron, réseaux, etc.) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    <!-- Styles spécifiques à la page Événements -->
+    <link rel="stylesheet" href="../styles/evenement.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-link">
+          <img src="../assets/logo_alumni.png" alt="Logo Ingémédia Alumni" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../pages/evenement.html" class="nav-pill active">Alumni 2026</a></li>
+          <li><a href="#">Actualité</a></li>
+          <li><a href="../pages/evenement.html#programme">Notre réseau</a></li>
+          <li><a href="#">Offres de stage</a></li>
+          <li class="dropdown">
+            <a href="#">Archives <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="../pages/alumni-2017.html">Alumni 2017</a></li>
+              <li><a href="../pages/alumni-2018.html">Alumni 2018</a></li>
+              <li><a href="../pages/alumni-2019.html">Alumni 2019</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <header class="hero hero-alumni">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-tag">Édition 2026</p>
+          <h1>JOURNÉE ALUMNI</h1>
+          <p class="hero-subtitle">Parcours, inspirations et évolutions dans les métiers du digital et des médias.</p>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span>Date</span>
+              <strong>12 juin 2026</strong>
+            </div>
+            <div class="meta-item">
+              <span>Lieu</span>
+              <strong>Campus Ingémédia</strong>
+            </div>
+            <div class="meta-item">
+              <span>Participants</span>
+              <strong>+120 Alumni</strong>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#programme">Voir le programme</a>
+            <a class="btn-secondary" href="../index.html">Retour à l'accueil</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Moments forts de la journée">
+          <h3>Moments forts</h3>
+          <ul>
+            <li>Conférences inspirantes par nos alumni</li>
+            <li>Ateliers immersifs en rotation</li>
+            <li>Remise des diplômes et photo officielle</li>
+            <li>Networking avec les partenaires</li>
+          </ul>
         </div>
       </div>
+    </header>
 
-      <div class="event-card">
-        <img src="../assets/event2.jpg" alt="Événement 2">
-        <div class="event-info">
-          <h2>Rencontre Métiers & Innovation</h2>
-          <p>Découvrez les parcours inspirants d’anciens Ingémédiens travaillant dans le digital, la tech et les médias.</p>
-          <a href="#" class="btn">Voir les détails</a>
+    <main class="container">
+      <section class="theme-section">
+        <h2 class="theme-title">Parcours, inspirations et évolutions dans les métiers du digital et des médias</h2>
+        <p class="theme-description">
+          Un espace d'échange entre anciens étudiants, étudiants actuels, enseignants et professionnels du secteur.
+        </p>
+      </section>
+
+      <section class="schedule" id="programme">
+        <div class="schedule-item">
+          <div class="schedule-time">9H00 - 9H30</div>
+          <div class="schedule-content">
+            <h3>Accueil et petit-déjeuner</h3>
+            <p>Arrivée des étudiants. Émargement et remise des badges. Buffet convivial.</p>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="main-footer">
-    <p>© 2026 Alumni Ingémédia — Tous droits réservés</p>
-  </footer>
-</body>
+        <div class="schedule-item">
+          <div class="schedule-time">9H30 - 11H30</div>
+          <div class="schedule-content">
+            <h3>Conférences plénières (format TEDx)</h3>
+            <p>Interventions inspirantes sur le futur du travail, l'innovation, la data et les compétences humaines. Échanges avec le public entre chaque intervention.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">11H30 - 12H00</div>
+          <div class="schedule-content">
+            <h3>Activité participative</h3>
+            <p>Atelier collectif de prise de parole et gestion du stress, animé avec des étudiants volontaires.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">12H00 - 13H30</div>
+          <div class="schedule-content">
+            <h3>Buffet et pause déjeuner</h3>
+            <p>Moment privilégié pour la rencontre et l'échange entre participants.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">13H30 - 14H00</div>
+          <div class="schedule-content">
+            <h3>Briefing et constitution des groupes</h3>
+            <p>Explication du système de rotations. Constitution de 10 groupes. Distribution du parcours et présentation des salles.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item highlight">
+          <div class="schedule-time">14H00 - 16H30</div>
+          <div class="schedule-content">
+            <h3>Ateliers en rotation</h3>
+            <p>8 ateliers proposés : Cinéma et Télomédia, Salle VR, QPUC Quiz numérique, Atelier professionnel, Job Dating, Jeux d'équipe, Storytelling Ingemedia, Photo professionnelle.</p>
+            <p class="workshop-note">Chaque groupe participe à 4 ateliers différents (25 min + 5 min de transition).</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">16H30 - 16H45</div>
+          <div class="schedule-content">
+            <h3>Fin des ateliers et transition</h3>
+            <p>Rassemblement des groupes et transition vers la cérémonie.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">16H45 - 17H00</div>
+          <div class="schedule-content">
+            <h3>Pause</h3>
+            <p>Temps libre pour se préparer et installer le public.</p>
+          </div>
+        </div>
+
+        <div class="schedule-item highlight">
+          <div class="schedule-time">17H00 - 18H00</div>
+          <div class="schedule-content">
+            <h3>Remise des diplômes</h3>
+            <p>Cérémonie officielle en présence des enseignants, alumni et partenaires. Discours, projection de souvenirs et photo collective finale.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <style>
+      /* Sécurité : masque les menus déroulants si la CSS globale est retardée */
+      .navbar .dropdown .dropdown-menu { display: none; }
+      .navbar .dropdown:hover .dropdown-menu { display: block; }
+    </style>
+  </body>
 </html>
