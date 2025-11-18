@@ -65,7 +65,13 @@ body {
   color: #333;
   background-color: #f7f9fc;
   line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+
 
 
 .hero {
@@ -386,7 +392,7 @@ body {
 
 /* ====== FOOTER GLOBAL ====== */
 .site-footer {
-  background: #3f5b8d; /* var(--bleu-fonce) si défini */
+  background: #3f5b8d;
   color: #fff;
   padding: 28px 20px;
 }
@@ -442,13 +448,52 @@ body {
   .footer-right { text-align: center; }
 }
 
-/* Alternance blanc / rose automatique */
-.schedule-item:nth-child(odd) {
-    background: #ffffff !important;
-    border-left: 0 !important;
+
+/* --------- DÉTAILS REPLIABLES DANS LE PROGRAMME --------- */
+
+.schedule-content {
+  position: relative;
+  padding-right: 40px; /* laisse de la place pour la flèche à droite */
 }
 
-.schedule-item:nth-child(even) {
-    background: linear-gradient(135deg, #fde6ea 0%, #fff1f4 100%) !important;
-    border-left: 4px solid var(--rouge) !important;
+/* bouton flèche */
+.toggle-details {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--rouge);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.toggle-details i {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+/* zone de détails cachée par défaut */
+.schedule-details {
+  display: none;
+  margin-top: 0.75rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* quand la carte est "open" (JS ajoute la classe) */
+.schedule-item.open .schedule-details {
+  display: block;
+}
+
+.schedule-item.open .toggle-details i {
+  transform: rotate(180deg);
+}
+
+.page-main {
+  flex: 1;
+}
+
