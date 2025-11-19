@@ -42,6 +42,8 @@ try:
                 poste=row["poste"] if row["poste"] else None,
                 url_photo=row["url_photo"] if row["url_photo"] else None,
                 promo=row["promo"] if row["promo"] else None,
+                latitude=float(row["latitude"]) if row["latitude"] else None,
+                longitude=float(row["longitude"]) if row["longitude"] else None,
                 entreprise_id=(
                     int(row["entreprise_id"]) if row["entreprise_id"] else None
                 ),

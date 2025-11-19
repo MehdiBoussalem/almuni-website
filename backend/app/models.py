@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -25,6 +25,8 @@ class Alumnis(Base):
     poste = Column(String, nullable=True)
     url_photo = Column(String, nullable=True)
     promo = Column(String, nullable=True)
+    latitude = Column(Float, nullable=True)
+    longitude = Column(Float, nullable=True)
     entreprise_id = Column(Integer, ForeignKey("entreprises.id"), nullable=True)
 
     # Relation

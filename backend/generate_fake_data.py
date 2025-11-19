@@ -5,6 +5,25 @@ from datetime import datetime, timedelta
 
 fake = Faker("fr_FR")
 
+# Coordonnées GPS approximatives des villes françaises
+VILLES_COORDONNEES = {
+    "Paris": {"lat": 48.8566, "lon": 2.3522},
+    "Lyon": {"lat": 45.7640, "lon": 4.8357},
+    "Marseille": {"lat": 43.2965, "lon": 5.3698},
+    "Toulouse": {"lat": 43.6047, "lon": 1.4442},
+    "Nice": {"lat": 43.7102, "lon": 7.2620},
+    "Nantes": {"lat": 47.2184, "lon": -1.5536},
+    "Montpellier": {"lat": 43.6108, "lon": 3.8767},
+    "Strasbourg": {"lat": 48.5734, "lon": 7.7521},
+    "Bordeaux": {"lat": 44.8378, "lon": -0.5792},
+    "Lille": {"lat": 50.6292, "lon": 3.0573},
+    "Rennes": {"lat": 48.1173, "lon": -1.6778},
+    "Toulon": {"lat": 43.1242, "lon": 5.9280},
+    "Grenoble": {"lat": 45.1885, "lon": 5.7245},
+    "Dijon": {"lat": 47.3220, "lon": 5.0415},
+    "Angers": {"lat": 47.4784, "lon": -0.5632},
+}
+
 # ========== Génération des Entreprises ==========
 print("Génération de 400 entreprises...")
 entreprises = []
@@ -26,23 +45,7 @@ print("✓ entreprises.csv créé")
 
 # ========== Génération des Alumnis ==========
 print("Génération de 2000 alumnis...")
-villes_france = [
-    "Paris",
-    "Lyon",
-    "Marseille",
-    "Toulouse",
-    "Nice",
-    "Nantes",
-    "Montpellier",
-    "Strasbourg",
-    "Bordeaux",
-    "Lille",
-    "Rennes",
-    "Toulon",
-    "Grenoble",
-    "Dijon",
-    "Angers",
-]
+villes_france = list(VILLES_COORDONNEES.keys())
 postes = [
     "Développeur Full Stack",
     "Data Scientist",
@@ -61,15 +64,24 @@ promos = ["2018", "2019", "2020", "2021", "2022", "2023", "2024"]
 
 alumnis = []
 for i in range(2000):
+    ville = random.choice(villes_france)
+    coords = VILLES_COORDONNEES[ville]
+
+    # Ajouter une petite variation aléatoire pour disperser les points sur la carte
+    lat_variation = random.uniform(-0.05, 0.05)
+    lon_variation = random.uniform(-0.05, 0.05)
+
     alumnis.append(
         {
             "id": i + 1,
             "nom": fake.last_name(),
             "prenom": fake.first_name(),
-            "lieu": random.choice(villes_france),
+            "lieu": ville,
             "poste": random.choice(postes),
             "url_photo": f"https://i.pravatar.cc/300?img={random.randint(1, 70)}",
             "promo": random.choice(promos),
+            "latitude": round(coords["lat"] + lat_variation, 6),
+            "longitude": round(coords["lon"] + lon_variation, 6),
             "entreprise_id": (
                 random.choice(entreprises)["id"] if random.random() > 0.2 else ""
             ),
@@ -87,6 +99,8 @@ with open("alumnis.csv", "w", newline="", encoding="utf-8") as f:
             "poste",
             "url_photo",
             "promo",
+            "latitude",
+            "longitude",
             "entreprise_id",
         ],
     )
@@ -149,5 +163,5 @@ with open("offres_stage.csv", "w", newline="", encoding="utf-8") as f:
 print("✓ offres_stage.csv créé")
 print("\n✅ Tous les fichiers CSV ont été générés avec succès!")
 print("   - entreprises.csv (400 entrées)")
-print("   - alumnis.csv (2000 entrées)")
+print("   - alumnis.csv (2000 entrées avec coordonnées GPS)")
 print("   - offres_stage.csv (200 entrées)")

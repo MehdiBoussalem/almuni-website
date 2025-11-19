@@ -28,6 +28,8 @@ class AlumniBase(BaseModel):
     poste: Optional[str] = None
     url_photo: Optional[str] = None
     promo: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
     entreprise_id: Optional[int] = None
 
 
