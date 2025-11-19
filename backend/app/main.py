@@ -1,36 +1,130 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .database import engine, Base, get_db # Importer les outils de DB
-from . import models, schemas, crud # Importer les modèles, schémas et opérations CRUD
+from .database import engine, Base, get_db
+from . import models, schemas, crud
 
-# 1. Crée les tables dans la DB au démarrage de l'application
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# Endpoint de base
+
 @app.get("/")
 def read_root():
-    return {"message": "Bienvenue sur l'API FastAPI et SQLite!"}
+    return {"message": "Bienvenue sur l'API Alumni!"}
 
-# 2. Endpoint pour CRÉER un élément (POST)
-@app.post("/items/", response_model=schemas.Item)
-def create_new_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
-    # Utilise la fonction CRUD pour insérer l'élément
-    return crud.create_item(db=db, item=item)
 
-# 3. Endpoint pour LIRE la liste des éléments (GET)
-@app.get("/items/", response_model=list[schemas.Item])
-def read_all_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    # Utilise la fonction CRUD pour récupérer les éléments
-    items = crud.get_items(db, skip=skip, limit=limit)
-    return items
+# ========== ENDPOINTS ENTREPRISES ==========
+@app.post("/entreprises/", response_model=schemas.Entreprise)
+def create_entreprise(
+    entreprise: schemas.EntrepriseCreate, db: Session = Depends(get_db)
+):
+    return crud.create_entreprise(db=db, entreprise=entreprise)
 
-# 4. Endpoint pour LIRE un élément spécifique par ID (GET)
-@app.get("/items/{item_id}", response_model=schemas.Item)
-def read_single_item(item_id: int, db: Session = Depends(get_db)):
-    item = crud.get_item(db, item_id=item_id)
-    if item is None:
-        # Renvoie une erreur si l'ID n'existe pas
-        raise HTTPException(status_code=404, detail="Item non trouvé")
-    return item
+
+@app.get("/entreprises/", response_model=list[schemas.Entreprise])
+def read_entreprises(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_entreprises(db, skip=skip, limit=limit)
+
+
+@app.get("/entreprises/{entreprise_id}", response_model=schemas.Entreprise)
+def read_entreprise(entreprise_id: int, db: Session = Depends(get_db)):
+    entreprise = crud.get_entreprise(db, entreprise_id=entreprise_id)
+    if entreprise is None:
+        raise HTTPException(status_code=404, detail="Entreprise non trouvée")
+    return entreprise
+
+
+@app.put("/entreprises/{entreprise_id}", response_model=schemas.Entreprise)
+def update_entreprise(
+    entreprise_id: int,
+    entreprise: schemas.EntrepriseCreate,
+    db: Session = Depends(get_db),
+):
+    updated = crud.update_entreprise(
+        db, entreprise_id=entreprise_id, entreprise=entreprise
+    )
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Entreprise non trouvée")
+    return updated
+
+
+@app.delete("/entreprises/{entreprise_id}")
+def delete_entreprise(entreprise_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_entreprise(db, entreprise_id=entreprise_id)
+    if deleted is None:
+        raise HTTPException(status_code=404, detail="Entreprise non trouvée")
+    return {"message": "Entreprise supprimée"}
+
+
+# ========== ENDPOINTS ALUMNIS ==========
+@app.post("/alumnis/", response_model=schemas.Alumni)
+def create_alumni(alumni: schemas.AlumniCreate, db: Session = Depends(get_db)):
+    return crud.create_alumni(db=db, alumni=alumni)
+
+
+@app.get("/alumnis/", response_model=list[schemas.Alumni])
+def read_alumnis(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_alumnis(db, skip=skip, limit=limit)
+
+
+@app.get("/alumnis/{alumni_id}", response_model=schemas.Alumni)
+def read_alumni(alumni_id: int, db: Session = Depends(get_db)):
+    alumni = crud.get_alumni(db, alumni_id=alumni_id)
+    if alumni is None:
+        raise HTTPException(status_code=404, detail="Alumni non trouvé")
+    return alumni
+
+
+@app.put("/alumnis/{alumni_id}", response_model=schemas.Alumni)
+def update_alumni(
+    alumni_id: int, alumni: schemas.AlumniCreate, db: Session = Depends(get_db)
+):
+    updated = crud.update_alumni(db, alumni_id=alumni_id, alumni=alumni)
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Alumni non trouvé")
+    return updated
+
+
+@app.delete("/alumnis/{alumni_id}")
+def delete_alumni(alumni_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_alumni(db, alumni_id=alumni_id)
+    if deleted is None:
+        raise HTTPException(status_code=404, detail="Alumni non trouvé")
+    return {"message": "Alumni supprimé"}
+
+
+# ========== ENDPOINTS OFFRES DE STAGE ==========
+@app.post("/offres-stage/", response_model=schemas.OffreStage)
+def create_offre_stage(offre: schemas.OffreStageCreate, db: Session = Depends(get_db)):
+    return crud.create_offre_stage(db=db, offre=offre)
+
+
+@app.get("/offres-stage/", response_model=list[schemas.OffreStage])
+def read_offres_stage(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_offres_stage(db, skip=skip, limit=limit)
+
+
+@app.get("/offres-stage/{offre_id}", response_model=schemas.OffreStage)
+def read_offre_stage(offre_id: int, db: Session = Depends(get_db)):
+    offre = crud.get_offre_stage(db, offre_id=offre_id)
+    if offre is None:
+        raise HTTPException(status_code=404, detail="Offre de stage non trouvée")
+    return offre
+
+
+@app.put("/offres-stage/{offre_id}", response_model=schemas.OffreStage)
+def update_offre_stage(
+    offre_id: int, offre: schemas.OffreStageCreate, db: Session = Depends(get_db)
+):
+    updated = crud.update_offre_stage(db, offre_id=offre_id, offre=offre)
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Offre de stage non trouvée")
+    return updated
+
+
+@app.delete("/offres-stage/{offre_id}")
+def delete_offre_stage(offre_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_offre_stage(db, offre_id=offre_id)
+    if deleted is None:
+        raise HTTPException(status_code=404, detail="Offre de stage non trouvée")
+    return {"message": "Offre de stage supprimée"}
