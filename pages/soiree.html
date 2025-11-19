@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soirée - Journée Alumni Ingémédia</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/evenement.css" />
+    <link rel="stylesheet" href="../styles/soiree.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+        <img src="../assets/logo_alumni.png" alt="Logo Alumni" class="logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="./evenement.html">Alumni 2026</a></li>
+          <li><a href="#">Actualité</a></li>
+          <li><a href="./notre-reseau.html">Notre réseau</a></li>
+          <li><a href="#">Offres de stage</a></li>
+          <li class="dropdown">
+            <a href="#">Archives <i class="mdi mdi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="./archives/alumni-2015.html">Alumni 2015</a></li>
+              <li><a href="./archives/alumni-2016.html">Alumni 2016</a></li>
+              <li><a href="./archives/alumni-2017.html">Alumni 2017</a></li>
+              <li><a href="./archives/alumni-2018.html">Alumni 2018</a></li>
+              <li><a href="./archives/alumni-2019.html">Alumni 2019</a></li>
+              <li><a href="./archives/alumni-2020.html">Alumni 2020</a></li>
+              <li><a href="./archives/alumni-2021.html">Alumni 2021</a></li>
+              <li><a href="./archives/alumni-2022.html">Alumni 2022</a></li>
+              <li><a href="./archives/alumni-2023.html">Alumni 2023</a></li>
+              <li><a href="./archives/alumni-2024.html">Alumni 2024</a></li>
+              <li><a href="./archives/alumni-2025.html">Alumni 2025</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main container">
+      <section class="theme-section">
+        <h1 class="theme-title">La grande soirée finale — Informations & inscription</h1>
+        <p class="theme-description">Retrouvez ici les détails sur la soirée et inscrivez-vous si vous souhaitez y participer.</p>
+      </section>
+
+      <section class="container">
+        <div class="soiree-grid">
+          <div class="program-column">
+            <div class="schedule-item">
+              <div class="schedule-content">
+                <div class="schedule-main">
+                  <h3>Programme de la soirée</h3>
+                  <ul class="timeline" aria-label="Programme de la soirée">
+                    <li class="timeline-item">
+                      <div class="timeline-time">21:00</div>
+                      <div class="timeline-dot" aria-hidden="true"></div>
+                      <div class="details">
+                        <h4>Ouverture & accueil</h4>
+                        <p>Accueil des participants et photo d'arrivée.</p>
+                      </div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-time">21:30</div>
+                      <div class="timeline-dot" aria-hidden="true"></div>
+                      <div class="details">
+                        <h4>DJ set & animations</h4>
+                        <p>Ambiance musicale assurée par notre DJ ; animations et jeux ponctuels.</p>
+                      </div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-time">23:00</div>
+                      <div class="timeline-dot" aria-hidden="true"></div>
+                      <div class="details">
+                        <h4>Pause buffet</h4>
+                        <p>Buffet, rencontres et networking — boissons & encas disponibles.</p>
+                      </div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-time">00:00</div>
+                      <div class="timeline-dot" aria-hidden="true"></div>
+                      <div class="details">
+                        <h4>Reprise & clôture</h4>
+                        <p>DJ set jusqu'à 02:00 — fin de la soirée et remerciements.</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p style="margin-top:0.75rem;">Tenue décontractée — L'accès se fait sur inscription uniquement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="soiree-form-card" aria-labelledby="inscription-title">
+            <h2 id="inscription-title" class="theme-title">Inscription à la soirée</h2>
+            <p class="theme-description">Inscrivez-vous pour garantir votre place — champs obligatoires.</p>
+
+            <form id="soiree-form" novalidate>
+              <div class="form-column">
+                <label for="student-number">Numéro étudiant</label>
+                <input id="student-number" name="studentNumber" type="text" placeholder="12345678" required pattern="\\d+" />
+
+                <label for="student-email">E-mail étudiant</label>
+                <input id="student-email" name="studentEmail" type="email" placeholder="prenom.nom@etu.univ.fr" required />
+
+                <button type="submit" class="btn-primary full">S'inscrire</button>
+              </div>
+            </form>
+
+            <div id="soiree-msg" role="status" aria-live="polite" style="margin-top:1rem; display:none;"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <div class="footer-contact">
+          <div class="contact-item">
+            <i class="mdi mdi-email"></i>
+            <span>ufr-ingemedia@univ-tln.fr</span>
+          </div>
+          <div class="contact-item">
+            <i class="mdi mdi-map-marker"></i>
+            <span>70 Av. Roger Devoucoux,83000 Toulon</span>
+          </div>
+          <div class="contact-item">
+            <i class="mdi mdi-phone"></i>
+            <span>04.83.36.63.28</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <ul>
+          <li><a href="https://www.facebook.com/IngemediaAlumni/?locale=fr_FR" aria-label="Facebook"><i class="mdi mdi-facebook"></i></a></li>
+          <li><a href="https://x.com/IngemediaAlumni" aria-label="Twitter"><i class="mdi mdi-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/ingemedia.alumni/" aria-label="Instagram"><i class="mdi mdi-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/ing%C3%A9m%C3%A9dia-alumni" aria-label="LinkedIn"><i class="mdi mdi-linkedin"></i></a></li>
+        </ul>
+        <p>&copy; 2026 Alumni Ingemedia. Tous droits réservés.</p>
+      </div>
+      <div class="footer-right">
+        <img src="../assets/Logo_Universite_de_Toulon.png" alt="Université de Toulon" class="footer-utln-logo" />
+      </div>
+    </footer>
+
+    <script>
+      // Simple client-side validation + fake submit (no backend)
+      document.getElementById('soiree-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const num = document.getElementById('student-number');
+        const email = document.getElementById('student-email');
+        const msg = document.getElementById('soiree-msg');
+
+        // Basic checks
+        if (!num.value || !/^\d+$/.test(num.value)) {
+          msg.style.display = 'block';
+          msg.style.color = 'crimson';
+          msg.textContent = 'Veuillez entrer un numéro étudiant valide (chiffres uniquement).';
+          num.focus();
+          return;
+        }
+        if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) {
+          msg.style.display = 'block';
+          msg.style.color = 'crimson';
+          msg.textContent = "Veuillez entrer une adresse e-mail étudiante valide.";
+          email.focus();
+          return;
+        }
+
+        // Simulate successful submission
+        msg.style.display = 'block';
+        msg.style.color = 'green';
+        msg.textContent = "Inscription reçue — merci ! Un e-mail de confirmation vous sera envoyé si un système d'envoi est configuré.";
+
+        // Clear form
+        this.reset();
+      });
+    </script>
+    ²<script src="../js/index.js">
+</script>
+
+</body>
+</html>

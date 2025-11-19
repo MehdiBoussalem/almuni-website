@@ -1,0 +1,244 @@
+@import url('index.css'); /* reprend les variables globales (polices + couleurs) */
+
+/* Page : Soirée — ajustements pour respecter la charte graphique */
+
+/* Utiliser les mêmes polices que le site */
+body {
+  font-family: var(--font-texte, 'Montserrat', sans-serif);
+  color: #222;
+  /* Fond neutre clair pour ne pas alourdir la page */
+  background-color: #f4f7f6;
+}
+
+/* Conteneur principal : espace et transparence légère */
+.page-main.container, .container {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Cartes du programme : fond blanc pour contraste (comme ailleurs) */
+.schedule-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.schedule-item.highlight {
+  background: #fff; /* remove heavy pink gradient: keep white card */
+  border-left: 6px solid var(--rouge);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.schedule-time {
+  color: var(--rouge);
+  font-weight: 800;
+}
+
+/* Titres : utiliser la même fonte de titre que le site pour cohérence */
+.theme-title, .hero-content h1 {
+  font-family: var(--font-titre, 'Bebas Neue', sans-serif);
+  color: var(--bleu-fonce);
+}
+
+/* Larger title + subtitle for the soiree page */
+.theme-title, .soiree-form-card .theme-title {
+  font-family: var(--font-titre, 'Bebas Neue', sans-serif);
+  color: var(--bleu-fonce);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.theme-description {
+  color: #555;
+  font-size: 1.12rem;
+  line-height: 1.45;
+}
+
+/* Formulaire d'inscription — styles cohérents avec le reste du site */
+#soiree-form label {
+  font-weight: 600;
+  color: #222;
+}
+
+#soiree-form input[type="text"],
+#soiree-form input[type="email"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+#soiree-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(53,95,155,0.08); /* petit halo bleu-clair */
+  border-color: var(--bleu-fonce);
+}
+
+/* Bouton principal sur la page soirée : utiliser la couleur primaire globale */
+#soiree-form .btn-primary {
+  background: var(--bleu-fonce);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 10rem;
+  display: inline-block;
+}
+
+#soiree-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Message de statut */
+#soiree-msg { font-weight: 600; }
+
+/* Small screens adjustments */
+@media (max-width: 768px) {
+  .schedule-item { padding: 1rem; }
+  .theme-title { font-size: 1.15rem; }
+}
+
+/* --- Layout for the soiree page: two-column grid (programme + inscription) --- */
+.soiree-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1rem; /* tighter to reduce overall page height */
+  align-items: center; /* center columns vertically */
+  max-width: 980px; /* slightly narrower so content fits */
+  margin: 0 auto; /* center the grid */
+}
+
+.program-column {
+  display: block;
+}
+
+/* Ensure the program card doesn't use the grid layout from evenement.css */
+.program-column .schedule-item {
+  display: block;
+  padding: 0.9rem 0.9rem; /* reduced padding to save vertical space */
+}
+
+.schedule-main { max-width: 720px; margin: 0 auto; }
+.schedule-main h3 { text-align: center; margin-top: 0; }
+
+.soiree-form-card {
+  background: #fff; /* white card for the inscription */
+  padding: 0.9rem 1rem; /* reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.soiree-form-card .theme-title {
+  color: var(--bleu-fonce);
+  margin-top: 0;
+}
+
+/* Reduce the inscription card title size to keep the card compact */
+.soiree-form-card .theme-title {
+  font-size: 1.4rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.soiree-form-card .theme-description {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem; /* reduced to sit visually below the card title */
+  line-height: 1.35;
+}
+
+.soiree-form-card .form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* full width variant for button inside card */
+.btn-primary.full {
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 0.75rem; /* slightly smaller button */
+  font-size: 0.95rem;
+}
+
+/* ensure program card stretches nicely */
+.program-column .schedule-item {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .soiree-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  .soiree-form-card { order: 2; }
+  .program-column { order: 1; }
+}
+
+/* Timeline styles for the evening program (aligned times & dots) */
+.timeline {
+  --tl-left: 64px; /* slightly closer to content to save horizontal space */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: var(--tl-left);
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: rgba(0,0,0,0.06);
+}
+.timeline-item {
+  position: relative;
+  padding: 14px 0 14px calc(var(--tl-left) + 32px); /* reduced vertical padding */
+}
+.timeline-time {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--tl-left) - 10px);
+  text-align: right; /* align time close to the line */
+  padding-right: 12px;
+  font-weight: 800;
+  color: var(--rouge);
+  font-size: 0.96rem;
+}
+.timeline-dot {
+  position: absolute;
+  /* center the dot over the vertical line: subtract half of the dot size */
+  left: calc(var(--tl-left) - 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rouge);
+  box-shadow: 0 0 0 6px rgba(222,18,81,0.06);
+}
+.timeline-item h4 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+.timeline-item p {
+  margin: 0;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .timeline { --tl-left: 56px; }
+  .timeline-item { padding-left: calc(var(--tl-left) + 32px); }
+  .timeline-time { width: calc(var(--tl-left) - 8px); padding-right:8px; }
+  .timeline-dot { left: var(--tl-left); }
+}
+
+/* Note: desktop scrolling restored — footer stays at bottom naturally. */
