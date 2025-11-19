@@ -11,16 +11,24 @@
   <!-- Styles spécifiques -->
   <link rel="stylesheet" href="../styles/notre-reseau.css" />
 
-  <!-- Material Design Icons (optionnel pour les icônes) -->
+  <!-- Material Design Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <!-- MarkerCluster CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Leaflet MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
+  <!-- Google Fonts (Nouveau design) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+  <!-- NAVBAR EXISTANTE -->
   <header>
     <a href="../index.html">
       <img src="../assets/logo_alumni.png" alt="Logo Alumni" class="logo" />
@@ -52,46 +60,42 @@
     </nav>
   </header>
 
-  <section class="reseau">
-    <h1>Notre Réseau d'Alumni Ingemedia</h1>
-    <p class="map-intro">Visualisez la répartition des Alumni à travers la France.</p>
-
-    <div class="network-container">
-      <div class="network-layout">
-        <div id="alumni-map" role="region" aria-label="Carte de France des Alumni"></div>
-      </div>
+  <!-- NOUVEAU CONTENU -->
+  <div class="container">
+    <div class="map-header">
+        <h1>NOTRE RÉSEAU ALUMNI</h1>
+        <h2>Retrouvez vos anciens camarades partout en France</h2>
     </div>
 
-    <!-- Panneau latéral -->
-    <aside id="city-panel" class="city-panel" aria-live="polite">
-      <div class="city-panel-header">
-        <h2 id="city-panel-title" class="city-panel-title">Ville</h2>
-        <button class="city-panel-close" aria-label="Fermer le panneau">
-          <i class="mdi mdi-close"></i>
-        </button>
-      </div>
-      <div id="city-panel-body" class="city-panel-body">
-        <p>Cliquez sur un point pour afficher les alumni.</p>
-      </div>
-    </aside>
-  </section>
+    <div id="map-container">
+        <div id="map"></div>
+        <!-- Petit overlay de statistiques -->
+        <div class="map-stats">
+            <span class="stat-number" id="count-display">0</span>
+            <span class="stat-label"><i class="mdi mdi-account-group"></i> Alumnis</span>
+        </div>
+    </div>
 
+
+  </div>
+
+  <!-- FOOTER EXISTANT -->
   <footer>
     <div class="footer-left">
-      <div class="footer-contact">
-        <div class="contact-item">
-          <i class="mdi mdi-email"></i>
-          <span>ufr-ingemedia@univ-tln.fr</span>
+        <div class="footer-contact">
+            <div class="contact-item">
+                <i class="mdi mdi-email"></i>
+                <span>ufr-ingemedia@univ-tln.fr</span>
+            </div>
+            <div class="contact-item">
+                <i class="mdi mdi-map-marker"></i>
+                <span>70 Av. Roger Devoucoux,83000 Toulon</span>
+            </div>
+            <div class="contact-item">
+                <i class="mdi mdi-phone"></i>
+                <span>04.83.36.63.28</span>
+            </div>
         </div>
-        <div class="contact-item">
-          <i class="mdi mdi-map-marker"></i>
-          <span>70 Av. Roger Devoucoux, 83000 Toulon</span>
-        </div>
-        <div class="contact-item">
-          <i class="mdi mdi-phone"></i>
-          <span>04.83.36.63.28</span>
-        </div>
-      </div>
     </div>
 
     <div class="footer-middle">
@@ -105,14 +109,15 @@
     </div>
 
     <div class="footer-right">
-      <img src="../assets/Logo_Universite_de_Toulon.png" alt="Université de Toulon" class="footer-utln-logo" />
+        <img src="../assets/Logo_Universite_de_Toulon.png" alt="Université de Toulon" class="footer-utln-logo">
     </div>
-  </footer>
+</footer>
 
-  <!-- Scripts (ordre garanti) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
-  <script src="../js/notre-reseau.js" defer></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Leaflet MarkerCluster JS -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+  <!-- Script Principal -->
+  <script src="../js/notre-reseau.js"></script>
 </body>
 </html>

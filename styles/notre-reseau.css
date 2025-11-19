@@ -1,190 +1,240 @@
+/* --- VARIABLES COULEURS --- */
 :root {
-  --map-height: clamp(560px, 72vh, 86vh);  /* + grand qu’avant */
-  --map-min-height: 560px;                 /* + grand qu’avant (était 520px) */
+  --bleu-fonce: #355F9B;
+  --bleu-clair: #7AC9F2;
+  --bordeau: #B11A5F;
+  --rouge: #DE1251;
+  --blanc: #ffffff;
+  --gris-clair: #f4f4f4;
 }
 
-/* Centrer le titre dans la section .reseau */
-.reseau {
-  padding: 40px 0;
-  margin: 0 auto;
-  width: 100%;
-}
-.reseau h1 {
-  margin: 0 0 12px 0;
-  text-align: center;
-}
-
-.map-intro {
-  text-align: center;
-  margin: 0 auto 24px;
-  max-width: 800px;
-}
-
-/* Footer collé en bas de la page */
+/* --- BASE LAYOUT --- */
 html { height: 100%; }
 body {
-  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--blanc);
+  color: #333;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
+
+/* Footer collé en bas */
 footer { margin-top: auto; }
 
-/* Conteneur centré */
-.network-container {
-  width: 100%;
-  padding: 0;
-}
-
-/* Supprime la grille, utilise juste le conteneur */
-.network-layout {
-  width: 100%;
-}
-
-/* Carte: largeur fixe centrée */
-#alumni-map {
-  width: 1600px;
-  max-width: 90%;
-  margin: 0 auto;          /* centrage automatique */
-  display: block;
-  box-sizing: border-box;
-  height: var(--map-height);
-  min-height: var(--map-min-height);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Panneau latéral pour afficher les alumni */
-.city-panel {
-  position: fixed;
-  right: -420px;                /* caché hors écran par défaut */
-  top: 80px;
-  width: 400px;
-  max-height: calc(100vh - 100px);
-  background: #ffffff;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.15);
-  border-radius: 12px 0 0 12px;
-  padding: 24px;
-  z-index: 1000;
-  overflow-y: auto;
-  transition: right 0.3s ease-in-out;
-}
-
-.city-panel.open {
-  right: 0;                     /* apparaît à droite */
-}
-
-.city-panel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid #e0e0e0;
-}
-
-.city-panel-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1976d2;
-  margin: 0;
-}
-
-.city-panel-close {
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #666;
-  padding: 4px;
+/* --- TYPOGRAPHIE SPÉCIFIQUE À LA PAGE --- */
+.map-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: var(--bleu-fonce);
+  letter-spacing: 2px;
   line-height: 1;
-  transition: color 0.2s;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.city-panel-close:hover {
-  color: #1976d2;
+.map-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 1.5rem;
+  color: var(--bordeau);
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-/* Liste des alumni */
-.alumni-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.container p {
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
 }
 
-.alumni-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  margin-bottom: 12px;
-  background: #f5f5f5;
-  border-radius: 8px;
-  transition: background 0.2s;
+.container strong {
+  font-weight: 700;
 }
 
-.alumni-item:hover {
-  background: #e3f2fd;
-}
-
-.alumni-thumb {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.alumni-meta {
+/* --- CONTENEUR PRINCIPAL --- */
+.container {
+  max-width: 1400px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 40px 20px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  text-align: center;
 }
 
-.alumni-meta strong {
-  font-size: 1rem;
-  color: #333;
+/* --- CARTE --- */
+#map-container {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Hauteur responsive */
+  min-height: 550px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(53, 95, 155, 0.15);
+  border: 2px solid var(--bleu-clair);
 }
 
-.alumni-meta div {
-  font-size: 0.875rem;
-  color: #666;
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.alumni-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.875rem;
-  color: #1976d2;
-  text-decoration: none;
-  margin-top: 4px;
+/* --- CUSTOM MARKER & CLUSTER STYLES --- */
+
+/* Style général (taille, police) */
+.marker-cluster-custom {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+.marker-cluster-custom div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 14px;
+  color: white;
+  line-height: 30px;
 }
 
-.alumni-link:hover {
-  text-decoration: underline;
+/* --- LA CORRECTION EST ICI --- */
+/* On chaine les deux classes (.class1.class2) pour augmenter la priorité */
+
+/* Petits clusters (< 10) : Bleu Clair */
+.marker-cluster-custom.marker-cluster-small {
+  background-color: rgba(122, 201, 242, 0.6);
+}
+.marker-cluster-custom.marker-cluster-small div {
+  background-color: var(--bleu-clair);
 }
 
-/* Mobile: panneau plein écran en bas */
-@media (max-width: 768px) {
-  .city-panel {
-    right: auto;
-    left: 0;
-    bottom: -100%;
-    top: auto;
-    width: 100%;
-    max-height: 70vh;
-    border-radius: 16px 16px 0 0;
-    transition: bottom 0.3s ease-in-out;
-  }
-  
-  .city-panel.open {
-    bottom: 0;
-    right: auto;
-  }
+/* Moyens clusters (< 100) : Bleu Foncé */
+.marker-cluster-custom.marker-cluster-medium {
+  background-color: rgba(53, 95, 155, 0.6);
+}
+.marker-cluster-custom.marker-cluster-medium div {
+  background-color: var(--bleu-fonce);
 }
 
-/* Mobile: pleine largeur sur petits écrans */
-@media (max-width: 1024px) {
-  .network-container { max-width: 100%; padding: 0 12px; }
-  .network-layout { grid-template-columns: 1fr; }
+/* Gros clusters (> 100) : Bordeau */
+.marker-cluster-custom.marker-cluster-large {
+  background-color: rgba(177, 26, 95, 0.6);
+}
+.marker-cluster-custom.marker-cluster-large div {
+  background-color: var(--bordeau);
+}
+
+.leaflet-interactive:hover {
+  stroke: var(--bleu-fonce);
+  stroke-width: 3px;
+  fill-opacity: 1;
+  r: 8;
+}
+
+/* --- NOUVEAUX POPUP STYLES --- */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 280px !important;
+}
+
+/* En-tête du popup avec fond coloré */
+.alumni-popup-header {
+  background-color: var(--bleu-fonce);
+  padding: 20px 15px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.alumni-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background-color: #ddd;
+}
+
+.alumni-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.alumni-promo {
+  font-size: 0.8rem;
+  background-color: var(--bordeau);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Corps du popup */
+.alumni-popup-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.alumni-job {
+  font-weight: 700;
+  color: var(--rouge);
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.alumni-company {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.alumni-location {
+  font-size: 0.8rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
+/* Informations Stats (Overlay sur la carte) */
+.map-stats {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 25px;
+  border-radius: 8px;
+  z-index: 500; /* Au dessus de la carte */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  backdrop-filter: blur(5px);
+}
+.stat-number {
+  display: block;
+  font-family: 'Bebas Neue';
+  font-size: 2.5rem;
+  color: var(--rouge);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  text-transform: uppercase;
 }
