@@ -1,0 +1,212 @@
+@import url('index.css');
+
+/* ------------------------------------------------------------------
+   Styles de base pour les pages d'archives (ex: alumni-2015.html)
+   Ce fichier importe `index.css` puis applique des ajustements
+   spécifiques aux pages archives. Les autres pages d'archives pourront
+   se baser sur ce fichier unique.
+   ------------------------------------------------------------------ */
+
+/* Conteneur principal spécifique aux pages d'archives */
+.container-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 5%;
+}
+
+/* Héro simplifiée pour les pages d'archives */
+.hero-section {
+  height: 36vh;
+  padding: 3rem 2rem 48px;
+  margin-top: 0;
+  /* dans les archives on laisse le header normal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(181, 26, 95, 0.92), rgba(222, 18, 81, 0.92));
+}
+
+.hero-section h1 {
+  font-size: 3.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.hero-section .subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+/* Programme : colonnes flex responsives */
+.program-section {
+  padding-top: 36px;
+}
+
+.program-columns {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.program-col {
+  flex: 1 1 300px;
+  min-width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.program-col-title {
+  font-family: var(--font-titre);
+  color: var(--bordeau);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.program-item {
+  margin-bottom: 14px;
+}
+
+.program-time {
+  font-weight: 700;
+  color: var(--bleu-fonce);
+}
+
+.program-title {
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.program-desc {
+  color: #555;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+/* Divider and small UI tweaks for archive pages */
+.section-title {
+  font-family: var(--font-titre);
+  color: var(--bleu-fonce);
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.mini-divider {
+  width: 140px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 10px 0 32px 0;
+  background: linear-gradient(to right, transparent, #c62828 20%, #c62828 80%, transparent);
+}
+
+/* Archives Grid Styles */
+.archives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.archive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(198, 40, 40, 0.15);
+  border-color: rgba(198, 40, 40, 0.2);
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.year-number {
+  font-family: var(--font-titre);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.archive-card:hover .year-number {
+  color: var(--bordeau);
+}
+
+.card-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: var(--bordeau);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.archive-card:hover .card-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .program-columns {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: auto;
+    padding: 28px 16px;
+  }
+
+  .program-columns {
+    flex-direction: column;
+  }
+
+  .program-col {
+    min-width: 100%;
+  }
+
+  .archives-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .year-number {
+    font-size: 2rem;
+  }
+}

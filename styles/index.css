@@ -85,16 +85,24 @@ header nav a:hover {
 
 /* 3. SECTION HÉRO */
 .hero-section {
-    position: relative;              /* needed so the arrow positions inside the hero */
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 45vh;
-    padding: 2rem 2rem 56px;         /* bottom padding to make room for the arrow */
-    background: linear-gradient(135deg, var(--bordeau), var(--rouge));
+    padding: 2rem 2rem 56px;
     text-align: center;
-    margin-top: -86px;               /* keep header overlap compensation */
+    margin-top: -86px;
+
+    /* DOUBLE FOND : dégradé + image derrière */
+    background-image:
+        linear-gradient(135deg, rgba(177, 26, 95, 0.92), rgba(222, 18, 81, 0.45)),
+        url("../assets/campus.jpg");
+
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-section h1 {
