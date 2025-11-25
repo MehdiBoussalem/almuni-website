@@ -91,7 +91,10 @@
                 <label for="student-email">E-mail étudiant</label>
                 <input id="student-email" name="studentEmail" type="email" placeholder="prenom.nom@etu.univ.fr" required />
 
-                <button type="submit" class="btn-primary full">S'inscrire</button>
+                <div class="form-actions">
+                  <button type="submit" class="btn-primary full">S'inscrire</button>
+                  <button type="button" id="btn-unsubscribe" class="btn-secondary full">Se désinscrire</button>
+                </div>
               </div>
             </form>
 
@@ -163,6 +166,37 @@
 
         // Clear form
         this.reset();
+      });
+
+      // Handle unsubscribe
+      document.getElementById('btn-unsubscribe').addEventListener('click', function() {
+        const num = document.getElementById('student-number');
+        const email = document.getElementById('student-email');
+        const msg = document.getElementById('soiree-msg');
+
+        // Basic checks
+        if (!num.value || !/^\d+$/.test(num.value)) {
+          msg.style.display = 'block';
+          msg.style.color = 'crimson';
+          msg.textContent = 'Veuillez entrer un numéro étudiant valide pour vous désinscrire.';
+          num.focus();
+          return;
+        }
+        if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) {
+          msg.style.display = 'block';
+          msg.style.color = 'crimson';
+          msg.textContent = "Veuillez entrer une adresse e-mail étudiante valide pour vous désinscrire.";
+          email.focus();
+          return;
+        }
+
+        // Simulate successful unsubscription
+        msg.style.display = 'block';
+        msg.style.color = 'var(--rouge)';
+        msg.textContent = "Désinscription prise en compte. Vous allez nous manquer !";
+        
+        // Clear form
+        document.getElementById('soiree-form').reset();
       });
     </script>
     ²<script src="../js/index.js">
