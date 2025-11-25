@@ -94,14 +94,23 @@
   color: var(--bleu-fonce);
   font-size: 1.6rem;
   margin-bottom: 6px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .mini-divider {
   width: 140px;
   height: 4px;
   border-radius: 2px;
-  margin: 10px 0 32px 0;
+  margin: 10px auto 20px auto;
   background: linear-gradient(to right, transparent, #c62828 20%, #c62828 80%, transparent);
+}
+
+.section-intro {
+  text-align: center;
+  color: #777;
+  margin-bottom: 48px;
+  font-style: italic;
 }
 
 /* Archives Grid Styles */
@@ -176,6 +185,84 @@
   transform: translateX(0);
 }
 
+/* Speakers Section Styles */
+.speakers-section {
+  padding: 48px 0;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+
+.speaker-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+}
+
+.speaker-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.speaker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.speaker-name {
+  font-family: var(--font-titre);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.speaker-role {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.speaker-company {
+  color: var(--bordeau);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.highlight-text {
+  color: var(--bordeau);
+  font-style: italic;
+  font-weight: 600;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .hero-section h1 {
@@ -209,4 +296,112 @@
   .year-number {
     font-size: 2rem;
   }
+}
+
+/* 2016 Speaker Card Styles (Rectangular) */
+.speaker-card-rect {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.speaker-card-rect:hover {
+  transform: translateY(-5px);
+}
+
+.speaker-image-rect-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.speaker-image-rect {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.speaker-rect-content {
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.speaker-socials {
+  margin-top: 12px;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* Utility classes for image adjustments */
+.speaker-image-rect-container.tall {
+  height: 260px;
+  /* Taller container to show more of the image (dezoom effect) */
+}
+
+.speaker-image-rect.position-center {
+  object-position: center center;
+}
+
+/* COVID Section Styles (2020) */
+.covid-section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.covid-content {
+  max-width: 700px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.covid-icon-container {
+  margin-bottom: 24px;
+}
+
+.covid-icon {
+  font-size: 5rem;
+  color: #ccc;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.covid-title {
+  font-family: var(--font-titre);
+  font-size: 2.2rem;
+  color: var(--bleu-fonce);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.covid-message {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.covid-submessage {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
 }

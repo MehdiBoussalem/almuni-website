@@ -1,110 +1,274 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live</title>
-    <link rel="stylesheet" href="../styles/live.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live - Alumni Ingémédia 2026</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/evenement.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <style>
-        .countdown-box {
-            font-size: 1.5rem; /* taille du texte plus petite */
-            padding: 10px 20px;
-            border-radius: 10px;
-            width: fit-content;
-            margin: 0 auto 20px auto;
-            background-color: black;
-            color: white;
+        .live-page-container {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .live-hero {
             text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .live-hero h1 {
+            font-family: var(--font-titre);
+            font-size: 3rem;
+            color: var(--bordeau);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .live-hero p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Countdown Styles */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            background-color: transparent !important;
+            /* Override index.css */
+            padding: 0 !important;
+        }
+
+        .countdown-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .countdown-number {
+            display: block;
+            font-family: var(--font-titre);
+            font-size: 4.5rem !important;
+            /* Override index.css */
+            font-weight: 400;
+            line-height: 1;
+            color: var(--bleu-fonce) !important;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-family: var(--font-texte) !important;
+            /* Override index.css */
+            font-size: 0.9rem !important;
+            /* Override index.css */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888 !important;
+            /* Override index.css */
+            font-weight: 600;
+        }
+
+        /* Video Container */
+        .video-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .live-status {
+            display: inline-flex;
+            align-items: center;
+            background: #e74c3c;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .live-status i {
+            margin-right: 6px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
         }
     </style>
 </head>
+
 <body>
-<header>
-    <a href="../index.html">
-        <img src="../assets/logo_alumni.png" alt="Logo Alumni" class="logo">
-    </a>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="./evenement.html">Alumni 2026</a></li>
-            <li><a href="#">Actualité</a></li>
-            <li><a href="./notre-reseau.html">Notre réseau</a></li>
-            <li><a href="#">Offres de stage</a></li>
-            <li><a href="./archives/index.html">Archives</a></li>
-        </ul>
-    </nav>
-</header>
-    <div class="wrapper">
-        <h2 style="text-align:center; color:#222; font-size:1.2rem; margin-top:5px; margin-bottom:20px;">Temps restant avant l'événement :</h2>
-        <div class="countdown-box" aria-label="Compte à rebours">
-            <span class="value" id="days">0</span> Jours :
-            <span class="value" id="hours">0</span> Heures :
-            <span class="value" id="minutes">0</span> Minutes :
-            <span class="value" id="seconds">0</span> Secondes
+
+    <header>
+        <a href="../index.html">
+            <img src="../assets/logo_alumni.png" alt="Logo Alumni" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./evenement.html">Alumni 2026</a></li>
+                <li><a href="#">Actualité</a></li>
+                <li><a href="./notre-reseau.html">Notre réseau</a></li>
+                <li><a href="#">Offres de stage</a></li>
+                <li><a href="./archives/index.html">Archives</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="live-page-container">
+        <div class="container">
+            <div class="live-hero">
+                <div class="live-status">
+                    <i class="mdi mdi-circle"></i> EN DIRECT
+                </div>
+                <h1>Live Alumni 2026</h1>
+                <p>Suivez la journée en direct comme si vous y étiez !</p>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown-container" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Jours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Heures</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Secondes</span>
+                </div>
+            </div>
+
+            <!-- Twitch Embed -->
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://player.twitch.tv/?channel=splinter&parent=localhost&parent=127.0.0.1"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
-        <p style="text-align:center; color:#333; font-size:1.2rem; margin:10px 0; font-weight:600;">
-            🎥 Live en direct sur <span style="color:#6441a5;">Twitch</span> ici
-        </p>
-        <div class="live-box">
-            <iframe
-                id="twitch-embed"
-                title="Twitch Player"
-                allowfullscreen
-                scrolling="no"
-                frameborder="0"
-                width="100%"
-                height="100%">
-            </iframe>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-contact">
+                <div class="contact-item"><i class="mdi mdi-email"></i><span>ufr-ingemedia@univ-tln.fr</span></div>
+                <div class="contact-item"><i class="mdi mdi-map-marker"></i><span>70 Av. Roger Devoucoux, 83000
+                        Toulon</span></div>
+                <div class="contact-item"><i class="mdi mdi-phone"></i><span>04.83.36.63.28</span></div>
+            </div>
         </div>
-        <p style="text-align:center; color:#b30000; font-size:1.1rem; margin-top:15px; font-weight:bold;">
-            Inscrivez-vous dès maintenant pour réserver vos places ! (limités)
-        </p>
-    </div>
-    <div class="qr-container" style="text-align:center; margin-top:25px;">
-        <img src="../assets/qrcode.png" alt="QR Code d'inscription" style="width:130px; height:130px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-        <p style="font-size:1rem; color:#333; font-weight:500;">Scannez pour accéder à la page d'inscription</p>
-    </div>
+        <div class="footer-middle">
+            <ul>
+                <li><a href="https://www.facebook.com/IngemediaAlumni/?locale=fr_FR" aria-label="Facebook"><i
+                            class="mdi mdi-facebook"></i></a></li>
+                <li><a href="https://x.com/IngemediaAlumni" aria-label="Twitter"><i class="mdi mdi-twitter"></i></a>
+                </li>
+                <li><a href="https://www.instagram.com/ingemedia.alumni/" aria-label="Instagram"><i
+                            class="mdi mdi-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ing%C3%A9m%C3%A9dia-alumni" aria-label="LinkedIn"><i
+                            class="mdi mdi-linkedin"></i></a></li>
+            </ul>
+            <p>&copy; 2026 Alumni Ingemedia. Tous droits réservés.</p>
+        </div>
+        <div class="footer-right">
+            <img src="../assets/Logo_Universite_de_Toulon.png" alt="Université de Toulon" class="footer-utln-logo">
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+        // Countdown Timer
+        const eventDate = new Date("January 16, 2026 09:00:00").getTime();
+
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "<div class='countdown-item' style='width:100%'><h3>L'événement a commencé !</h3></div>";
+            }
+        }, 1000);
+    </script>
+
 </body>
-<script>
-    // Configure Twitch embed with the exact current host as `parent`
-    (function initTwitch() {
-        const host = window.location.hostname; // e.g., 127.0.0.1 or localhost or yourdomain.com
-        const twitchSrc = `https://player.twitch.tv/?channel=riotgames&parent=${host}&muted=true`;
-        const iframe = document.getElementById('twitch-embed');
-        if (iframe) iframe.src = twitchSrc;
-    })();
 
-    const targetDate = new Date("January 22, 2026 00:00:00").getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = Math.max(days, 0);
-        document.getElementById("hours").textContent = Math.max(hours, 0);
-        document.getElementById("minutes").textContent = Math.max(minutes, 0);
-        document.getElementById("seconds").textContent = Math.max(seconds, 0);
-
-        if (distance < 0) {
-            clearInterval(interval);
-            document.querySelector(".countdown-box").style.color = "#e53935";
-            document.querySelector(".live-box").innerHTML = "<p>LIVE EN DIRECT !</p>";
-        }
-    }
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-</script>
 </html>
-
-
-
-
-
-
-
