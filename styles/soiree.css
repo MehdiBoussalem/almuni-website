@@ -166,6 +166,40 @@ body {
   font-size: 0.95rem;
 }
 
+/* Container for buttons */
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions .btn-primary, .form-actions .btn-secondary {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Secondary button style */
+.btn-secondary {
+  background: #fff;
+  color: var(--rouge);
+  border: 2px solid var(--rouge);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+  background: var(--rouge);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(222, 18, 81, 0.2);
+}
+
 /* ensure program card stretches nicely */
 .program-column .schedule-item {
   width: 100%;
