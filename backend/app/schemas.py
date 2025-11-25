@@ -64,3 +64,26 @@ class OffreStage(OffreStageBase):
 
     class Config:
         from_attributes = True
+
+
+# ========== Etudiants ==========
+class EtudiantBase(BaseModel):
+    mail: str
+    numero_etudiant: str
+    nom: str
+    prenom: str
+    soiree: bool = False
+
+
+class EtudiantCreate(EtudiantBase):
+    pass
+
+
+class Etudiant(EtudiantBase):
+    id: int
+
+    class Config:
+        from_attributes = True
+
+
+

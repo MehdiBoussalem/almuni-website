@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float, Boolean
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -45,3 +45,14 @@ class OffresStage(Base):
 
     # Relation
     entreprise = relationship("Entreprises", back_populates="offres")
+
+
+class Etudiant(Base):
+    __tablename__ = "etudiants"
+
+    id = Column(Integer, primary_key=True, index=True)
+    mail = Column(String, index=True, nullable=False)
+    numero_etudiant = Column(String, nullable=False)
+    nom = Column(String, nullable=False)
+    prenom = Column(String, nullable=False)
+    soiree = Column(Boolean, nullable=False, default=False)
