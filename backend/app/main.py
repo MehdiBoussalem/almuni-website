@@ -179,3 +179,16 @@ def delete_etudiant(etudiant_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Etudiant non trouvé")
     return {"message": "Etudiant supprimé"}
 
+
+@app.get("/etudiants/soiree/count")
+def count_etudiants_soiree(db: Session = Depends(get_db)):
+    count = crud.count_etudiants_soiree(db)
+    return {"count": count}
+
+
+@app.get("/etudiants/soiree", response_model=list[schemas.Etudiant])
+def read_etudiants_soiree(
+    skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
+):
+    return crud.get_etudiants_soiree(db, skip=skip, limit=limit)
+

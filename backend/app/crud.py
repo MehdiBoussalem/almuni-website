@@ -149,3 +149,17 @@ def delete_etudiant(db: Session, etudiant_id: int):
         db.commit()
     return db_etudiant
 
+
+def count_etudiants_soiree(db: Session):
+    return db.query(models.Etudiant).filter(models.Etudiant.soiree == True).count()
+
+
+def get_etudiants_soiree(db: Session, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Etudiant)
+        .filter(models.Etudiant.soiree == True)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
