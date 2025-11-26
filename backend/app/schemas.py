@@ -79,6 +79,14 @@ class EtudiantCreate(EtudiantBase):
     pass
 
 
+class EtudiantUpdate(BaseModel):
+    mail: Optional[str] = None
+    numero_etudiant: Optional[str] = None
+    nom: Optional[str] = None
+    prenom: Optional[str] = None
+    soiree: Optional[bool] = None
+
+
 class Etudiant(EtudiantBase):
     id: int
 
