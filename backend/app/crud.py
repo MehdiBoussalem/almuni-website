@@ -163,3 +163,13 @@ def get_etudiants_soiree(db: Session, skip: int = 0, limit: int = 100):
         .all()
     )
 
+
+def get_etudiant_by_mail_and_numero(db: Session, mail: str, numero_etudiant: str):
+    return (
+        db.query(models.Etudiant)
+        .filter(
+            models.Etudiant.mail == mail,
+            models.Etudiant.numero_etudiant == numero_etudiant,
+        )
+        .first()
+    )

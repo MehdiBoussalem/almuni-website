@@ -192,3 +192,52 @@ def read_etudiants_soiree(
 ):
     return crud.get_etudiants_soiree(db, skip=skip, limit=limit)
 
+@app.get("/etudiants/recognize", response_model=schemas.Etudiant)
+def recognize_etudiant(
+    mail: str, numero_etudiant: str, db: Session = Depends(get_db)
+):
+    etudiant = crud.get_etudiant_by_mail_and_numero(
+        db, mail=mail, numero_etudiant=numero_etudiant
+    )
+    if etudiant is None:
+        raise HTTPException(status_code=404, detail="Etudiant non trouvé")
+    return etudiant
+
+
+@app.patch("/etudiants/inscription", response_model=schemas.Etudiant)
+def inscrire_etudiant(
+    inscription: schemas.EtudiantInscription, db: Session = Depends(get_db)
+):
+    etudiant = crud.get_etudiant_by_mail_and_numero(
+        db, mail=inscription.mail, numero_etudiant=inscription.numero_etudiant
+    )
+    if etudiant is None:
+        raise HTTPException(status_code=404, detail="Etudiant non trouvé")
+
+    etudiant_update = schemas.EtudiantUpdate(soiree=True)
+    updated_etudiant = crud.update_etudiant(
+        db, etudiant_id=etudiant.id, etudiant=etudiant_update
+    )
+    return updated_etudiant
+
+
+@app.patch("/etudiants/desinscription", response_model=schemas.Etudiant)
+def desinscrire_etudiant(
+    inscription: schemas.EtudiantInscription, db: Session = Depends(get_db)
+):
+    etudiant = crud.get_etudiant_by_mail_and_numero(
+        db, mail=inscription.mail, numero_etudiant=inscription.numero_etudiant
+    )
+    if etudiant is None:
+        raise HTTPException(status_code=404, detail="Etudiant non trouvé")
+
+    etudiant_update = schemas.EtudiantUpdate(soiree=False)
+    updated_etudiant = crud.update_etudiant(
+        db, etudiant_id=etudiant.id, etudiant=etudiant_update
+    )
+    return updated_etudiant
+
+
+
+
+

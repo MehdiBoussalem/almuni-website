@@ -87,6 +87,11 @@ class EtudiantUpdate(BaseModel):
     soiree: Optional[bool] = None
 
 
+class EtudiantInscription(BaseModel):
+    mail: str
+    numero_etudiant: str
+
+
 class Etudiant(EtudiantBase):
     id: int
 
