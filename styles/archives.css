@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, rgba(181, 26, 95, 0.92), rgba(222, 18, 81, 0.92));
+  background: linear-gradient(135deg, rgba(177, 26, 95, 1), rgba(53, 95, 155, 1));
 }
 
 .hero-section h1 {

@@ -132,7 +132,7 @@ def create_etudiant(db: Session, etudiant: schemas.EtudiantCreate):
     return db_etudiant
 
 
-def update_etudiant(db: Session, etudiant_id: int, etudiant: schemas.EtudiantCreate):
+def update_etudiant(db: Session, etudiant_id: int, etudiant: schemas.EtudiantUpdate):
     db_etudiant = get_etudiant(db, etudiant_id)
     if db_etudiant:
         for key, value in etudiant.model_dump(exclude_unset=True).items():
