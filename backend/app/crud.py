@@ -117,15 +117,15 @@ def delete_offre_stage(db: Session, offre_id: int):
 
 # ========== ETUDIANTS ==========
 def get_etudiant(db: Session, etudiant_id: int):
-    return db.query(models.Etudiants).filter(models.Etudiants.id == etudiant_id).first()
+    return db.query(models.Etudiant).filter(models.Etudiant.id == etudiant_id).first()
 
 
 def get_etudiants(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Etudiants).offset(skip).limit(limit).all()
+    return db.query(models.Etudiant).offset(skip).limit(limit).all()
 
 
 def create_etudiant(db: Session, etudiant: schemas.EtudiantCreate):
-    db_etudiant = models.Etudiants(**etudiant.model_dump())
+    db_etudiant = models.Etudiant(**etudiant.model_dump())
     db.add(db_etudiant)
     db.commit()
     db.refresh(db_etudiant)
@@ -135,7 +135,7 @@ def create_etudiant(db: Session, etudiant: schemas.EtudiantCreate):
 def update_etudiant(db: Session, etudiant_id: int, etudiant: schemas.EtudiantCreate):
     db_etudiant = get_etudiant(db, etudiant_id)
     if db_etudiant:
-        for key, value in etudiant.model_dump().items():
+        for key, value in etudiant.model_dump(exclude_unset=True).items():
             setattr(db_etudiant, key, value)
         db.commit()
         db.refresh(db_etudiant)
@@ -148,4 +148,3 @@ def delete_etudiant(db: Session, etudiant_id: int):
         db.delete(db_etudiant)
         db.commit()
     return db_etudiant
-

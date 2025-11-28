@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from .database import engine, Base, get_db
 from . import models, schemas, crud
 
-from fastapi.middleware.cors import CORSMiddleware 
+from fastapi.middleware.cors import CORSMiddleware
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -146,24 +146,29 @@ def delete_offre_stage(offre_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Offre de stage non trouvée")
     return {"message": "Offre de stage supprimée"}
 
-# ========== ENDPOINTS ETUDIANTS ===    
 
-@app.post("/etudiants/", response_model=schemas.Etudiant)
+# ========== ENDPOINTS ETUDIANTS ===
+
+
+@app.post("/etudiant/", response_model=schemas.Etudiant)
 def create_etudiant(etudiant: schemas.EtudiantCreate, db: Session = Depends(get_db)):
     return crud.create_etudiant(db=db, etudiant=etudiant)
+
 
 @app.get("/etudiants/", response_model=list[schemas.Etudiant])
 def read_etudiants(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_etudiants(db, skip=skip, limit=limit)
 
-@app.get("/etudiants/{etudiant_id}", response_model=schemas.Etudiant)
+
+@app.get("/etudiant/{etudiant_id}", response_model=schemas.Etudiant)
 def read_etudiant(etudiant_id: int, db: Session = Depends(get_db)):
     etudiant = crud.get_etudiant(db, etudiant_id=etudiant_id)
     if etudiant is None:
         raise HTTPException(status_code=404, detail="Etudiant non trouvé")
     return etudiant
 
-@app.put("/etudiants/{etudiant_id}", response_model=schemas.Etudiant)
+
+@app.patch("/etudiant/{etudiant_id}", response_model=schemas.Etudiant)
 def update_etudiant(
     etudiant_id: int, etudiant: schemas.EtudiantCreate, db: Session = Depends(get_db)
 ):
@@ -172,10 +177,10 @@ def update_etudiant(
         raise HTTPException(status_code=404, detail="Etudiant non trouvé")
     return updated
 
-@app.delete("/etudiants/{etudiant_id}")
+
+@app.delete("/etudiant/{etudiant_id}")
 def delete_etudiant(etudiant_id: int, db: Session = Depends(get_db)):
     deleted = crud.delete_etudiant(db, etudiant_id=etudiant_id)
     if deleted is None:
         raise HTTPException(status_code=404, detail="Etudiant non trouvé")
     return {"message": "Etudiant supprimé"}
-
