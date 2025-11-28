@@ -78,7 +78,7 @@ body {
 .hero {
   display: block;
   position: relative;
-  background: linear-gradient(120deg, var(--bordeau), var(--rouge));
+  background: linear-gradient(135deg, rgba(177, 26, 95, 1), rgba(53, 95, 155, 1));
   color: #fff;
   padding: 2rem 2rem 1.25rem;
   /* tightened top/bottom to lift following content */
