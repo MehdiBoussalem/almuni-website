@@ -148,3 +148,31 @@ def delete_etudiant(db: Session, etudiant_id: int):
         db.delete(db_etudiant)
         db.commit()
     return db_etudiant
+
+
+# ========== ETUDIANTS SOIREE ==========
+
+
+def count_etudiants_soiree(db: Session):
+    return db.query(models.Etudiant).filter(models.Etudiant.soiree == True).count()
+
+
+def get_etudiants_soiree(db: Session, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Etudiant)
+        .filter(models.Etudiant.soiree == True)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def get_etudiant_by_mail_and_numero(db: Session, mail: str, numero_etudiant: str):
+    return (
+        db.query(models.Etudiant)
+        .filter(
+            models.Etudiant.mail == mail,
+            models.Etudiant.numero_etudiant == numero_etudiant,
+        )
+        .first()
+    )
