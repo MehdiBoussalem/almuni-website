@@ -14,6 +14,8 @@ app = FastAPI()
 origins = [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
+    "http://localhost:5501",
+    "http://127.0.0.1:5501",
 ]
 
 app.add_middleware(
@@ -199,7 +201,7 @@ def read_etudiants_soiree(
     return crud.get_etudiants_soiree(db, skip=skip, limit=limit)
 
 
-@app.get("/etudiants/recognize", response_model=schemas.Etudiant)
+@app.get("/etudiant/{mail}/{numero_etudiant}", response_model=schemas.Etudiant)
 def recognize_etudiant(mail: str, numero_etudiant: str, db: Session = Depends(get_db)):
     etudiant = crud.get_etudiant_by_mail_and_numero(
         db, mail=mail, numero_etudiant=numero_etudiant
@@ -218,6 +220,9 @@ def inscrire_etudiant(
     )
     if etudiant is None:
         raise HTTPException(status_code=404, detail="Etudiant non trouvé")
+
+    if etudiant.soiree:
+        raise HTTPException(status_code=400, detail="Etudiant déjà inscrit")
 
     etudiant_update = schemas.EtudiantUpdate(soiree=True)
     updated_etudiant = crud.update_etudiant(

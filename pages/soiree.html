@@ -81,6 +81,12 @@
 
           <aside class="soiree-form-card" aria-labelledby="inscription-title">
             <h2 id="inscription-title" class="theme-title">Inscription à la soirée</h2>
+            
+            <!-- Ajout de l'affichage des places -->
+            <p id="places-info" style="color: var(--rouge); font-weight: 700; margin-bottom: 0.5rem;">
+              Chargement des places...
+            </p>
+
             <p class="theme-description">Inscrivez-vous pour garantir votre place — champs obligatoires.</p>
 
             <form id="soiree-form" novalidate>
@@ -135,72 +141,7 @@
       </div>
     </footer>
 
-    <script>
-      // Simple client-side validation + fake submit (no backend)
-      document.getElementById('soiree-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const num = document.getElementById('student-number');
-        const email = document.getElementById('student-email');
-        const msg = document.getElementById('soiree-msg');
-
-        // Basic checks
-        if (!num.value || !/^\d+$/.test(num.value)) {
-          msg.style.display = 'block';
-          msg.style.color = 'crimson';
-          msg.textContent = 'Veuillez entrer un numéro étudiant valide (chiffres uniquement).';
-          num.focus();
-          return;
-        }
-        if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) {
-          msg.style.display = 'block';
-          msg.style.color = 'crimson';
-          msg.textContent = "Veuillez entrer une adresse e-mail étudiante valide.";
-          email.focus();
-          return;
-        }
-
-        // Simulate successful submission
-        msg.style.display = 'block';
-        msg.style.color = 'green';
-        msg.textContent = "Inscription reçue — merci ! Un e-mail de confirmation vous sera envoyé si un système d'envoi est configuré.";
-
-        // Clear form
-        this.reset();
-      });
-
-      // Handle unsubscribe
-      document.getElementById('btn-unsubscribe').addEventListener('click', function() {
-        const num = document.getElementById('student-number');
-        const email = document.getElementById('student-email');
-        const msg = document.getElementById('soiree-msg');
-
-        // Basic checks
-        if (!num.value || !/^\d+$/.test(num.value)) {
-          msg.style.display = 'block';
-          msg.style.color = 'crimson';
-          msg.textContent = 'Veuillez entrer un numéro étudiant valide pour vous désinscrire.';
-          num.focus();
-          return;
-        }
-        if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) {
-          msg.style.display = 'block';
-          msg.style.color = 'crimson';
-          msg.textContent = "Veuillez entrer une adresse e-mail étudiante valide pour vous désinscrire.";
-          email.focus();
-          return;
-        }
-
-        // Simulate successful unsubscription
-        msg.style.display = 'block';
-        msg.style.color = 'var(--rouge)';
-        msg.textContent = "Désinscription prise en compte. Vous allez nous manquer !";
-        
-        // Clear form
-        document.getElementById('soiree-form').reset();
-      });
-    </script>
-    ²<script src="../js/index.js">
-</script>
-
-</body>
+    <script src="../js/index.js"></script>
+    <script src="../js/soiree.js"></script>
+  </body>
 </html>
