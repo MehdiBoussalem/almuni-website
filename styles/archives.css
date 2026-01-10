@@ -405,3 +405,159 @@
   color: #888;
   font-style: italic;
 }
+
+/* ========================================
+   RESPONSIVITÉ ARCHIVES - MOBILE
+   ======================================== */
+
+/* === Écrans tablette (600px à 999px) === */
+@media (max-width: 999px) {
+  /* Container responsive */
+  .container-text {
+    max-width: 100%;
+    padding: 20px 4%;
+  }
+  
+  /* Hero responsive */
+  .hero-section {
+    height: 30vh;
+    padding: 2rem 1.5rem 36px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .hero-section .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  /* Program columns */
+  .program-columns {
+    gap: 20px;
+  }
+  
+  .program-col {
+    flex: 1 1 280px;
+    padding: 15px;
+  }
+  
+  .program-col-title {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* === Écrans mobiles (< 600px) === */
+@media (max-width: 599px) {
+  /* Container */
+  .container-text {
+    max-width: 100%;
+    width: 100%;
+    padding: 15px 3%;
+  }
+  
+  /* Hero */
+  .hero-section {
+    height: 25vh;
+    padding: 1.5rem 1rem 28px;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .hero-section .subtitle {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  
+  /* Program section */
+  .program-section {
+    padding-top: 20px;
+  }
+  
+  /* Program columns - stack vertically */
+  .program-columns {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .program-col {
+    flex: 1 1 100%;
+    min-width: unset;
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .program-col-title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .program-item {
+    margin-bottom: 12px;
+  }
+  
+  .program-time {
+    font-size: 0.9rem;
+  }
+  
+  .program-title {
+    font-size: 0.95rem;
+  }
+  
+  .program-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  
+  /* COVID message */
+  .covid-message {
+    font-size: 1rem;
+  }
+  
+  .covid-submessage {
+    font-size: 0.9rem;
+  }
+  
+  /* Stats cards responsive */
+  .stats-container {
+    flex-direction: column;
+  }
+  
+  .stat-card {
+    width: 100%;
+  }
+}
+
+/* === Très petits écrans (< 480px) === */
+@media (max-width: 479px) {
+  .container-text {
+    padding: 12px 2%;
+  }
+  
+  .hero-section {
+    height: 22vh;
+    padding: 1rem 0.8rem 24px;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .program-col {
+    padding: 10px;
+  }
+}

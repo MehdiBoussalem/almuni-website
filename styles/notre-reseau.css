@@ -212,6 +212,48 @@ footer { margin-top: auto; }
   margin-top: 5px;
 }
 
+/* Section LinkedIn et bouton */
+.alumni-linkedin-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.linkedin-button {
+  display: inline-block;
+  padding: 10px 14px;
+  background-color: #0A66C2;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.linkedin-button:hover,
+.linkedin-button:visited,
+.linkedin-button:active {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.linkedin-button:hover {
+  background-color: #084298;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(10, 102, 194, 0.3);
+  text-decoration: none;
+}
+
+.linkedin-button i {
+  margin-right: 6px;
+  font-weight: 700;
+}
+
 /* Informations Stats (Overlay sur la carte) */
 .map-stats {
   position: absolute;
@@ -237,4 +279,222 @@ footer { margin-top: auto; }
   font-weight: 700;
   color: var(--bleu-fonce);
   text-transform: uppercase;
+}
+
+/* ========================================
+   RESPONSIVITÉ NOTRE RÉSEAU - MOBILE
+   ======================================== */
+
+/* === Écrans tablette (600px à 999px) === */
+@media (max-width: 999px) {
+  /* Container */
+  .container {
+    max-width: 100%;
+    width: 90%;
+    padding: 30px 15px;
+  }
+  
+  /* Header */
+  .map-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .map-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  /* Map container */
+  #map-container {
+    height: 60vh;
+    min-height: 450px;
+  }
+  
+  /* Stats overlay */
+  .map-stats {
+    top: 15px;
+    right: 15px;
+    padding: 12px 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  /* Popup adjust */
+  .leaflet-popup-content {
+    width: 250px !important;
+  }
+  
+  /* Avatar grid */
+  #reseau .avatar-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-auto-rows: 80px;
+    gap: 12px;
+  }
+  
+  #reseau .avatar {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+/* === Écrans mobiles (< 600px) === */
+@media (max-width: 599px) {
+  /* Page main container */
+  .page-main.container {
+    padding: 1rem 2%;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 100%;
+    width: 95%;
+    padding: 20px 10px;
+  }
+  
+  /* Header */
+  .map-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .map-header h2 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .container p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Map container */
+  #map-container {
+    height: 50vh;
+    min-height: 350px;
+    min-width: 280px;
+    border-radius: 10px;
+    border-width: 1px;
+  }
+  
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Stats overlay - repositionné */
+  .map-stats {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  /* Leaflet popup */
+  .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+  }
+  
+  .leaflet-popup-content {
+    width: 220px !important;
+    padding: 10px !important;
+  }
+  
+  /* Marker cluster - reduce sizes */
+  .marker-cluster-custom div {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+    margin-top: 3px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  
+  /* Avatar grid responsive */
+  #reseau .avatar-grid {
+    grid-template-columns: repeat(3, 60px);
+    grid-auto-rows: 60px;
+    gap: 10px;
+  }
+  
+  #reseau .avatar {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  /* Alumni popup content */
+  .alumni-info-title {
+    font-size: 1rem !important;
+  }
+  
+  .alumni-info-details {
+    font-size: 0.85rem !important;
+  }
+  
+  .alumni-linkedin-section {
+    padding: 8px 0 !important;
+  }
+  
+  .linkedin-button {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    gap: 4px !important;
+  }
+  
+  .linkedin-button i {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* === Écrans très petits (< 480px) === */
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+    padding: 15px 10px;
+  }
+  
+  .map-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .map-header h2 {
+    font-size: 0.9rem;
+  }
+  
+  #map-container {
+    height: 45vh;
+    min-height: 300px;
+  }
+  
+  .leaflet-popup-content {
+    width: 200px !important;
+  }
+  
+  #reseau .avatar-grid {
+    grid-template-columns: repeat(2, 50px);
+    grid-auto-rows: 50px;
+    gap: 8px;
+  }
+  
+  #reseau .avatar {
+    width: 50px !important;
+    height: 50px !important;
+  }
 }

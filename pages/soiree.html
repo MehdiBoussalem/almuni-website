@@ -18,9 +18,7 @@
         <ul>
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="./evenement.html">Alumni 2026</a></li>
-          <li><a href="#">Actualité</a></li>
           <li><a href="./notre-reseau.html">Notre réseau</a></li>
-          <li><a href="#">Offres de stage</a></li>
           <li><a href="./archives/index.html">Archives</a></li>
         </ul>
       </nav>
@@ -30,6 +28,17 @@
       <section class="theme-section">
         <h1 class="theme-title">La grande soirée finale — Informations & inscription</h1>
         <p class="theme-description">Retrouvez ici les détails sur la soirée et inscrivez-vous si vous souhaitez y participer.</p>
+        
+        <!-- Informations sur le lieu -->
+        <div class="lieu-info" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bordeau) 100%); border-radius: 12px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <i class="mdi mdi-map-marker" style="font-size: 1.8rem;"></i>
+            <h3 style="margin: 0; font-size: 1.4rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px;">Lieu de la soirée</h3>
+          </div>
+          <p style="font-size: 1.1rem; font-weight: 600; margin: 0.5rem 0 0 0;">Domaine de La Baratonne </p>
+          <p style="font-size: 0.95rem; margin: 0.25rem 0; opacity: 0.9;">1640 Rte d'Hyères</p>
+          <p style="font-size: 0.95rem; margin: 0; opacity: 0.9;">83130 La Garde</p>
+        </div>
       </section>
 
       <section class="container">
@@ -91,15 +100,39 @@
 
             <form id="soiree-form" novalidate>
               <div class="form-column">
-                <label for="student-number">Numéro étudiant</label>
-                <input id="student-number" name="studentNumber" type="text" placeholder="12345678" required pattern="\\d+" />
+                <label for="student-name">Nom</label>
+                <input id="student-name" name="studentName" type="text" placeholder="Dupont" required />
 
-                <label for="student-email">E-mail étudiant</label>
-                <input id="student-email" name="studentEmail" type="email" placeholder="prenom.nom@etu.univ.fr" required />
+                <label for="student-firstname">Prénom</label>
+                <input id="student-firstname" name="studentFirstname" type="text" placeholder="Marie" required />
 
-                <div class="form-actions">
+                <label for="student-email">E-mail</label>
+                <input id="student-email" name="studentEmail" type="email" placeholder="marie.dupont@email.com" required />
+
+                <label for="student-statut">Votre Statut</label>
+                <select id="student-statut" name="studentStatut" required>
+                  <option value="">-- Sélectionnez votre statut --</option>
+                  <option value="Étudiant(e) de l'UFR Ingémedia">Étudiant(e) de l'UFR Ingémedia</option>
+                  <option value="Ancien étudiant(e) de l'UFR Ingémedia">Ancien étudiant(e) de l'UFR Ingémedia</option>
+                  <option value="Autre">Autre</option>
+                </select>
+
+                <div id="precision-statut-wrapper" style="display: none;">
+                  <label for="student-precision">Veuillez préciser</label>
+                  <input id="student-precision" name="studentPrecision" type="text" placeholder="Ex: Professionnel, Parent..." />
+                </div>
+
+                <label for="student-captation">Autorisation de captation de vidéos & photos</label>
+                <div class="captation-group">
+                  <div class="captation-options">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                      <input type="radio" name="studentCaptation" value="Oui" required /> Oui
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                      <input type="radio" name="studentCaptation" value="Non" required /> Non
+                    </label>
+                  </div>
                   <button type="submit" class="btn-primary full">S'inscrire</button>
-                  <button type="button" id="btn-unsubscribe" class="btn-secondary full">Se désinscrire</button>
                 </div>
               </div>
             </form>

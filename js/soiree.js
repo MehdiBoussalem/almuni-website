@@ -1,14 +1,25 @@
-const API_URL = "http://localhost:8000";
+const API_URL = "http://127.0.0.1:8000";
 const MAX_PLACES = 150;
 
 document.addEventListener('DOMContentLoaded', () => {
     updatePlacesCount();
 
     const form = document.getElementById('soiree-form');
-    const btnUnsubscribe = document.getElementById('btn-unsubscribe');
-
     if (form) form.addEventListener('submit', handleInscription);
-    if (btnUnsubscribe) btnUnsubscribe.addEventListener('click', handleDesinscription);
+
+    // Gestion du champ "Autre" pour le statut
+    const statutSelect = document.getElementById('student-statut');
+    if (statutSelect) {
+        statutSelect.addEventListener('change', (e) => {
+            const wrapper = document.getElementById('precision-statut-wrapper');
+            if (e.target.value === 'Autre') {
+                wrapper.style.display = 'block';
+            } else {
+                wrapper.style.display = 'none';
+                document.getElementById('student-precision').value = '';
+            }
+        });
+    }
 });
 
 /**
@@ -19,7 +30,7 @@ async function updatePlacesCount() {
     const btnSubmit = document.querySelector('#soiree-form .btn-primary');
     
     try {
-        const response = await fetch(`${API_URL}/etudiants/soiree/count`);
+        const response = await fetch(`${API_URL}/inscrits-soiree/count`);
         if (!response.ok) throw new Error('Erreur réseau');
         
         const data = await response.json();
@@ -44,47 +55,68 @@ async function updatePlacesCount() {
 }
 
 /**
- * Gère l'inscription (PATCH /etudiants/inscription)
+ * Gère l'inscription (POST /inscrits-soiree/)
  */
 async function handleInscription(e) {
     e.preventDefault();
     const msg = document.getElementById('soiree-msg');
     resetMessage(msg);
     
-    const num = document.getElementById('student-number').value;
-    const email = document.getElementById('student-email').value;
+    const nom = document.getElementById('student-name').value.trim();
+    const prenom = document.getElementById('student-firstname').value.trim();
+    const email = document.getElementById('student-email').value.trim();
+    const statut = document.getElementById('student-statut').value.trim();
+    const autorisation_captation = document.querySelector('input[name="studentCaptation"]:checked')?.value;
 
-    if (!validateForm(num, email, msg)) return;
+    let precision_statut = null;
+    if (statut === 'Autre') {
+        precision_statut = document.getElementById('student-precision').value.trim();
+    }
+
+    if (!validateForm(nom, prenom, email, statut, precision_statut, autorisation_captation, msg)) return;
 
     try {
         // Vérification frontend : est-ce que c'est complet ?
-        const countRes = await fetch(`${API_URL}/etudiants/soiree/count`);
+        const countRes = await fetch(`${API_URL}/inscrits-soiree/count`);
         if (countRes.ok) {
             const countData = await countRes.json();
             if (countData.count >= MAX_PLACES) {
                 showMessage(msg, "Impossible de s'inscrire : la soirée est complète.", "grey");
-                updatePlacesCount(); // Met à jour l'affichage du compteur
-                return; // On arrête tout ici
+                updatePlacesCount();
+                return;
             }
         }
 
-        const response = await fetch(`${API_URL}/etudiants/inscription`, {
-            method: 'PATCH',
+        const payload = { 
+            nom, 
+            prenom, 
+            mail: email,
+            statut,
+            precision_statut,
+            autorisation_captation
+        };
+
+        const response = await fetch(`${API_URL}/inscrits-soiree/`, {
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ numero_etudiant: num, mail: email })
+            body: JSON.stringify(payload)
         });
 
         if (response.ok) {
             showMessage(msg, "Inscription réussie ! À bientôt.", "green");
             updatePlacesCount();
             document.getElementById('soiree-form').reset();
+            document.getElementById('precision-statut-wrapper').style.display = 'none';
         } else if (response.status === 400) {
             const errData = await response.json();
             if (errData.detail === "Soirée complète") {
                 showMessage(msg, "Impossible de s'inscrire : la soirée est complète.", "grey");
+            } else if (errData.detail === "Cette adresse email est déjà inscrite") {
+                showMessage(msg, "Cette adresse email est déjà inscrite !", "orange");
             } else {
-                showMessage(msg, "Vous êtes déjà inscrit !", "orange");
+                showMessage(msg, errData.detail || "Erreur lors de l'inscription", "crimson");
             }
+            updatePlacesCount();
         } else {
             const errData = await response.json();
             throw new Error(errData.detail || "Erreur lors de l'inscription");
@@ -94,66 +126,53 @@ async function handleInscription(e) {
     }
 }
 
-/**
- * Gère la désinscription (PATCH /etudiants/desinscription)
- */
-async function handleDesinscription() {
-    const msg = document.getElementById('soiree-msg');
-    resetMessage(msg);
-
-    const num = document.getElementById('student-number').value;
-    const email = document.getElementById('student-email').value;
-
-    if (!validateForm(num, email, msg)) return;
-
-    try {
-        const response = await fetch(`${API_URL}/etudiants/desinscription`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ numero_etudiant: num, mail: email })
-        });
-
-        if (response.ok) {
-            showMessage(msg, "Désinscription prise en compte.", "var(--rouge)");
-            updatePlacesCount();
-            document.getElementById('soiree-form').reset();
-        } else {
-            const errData = await response.json();
-            throw new Error(errData.detail || "Erreur lors de la désinscription");
-        }
-    } catch (error) {
-        handleError(error, msg);
-    }
-}
-
 // --- Utilitaires ---
 
-function validateForm(num, email, msgEl) {
-    if (!num || !/^\d+$/.test(num)) {
-        showMessage(msgEl, 'Numéro étudiant invalide (chiffres uniquement).', 'crimson');
+function validateForm(nom, prenom, email, statut, precision_statut, autorisation_captation, msgEl) {
+    if (!nom || nom.length < 2) {
+        showMessage(msgEl, 'Nom invalide (minimum 2 caractères).', 'crimson');
+        return false;
+    }
+    if (!prenom || prenom.length < 2) {
+        showMessage(msgEl, 'Prénom invalide (minimum 2 caractères).', 'crimson');
         return false;
     }
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
         showMessage(msgEl, "Adresse e-mail invalide.", 'crimson');
         return false;
     }
+    if (!statut) {
+        showMessage(msgEl, "Veuillez sélectionner votre statut.", 'crimson');
+        return false;
+    }
+    if (statut === 'Autre' && (!precision_statut || precision_statut.length < 2)) {
+        showMessage(msgEl, "Veuillez préciser votre statut (minimum 2 caractères).", 'crimson');
+        return false;
+    }
+    if (!autorisation_captation) {
+        showMessage(msgEl, "Veuillez indiquer votre autorisation de captation.", 'crimson');
+        return false;
+    }
     return true;
 }
 
 function handleError(error, msgEl) {
-    const text = error.message === "Etudiant non trouvé" 
-        ? "Identifiant incorecte." 
-        : "Erreur : " + error.message;
+    const text = "Erreur : " + error.message;
     showMessage(msgEl, text, 'crimson');
 }
 
 function showMessage(el, text, color) {
+    if (!el) return;
+    el.textContent = text;
     el.style.display = 'block';
     el.style.color = color;
-    el.textContent = text;
+    el.style.padding = '0.75rem';
+    el.style.borderRadius = '4px';
+    el.style.backgroundColor = color === 'green' ? '#d4edda' : (color === 'orange' ? '#fff3cd' : '#f8d7da');
 }
 
 function resetMessage(el) {
-    el.style.display = 'none';
+    if (!el) return;
     el.textContent = '';
+    el.style.display = 'none';
 }

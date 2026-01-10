@@ -1,32 +1,84 @@
+"""
+Script pour exporter les inscrits à la soirée en fichier CSV
+"""
+
+import os
 import csv
-from app.database import SessionLocal
-from app import models
+from datetime import datetime
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from app.models import InscritSoiree
+
+# Configuration
+DB_PATH = "sqlite:///alumni.db"
+OUTPUT_DIR = "exports"
+
+# Créer le dossier exports s'il n'existe pas
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 
 def export_inscrits():
-    db = SessionLocal()
+    """Exporte les inscrits à la soirée en CSV"""
+
+    # Connexion à la base de données
+    engine = create_engine(DB_PATH)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
     try:
-        # Query students registered for the soiree
-        inscrits = db.query(models.Etudiant).filter(models.Etudiant.soiree == True).all()
-        
-        filename = "inscrits_soiree.csv"
-        
-        with open(filename, mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            # Write header
-            writer.writerow(["Nom", "Prénom", "Mail"])
-            
-            # Write student data
-            for etudiant in inscrits:
-                writer.writerow([etudiant.nom, etudiant.prenom, etudiant.mail])
-            
-            # Write empty line and total
-            writer.writerow([])
-            writer.writerow(["Total inscrits", len(inscrits)])
-            
-        print(f"Export terminé : {filename} ({len(inscrits)} étudiants)")
-        
+        # Récupérer tous les inscrits
+        inscrits = session.query(InscritSoiree).all()
+
+        if not inscrits:
+            print("❌ Aucun inscrit trouvé dans la base de données.")
+            return
+
+        # Timestamp pour le fichier
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        # EXPORT CSV
+        csv_filename = f"{OUTPUT_DIR}/inscrits_soiree_{timestamp}.csv"
+
+        with open(csv_filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f, delimiter=";")
+
+            # En-têtes
+            writer.writerow(
+                [
+                    "ID",
+                    "Nom",
+                    "Prénom",
+                    "E-mail",
+                    "Statut",
+                    "Précision Statut",
+                    "Autorisation Captation",
+                ]
+            )
+
+            # Données
+            for inscrit in inscrits:
+                writer.writerow(
+                    [
+                        inscrit.id,
+                        inscrit.nom,
+                        inscrit.prenom,
+                        inscrit.mail,
+                        inscrit.statut,
+                        inscrit.precision_statut or "",
+                        inscrit.autorisation_captation,
+                    ]
+                )
+
+        print(f"✅ CSV exporté : {csv_filename}")
+        print(f"📊 Total inscrits : {len(inscrits)}")
+
+    except Exception as e:
+        print(f"❌ Erreur lors de l'export : {e}")
+
     finally:
-        db.close()
+        session.close()
+
 
 if __name__ == "__main__":
+    print("🔄 Export des inscrits à la soirée...\n")
     export_inscrits()

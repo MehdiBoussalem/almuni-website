@@ -67,6 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const alumnis = await response.json();
       
+      // Debug: Afficher les données pour vérifier
+      console.log('Alumnis chargés:', alumnis);
+      console.log('Exemple d\'alumni avec photo:', alumnis.find(a => a.photo));
+      
       // Afficher le nombre d'alumnis chargés
       if(countDisplay) countDisplay.innerText = alumnis.length;
 
@@ -80,24 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const circle = L.circleMarker([alumni.latitude, alumni.longitude], markerOptions);
 
         // Récupérer le nom de l'entreprise si disponible
-        const entrepriseInfo = alumni.entreprise_id 
-          ? `chez <strong>${alumni.entreprise?.nom || 'Entreprise inconnue'}</strong>` 
+        const entrepriseInfo = alumni.entreprise 
+          ? `chez <strong>${alumni.entreprise}</strong>` 
+          : '';
+
+        // Créer le bouton LinkedIn s'il y a un lien
+        const linkedinButton = alumni.linkedin 
+          ? `<a href="${alumni.linkedin}" target="_blank" rel="noopener noreferrer" class="linkedin-button"><i class="mdi mdi-linkedin"></i> Profil LinkedIn</a>` 
           : '';
 
         // HTML DU POPUP
         const popupContent = `
             <div class="alumni-popup-header">
-                <img src="${alumni.url_photo || 'https://i.pravatar.cc/150'}" 
-                     alt="${alumni.prenom}" 
-                     class="alumni-avatar"
-                     onerror="this.src='https://i.pravatar.cc/150'">
                 <h4 class="alumni-name">${alumni.prenom} ${alumni.nom}</h4>
                 <span class="alumni-promo">Promo ${alumni.promo}</span>
             </div>
             <div class="alumni-popup-body">
                 <div class="alumni-job">${alumni.poste}</div>
                 ${entrepriseInfo ? `<div class="alumni-company">${entrepriseInfo}</div>` : ''}
-                <div class="alumni-location">📍 Basé(e) à ${alumni.lieu}</div>
+                <div class="alumni-location">📍 Basé(e) à ${alumni.ville}</div>
+                ${linkedinButton ? `<div class="alumni-linkedin-section">${linkedinButton}</div>` : ''}
             </div>
         `;
 

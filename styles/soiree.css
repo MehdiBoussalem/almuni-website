@@ -275,4 +275,269 @@ body {
   .timeline-dot { left: var(--tl-left); }
 }
 
+/* Groupement de l'autorisation de captation avec bouton */
+.captation-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.captation-options {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.captation-group .btn-primary.full {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVITÉ SOIRÉE - MOBILE
+   ======================================== */
+
+/* === Écrans tablette (600px à 899px) === */
+@media (max-width: 899px) {
+  /* Soiree grid stacking */
+  .soiree-grid {
+    grid-template-columns: 1fr;
+    padding: 0 2%;
+    gap: 1.5rem;
+  }
+  
+  .soiree-form-card {
+    order: 2;
+  }
+  
+  .program-column {
+    order: 1;
+  }
+  
+  /* Form responsive */
+  .soiree-form-card .theme-title {
+    font-size: 1.2rem;
+  }
+  
+  .soiree-form-card .form-column {
+    gap: 0.5rem;
+  }
+  
+  #soiree-form label {
+    font-size: 0.95rem;
+  }
+  
+  #soiree-form input,
+  #soiree-form select {
+    font-size: 0.95rem;
+    padding: 0.55rem 0.75rem;
+  }
+  
+  /* Timeline */
+  .timeline { --tl-left: 50px; }
+  .timeline-time { font-size: 0.9rem; }
+  .timeline-item h4 { font-size: 0.98rem; }
+  
+  /* Lieu info responsive */
+  .lieu-info {
+    padding: 1.2rem !important;
+  }
+  
+  .lieu-info h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .lieu-info p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Section title */
+  .theme-title {
+    font-size: 1.5rem;
+  }
+  
+  .theme-description {
+    font-size: 1rem;
+  }
+}
+
+/* === Écrans mobiles (< 600px) === */
+@media (max-width: 599px) {
+  /* Main container */
+  .page-main.container {
+    padding: 1rem 2%;
+  }
+  
+  /* Soiree grid */
+  .soiree-grid {
+    padding: 0 1%;
+    gap: 1rem;
+  }
+  
+  /* Lieu info */
+  .lieu-info {
+    margin-top: 1rem !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+  }
+  
+  .lieu-info div {
+    gap: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  .lieu-info i {
+    font-size: 1.4rem !important;
+  }
+  
+  .lieu-info h3 {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px !important;
+  }
+  
+  .lieu-info p {
+    font-size: 0.85rem !important;
+    margin: 0.2rem 0 !important;
+  }
+  
+  /* Titres */
+  .theme-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .theme-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Programme section */
+  .program-column .schedule-item {
+    padding: 0.8rem;
+  }
+  
+  .schedule-item h3 {
+    font-size: 1rem;
+    margin: 0 0 0.8rem 0;
+  }
+  
+  /* Timeline */
+  .timeline {
+    --tl-left: 45px;
+  }
+  
+  .timeline::before {
+    left: var(--tl-left);
+    top: 8px;
+  }
+  
+  .timeline-item {
+    padding: 10px 0 10px calc(var(--tl-left) + 28px);
+  }
+  
+  .timeline-time {
+    font-size: 0.8rem;
+    width: calc(var(--tl-left) - 10px);
+    padding-right: 8px;
+  }
+  
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    left: calc(var(--tl-left) - 5px);
+  }
+  
+  .timeline-item h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .timeline-item p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  /* Formulaire d'inscription */
+  .soiree-form-card {
+    padding: 1rem;
+  }
+  
+  .soiree-form-card .theme-title {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .soiree-form-card .theme-description {
+    font-size: 0.85rem;
+  }
+  
+  .soiree-form-card .form-column {
+    gap: 0.5rem;
+  }
+  
+  #soiree-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  #soiree-form input,
+  #soiree-form select {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+  
+  /* Radio buttons responsive */
+  #soiree-form div[style*="display: flex; gap: 1rem"] {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  #soiree-form label[style*="display: flex"] {
+    margin: 0 !important;
+  }
+  
+  /* Captation group responsive */
+  .captation-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .captation-options {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .captation-group .btn-primary.full {
+    width: 100%;
+  }
+  
+  /* Bouton */
+  .btn-primary.full {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Message statut */
+  #soiree-msg {
+    font-size: 0.9rem;
+    padding: 0.6rem !important;
+    margin-top: 0.8rem !important;
+  }
+  
+  /* Places info */
+  #places-info {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem !important;
+  }
+}
+
 /* Note: desktop scrolling restored — footer stays at bottom naturally. */

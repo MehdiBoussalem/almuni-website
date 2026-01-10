@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-texte);
   font-weight: 300;
@@ -961,4 +965,380 @@ section.network-section {
   /* Enlève le padding pour que le fond touche les bords */
   padding-right: 0;
   /* Enlève le padding pour que le fond touche les bords */
+}
+
+/* ========================================
+   RESPONSIVITÉ - MOBILE & TABLETTE
+   ======================================== */
+
+/* === Écrans extra-larges (>= 1200px) : aucun changement === */
+
+/* === Écrans moyens (768px à 1199px) === */
+@media (max-width: 1199px) {
+  header nav li {
+    margin: 0 15px;
+  }
+  
+  header nav a {
+    font-size: 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .kpis {
+    gap: 15px;
+  }
+  
+  .kpi {
+    flex-basis: 200px;
+  }
+  
+  .kpi h3 {
+    font-size: 2.8rem;
+  }
+  
+  .countdown-item span {
+    font-size: 3rem;
+  }
+  
+  .network-inner {
+    gap: 40px;
+  }
+  
+  .network-right h2 {
+    font-size: 2rem;
+  }
+}
+
+/* === Écrans tablette (600px à 767px) === */
+@media (max-width: 767px) {
+  /* HEADER - Navigation mobile */
+  header {
+    flex-wrap: wrap;
+    padding: 0.5rem 3%;
+  }
+  
+  header nav ul {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  header nav li {
+    margin: 0.35rem 0;
+    text-align: center;
+  }
+  
+  header nav a {
+    font-size: 0.95rem;
+  }
+  
+  header .logo {
+    height: 50px;
+  }
+  
+  /* SECTION HÉRO */
+  .hero-section {
+    height: 35vh;
+    padding: 1.5rem;
+    margin-top: 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .scroll-down {
+    font-size: 28px;
+    bottom: 20px;
+  }
+  
+  /* SECTIONS GÉNÉRALES */
+  section {
+    padding: 40px 3%;
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+  }
+  
+  .about-section p {
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  
+  /* KPIs */
+  .kpis {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .kpi {
+    flex-basis: auto;
+    padding: 20px;
+  }
+  
+  .kpi h3 {
+    font-size: 2.5rem;
+  }
+  
+  /* Titre objectifs */
+  .objectives-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Conteneur d'objectifs */
+  .objectives-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .objective {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  
+  /* Countdown */
+  .countdown-container h2 {
+    font-size: 2rem;
+  }
+  
+  #countdown {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    min-width: 100px;
+    padding: 15px;
+  }
+  
+  .countdown-item span {
+    font-size: 2rem;
+  }
+  
+  /* Réseau - section avant-propos */
+  .network-section {
+    padding: 40px 3%;
+  }
+  
+  .network-inner {
+    gap: 20px;
+  }
+  
+  .avatar-grid {
+    grid-template-columns: repeat(3, 72px);
+    grid-auto-rows: 72px;
+    gap: 12px;
+  }
+  
+  .avatar {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  
+  .network-right {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .network-right h2 {
+    font-size: 1.5rem;
+  }
+  
+  .network-right p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* FOOTER */
+  footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+    padding: 20px 3%;
+  }
+  
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    grid-column: 1;
+    justify-self: center;
+  }
+  
+  .footer-left .footer-contact {
+    text-align: center;
+  }
+  
+  .footer-middle ul {
+    gap: 15px;
+  }
+  
+  .footer-utln-logo {
+    width: 120px;
+  }
+  
+  /* Dropdown menu ajustements */
+  nav ul li.dropdown .dropdown-menu {
+    min-width: 150px;
+  }
+}
+
+/* === Écrans mobiles petits (< 600px) === */
+@media (max-width: 599px) {
+  /* HEADER */
+  header {
+    padding: 0.5rem 2%;
+  }
+  
+  header nav li {
+    margin: 0.25rem 0;
+  }
+  
+  header nav a {
+    font-size: 0.85rem;
+  }
+  
+  header .logo {
+    height: 40px;
+  }
+  
+  /* SECTION HÉRO */
+  .hero-section {
+    height: 30vh;
+    padding: 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  /* SECTIONS */
+  section {
+    padding: 30px 2%;
+  }
+  
+  .about-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* KPIs */
+  .kpi {
+    padding: 15px;
+  }
+  
+  .kpi h3 {
+    font-size: 2rem;
+  }
+  
+  .kpi p {
+    font-size: 0.9rem;
+  }
+  
+  /* Objectifs */
+  .objectives-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+  }
+  
+  .objective h3 {
+    font-size: 0.95rem;
+  }
+  
+  .objective p {
+    font-size: 0.85rem;
+  }
+  
+  /* Countdown */
+  .countdown-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #countdown {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .countdown-item {
+    min-width: 80px;
+    padding: 12px;
+  }
+  
+  .countdown-item span {
+    font-size: 1.8rem;
+  }
+  
+  .countdown-item p {
+    font-size: 0.75rem;
+  }
+  
+  /* Réseau */
+  .network-section {
+    padding: 30px 2%;
+  }
+  
+  .network-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .avatar-grid {
+    grid-template-columns: repeat(3, 60px);
+    grid-auto-rows: 60px;
+    gap: 10px;
+  }
+  
+  .avatar {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .network-right h2 {
+    font-size: 1.3rem;
+  }
+  
+  .network-right p {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+  
+  /* FOOTER */
+  footer {
+    padding: 15px 2%;
+  }
+  
+  .footer-middle ul {
+    gap: 12px;
+  }
+  
+  footer a {
+    font-size: 1.5rem;
+  }
+  
+  .footer-utln-logo {
+    width: 100px;
+  }
 }

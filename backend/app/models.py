@@ -1,18 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float, Boolean
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, Float
 from app.database import Base
-
-
-class Entreprises(Base):
-    __tablename__ = "entreprises"
-
-    id = Column(Integer, primary_key=True, index=True)
-    nom = Column(String, index=True, nullable=False)
-    url = Column(String, nullable=True)
-
-    # Relations
-    alumnis = relationship("Alumnis", back_populates="entreprise")
-    offres = relationship("OffresStage", back_populates="entreprise")
 
 
 class Alumnis(Base):
@@ -21,38 +8,22 @@ class Alumnis(Base):
     id = Column(Integer, primary_key=True, index=True)
     nom = Column(String, index=True, nullable=False)
     prenom = Column(String, index=True, nullable=False)
-    lieu = Column(String, nullable=True)
+    ville = Column(String, nullable=True)
     poste = Column(String, nullable=True)
-    url_photo = Column(String, nullable=True)
+    linkedin = Column(String, nullable=True)
     promo = Column(String, nullable=True)
     latitude = Column(Float, nullable=True)
     longitude = Column(Float, nullable=True)
-    entreprise_id = Column(Integer, ForeignKey("entreprises.id"), nullable=True)
-
-    # Relation
-    entreprise = relationship("Entreprises", back_populates="alumnis")
+    entreprise = Column(String, nullable=True)
 
 
-class OffresStage(Base):
-    __tablename__ = "offres_stage"
+class InscritSoiree(Base):
+    __tablename__ = "inscrits_soiree"
 
     id = Column(Integer, primary_key=True, index=True)
-    nom = Column(String, index=True, nullable=False)
-    texte = Column(String, nullable=False)
-    date_post = Column(Date, nullable=False)
-    lien_postuler = Column(String, nullable=False)
-    entreprise_id = Column(Integer, ForeignKey("entreprises.id"), nullable=False)
-
-    # Relation
-    entreprise = relationship("Entreprises", back_populates="offres")
-
-
-class Etudiant(Base):
-    __tablename__ = "etudiants"
-
-    id = Column(Integer, primary_key=True, index=True)
-    mail = Column(String, index=True, nullable=False)
-    numero_etudiant = Column(String, nullable=False)
     nom = Column(String, nullable=False)
     prenom = Column(String, nullable=False)
-    soiree = Column(Boolean, nullable=False, default=False)
+    mail = Column(String, unique=True, index=True, nullable=False)
+    statut = Column(String, nullable=False)  # "Étudiant", "Ancien étudiant", "Autre"
+    precision_statut = Column(String, nullable=True)  # Si statut == "Autre"
+    autorisation_captation = Column(String, nullable=False)  # "Oui" ou "Non"
