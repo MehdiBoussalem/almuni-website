@@ -12,10 +12,11 @@ app = FastAPI()
 
 # Configuration CORS
 origins = [
-    "http://localhost:5500",
-    "http://127.0.0.1:5500",
-    "http://localhost:5501",
-    "http://127.0.0.1:5501",
+    "https://alumni-ingemedia.net",
+    "https://www.alumni-ingemedia.net",
+    "http://alumni-ingemedia.net",
+    "http://www.alumni-ingemedia.net",
+    "http://37.59.115.57",
 ]
 
 app.add_middleware(

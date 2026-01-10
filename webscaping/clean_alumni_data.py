@@ -347,6 +347,9 @@ def cleanup_columns(df):
     # Remplir les entreprises manquantes
     df["entreprise"] = df["entreprise"].fillna("Aucune")
 
+    # Remplir les postes manquants
+    df["poste"] = df["poste"].fillna("Aucun Poste")
+
     return df
 
 

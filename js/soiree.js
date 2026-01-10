@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000";
+// Utilise l'origine courante (Apache proxy) au lieu de localhost
+const API_URL = `${window.location.origin}/api`;
 const MAX_PLACES = 150;
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -6,7 +6,8 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- CONFIGURATION ---
-  const API_BASE_URL = 'http://localhost:8000'; // URL du backend FastAPI
+  // Utilise l'origine courante du site (Apache reverse proxy) pour cibler l'API
+  const API_BASE_URL = `${window.location.origin}/api`;
   
   // --- INITIALISATION DE LA CARTE ---
   const map = L.map('map', {
