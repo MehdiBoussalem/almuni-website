@@ -297,6 +297,130 @@ body {
   margin: 0;
 }
 
+/* Message de fermeture des inscriptions */
+#soiree-closure-msg {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(53, 95, 155, 0.2);
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#soiree-closure-msg h3 {
+  color: var(--bleu-fonce);
+  margin: 0 0 0.75rem 0;
+  font-family: var(--font-titre, 'Bebas Neue', sans-serif);
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#soiree-closure-msg p {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  width: 100%;
+}
+
+#soiree-closure-msg p:first-of-type {
+  margin-top: 0;
+  color: #555;
+  font-weight: 500;
+}
+
+#soiree-closure-msg p:last-of-type {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+#soiree-closure-msg a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--rouge);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(222, 18, 81, 0.2);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+#soiree-closure-msg a:hover {
+  background: #A00A46;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(222, 18, 81, 0.3);
+}
+
+@media (max-width: 900px) {
+  #soiree-closure-msg {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.04);
+    padding: 1.2rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  #soiree-closure-msg h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  #soiree-closure-msg p {
+    font-size: 0.95rem;
+    margin: 0.6rem 0;
+  }
+
+  #soiree-closure-msg p:last-of-type {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #soiree-closure-msg a {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 599px) {
+  #soiree-closure-msg {
+    background: #fff;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+  }
+
+  #soiree-closure-msg h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #soiree-closure-msg p {
+    font-size: 0.85rem;
+    margin: 0.4rem 0;
+  }
+
+  #soiree-closure-msg p:last-of-type {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  #soiree-closure-msg a {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    width: 90%;
+  }
+}
+
 /* ========================================
    RESPONSIVITÉ SOIRÉE - MOBILE
    ======================================== */

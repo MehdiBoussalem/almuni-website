@@ -1,6 +1,6 @@
 // Utilise l'origine courante (Apache proxy) au lieu de localhost
 const API_URL = `${window.location.origin}/api`;
-const MAX_PLACES = 150;
+const MAX_PLACES = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     updatePlacesCount();
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function updatePlacesCount() {
     const infoEl = document.getElementById('places-info');
     const btnSubmit = document.querySelector('#soiree-form .btn-primary');
+    const form = document.getElementById('soiree-form');
     
     try {
         const response = await fetch(`${API_URL}/inscrits-soiree/count`);
@@ -39,19 +40,74 @@ async function updatePlacesCount() {
         const remaining = MAX_PLACES - count;
         
         if (infoEl) {
-            if (remaining <= 0) {
-                infoEl.textContent = "Complet ! (0 places restantes)";
-                infoEl.style.color = "grey";
-                if (btnSubmit) btnSubmit.disabled = true;
+            // Si MAX_PLACES = 0, les inscriptions sont fermées
+            if (MAX_PLACES === 0) {
+                // Afficher le message de fermeture et cacher le formulaire
+                displayClosureMessage();
+                if (form) form.style.display = 'none';
             } else {
-                infoEl.textContent = `${remaining} places restantes sur ${MAX_PLACES}`;
-                infoEl.style.color = "var(--rouge)";
-                if (btnSubmit) btnSubmit.disabled = false;
+                // Les inscriptions sont ouvertes - afficher le formulaire et le nombre de places
+                displayOpenForm();
+                if (form) form.style.display = 'block';
+                
+                if (remaining <= 0) {
+                    infoEl.textContent = "Complet ! (0 places restantes)";
+                    infoEl.style.color = "grey";
+                    if (btnSubmit) btnSubmit.disabled = true;
+                } else {
+                    infoEl.textContent = `${remaining} places restantes sur ${MAX_PLACES}`;
+                    infoEl.style.color = "var(--rouge)";
+                    if (btnSubmit) btnSubmit.disabled = false;
+                }
             }
         }
     } catch (error) {
         console.error("Impossible de récupérer le nombre de places", error);
         if (infoEl) infoEl.textContent = "Info places indisponible";
+    }
+}
+
+/**
+ * Affiche le message de fermeture des inscriptions
+ */
+function displayClosureMessage() {
+    const infoEl = document.getElementById('places-info');
+    if (infoEl) {
+        infoEl.textContent = "Les inscriptions sont fermées";
+        infoEl.style.color = "grey";
+    }
+    
+    // Créer ou récupérer l'élément de message de fermeture
+    let closureMsg = document.getElementById('soiree-closure-msg');
+    if (!closureMsg) {
+        closureMsg = document.createElement('div');
+        closureMsg.id = 'soiree-closure-msg';
+        
+        // Insérer le message après les infos de places et avant la description
+        const formCard = document.querySelector('.soiree-form-card');
+        const description = document.querySelector('.soiree-form-card .theme-description');
+        
+        if (formCard && description) {
+            description.parentNode.insertBefore(closureMsg, description.nextSibling);
+        }
+    }
+    
+    closureMsg.innerHTML = `
+        <h3>Inscriptions fermées</h3>
+        <p>Nous sommes désolés, les inscriptions pour cette soirée sont actuellement fermées.</p>
+        <p>Pour toute question, veuillez nous contacter :</p>
+        <a href="mailto:ingemedia.alumni@gmail.com">📧 ingemedia.alumni@gmail.com</a>
+    `;
+    closureMsg.style.display = 'block';
+}
+
+/**
+ * Affiche le formulaire d'inscription
+ */
+function displayOpenForm() {
+    const closureMsg = document.getElementById('soiree-closure-msg');
+    if (closureMsg) {
+        closureMsg.style.display = 'none';
     }
 }
 

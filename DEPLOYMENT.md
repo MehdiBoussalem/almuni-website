@@ -12,15 +12,16 @@
 
 ## 🟢 État actuel du déploiement
 
-**Date**: 10 janvier 2026  
-**Status**: ✅ **Production en HTTP - Fonctionnel**  
+**Date**: 13 janvier 2026  
+**Status**: ✅ **Production en HTTPS - Entièrement Fonctionnel**  
 **IP**: 37.59.115.57  
-**Domaine**: alumni-ingemedia.net (DNS non encore correct)
+**Domaine**: alumni-ingemedia.net (DNS ✅ Correct)
 
 ### URLs actuelles:
-- Frontend: `http://37.59.115.57/`
-- API: `http://37.59.115.57/api/`
-- Accès direct: `http://alumni-ingemedia.net/` (IPv6 temporaire)
+- Frontend: `https://alumni-ingemedia.net/`
+- API: `https://alumni-ingemedia.net/api/`
+- Accès HTTP: `http://alumni-ingemedia.net/` → Redirige vers HTTPS ✅
+- Certificat SSL: Let's Encrypt (valide jusqu'au 13 avril 2026)
 
 ---
 
@@ -176,82 +177,64 @@ origins = [
 
 ---
 
-## 🔄 Prochaines étapes (DNS + SSL)
+## ✅ SSL/HTTPS - Configuration complétée
 
-### ⚠️ Problème actuel
+### 🔒 Certificat Let's Encrypt installé
 
-Le domaine `alumni-ingemedia.net` pointe actuellement vers **IPv6** (2001:41d0:301::26) au lieu de **IPv4** (37.59.115.57).
-
-**Vérification**:
 ```bash
-dig alumni-ingemedia.net +short
-# Retourne: 2001:41d0:301::26 (MAUVAIS)
-# Devrait retourner: 37.59.115.57 (BON)
+Certificate Name: alumni-ingemedia.net
+  Serial Number: 53f9c253702b32bbc071b90da6b7b809a9d
+  Key Type: ECDSA
+  Domains: alumni-ingemedia.net www.alumni-ingemedia.net
+  Expiry Date: 2026-04-13 12:33:17+00:00 (VALID: 89 days)
+  Certificate Path: /etc/letsencrypt/live/alumni-ingemedia.net/fullchain.pem
+  Private Key Path: /etc/letsencrypt/live/alumni-ingemedia.net/privkey.pem
 ```
 
-### ✅ Solution: Corriger le DNS
+### 🔄 Configuration Apache HTTPS
 
-**Où**: Chez votre registraire de domaine (OVH, Namecheap, etc.) ou console OVHcloud
+**Fichier**: `/etc/apache2/sites-available/alumni-le-ssl.conf`
 
-**À faire**:
-1. Accédez au panneau de gestion de votre domaine
-2. Modifiez l'enregistrement DNS **A** pour alumni-ingemedia.net
-3. Mettez la valeur: **37.59.115.57**
-4. Attendez la propagation DNS (~5-30 minutes)
-
-**Vérification**:
-```bash
-# Attendre puis tester
-dig alumni-ingemedia.net +short
-# Devrait retourner: 37.59.115.57
+Proxy correctement configuré avec `/api/` (avec slash final):
+```apache
+ProxyPass /api/ http://127.0.0.1:8000/
+ProxyPassReverse /api/ http://127.0.0.1:8000/
 ```
 
-### 🔒 Étape 1: Générer le certificat SSL
+**Status**: ✅ Actif et fonctionnel
 
-Une fois le DNS corrigé, exécutez:
+### 🔄 Redirection HTTP → HTTPS
 
-```bash
-sudo certbot --apache \
-  -d alumni-ingemedia.net \
-  -d www.alumni-ingemedia.net \
-  --agree-tos \
-  --no-eff-email \
-  -m mehdiboussalem95@gmail.com
+**Fichier**: `/etc/apache2/sites-available/alumni.conf`
+
+Redirige tous les appels HTTP vers HTTPS:
+```apache
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
-**Certbot va**:
-- Valider que vous êtes propriétaire du domaine
-- Générer le certificat Let's Encrypt (gratuit)
-- Modifier automatiquement le VirtualHost Apache
-- Ajouter la redirection HTTP → HTTPS
-- Configurer le renouvellement automatique
+**Status**: ✅ Actif
 
-**Résultat**: Votre site sera accessible en **HTTPS** 🔐
-
-### 🔒 Étape 2: Vérifier le renouvellement automatique SSL
-
-Let's Encrypt émet des certificats valides **90 jours**. Le renouvellement est automatique via:
+### ✅ Renouvellement automatique SSL
 
 ```bash
-# Vérifier
+# Status
 sudo systemctl status certbot.timer
-# ✓ Active: active (waiting)
+# ● certbot.timer - Run certbot twice daily
+#    Active: active (waiting)
 
-# Ou forcer un test de renouvellement
+# Test renouvellement (dry-run)
 sudo certbot renew --dry-run
-```
-
-### 🔒 Étape 3: Redémarrer Apache après SSL
-
-```bash
-sudo systemctl reload apache2
+# The following simulated renewals succeeded:
+#   /etc/letsencrypt/live/alumni-ingemedia.net/fullchain.pem (success)
 ```
 
 **Résultat final**: 
 - ✅ Site accessible en HTTPS
-- ✅ Certificat valide (cadenas vert)
+- ✅ Certificat valide (cadenas vert 🔒)
 - ✅ Redirection automatique HTTP → HTTPS
-- ✅ Score SSL A+
+- ✅ Renouvellement automatique tous les 90 jours
 
 ---
 
@@ -305,23 +288,25 @@ sudo certbot renew --force-renewal
 sudo certbot renew --dry-run
 ```
 
-### Tests API
+### Tests API (HTTPS)
 ```bash
-# Test direct API
+# Test direct API (en local)
 curl http://127.0.0.1:8000/
 
-# Test via Apache proxy
-curl http://37.59.115.57/api/
-
-# Test sur le domaine (une fois DNS correct)
-curl http://alumni-ingemedia.net/api/
-curl https://alumni-ingemedia.net/api/  # Après SSL
+# Test via Apache proxy en HTTPS
+curl https://alumni-ingemedia.net/api/
 
 # Récupérer les alumni
-curl http://37.59.115.57/api/alumnis/
+curl https://alumni-ingemedia.net/api/alumnis/
+
+# Récupérer avec limite
+curl 'https://alumni-ingemedia.net/api/alumnis/?limit=100'
 
 # Compter les inscrits
-curl http://37.59.115.57/api/inscrits-soiree/count
+curl https://alumni-ingemedia.net/api/inscrits-soiree/count
+
+# Récupérer un alumni spécifique
+curl https://alumni-ingemedia.net/api/alumnis/1
 ```
 
 ---
@@ -342,14 +327,20 @@ sudo journalctl -u almuni-api.service -n 20
 
 ### Problème: Apache retourne 404 sur /api/
 ```bash
-# Vérifier la config proxy
-grep -A 2 "ProxyPass" /etc/apache2/sites-available/almuni.conf
+# Vérifier la config proxy (HTTPS)
+grep -A 2 "ProxyPass" /etc/apache2/sites-available/alumni-le-ssl.conf
 
 # Doit afficher:
 # ProxyPass /api/ http://127.0.0.1:8000/
 # ProxyPassReverse /api/ http://127.0.0.1:8000/
 
-# Si manquant le "/" après "api", recharger Apache
+# ⚠️ IMPORTANT: Le "/" final après "api" est OBLIGATOIRE!
+# ProxyPass /api/ ✅
+# ProxyPass /api ❌ (va causer des 404)
+
+# Si modifié:
+sudo apache2ctl configtest
+sudo systemctl reload apache2
 ```
 
 ### Problème: CORS errors depuis le navigateur
@@ -392,18 +383,33 @@ df -h
 
 ---
 
-## 📊 Checklist avant déploiement final (HTTPS)
+## 📊 Checklist de déploiement (COMPLÉTÉE ✅)
 
-- [ ] ✅ DNS pointe vers 37.59.115.57
-- [ ] ✅ `dig alumni-ingemedia.net +short` retourne 37.59.115.57
-- [ ] ✅ Frontend accessible en HTTP: `http://37.59.115.57/`
-- [ ] ✅ API répond en HTTP: `curl http://37.59.115.57/api/`
-- [ ] ✅ Certificat SSL généré: `sudo certbot --apache -d alumni-ingemedia.net`
-- [ ] ✅ Site accessible en HTTPS: `https://alumni-ingemedia.net`
-- [ ] ✅ Redirection HTTP → HTTPS fonctionne
-- [ ] ✅ Logs Apache clean (aucune erreur 5xx)
-- [ ] ✅ API accessible depuis navigateur (pas de CORS errors)
-- [ ] ✅ Cron renouvellement SSL activé
+### Infrastructure
+- [x] ✅ DNS pointe vers 37.59.115.57
+- [x] ✅ `dig alumni-ingemedia.net +short` retourne 37.59.115.57
+- [x] ✅ Apache2 installé et configuré
+- [x] ✅ Python 3.13 + FastAPI backend
+- [x] ✅ SQLite database persistante
+
+### Déploiement HTTP
+- [x] ✅ Frontend accessible en HTTP: `http://37.59.115.57/`
+- [x] ✅ API répond en HTTP: `curl http://37.59.115.57/api/`
+- [x] ✅ Proxy Apache configuré: `/api/` → `localhost:8000`
+
+### SSL/HTTPS
+- [x] ✅ Certificat SSL généré et installé
+- [x] ✅ Site accessible en HTTPS: `https://alumni-ingemedia.net` ✅
+- [x] ✅ Redirection HTTP → HTTPS fonctionne ✅
+- [x] ✅ Renouvellement automatique activé ✅
+- [x] ✅ Certificate valide (89 jours)
+
+### Tests finaux
+- [x] ✅ Logs Apache clean (aucune erreur 5xx)
+- [x] ✅ API accessible depuis navigateur
+- [x] ✅ `/api/alumnis/` retourne les données
+- [x] ✅ Pas d'erreurs CORS
+- [x] ✅ Performance acceptable
 
 ---
 
@@ -416,20 +422,37 @@ df -h
 
 ---
 
-## 🎯 Résumé actions à faire
+## 🎯 Résumé du déploiement
 
-### **IMMÉDIATEMENT** (avant SSL):
-1. ✅ **DNS**: Corriger chez votre registraire (alumni-ingemedia.net → 37.59.115.57)
-2. ✅ **Attendre**: Propagation DNS (~5-30 min)
-3. ✅ **Tester**: `dig alumni-ingemedia.net +short` retourne 37.59.115.57
+### ✅ COMPLÉTÉ
+1. ✅ DNS corrigé (37.59.115.57) - Propagation confirmée
+2. ✅ SSL généré et installé via Let's Encrypt
+3. ✅ Apache configuré avec HTTPS + Proxy API
+4. ✅ Redirection HTTP → HTTPS activée
+5. ✅ API backend fonctionnelle en HTTPS
+6. ✅ Renouvellement SSL automatique
 
-### **APRÈS** (DNS correct):
-1. ✅ **SSL**: Exécuter `sudo certbot --apache -d alumni-ingemedia.net -d www.alumni-ingemedia.net`
-2. ✅ **Reload**: `sudo systemctl reload apache2`
-3. ✅ **Vérifier**: Accéder à `https://alumni-ingemedia.net` ✓
+### 📍 Production Status
+
+| Composant | Status | URL |
+|-----------|--------|-----|
+| Frontend | ✅ | https://alumni-ingemedia.net |
+| API | ✅ | https://alumni-ingemedia.net/api/ |
+| SSL Cert | ✅ | Valid until 2026-04-13 |
+| Auto Renew | ✅ | certbot.timer active |
+| HTTP → HTTPS | ✅ | 301 Redirect |
+
+### 🚀 Prêt pour la production
+
+Le site **alumni-ingemedia.net** est maintenant opérationnel en **HTTPS** avec:
+- ✅ Certificat SSL valide (Let's Encrypt)
+- ✅ Backend API fully functional
+- ✅ Renouvellement automatique chaque 90 jours
+- ✅ Redirection HTTP → HTTPS
+- ✅ Architecture sécurisée
 
 ---
 
-**Dernière mise à jour**: 10 janvier 2026  
+**Dernière mise à jour**: 13 janvier 2026 (SSL ✅ Complété)  
 **Responsable déploiement**: Mehdi Boussalem  
 **Email support**: mehdiboussalem95@gmail.com
