@@ -79,6 +79,14 @@ almuni-website/
 
 ---
 
+## 📝 TODO
+
+- Ajouter un formulaire de désinscription alumni
+- Ajouter l'archive 2026
+- Sécuriser l'API
+
+---
+
 ## 🎨 Design
 
 | Élément | Valeur |

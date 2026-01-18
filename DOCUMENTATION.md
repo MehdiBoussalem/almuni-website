@@ -89,25 +89,28 @@ GET /api/inscrits-soiree/   - Lister les inscriptions
 **URL**: https://alumni-ingemedia.net/pages/tshirt.html
 
 **Fonctionnalités**:
-- 👕 Commande de T-shirts personnalisés
-- 📦 Gestion des stocks
-- 💾 Sauvegarde des commandes
+- � Upload de photos de T-shirts personnalisés créés par les étudiants
+- 🖼️ Galerie photo affichant tous les T-shirts uploadés
+- 👤 Identification du créateur (nom, prénom)
 
 **Données collectées**:
-- Nom du client
-- Taille (XS, S, M, L, XL, XXL)
-- Couleur
-- Quantité
+- Nom du créateur
+- Prénom du créateur
+- Photo du T-shirt (JPEG, PNG, WebP - max 5MB)
+- Date d'upload (automatique)
 
 **Fichiers associés**:
 - `styles/tshirt.css`
-- `js/tshirt.js` - Gestion du formulaire
-- `backend/uploads/tshirts/` - Stockage des données
+- `js/tshirt.js` - Gestion de l'upload et affichage de la galerie
+- `backend/uploads/tshirts/` - Stockage des images uploadées
 
 **Endpoints API utilisés**:
 ```
-POST /api/tshirts/  - Créer une commande
-GET /api/tshirts/   - Lister les commandes
+POST /api/tshirts/              - Upload une photo de T-shirt (multipart/form-data)
+GET /api/tshirts/               - Récupérer tous les T-shirts pour la galerie
+GET /api/tshirts/{tshirt_id}    - Récupérer un T-shirt spécifique
+DELETE /api/tshirts/{tshirt_id} - Supprimer un T-shirt
+DELETE /api/tshirts/            - Supprimer tous les T-shirts
 ```
 
 ---
@@ -186,12 +189,8 @@ python backend/import_alumnis_json.py
 python backend/export_inscrits.py
 ```
 
-### 3. **Gestion des T-Shirts**
-- Commande personnalisée
-- Suivi du stock
-- Téléchargement des données
 
-### 4. **Responsive Design**
+### 3. **Responsive Design**
 - Tous les styles sont optimisés pour mobile
 - Breakpoints : 320px, 768px, 1024px, 1440px
 
@@ -215,15 +214,15 @@ python backend/export_inscrits.py
 3. Cliquer sur "S'inscrire"
 4. Confirmation affichée à l'écran
 
-#### 3. Commander un T-shirt
+#### 3. Partager une photo de T-shirt
 1. Aller sur **T-Shirts**
 2. Remplir le formulaire avec :
    - Nom
-   - Taille
-   - Couleur
-   - Quantité
-3. Cliquer sur "Commander"
-4. Les données sont sauvegardées
+   - Prénom
+   - Description (optionnelle)
+   - Sélectionner une photo du T-shirt
+3. Cliquer sur "Uploader"
+4. La photo apparaît dans la galerie
 
 #### 4. Consulter les archives
 1. Cliquer sur **Archives** dans le menu
@@ -312,14 +311,14 @@ date_inscription: datetime
 confirmed: bool
 ```
 
-#### 3. Commandes T-Shirts
+#### 3. T-Shirts (Galerie photos)
 ```python
 id: int (primary key)
 nom: str
-taille: str (XS, S, M, L, XL, XXL)
-couleur: str
-quantite: int
-date_commande: datetime
+prenom: str
+image_path: str
+upload_date: datetime
+description: str (optional)
 ```
 
 ### Import/Export de données
