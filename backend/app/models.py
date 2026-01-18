@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, DateTime
+from datetime import datetime
 from app.database import Base
 
 
@@ -27,3 +28,14 @@ class InscritSoiree(Base):
     statut = Column(String, nullable=False)  # "Étudiant", "Ancien étudiant", "Autre"
     precision_statut = Column(String, nullable=True)  # Si statut == "Autre"
     autorisation_captation = Column(String, nullable=False)  # "Oui" ou "Non"
+
+
+class Tshirt(Base):
+    __tablename__ = "tshirts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nom = Column(String, nullable=False)
+    prenom = Column(String, nullable=False)
+    image_path = Column(String, nullable=False)
+    upload_date = Column(DateTime, default=datetime.utcnow, nullable=False)
+    description = Column(String, nullable=True)

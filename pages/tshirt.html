@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Tshirts - Alumni Ingémédia</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/tshirt.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img src="../assets/logo_alumni.png" alt="Logo Alumni" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./evenement.html">Alumni 2026</a></li>
+                <li><a href="./notre-reseau.html">Notre réseau</a></li>
+                <li><a href="./archives/index.html">Archives</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="upload-section">
+            <h1>Partagez votre Tshirt Alumni !</h1>
+            <p class="section-description">Uploadez une photo de  votre tshirt Alumni et rejoignez la galerie.</p>
+            
+            <form id="tshirt-form" class="tshirt-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo">Photo de votre tshirt *</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                    <small>Formats acceptés: JPG, PNG, WebP (max 5MB)</small>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <i class="mdi mdi-upload"></i> Uploader mon tshirt
+                </button>
+            </form>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Galerie des Tshirts</h2>
+            <p class="gallery-count" id="tshirt-count">Chargement...</p>
+            <div id="tshirt-gallery" class="gallery-grid">
+                <p class="loading">Chargement de la galerie...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; margin-top: 3rem; color: #666;">
+        <p>&copy; 2026 Alumni Ingémédia - Tous droits réservés</p>
+    </footer>
+
+    <script src="../js/tshirt.js"></script>
+</body>
+</html>

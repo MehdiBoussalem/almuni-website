@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
+from datetime import datetime
 
 
 # ========== Alumnis ==========
@@ -42,6 +43,26 @@ class InscritSoireeCreate(InscritSoireeBase):
 
 class InscritSoiree(InscritSoireeBase):
     id: int
+
+    class Config:
+        from_attributes = True
+
+
+# ========== Tshirts ==========
+class TshirtBase(BaseModel):
+    nom: str
+    prenom: str
+    description: Optional[str] = None
+
+
+class TshirtCreate(TshirtBase):
+    pass
+
+
+class Tshirt(TshirtBase):
+    id: int
+    image_path: str
+    upload_date: datetime
 
     class Config:
         from_attributes = True

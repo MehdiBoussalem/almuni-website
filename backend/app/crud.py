@@ -74,3 +74,41 @@ def delete_inscrit_soiree(db: Session, inscrit_id: int):
 
 def count_inscrits_soiree(db: Session):
     return db.query(models.InscritSoiree).count()
+
+
+# ========== TSHIRTS ==========
+def get_tshirt(db: Session, tshirt_id: int):
+    return db.query(models.Tshirt).filter(models.Tshirt.id == tshirt_id).first()
+
+
+def get_tshirts(db: Session, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Tshirt)
+        .order_by(models.Tshirt.upload_date.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def create_tshirt(db: Session, tshirt: schemas.TshirtCreate, image_path: str):
+    db_tshirt = models.Tshirt(**tshirt.model_dump(), image_path=image_path)
+    db.add(db_tshirt)
+    db.commit()
+    db.refresh(db_tshirt)
+    return db_tshirt
+
+
+def delete_tshirt(db: Session, tshirt_id: int):
+    db_tshirt = get_tshirt(db, tshirt_id)
+    if db_tshirt:
+        db.delete(db_tshirt)
+        db.commit()
+    return db_tshirt
+
+
+def delete_all_tshirts(db: Session):
+    count = db.query(models.Tshirt).count()
+    db.query(models.Tshirt).delete()
+    db.commit()
+    return count

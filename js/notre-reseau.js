@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollWheelZoom: true
   }).setView([46.603354, 1.888334], 6);
 
-  // Utilisation de CartoDB Voyager
+  // Utilisation de CartoDB Voyager (affiche automatiquement en français pour la France)
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',
@@ -52,6 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
       fillOpacity: 0.8
   };
 
+  // Répartit légèrement les points lorsqu'ils partagent la même localisation
+  const buildLocationKey = (alumni) => `${Number(alumni.latitude).toFixed(4)}|${Number(alumni.longitude).toFixed(4)}`;
+  const jitterCoordinates = (lat, lng, index, total) => {
+    if (total <= 1) return [lat, lng];
+    const angle = (index * 137.508) * Math.PI / 180; // angle d'or pour espacer
+    const maxOffsetDeg = 0.002; // ~200m
+    const radius = maxOffsetDeg * (0.4 + 0.6 * (index / Math.max(total - 1, 1)));
+    const latOffset = radius * Math.sin(angle);
+    const lngOffset = radius * Math.cos(angle) / Math.cos(lat * Math.PI / 180);
+    return [lat + latOffset, lng + lngOffset];
+  };
+
   // --- FONCTION POUR CHARGER LES ALUMNIS DEPUIS L'API ---
   async function loadAlumnis() {
     try {
@@ -75,6 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // Afficher le nombre d'alumnis chargés
       if(countDisplay) countDisplay.innerText = alumnis.length;
 
+      // Calculer les doublons de localisation pour appliquer un léger bruit
+      const locationCounts = new Map();
+      alumnis.forEach(alumni => {
+        if (!alumni.latitude || !alumni.longitude) return;
+        const key = buildLocationKey(alumni);
+        locationCounts.set(key, (locationCounts.get(key) || 0) + 1);
+      });
+      const locationProgress = new Map();
+
       // Créer un marqueur pour chaque alumni
       alumnis.forEach(alumni => {
         // Vérifier que l'alumni a des coordonnées valides
@@ -82,7 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
           return; // Ignorer cet alumni s'il n'a pas de coordonnées
         }
 
-        const circle = L.circleMarker([alumni.latitude, alumni.longitude], markerOptions);
+        const locationKey = buildLocationKey(alumni);
+        const totalAtLocation = locationCounts.get(locationKey) || 1;
+        const currentIndex = locationProgress.get(locationKey) || 0;
+        const [jitteredLat, jitteredLng] = jitterCoordinates(alumni.latitude, alumni.longitude, currentIndex, totalAtLocation);
+        locationProgress.set(locationKey, currentIndex + 1);
+
+        const circle = L.circleMarker([jitteredLat, jitteredLng], markerOptions);
 
         // Récupérer le nom de l'entreprise si disponible
         const entrepriseInfo = alumni.entreprise 
