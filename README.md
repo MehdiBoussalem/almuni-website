@@ -1,150 +1,137 @@
 # 🎓 Alumni Website - IngeMedia
 
-## 🎨 Design & Couleurs
+**Un réseau, une communauté, une ambition commune !**
 
-### Fonts
-- **Titre**: BEBAS NEUE REGULAR
-- **Textes**: Montserrat (Light, Bold)
+## 🚀 Démarrage rapide
 
-### Palette de couleurs
-- Bleu foncé: `#355F9B`
-- Bleu clair: `#7AC9F2`
-- Bordeaux: `#B11A5F`
-- Rouge: `#DE1251`
-
----
-
-## ✅ État du déploiement (13 Janvier 2026)
-
-**Status**: ✅ **Production en HTTPS - Entièrement Fonctionnel**
-
-### URLs actuelles
 - 🌐 **Site**: https://alumni-ingemedia.net
 - 🔌 **API**: https://alumni-ingemedia.net/api/
-- 📍 **IP Serveur**: 37.59.115.57
-- 🔒 **Certificat SSL**: Let's Encrypt (valide jusqu'au 13 avril 2026)
+- 📚 **Documentation**: Voir les fichiers `.md` ci-dessous
 
-### Fonctionnalités déployées
-✅ Frontend (HTML/CSS/JS) - Responsive design  
-✅ API FastAPI (Backend) - Full CRUD  
-✅ Base de données SQLite - Persistante  
-✅ SSL/HTTPS - Certificat Let's Encrypt  
-✅ Redirection HTTP → HTTPS  
-✅ Renouvellement SSL automatique  
-✅ Proxy Apache vers API Uvicorn  
+### Status Production
+✅ **Production en HTTPS - Entièrement Fonctionnel**  
+- Serveur: 37.59.115.57 (HTTPS)
+- SSL: Let's Encrypt (valide jusqu'au 13 avril 2026)
+- API: FastAPI + SQLite
+- Frontend: HTML5, CSS3, JavaScript
 
 ---
 
-## 🏗️ Architecture
+## 📖 Documentation
 
-```
-┌─────────────────────────────────────────────┐
-│    Internet (37.59.115.57 - HTTPS)         │
-└─────────────────────┬───────────────────────┘
-                      │
-        ┌─────────────▼─────────────┐
-        │     Apache2 (Port 443)    │
-        │  VirtualHost alumni-le-ssl│
-        └──────────┬────────────┬───┘
-                   │            │
-          ┌────────▼──────┐  ┌──▼──────────┐
-          │   Frontend    │  │  API Proxy  │
-          │ (HTML/CSS/JS) │  │   /api/ →   │
-          │               │  │  localhost  │
-          └────────────────┘  │   :8000    │
-                              └──────┬─────┘
-                                     │
-                            ┌────────▼──────┐
-                            │   Uvicorn     │
-                            │  FastAPI App  │
-                            │  :8000        │
-                            └────────┬──────┘
-                                     │
-                            ┌────────▼──────┐
-                            │   SQLite      │
-                            │ alumni.db     │
-                            └───────────────┘
-```
+### 📘 [DOCUMENTATION.md](DOCUMENTATION.md)
+**Guide complet du site web**
+- Pages et fonctionnalités détaillées
+- Guide utilisateur
+- Architecture technique
+- Gestion des données
+- Commandes de maintenance
+
+### 🔌 [API.md](API.md)
+**Documentation complète de l'API REST**
+- Endpoints Alumni, Soirée, T-Shirts
+- Exemples de requêtes (cURL, JavaScript, Python)
+- Gestion des erreurs
+- Pagination
+
+### 🚀 [DEPLOYMENT.md](DEPLOYMENT.md)
+**Guide de déploiement**
+- Configuration du serveur
+- Certificat SSL
+- Commandes de redémarrage
+- Troubleshooting
 
 ---
 
-## 🚀 Utilisation
+## 🎯 Fonctionnalités principales
 
-### Accès au site
-```bash
-# Production (HTTPS)
-https://alumni-ingemedia.net
+- 👥 **Annuaire Alumni** - Recherche et consulter le réseau
+- 🎫 **Inscriptions** - S'inscrire aux événements (soirées)
+- 👕 **Commandes T-Shirts** - Commander des T-shirts personnalisés
+- 📚 **Archives** - Consulter les promotions (2015-2025)
+- 📱 **Responsive Design** - Optimisé pour mobile
 
-# Redirection automatique
-http://alumni-ingemedia.net → https://alumni-ingemedia.net
+---
+
+## 📂 Structure du projet
+
 ```
-
-### Endpoints API disponibles
-
-#### Alumni
-```bash
-GET /api/alumnis/
-GET /api/alumnis/?limit=100
-GET /api/alumnis/{id}
-POST /api/alumnis/
-PUT /api/alumnis/{id}
-DELETE /api/alumnis/{id}
-```
-
-#### Inscriptions Soirée
-```bash
-GET /api/inscrits-soiree/
-POST /api/inscrits-soiree/
-```
-
-#### Événements
-```bash
-GET /api/evenements/
+almuni-website/
+├── index.html                    # Accueil
+├── pages/                        # Pages du site
+│   ├── evenement.html
+│   ├── soiree.html
+│   ├── tshirt.html
+│   ├── notre-reseau.html
+│   └── archives/
+├── styles/                       # CSS
+├── js/                          # JavaScript
+├── backend/                     # API FastAPI
+│   └── app/
+│       ├── main.py
+│       ├── models.py
+│       ├── schemas.py
+│       └── crud.py
+├── DOCUMENTATION.md             # Guide complet
+├── API.md                       # Documentation API
+└── DEPLOYMENT.md                # Guide déploiement
 ```
 
 ---
 
-## 📝 Fichiers importants
+## 🎨 Design
 
-- `index.html` - Page d'accueil
-- `pages/` - Pages statiques (soirée, événements, etc.)
-- `styles/` - Feuilles CSS
-- `js/` - Scripts JavaScript
-- `backend/app/main.py` - API FastAPI
-- `backend/alumni.db` - Base de données SQLite
-- `DEPLOYMENT.md` - Guide de déploiement détaillé
+| Élément | Valeur |
+|---------|--------|
+| **Bleu foncé** | `#355F9B` |
+| **Bleu clair** | `#7AC9F2` |
+| **Bordeaux** | `#B11A5F` |
+| **Rouge** | `#DE1251` |
+| **Titres** | BEBAS NEUE REGULAR |
+| **Texte** | Montserrat |
 
 ---
 
-## 🔒 SSL/HTTPS
+## ⚡ Commandes utiles
 
-### Certificate Let's Encrypt
-- **Domaines**: alumni-ingemedia.net, www.alumni-ingemedia.net
-- **Validité**: 13 janvier 2026 → 13 avril 2026
-- **Renouvellement**: Automatique (Certbot Timer actif)
-
-### Commandes utiles
+### Gestion du service
 ```bash
-# Vérifier certificat
-sudo certbot certificates
+# Redémarrer l'API
+sudo systemctl restart almuni
 
+# Statut du service
+sudo systemctl status almuni
+
+# Redémarrer Apache
+sudo systemctl restart apache2
+```
+
+### Renouvellement SSL
+```bash
 # Test renouvellement
 sudo certbot renew --dry-run
 
-# Voir logs Apache
-sudo tail -f /var/log/apache2/almuni-error.log
+# Renouveler maintenant
+sudo certbot renew
+
+# Voir les certificats
+sudo certbot certificates
 ```
 
----
+### Logs
+```bash
+# Logs Apache
+sudo tail -f /var/log/apache2/almuni-error.log
 
-## 📋 TODO
-
-- [ ] Rendre Responsive Accueil
-- [ ] Améliorer performances API
-- [ ] Ajouter pagination endpoints
+# Logs API
+journalctl -u almuni -f
+```
 
 ---
 
 ## 📞 Support
 
-Pour plus d'informations, voir `DEPLOYMENT.md`
+Pour toute question :
+- 📘 Consulter la [Documentation complète](DOCUMENTATION.md)
+- 🔌 Voir l'[API Documentation](API.md)
+- 🚀 Voir le [Guide de déploiement](DEPLOYMENT.md)
