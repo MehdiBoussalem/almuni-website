@@ -126,7 +126,8 @@ async def upload_tshirt(
     allowed_types = ["image/jpeg", "image/png", "image/jpg", "image/webp"]
     if file.content_type not in allowed_types:
         raise HTTPException(
-            status_code=400, detail="Format d'image non supporté (JPEG, PNG, WebP uniquement)"
+            status_code=400,
+            detail="Format d'image non supporté (JPEG, PNG, WebP uniquement)",
         )
 
     # Validation de la taille (5MB max)

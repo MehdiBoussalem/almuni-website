@@ -1,0 +1,881 @@
+ID,Nom,Prénom,Ville,Poste,LinkedIn,Promo,Latitude,Longitude,Entreprise
+1,Garcia,Jonathan,Portets,Artisan d’art,https://linkedin.com/in/jonathan-garcia-362b65357,2010,44.6959687,-0.4238244,Soleil Verre
+2,THIERY,Marie,Strasbourg,"Chargée de mission ""Supports de Communication""",https://linkedin.com/in/marie-thiery-b4912649,2025,48.584614,7.7507127,ARTE
+3,Crochard,Maureen,Toulon,Chargée de communication - Apprentie,https://linkedin.com/in/maureen-crochard-032811160,2025,43.1257311,5.9304919,Université de Toulon
+4,Garay,Laurent,Paris,Senior Project Manager 360°,https://linkedin.com/in/laurent-garay-460901141,2020,48.8588897,2.320041,TBWA Paris
+5,Pasqualini,Benjamin,Mirabeau,Chef de projet,https://linkedin.com/in/benjamin-pasqualini-81b17134b,2019,44.0580563,6.0638506,PETRA PATRIMONIA
+6,Maestracci,Rémi,Toulon,Assistant chef de projet marketing,https://linkedin.com/in/rémi-maestracci,2025,43.1257311,5.9304919,DAM MARINE
+7,CHERKAOUI,Nehmaath,Toulon,Attachée de direction,https://linkedin.com/in/nehmaath-cherkaoui-4b6835108,2017,43.1257311,5.9304919,Korian
+8,Tiberghien,Maxime,Paris,Creative Director and 3D Artist,https://linkedin.com/in/maxime-tiberghien-12a02153,2014,48.8588897,2.320041,Ministère Cinétique
+9,Dattiches,Rafaël ,Toulon,Stagiaire,https://linkedin.com/in/rafaël-dattiches,2025,43.1257311,5.9304919,CPS Production
+10,Vignoboul,Julien,Antrenas,Concepteur de solutions digitales et web sur mesure,https://linkedin.com/in/jvignoboul,2009,44.5813553,3.2666605,Multiweb
+11,Gillet,Timothée,La Chardie,Développeur web,https://linkedin.com/in/timothée-gillet-59539758,2012,45.5565011,3.694883,Conservatoire botanique national du Massif central
+12,Dibatista,Manon,Draguignan,WEB digital et social media Expert📲,https://linkedin.com/in/manondibatista,2015,43.5374662,6.4627333,MD Communication📱
+13,ROUYER,Guillaume,Marseille,Chef de Projet – UX / UI Design – Product Owner,https://linkedin.com/in/grouyer,2013,43.2961743,5.3699525,so.buzz
+14,Maulandi,Vincent,Noisy-le-Sec,Producer,https://linkedin.com/in/vincent-maulandi-319b9619,2009,48.8897751,2.4516055,Ubisoft Paris Studio
+15,Ferrat,Marina,Marseille,Analyste de données,https://linkedin.com/in/marina-ferrat,2025,43.2961743,5.3699525,Airbus Helicopters
+16,Carmona,Raquel,Antibes,Web Multimedia Designer,https://linkedin.com/in/raquel-carmona-b91908144,2025,43.5813878,7.1236966,Solaïs
+17,Bonicel,Vannina,Toulon,Chef de projet UX/UI,https://linkedin.com/in/vannina-bonicel,2024,43.1257311,5.9304919,COMMLAB Marine nationale
+18,PYRA,Lidia,Sarzay,Data Analyst - Work-study student,https://linkedin.com/in/lidia-pyra-3a095a2a3,2025,46.603354,1.8883335,MELLONE INVESTISSEMENT
+19,Bayili,Jacky,Le Cannet,Producteur vidéo,https://linkedin.com/in/jacky-bayili-958039389,2013,43.5761076,7.0191865,BAYILI JACKY
+20,DIALLO,Oumou,Marseille,Chargée de communication interne,https://linkedin.com/in/oumou-diallo-toulon,2025,43.2961743,5.3699525,Ensemble Paris Emploi Compétences - EPEC
+21,GABORIEAU,Isabelle,Toulon,Chargée de création graphique,https://linkedin.com/in/isabelle-gaborieau-0b18a8376,2011,43.1257311,5.9304919,Ville de Brignoles
+22,Maillot,Cindy,Toulon,Consultante Communication & Social Media – Freelance,https://linkedin.com/in/cindy-maillot-3204b8b9,2016,43.1257311,5.9304919,Parallel
+23,Talebzadeh,Shayann,Braunschweig,Data Grader,https://linkedin.com/in/shayann-talebzadeh-8b8b9a1a5,2022,52.2646577,10.5236066,TransPerfect
+24,Geiglé,Thibault,Marseille, Chef de projets / Consultant Delivery,https://linkedin.com/in/thibault-geiglé-b8180552,2013,43.2961743,5.3699525,Visiativ
+25,Belkassim,Bouzidi,Montpellier,Analyste marketing Web,https://linkedin.com/in/bouzidi-belkassim,2025,43.6112422,3.8767337,Clinique des Champs Elysées
+26,Loubar,Afaf,Marseille,Graphiste,https://linkedin.com/in/loubarafaf,2025,43.2961743,5.3699525,Majordhom
+27,LARREDE,Baptiste,Toulon,Journaliste,https://linkedin.com/in/baptiste-larrede-007279233,2025,43.1257311,5.9304919,Presse83
+28,Duco Micas,Elise,Toulon,Aide aux inscriptions administratives ,https://linkedin.com/in/elise-duco-micas-0aa3112a5,2025,43.1257311,5.9304919,Université de Toulon
+29,Hamla,Adlan,Marseille,Data Analyst,https://linkedin.com/in/adlan-hamla-57066b238,2025,43.2961743,5.3699525,EXPANSI Avocats & Experts-Comptables
+30,Ben ali,Elyes,Toulon,Conducteur de travaux,https://linkedin.com/in/elyes-ben-ali-b30227346,2021,43.1257311,5.9304919,Exetanch
+31,Thos,Jolan d'Artagnan,Toulon,Chargé de communications,https://linkedin.com/in/jolan-d-artagnan-thos-abb142298,2025,43.1257311,5.9304919,Domaine de l'Enregado
+32,Castillon,Chelsea,Bordeaux,DA motion designer ,https://linkedin.com/in/chelsea-c-7a3aaa87,2018,44.841225,-0.5800364,snack.
+33,Girard,Kylian,Toulon,Stagiaire,https://linkedin.com/in/kylian-girard,2025,43.1257311,5.9304919,MANE
+34,Ascensio,Sylvain,Aix-en-Provence,technicien polyvalent,https://linkedin.com/in/sylvain-ascensio-a02ba8324,2025,43.5298424,5.4474738,Eurofins Environment Testing France
+35,Gruwe,Nicolas,Toulouse,Freelance Wordpress Senior developer,https://linkedin.com/in/nicolas-gruwe-b4805587,2017,43.6044638,1.4442433,Freelance
+36,Schneider,Morgane,Ousse-Suzan,Étudiante,https://linkedin.com/in/morgane-schneider-584803213,2025,43.9560203,-0.7614948,Institut Ingemedia
+37,Giacone,Flora,Carqueiranne,Employee polyvalente,https://linkedin.com/in/flora-giacone-696551268,2025,43.0910087,6.0766933,ALDI France
+38,Vantyghem,Oceane ,Toulon,Asisstante Social Media - Brand Content,https://linkedin.com/in/oceane-vantyghem-34054629b,2025,43.1257311,5.9304919,Molly Bracken
+39,Arsalane,Ilyass,Toulon,Big Data & AI Engineer Intern,https://linkedin.com/in/ilyass-arsalane-,2025,43.1257311,5.9304919,Institut méditerranéen des sciences de l'information et de la communication
+40,Soubeyrand,Noël,Sarzay,Co-fondateur,https://linkedin.com/in/noel-soubeyrand,2021,46.603354,1.8883335,Signatelo - Signature électronique
+41,Kirtz,Carèle,Toulon,Assistante marketing et communication,https://linkedin.com/in/carèle-k-0156b31a6,2025,43.1257311,5.9304919,Hôtel Restaurants Le Provencal
+42,PONTIAC,Marie-Lisa,Toulon,Support for cross-functional missions and projects,https://linkedin.com/in/marie-lisa-pontiac-1b078a1a2,2025,43.1257311,5.9304919,Département du Var
+43,Costa,Alessandra,Hyères,Senior Travel Consultant,https://linkedin.com/in/alessandra-farias,2025,43.1202573,6.1301614,Passion Brazil | DMC & Incoming Tour Operator
+44,Volatron,Pablo,Gaillac,Assistant Régisseur Son,https://linkedin.com/in/pablovolatron,2024,43.9016766,1.8967943,L' ASTRADA
+45,Binet,Pierre-Olivier,Toulon,Responsable des réseaux sociaux,https://linkedin.com/in/pierre-olivier-binet,2025,43.1257311,5.9304919,Aucune
+46,Boyer,Jonathan,Montpellier,Créateur de contenu / Formateur,https://linkedin.com/in/jonathan-boyer-montpellier,2010,43.6112422,3.8767337,YouTube
+47,Herranz,Nathan,Cavalaire-sur-Mer,Assistant de direction,https://linkedin.com/in/nathan-herranz-58871b340,2025,43.1722952,6.531917,SUN 7 GRAPHIC
+48,Rouffignat,Margaux,La Valette-du-Var,Assistante communication,https://linkedin.com/in/margaux-rouffignat-438318302,2025,43.1378245,5.9834654,Tandem SMAC
+49,Guiton,Noé,Boisset-et-Gaujac,Composer,https://linkedin.com/in/noeguiton,2025,44.0494413,4.0211786,Aucune
+50,Toro,Eulalie,Toulon,Chargée de communication ,https://linkedin.com/in/eulalie-toro-38054432b,2025,43.1257311,5.9304919,signature mariage 
+51,Poitou,Antonin,Fuveau,Technicien son,https://linkedin.com/in/antonin-poitou-5bb753342,2024,43.4539098,5.5608088,AUCOP
+52,Tavares,Cristiane,Toulon,Recherche-enseignement,https://linkedin.com/in/cristiane-tavares-6782b0157,2021,43.1257311,5.9304919,Université de Toulon
+53,Ghelila,Ismahane,Toulon,Event Communication Intern,https://linkedin.com/in/ismahane-ghelila-300818237,2025,43.1257311,5.9304919,Inspé d'Aix-Marseille
+54,B.,khaled,Toulon,Responsable des systèmes d'information,https://linkedin.com/in/khaled-b-331592331,2017,43.1257311,5.9304919,DEGREANE HORIZON
+55,Amiot,Léo,Toulon,Fondateur,https://linkedin.com/in/léo-amiot,2025,43.1257311,5.9304919,Joio
+56,Merlat,Florent,Sarzay,Product Owner - Chef de projet numérique,https://linkedin.com/in/florentmerlat,2015,46.603354,1.8883335,FFESSM
+57,CHEVALIER,Sophie,La Garde,Référente Développement Durable,https://linkedin.com/in/sophie-chevalier-68104b22b,2024,43.8301121,6.5572147,Ville de La Farlède
+58,AJMI,Anis,Paris,"Dév Front-End : React/Next.js,  TypeScript, StoryBook,Tailwind",https://linkedin.com/in/anis-ajmi,2011,48.8588897,2.320041,Aucune
+59,Matt,Aurélien,Toulon,Chef de projet 2D/3D,https://linkedin.com/in/aurélien-matt-876099204,2025,43.1257311,5.9304919,COMMLAB Marine nationale
+60,Czeszynski,Yann,Redessan,Aucun Poste,https://linkedin.com/in/yann-czeszynski,2024,43.8318215,4.4961043,Aucune
+61,Dang,Stéphanie,Marseille,Manager comptoir,https://linkedin.com/in/stéphanie-dang-profil,2025,43.2961743,5.3699525,Sodexo Live!
+62,Millet,Maxime,Toulon,Community manager,https://linkedin.com/in/maxime-millet-254b0b26a,2024,43.1257311,5.9304919,Flower camping les Cadenières
+63,Brand,Amane,Marseille,Assistante communications relations publiques,https://linkedin.com/in/amane-brand,2024,43.2961743,5.3699525,Fiesta des Suds
+64,Messiez,Rafaël,Les Avenières Veyrins-Thuellin,Chargé de mission culture et métiers d'art,https://linkedin.com/in/rafaël-messiez-86156b298,2018,45.6410145,5.5692438,Communauté de Communes du Puisaye-Forterre
+65,Alcantara,Karla,Toulon,Réceptionniste accueil,https://linkedin.com/in/karla-alcantara-577b2a2a0,2024,43.1257311,5.9304919,PizzaCosy🍕
+66,Wabnitz,Marc,Madrid,CX/AX Design Manager,https://linkedin.com/in/marc-wabnitz,2006,40.416782,-3.703507,Making Science
+67,Lahlou,Azzedine,Toulon,Product Designer,https://linkedin.com/in/azzedine-lahlou,2025,43.1257311,5.9304919,Inria
+68,Albertini,Alexandra,Toulon,Employé service restauration,https://linkedin.com/in/alexandra-albertini-485b082a3,2024,43.1257311,5.9304919,McDonald's
+69,NAUD,Annaëlle,La Seyne-sur-Mer,Cheffe de projet - Traffic manager,https://linkedin.com/in/annaëlle-naud-b00a31205,2025,43.1007714,5.8788948,AssurAgency
+70,Grosjean,Liam,Sarzay,UX & UI Designer and No-code Maker,https://linkedin.com/in/liamgrosjean,2025,46.603354,1.8883335,Splash
+71,Rose,Elisa,Dijon,Aucun Poste,https://linkedin.com/in/elisa-rose-260a92233,2025,47.3215806,5.0414701,Aucune
+72,Rahmoun,Sara,Aix-les-Bains,Assistante en communication,https://linkedin.com/in/sara-rahmoun-455b661ba,2025,45.6886292,5.9146362,Groupe EPIKUR
+73,Millot,Léa,Toulon,Aucun Poste,https://linkedin.com/in/leamillot,2024,43.1257311,5.9304919,Aucune
+74,P.,Anne,Porto-Vecchio,Chargée de communication interne,https://linkedin.com/in/anne-pinson,2018,41.5911382,9.2794469,Airbus
+75,Cotrelle,Manon,Toulon,Graphiste,https://linkedin.com/in/manon-cotrelle-1424611b7,2024,43.1257311,5.9304919,Gassier
+76,Paumier,Thomas,Toulon,Hôte d’accueil,https://linkedin.com/in/thomas-paumier-ba50382b1,2025,43.1257311,5.9304919,Florence Doré
+77,Sabatier,Yann,Sarzay,"Audio & Visual Specialist | Recording, Mixing, Live Shows, Photography & Video",https://linkedin.com/in/yann-sabatier,2024,46.603354,1.8883335,Aucune
+78,B.,Léa,Lille,Creative Strategist,https://linkedin.com/in/léa-b-2232422b8,2021,50.6365654,3.0635282,We Love Digital
+79,Cherigui,Laetissia,Paris,Plongeuse (restauration),https://linkedin.com/in/laetissia-c-846290294,2024,48.8588897,2.320041,SOC INSULAIRE NETTOYAGE AUTOMATISE
+80,Bissonnier,Lucas,Grenoble,Responsable de département,https://linkedin.com/in/lucas-bissonnier,2018,45.1875602,5.7357819,agap2IT France
+81,Leblanc,Marie,Toulon,Vendeuse,https://linkedin.com/in/marie-leblanc-56b208151,2025,43.1257311,5.9304919,Tabac des Lones
+82,Koudaya,Aimery,Bouillon,Administrative Assistant - Financial Departement,https://linkedin.com/in/aimery-koudaya-4a4553292,2024,49.7948301,5.0701814,Proximus Group
+83,Saidj,Assia,Paris,Volontaire au Corps Européen de Solidarité,https://linkedin.com/in/assia-saidj-371b3b183,2024,48.8588897,2.320041,Europe4Youth
+84,VUAILLAT,Lysa,La Farlède,Digital Product Manager,https://linkedin.com/in/lysa-vuaillat-a08880242,2025,43.1597,6.04317,STRATIS
+85,Segault,Laura,Toulon,Assistante Chargée de Communication,https://linkedin.com/in/laura-segault-439564213,2024,43.1257311,5.9304919,Eyras - Agence Web
+86,Remark,Cécilia,Toulon,SEO Manager,https://linkedin.com/in/ceciliaremark,2025,43.1257311,5.9304919,Swello
+87,Faraci,Tony,La Garde,Graphiste,https://linkedin.com/in/tony-faraci-499463201,2025,43.8301121,6.5572147,Rugby Club Toulonnais
+88,El Yebdri,Amirah,Toulon,Assistant communications,https://linkedin.com/in/el-yebdri-amirah,2025,43.1257311,5.9304919,AMNYOS Consultants
+89,briand,antoine,Saint-Herblain,Community Manager,https://linkedin.com/in/antoine-briand-8820562b6,2024,47.2233007,-1.6346964,ENGIE Vianeo
+90,BENMOUMEN,Zakaria,Casablanca ⵜⴰⴷⴷⴰⵔⵜ ⵜⵓⵎⵍⵉⵍⵜ الدار البيضاء,Co-fondateur,https://linkedin.com/in/zakariabenmoumen,2008,33.5675527,-7.6187566,CAPEXIA APP
+91,Verrier,Maëlle,Toulon,Chargée de communication digitale ,https://linkedin.com/in/maëlle-verrier,2025,43.1257311,5.9304919,TERRITOIRES BRANDING
+92,AMAJJAR,Ilyas,Toulon,Commercial,https://linkedin.com/in/ilyas-amajjar-7b7974222,2025,43.1257311,5.9304919,Le Hüb - Privilodges
+93,CHRISTOPHE,Adrien,Metz,Chargé de mission partenariat médias et médiaplanning,https://linkedin.com/in/adrien-christophe-238b68117,2016,49.1196964,6.1763552,Région Grand Est
+94,Lungato,Lisa,La Seyne-sur-Mer,Responsable Stratégie Innovation,https://linkedin.com/in/lisa-lungato-7b01a3294,2024,43.1007714,5.8788948,NAVAL GROUP
+95,CISSE,Mahamadou,Mirabeau,Inbound Marketing Manager,https://linkedin.com/in/mahamadoucisse,2021,44.0580563,6.0638506,Sekoia.io
+96,Chappuis,Marie-Emilie,Toulon,Ingénieure commerciale / Responsable de comptes,https://linkedin.com/in/marie-emilie-chappuis-a75a41a6,2013,43.1257311,5.9304919,Akuiteo SAS
+97,Garnier,Ramon,City of Westminster,Ingeniero,https://linkedin.com/in/ramon-garnier-6b5716295,2023,51.5074456,-0.1277653,Kalspec
+98,Estienne,Lou,Belgentier,Chargé de Communication & Marketing,https://linkedin.com/in/lou-estienne-44a3301aa,2024,43.2452486,6.0002925,OLEA CONSEIL TPE
+99,Sahut ,Juliette,Clermont-Ferrand,Chargée de communication,https://linkedin.com/in/juliette-sahut-022271293,2024,45.7774551,3.0819427,Galerie BO
+100,Bouteuil,Malik,Toulon,Développeur web,https://linkedin.com/in/malik-bouteuil-820871197,2024,43.1257311,5.9304919,PRO FORM'ARTS
+101,Chicaud,Charlène,Marseille,Assistante directrice artistique,https://linkedin.com/in/charlenechicaud,2025,43.2961743,5.3699525,AngelStudio
+102,ALI COUDI,Gustave,La Seyne-sur-Mer,Superviseur assistance commerciale,https://linkedin.com/in/gustave-ali-coudi-4b6a4919,2009,43.1007714,5.8788948,CAISSE D'EPARGNE COTE D'AZUR
+103,DAL BIANCO,Elno,Salon-de-Provence,Développeur front-end,https://linkedin.com/in/elno-dal-bianco-889451290,2023,43.6405237,5.0980225,Gupeel
+104,Filleur,Loïc,Sarzay,Customer Success Manager,https://linkedin.com/in/loïc-filleur-976b7bb4,2015,46.603354,1.8883335,Dendreo
+105,Boyer,Camille,Montélimar,Chargée de communication et RSE,https://linkedin.com/in/camille-boyer-06ba0b1bb,2025,44.5579391,4.750318,Q ENERGY
+106,Omrani,Iskander,Toulon,Responsable de projet numérique,https://linkedin.com/in/skander-omrani-exp,2021,43.1257311,5.9304919,All For Host
+107,Michel,Mélanie,Toulon,Développeur web,https://linkedin.com/in/mélanie-michel-648b9991,2022,43.1257311,5.9304919,Pratic-Coop
+108,Bachet,Sacha-Hess,Toulon,Chargé de la création de contenu,https://linkedin.com/in/sacha-hess-bachet,2024,43.1257311,5.9304919,Externat Saint Joseph - La Cordeille
+109,Lacroix,Hugo,Sarzay,Community manager,https://linkedin.com/in/hugo-lacroix-36a627250,2025,46.603354,1.8883335,LFP - Ligue de Football Professionnel
+110,Viesi,Virginia,Toulon,Apprendista comunicazione,https://linkedin.com/in/virginiaviesi,2024,43.1257311,5.9304919,Le Pole Arts en Circulation
+111,Bourgoin,Arthur,Toulon,Aucun Poste,https://linkedin.com/in/arthur-bourgoin-93306a202,2024,43.1257311,5.9304919,Aucune
+112,Azag,Tyron,Lyon,UX UI Designer / Intégrateur,https://linkedin.com/in/tyron-azag-a08246135,2017,45.7578137,4.8320114,Digital Virgo
+113,Renaud ,Estelle,Toulon,Sales Advisor,https://linkedin.com/in/estelle-renaud-365366151,2019,43.1257311,5.9304919,Free
+114,Abdallah,Hadidja,Marseille,Civic Service Volunteer,https://linkedin.com/in/hadidja-abdallah-194595198,2025,43.2961743,5.3699525,Unis-Cite
+115,MBAYE,Pape Daour Diagne,Toulon,Agent de communication et marketing digital,https://linkedin.com/in/pape-daour-diagne-mbaye-182328a7,2024,43.1257311,5.9304919,Enel Group
+116,Bravo,Valentin,Toulon,Concepteur graphique Print & Web,https://linkedin.com/in/valentin-bravo-b0a548267,2023,43.1257311,5.9304919,SAS WEBBYCOM
+117,Dumas ,Tania,Paris,Chargée de communication,https://linkedin.com/in/tania-dumas-9401b51b5,2024,48.8588897,2.320041,OPSIA
+118,Lochet,Margot,Montpellier,Réceptionniste hôtellerie,https://linkedin.com/in/margot-lochet,2023,43.6112422,3.8767337,greet hotels
+119,Farappa,Sabrina,Salon-de-Provence,Executive manager,https://linkedin.com/in/sabrinafarappa,2010,43.6405237,5.0980225,Deluxe France
+120,YU,Bryan,Anaa,Chargé de communication,https://linkedin.com/in/yubryan,2015,-17.0243749,-144.6434898,Sofidep
+121,Siguan,Jeremie,Sydney,Senior Production Manager,https://linkedin.com/in/jeremie-siguan-75937642,2007,-33.8698439,151.2082848,CampaignLab
+122,Luquet,Aubin,Saulce-sur-Rhône,Assistant marketing,https://linkedin.com/in/aubin-luquet-2616871b7,2024,44.7033,4.799405,Pineapple Contracts France
+123,Evrard,Shanon,Toulon,Chargée de communication et gestion de projet ,https://linkedin.com/in/shanon-evrard13,2023,43.1257311,5.9304919,Pépite Paca Est Toulon
+124,Gédor,Méline,Nice,Responsable,https://linkedin.com/in/méline-gédor,2024,43.7009358,7.2683912,Chez Diedie
+125,ROUX,Paul-Julien,Hyères,Formateur en communication,https://linkedin.com/in/paul-julien-roux,2013,43.1202573,6.1301614,Co'efficience 3
+126,Mantelin,Eva,Hyères,Chef de rang,https://linkedin.com/in/eva-mantelin-755777194,2024,43.1202573,6.1301614,la crique
+127,Mhadhbi,Eya,Paris,Digital Marketing Assistant,https://linkedin.com/in/eya-mhadhbi-80a8541b2,2025,48.8588897,2.320041,Dassault Systèmes
+128,Gouazé,Manon,Toulon,Graphic and web designer,https://linkedin.com/in/manon-gouazé-683a44276,2023,43.1257311,5.9304919,Getup Agency
+129,Wohl,Jade,Marseille,Chargé des relations clientèle,https://linkedin.com/in/jade-wohl-chargee-clientele-carbookr,2024,43.2961743,5.3699525,Carbookr
+130,Akel,Stephanie,Taverny,Responsable communications,https://linkedin.com/in/stephanie-akel-956a37234,2023,49.0265888,2.2234971,Association Univers Cité 
+131,Franceschi,Stessy,La Seyne-sur-Mer,Conseillère ventes,https://linkedin.com/in/stessy-franceschi-258a3b233,2024,43.1007714,5.8788948,Castorama
+132,Gomes Lenoir,Louis,Toulon,Aucun Poste,https://linkedin.com/in/louis-gomes-lenoir-ba057b262,2024,43.1257311,5.9304919,Aucune
+133,Suc,Loïc,Montréal,Assistant clientèle,https://linkedin.com/in/loïc-suc-aab565193,2023,45.5031824,-73.5698065,Raymond Chabot Grant Thornton
+134,Miloua,Mehdi,Toulon,Data analyst,https://linkedin.com/in/mehdi-miloua-13734b245,2025,43.1257311,5.9304919,Enedis
+135,Molli,Lucas,La Crau,Assistant de communication et du numérique,https://linkedin.com/in/lucas-molli,2022,43.1497034,6.0737053,Mairie de Flassans-sur-Issole
+136,Lemasson,Anaïs,Bordeaux,Artiste-autrice,https://linkedin.com/in/anaislemasson,2012,44.841225,-0.5800364,Anaïs Lem Arts
+137,Mouchih,Naoual,Toulon,Aucun Poste,https://linkedin.com/in/naoual-mouchih-797525211,2023,43.1257311,5.9304919,Aucune
+138,Thioub,Aïssata,Marseille,Business developer IT,https://linkedin.com/in/aissata-thioub,2016,43.2961743,5.3699525,Orange Business
+139,Vignon,Cynthia,Sarzay,Réceptionniste,https://linkedin.com/in/cynthia-vignon-27a448284,2022,46.603354,1.8883335,Château de Berne
+140,𝒞𝒜𝑅𝐸𝒮𝑀𝐸𝐿,𝒜𝒾𝓂é,Aime-la-Plagne,\\[ᴄᴅᴅ]: Drone_Choreographer & Jr. Creative Director,https://linkedin.com/in/aimé-caresmel,2019,45.5555869,6.6229794,Dronisos - Drone Light Shows
+141,BADJI,Sarah,Toulon,Designer - infographiste multimedia,https://linkedin.com/in/sarah-badji-80a854188,2024,43.1257311,5.9304919,Marine Nationale
+142,Mazzarese,Hélène,Niort,UX/UI designer,https://linkedin.com/in/hélène-mazzarese,2018,46.3239233,-0.4646064,Neosoft
+143,COUZI,Charles,La Valette-du-Var,Développeur Android,https://linkedin.com/in/charles-couzi-89a772261,2016,43.1378245,5.9834654,SoundBirth
+144,DUQUENOY,Marie,Sarzay,Freelance Designer,https://linkedin.com/in/marie-duquenoy-593685236,2024,46.603354,1.8883335,MDT.design
+145,Napoleone,Julian,Sarzay,Chargé ADV web,https://linkedin.com/in/julian-napoleone-9161821b0,2021,46.603354,1.8883335,American Vintage Groupe
+146,Soulaimana,Moustoifa,Nice,Product Owner,https://linkedin.com/in/moustoifams,2023,43.7009358,7.2683912,OKTOGONE GROUP
+147,Ribes,Melody,Nice,Assistante de la responsable d'archives et historienne de l'art,https://linkedin.com/in/melody-ribes-61a65b143,2022,43.7009358,7.2683912,Famille de l'artiste de Théo Tobiasse
+148,Pannier,Laly,Sarzay,Photographe freelance,https://linkedin.com/in/laly-pannier-183a59289,2023,46.603354,1.8883335,Aucune
+149,Cherrad,Hakim,Monaco,Responsable systèmes informatiques,https://linkedin.com/in/hakim-cherrad-2a2a33260,2007,43.7309697,7.4248152,Institut audiovisuel de Monaco
+150,Guignard,Gaétan,Toulouse,Consultant rédacteur,https://linkedin.com/in/gaétan-guignard-03321b159,2022,43.6044638,1.4442433,Ayming
+151,Maffeis,Caroline,Metz,Assistante de production évènementiel,https://linkedin.com/in/caroline-maffeis-2650a0227,2025,49.1196964,6.1763552,Vitanime
+152,Robin,Victor,Toulon,Chargé de communication externe ,https://linkedin.com/in/victor-robin-5a3888177,2024,43.1257311,5.9304919,Festival de Musique de Toulon et sa région
+153,BAMEHOSSOU,Débora,Vitry-sur-Seine,Communications and sales manager,https://linkedin.com/in/débora-bamehossou-23994a215,2025,48.7876,2.39164,Franprix
+154,Deconinck,Théo,Toulon,Ingénieur son,https://linkedin.com/in/théo-deconinck-a02741252,2024,43.1257311,5.9304919,DALIDA INSTITUTE
+155,Reboul,Arthur,Marseille,Aucun Poste,https://linkedin.com/in/arthur-reboul-47aaa3176,2023,43.2961743,5.3699525,Aucune
+156,Dussauge,Anaïs,Hyères,Cashier,https://linkedin.com/in/anaïs-dussauge,2025,43.1202573,6.1301614,Auchan Retail
+157,Tallarita,Lucas,Toulon,Directeur associé,https://linkedin.com/in/lucastallarita,2018,43.1257311,5.9304919,Agence TEAPS
+158,BAYLE,Marie,Toulon,Chargé de service clients,https://linkedin.com/in/marie-bayle-582568251,2024,43.1257311,5.9304919,Parc Spirou Provence
+159,VIRY,Leonie,Toulon,Chargée de communication,https://linkedin.com/in/léonie-viry,2024,43.1257311,5.9304919,Pôle Mer Méditerranée
+160,GUEYE,Alioune Badara,Toulon,Enseignant-chercheur,https://linkedin.com/in/alioune-badara-gueye-0052a882,2023,43.1257311,5.9304919,Centre d'Études des Sciences et Techniques de l'Information
+161,CHEVAL,Mathilde,Boulogne-Billancourt,UX/UI Designer,https://linkedin.com/in/mathilde-cheval,2023,48.8356649,2.240206,SNCF Réseau
+162,Deplace,Yolaine,Toulon,Présidente,https://linkedin.com/in/yolaine-deplace,2022,43.1257311,5.9304919,Cosplay Smart
+163,Labory,Lola,Toulon,Data analyste (santé/médico-social),https://linkedin.com/in/lola-labory,2025,43.1257311,5.9304919,Innovation e-Santé Sud
+164,Lelay,Sébastien,Sarzay,Data Analyst - Qualité,https://linkedin.com/in/sébastien-lelay-624722174,2024,46.603354,1.8883335,Airbus
+165,Lecourtois,Elisa,Toulon,Auto-entrepreneur,https://linkedin.com/in/elisa-lecourtois-ab29801b6,2022,43.1257311,5.9304919,Lecourtois Elisa
+166,Picq,Baptiste,La Valette-du-Var,Assistant de communication,https://linkedin.com/in/baptiste-picq,2024,43.1378245,5.9834654,Centre Hospitalier Intercommunal Toulon - La Seyne-sur-Mer
+167,Drouallière,Margaux,Toulon,Aucun Poste,https://linkedin.com/in/margaux-drouallière-11438b201,2023,43.1257311,5.9304919,Aucune
+168,Bodin,Élodie,Toulouse,Designer UX + UI,https://linkedin.com/in/elodie-bodin-ux-ui,2006,43.6044638,1.4442433,CGI
+169,BONNISSOL,Jérémie,La Chardie,Freelance Directeur Artistique,https://linkedin.com/in/jebonnisso,2024,45.5565011,3.694883,Aucune
+170,GUENNAOUI,Hasna,Toulon,Chargée de Communication,https://linkedin.com/in/hasna-guennaoui-49391622a,2024,43.1257311,5.9304919,Kocoon Rénovation
+171,Mellouk,Solène,Clermont-Ferrand,UX/UI Designer,https://linkedin.com/in/solène-mellouk,2023,45.7774551,3.0819427,Openium
+172,Coi,Sarah,Toulon,Création de contenu vidéo et photo pour les réseaux sociaux ,https://linkedin.com/in/sarah-c-a79a22182,2023,43.1257311,5.9304919,Fantaisie Prod
+173,Audibert,Romain,Marseille,Experience and interface design consultant,https://linkedin.com/in/romain-audibert,2023,43.2961743,5.3699525,Sopra Steria Next
+174,Desbrosse,Carlos,Sarzay,Chargé de communication digitale,https://linkedin.com/in/carlos-desbrosse,2024,46.603354,1.8883335,La Team Durable
+175,Deguin,Luca,La Crau,Fondateur,https://linkedin.com/in/luca-deguin-7b99a1174,2025,43.1497034,6.0737053,Webba
+176,Auguy,Marie,Paris,Content Manager,https://linkedin.com/in/marie-auguy,2022,48.8588897,2.320041,Clint
+177,LOUPY,Maurane,Six-Fours-les-Plages,Assistante en communication,https://linkedin.com/in/maurane-loupy-9749951b7,2025,43.0935105,5.8393953,Alianza por la Solidaridad-ActionAid
+178,Bastaï,Marilyn,Carqueiranne,Communication Assistant,https://linkedin.com/in/marilyn-bastaï-b13099245,2025,43.0910087,6.0766933,SICA Marche aux fleurs
+179,Rhazouani,Asma,Sarzay,"Cheffe de projet communication & marketing digital - Brand, Web & Content management",https://linkedin.com/in/asma-rhazouani-879a09223,2025,46.603354,1.8883335,Restopedia
+180,Sesliyan,Arthur,La Ciotat,Création numérique,https://linkedin.com/in/arthur-s-1184aa1b0,2023,43.1758591,5.6062495,ATYPIQUE studio
+181,Guillaume,Mathis,Montpellier,Assistant communication et marketing ,https://linkedin.com/in/mathis-guillaume-272b74199,2024,43.6112422,3.8767337,Montpellier Events gestionnaire du Corum et du Zénith Sud
+182,Delcambre,Sophie,Toulon,Trainee Web & print graphic designer / Community manager,https://linkedin.com/in/sophie-delcambre,2024,43.1257311,5.9304919,La Cadiere d'Azur Tourist Office
+183,BUTTEAUD,Claire,Paris,Responsable communication régionale et évènementiel,https://linkedin.com/in/cbutteaud,2019,48.8588897,2.320041,ECF Experts-comptables et Commissaires aux comptes de France
+184,SEGUIN,Stéphanie,Toulouse,Scrum master,https://linkedin.com/in/stephanie-seguinc,2011,43.6044638,1.4442433,Berger-Levrault
+185,Maize,David,Marseille,Kitchen help / Bartender / Waiter,https://linkedin.com/in/david-maize-32955b193,2023,43.2961743,5.3699525,Café Liberté
+186,Lhermitte,Apolline,Toulon,Chargée de la relation client & influence,https://linkedin.com/in/alhermitte,2020,43.1257311,5.9304919,Swello
+187,Ben Bahri,Rayan,Toulon,Appui à la direction Citoyenneté et Proximité,https://linkedin.com/in/rayan-ben-bahri-593a071bb,2023,43.1257311,5.9304919,Toulon Provence Méditerranée
+188,LAN,Wen-Yu,Ollioules,Visual Artist,https://linkedin.com/in/wen-yu-lan-30080622b,2023,43.1397205,5.8483538,Jean-Baptiste Warluzel
+189,Meynard,Xavier,Toulon,Réalisateur de film 3D & Chargé de communication,https://linkedin.com/in/xavier-meynard-bb4389201,2025,43.1257311,5.9304919,CNRS
+190,Dias,Hugo,Toulon,chargé de Communication - Projets Européens,https://linkedin.com/in/hugo-dias-590b16182,2024,43.1257311,5.9304919,CCIduVar
+191,Gamba,César,Toulon,Aucun Poste,https://linkedin.com/in/césar-gamba-732886258,2025,43.1257311,5.9304919,Aucune
+192,TAOUFIK,Souhaila,Toulon,Responsible for digital communications,https://linkedin.com/in/souhaila-taoufik,2025,43.1257311,5.9304919,Légumes de Star
+193,Gracia,Lilian,Saint-Étienne,Digital Business Developer | Service E-Business,https://linkedin.com/in/lilian-gracia-8b9349aa,2018,45.4401467,4.3873058,Crédit Agricole Loire Haute-Loire
+194,Ayoldi,Lila ,Toulon,Attached to communication,https://linkedin.com/in/lila-ayoldi,2024,43.1257311,5.9304919,LE PÔLE - Arts en Circulation
+195,PINNEY,Jon,Paris,UX Designer,https://linkedin.com/in/jonpinney1869,2007,48.8588897,2.320041,Aucune
+196,Polito 💜,Cassandra,Toulon,Chargée de communication,https://linkedin.com/in/cassandra-polito,2019,43.1257311,5.9304919,Swello
+197,Manon,Paret,Toulon,Analyste de référencement,https://linkedin.com/in/paret-manon-310640233,2023,43.1257311,5.9304919,Creacool
+198,Restivo,Mattéo,Bourgoin-Jallieu,Community Manager,https://linkedin.com/in/matteo-restivo,2023,45.5860438,5.2772265,Ligue Auvergne Rhône-Alpes d'Athlétisme
+199,Reboul,Clara,Toulon,Chargee de communication / événementiel,https://linkedin.com/in/clara-reboul-781612259,2025,43.1257311,5.9304919,Groupe itp
+200,ASSOGBA,Carmel F.,Toulon,UI Designer (Full remote),https://linkedin.com/in/frumence-assogba,2025,43.1257311,5.9304919,Fittingbox
+201,Charrin,Audrey,Six-Fours-les-Plages,Webmaster et chargée de communication,https://linkedin.com/in/audrey-charrin-69487a250,2025,43.0935105,5.8393953,Direction générale des Finances publiques
+202,AOUNIT,Célia,Sarzay,Chargée de communication événementielle,https://linkedin.com/in/célia-aounit-702228184,2023,46.603354,1.8883335,Aucune
+203,Hadri,Sarah,Toulon,Data Engineer,https://linkedin.com/in/sarah-hadri-493a111a1,2023,43.1257311,5.9304919,Bouygues Bâtiment Sud-Est
+204,Munteanu,Myriam,Montpellier,UX/UI Designer,https://linkedin.com/in/myriam-munteanu-7b6785253,2023,43.6112422,3.8767337,ChallengeMe
+205,Santana,Ana,Lyon,Junior UX/UI Designer,https://linkedin.com/in/anasntana,2024,45.7578137,4.8320114,DataGalaxy
+206,Witkowski,Thomas,La Crau,Commercial,https://linkedin.com/in/thomas-witkowski-753b041bb,2023,43.1497034,6.0737053,CDV Habitat
+207,Trancoen,Marion,Toulon,Directrice communication et partenariats,https://linkedin.com/in/marion-trancoen-83a881140,2017,43.1257311,5.9304919,Love Radius
+208,VISCONTI,Enzo,Toulon,Aucun Poste,https://linkedin.com/in/enzo-visconti-849630259,2025,43.1257311,5.9304919,Aucune
+209,Wirz,Théophane,Thionville,Stagiaire communication,https://linkedin.com/in/theophane-wirz,2024,49.3579272,6.1675872,Addik'Tok
+210,HAMMADI,Wassim,Toulon,Stagiaire Chargé de la communication sur les QPV,https://linkedin.com/in/wassim-hammadi,2023,43.1257311,5.9304919,Métropole Aix-Marseille-Provence
+211,Labidi,Amir,Toulon,Data Analyst,https://linkedin.com/in/amir-labidi-7a87a7235,2023,43.1257311,5.9304919,Toulon Provence Méditerranée
+212,BRUN,Romane,Toulon,Cheffe de projets numériques,https://linkedin.com/in/romane-brun,2024,43.1257311,5.9304919,STRATIS
+213,Chaiheloudj,Ines,Toulon,Chargée de communication,https://linkedin.com/in/ines-chaiheloudj-5564491b8,2025,43.1257311,5.9304919,DAC Var Ouest
+214,Mangiapane,Estelle,Toulon,"Coach Instagram, social media & community manager, créatrice de contenu",https://linkedin.com/in/estelle-mangiapane,2020,43.1257311,5.9304919,Estellemgp Communication
+215,Stofft,Bastien,Vaughan,Technical Operator,https://linkedin.com/in/bastien-stofft-b6710a248,2022,43.8000921,-79.5726453,Sonhouse - sound production agency
+216,Cadeddu,Axel,Aix-en-Provence,Product Manager,https://linkedin.com/in/axelcadeddu,2014,43.5298424,5.4474738,Reel IT Groupe
+217,Pigal,Mathilde,Toulon,Responsable Communication,https://linkedin.com/in/mathilde-pigal-351487200,2023,43.1257311,5.9304919,FUNÉUP
+218,Rigaud,Anaïs,Toulon,Chargée de communication et de clientèle,https://linkedin.com/in/anaisrigaud,2022,43.1257311,5.9304919,Cours Ado Toulon
+219,Togni,Mathis,Toulon,Développeur Wordpress / Webdesigner,https://linkedin.com/in/mathis-t-9baa831a3,2024,43.1257311,5.9304919,FEMTO-ST Institute
+220,Bourguet,Elodie,Berlin,Educator & Library Coordinator,https://linkedin.com/in/elodie-bourguet,2016,52.503379,13.3386522,Judith-Kerr-Grundschule
+221,Khieu,Anthony,Marseille,Digital Communication Assistant,https://linkedin.com/in/anthony-khieu-50668b1a6,2023,43.2961743,5.3699525,Jones and Co
+222,Henry,Eva,Paris,Artiste Plasticienne et Vidéaste,https://linkedin.com/in/eva-henry-291344171,2024,48.8588897,2.320041,Aucune
+223,Dekhili,Inès,Paris,Commerciale sédentaire,https://linkedin.com/in/inès-d-b752371b9,2023,48.8588897,2.320041,Licce
+224,Malfione,Robin,Ivry-sur-Seine,Auto-entrepreneur,https://linkedin.com/in/robin-malfione-3b031b115,2020,48.8122302,2.3872525,RM
+225,Charles,Elisa,Toulon,Digital communications internship,https://linkedin.com/in/elisa-charles-3b8169187,2024,43.1257311,5.9304919,La Maison Digitale
+226,Besrest,Lorianne,Toulon,Cheffe de projet,https://linkedin.com/in/lorianne-besrest,2022,43.1257311,5.9304919,STRATIS
+227,BELLOI,Matthieu,Puteaux,Chief Digital Officer (CDO),https://linkedin.com/in/matthieubelloi,2010,48.8841522,2.2368863,Biggie
+228,Arribot,Romain,Bandol,Commercial ,https://linkedin.com/in/romain-arribot-0833671b1,2023,43.1357717,5.7523647,Blinker France
+229,Lauraux,Matthieu,Paris,"Rédacteur Mobilités, Vélo, Auto, High-tech",https://linkedin.com/in/matthieulauraux,2011,48.8588897,2.320041,Aucune
+230,Morinière,Lucil,Sarzay,Employer Branding & Campus Marketing (Talent Acquisition),https://linkedin.com/in/lucil-moriniere,2025,46.603354,1.8883335,Eurofins
+231,PAGLIUCHI,Arthur,Cuers,Project Manager,https://linkedin.com/in/arthur-pag,2024,43.2372099,6.072772,FOL 83 - Ligue de l'enseignement du Var
+232,Beyrouti,⭑ Grégory,Nice,Co-founder and CEO,https://linkedin.com/in/gregorybeyrouti,2004,43.7009358,7.2683912,WiziShop
+233,Kozlova,Elizaveta,Toulon,Chargée de communication ,https://linkedin.com/in/elizaveta-kozlova-2863bb224,2023,43.1257311,5.9304919,Élégance Tailor Shop
+234,Claeyssens,Manon,Vallauris,Chef de projet,https://linkedin.com/in/manon-claeyssens-998117172,2023,43.5761001,7.05859,Aesthetic Models World Recruitment
+235,Debraize,Marc,Besançon,Technical project manager,https://linkedin.com/in/marcdebraize,2016,47.2380222,6.0243622,Arrive
+236,GALLET,Cecile,Sarzay,Founder | Relocation & Lifestyle Strategist - Haven in France,https://linkedin.com/in/cecilegallet,2022,46.603354,1.8883335,HAVEN IN FRANCE
+237,Ferret,Louis,Mâcon,Product Manager,https://linkedin.com/in/louis-ferret,2021,46.3036683,4.8322266,TooSmart
+238,Roux,Nicolas,Vancouver,Communications & Public Relations Manager,https://linkedin.com/in/nicolasrouxmovingmind,2007,49.2608724,-123.113952,RésoSanté Colombie-Britannique
+239,Landemaine,Joshua,Angers,Facteur,https://linkedin.com/in/joshua-landemaine,2022,47.4739884,-0.5515588,La Poste Groupe
+240,Domergue,Florian,Rennes,Chargé de production podcast,https://linkedin.com/in/florian-domergue-54008a191,2022,48.1113387,-1.6800198,Saooti
+241,Damamme,Axel,Hyères,Photographe indépendant,https://linkedin.com/in/axel-damamme,2013,43.1202573,6.1301614,Axel Photographe Immobilier
+242,PASSARET,Angelique,Sanary-sur-Mer,Gérant principal,https://linkedin.com/in/angelique-passaret-9a654124a,2014,43.1177238,5.8008839,DAPHICOLANGE
+243,Legrand,Hugo,Toulon,Designer d’expérience utilisateur,https://linkedin.com/in/hugo-lg,2024,43.1257311,5.9304919,Thales Cyber and Digital
+244,Visseq,Paul,Nîmes,Chargé de communication,https://linkedin.com/in/paul-visseq-0bb761229,2023,43.8374249,4.3600687,Objectif Gard
+245,Scarfo,Théo,Sarzay,COO - Responsable des Opérations et du Marketing,https://linkedin.com/in/théo-scarfo-3b1279210,2024,46.603354,1.8883335,Sud Est Chape
+246,ALLIONE,Sébastien,Toulon,Directeur du Département Architecture,https://linkedin.com/in/sébastien-allione,2019,43.1257311,5.9304919,STRATIS
+247,Atallah,Mourad,Sarzay,Chef de projet IT,https://linkedin.com/in/mourad-atallah-24a75317,2011,46.603354,1.8883335,Place des Tendances
+248,G.,Rose,Sarzay,Employé volontaire,https://linkedin.com/in/rose-g-789a49242,2023,46.603354,1.8883335,Mayaa Nepal
+249,Manaud,Adèle,Lyon,Chargée de Communication 360°,https://linkedin.com/in/adèle-manaud-469a93109,2020,45.7578137,4.8320114,Evergreen Garden Care
+250,Gazzo,Ingrid,La Seyne-sur-Mer,Data Manager,https://linkedin.com/in/ingrid-gazzo-0b75b2173,2023,43.1007714,5.8788948,Marine Nationale
+251,Beldjoudi,Sarah,Paris,Chargée d’ingénierie « formation et numérique »,https://linkedin.com/in/sarahbldj,2017,48.8588897,2.320041,Ministère de la Défense
+252,Fabre,Céline,Toulon,Cheffe de projet - Graphiste ,https://linkedin.com/in/céline-fabre13,2023,43.1257311,5.9304919,Ace Agency
+253,Jacquet,Elsa,Annecy,Chargée de marketing digital,https://linkedin.com/in/elsa-j-603a041b8,2024,45.8992348,6.1288847,Arval BNP Paribas Group
+254,Arsaut,Pierre,Toulon,Développeur Java,https://linkedin.com/in/pierre-arsaut-bb4161b1,2017,43.1257311,5.9304919,Atos
+255,Ghafar,Seliha,Toulon,Responsable communications,https://linkedin.com/in/seliha-ghafar,2025,43.1257311,5.9304919,Cap Croisières Voyages
+256,Perez,Emeline,Marseille,Graphiste multimédia,https://linkedin.com/in/emeline-perez-3098b31b4,2023,43.2961743,5.3699525,Le Vapoteur Discount
+257,Coulon,Andréa,Châtenoy-le-Royal,Chargée de communication,https://linkedin.com/in/andréa-coulon-5ab453220,2024,46.794589,4.8145788,CentralAP16
+258,DABBENE,Mathis,Rennes,Étudiant en Master 2 Information et Communication,https://linkedin.com/in/mathis-dabbene-780552166,2020,48.1113387,-1.6800198,Université de La Réunion
+259,abass mado abari,Hasbatou,Marseille,Chargée de Communication Digitale et Webdesign en alternance,https://linkedin.com/in/habsatou-abass-mado-6873491b9,2023,43.2961743,5.3699525,Pixxim SAS
+260,ROUBAOUI,Chérihane,Toulon,Chargée de communication ,https://linkedin.com/in/chérihane-roubaoui-20b6b7195,2024,43.1257311,5.9304919,TVT Innovation
+261,Dive,Nicolas,Toulon,Data Analyst Commercial et Marketing,https://linkedin.com/in/nicolas-dive-565073146,2022,43.1257311,5.9304919,Mégara / Berceau magique
+262,Malléjac,Clément,La Seyne-sur-Mer,Vidéaste & graphiste,https://linkedin.com/in/clément-malléjac,2022,43.1007714,5.8788948,C2Care
+263,Moranton,Loriane,Toulon,Chargée de communication et d'appui aux activités ,https://linkedin.com/in/loriane-moranton-6645a3113,2023,43.1257311,5.9304919,France Volontaires
+264,Bicais,Doriane,Toulon,Cheffe de projet numérique,https://linkedin.com/in/doriane-bicais,2023,43.1257311,5.9304919,Ville de Toulon
+265,Edarazi,Samir,Toulon,Data & Software Engineer Junior,https://linkedin.com/in/samir-edarazi,2024,43.1257311,5.9304919,ATEXIS
+266,AMROUSSI,Habib Aymen,,Founder,https://linkedin.com/in/habib-aymen-amroussi-8234a8229,2010,33.8439408,9.400138,FODITRAM
+267,Prost,Juliette,Toulon,Freelance communication manager,https://linkedin.com/in/juliette-prost-721975171,2021,43.1257311,5.9304919,Julietta Studio
+268,Ben Bahri,Myriam,Toulon,Saleswoman,https://linkedin.com/in/myriam-ben-bahri-58b607198,2023,43.1257311,5.9304919,Adopt​ Parfums
+269,Belot,Chloé,Toulon,Cheffe de projet,https://linkedin.com/in/chloebelot,2024,43.1257311,5.9304919,Webnotoriété
+270,Guccini,Aurélie,Toulon,UX/UI Designer & Cheffe de Projet Digital Freelance,https://linkedin.com/in/aurelieguccini,2024,43.1257311,5.9304919,Aucune
+271,Ali,Rahaf,Valence,Aucun Poste,https://linkedin.com/in/rahafali95,2023,44.9332277,4.8920811,Aucune
+272,GALLIANO,Clara,Toulon,Gestionnaire administrative et pédagogique de l'Ecole Doctorale 509,https://linkedin.com/in/clara-galliano-2982ab81,2025,43.1257311,5.9304919,Université de Toulon
+273,Martinent,Aloïs,Sarzay,Voluntary,https://linkedin.com/in/aloïs-martinent,2024,46.603354,1.8883335,Unis-Cité Auvergne Rhône-Alpes
+274,Regnier,Raphaël,Marseille,UI/UX designer consultant at CMA CGM,https://linkedin.com/in/rrr-raphael-regnier,2013,43.2961743,5.3699525,SQUAD - Cabinet de conseils et d’expertises
+275,Scaillierez,Romain,Marseille,Ingénieur de Projets Informatiques,https://linkedin.com/in/romain-scaillierez-0784ba99,2017,43.2961743,5.3699525,Ecocem en France
+276,Tartier,Marion,Toulon,Graphiste,https://linkedin.com/in/marion-tartier-b61a33188,2023,43.1257311,5.9304919,Aucune
+277,De Marez,Alyssa,Grenoble,Caissier,https://linkedin.com/in/alyssa-de-marez,2023,45.1875602,5.7357819,Grand Frais 
+278,BELTOU,Fiona,Toulouse,Responsable communication et marketing,https://linkedin.com/in/fionabeltou,2022,43.6044638,1.4442433,SODIX Communication
+279,Virenque,Dario,Hyères,Marketing Data Analyst,https://linkedin.com/in/dario-virenque-562818182,2023,43.1202573,6.1301614,APM Monaco
+280,CURGIS,Malaury,Sarzay,Designer graphique,https://linkedin.com/in/malaury-curgis-41236b147,2022,46.603354,1.8883335,Nestenn Immobilier
+281,Goma,Maeva,Saint-Joseph,Enseignant art appliquée,https://linkedin.com/in/maeva-goma-a462a6109,2021,14.670406,-61.0384708,Lycée du Golfe de Saint-Tropez
+282,Ghebbi,Melissa,Paris,key Account Manager,https://linkedin.com/in/melissa-ghebbi-348469166,2021,48.8588897,2.320041,Clone
+283,Ossetti,Célia,La Garde,Chargée de Marketing Volkswagen & Skoda,https://linkedin.com/in/célia-ossetti-2b2aa0172,2022,43.8301121,6.5572147,BYmyCAR
+284,ALBERTINI,Romane,Toulon,GRAPHISTE MOTION DESIGN & 3D - LABORATOIRE D'INNOVATION DE LA FORCE D'ACTION NAVALE,https://linkedin.com/in/romane-albertini,2022,43.1257311,5.9304919,Marine Nationale
+285,DRIOT ,Grégory ,Paris,CEO & Chief Technical Product Officer (CTPO),https://linkedin.com/in/gregorydriot,2007,48.8588897,2.320041,Creative Web Solutions - CWS
+286,Michelier,Adélie,Toulon,Assistante communication et création de contenus vidéo,https://linkedin.com/in/adélie-michelier-306379173,2023,43.1257311,5.9304919,Incubateur Belle de Mai
+287,BLACHE,Tom,Hyères,Responsable développement numérique,https://linkedin.com/in/tom-blache-a948b2224,2023,43.1202573,6.1301614,Micro crèche 3 P'tits Chats
+288,Castel,Matéo,Toulon,Assistant label,https://linkedin.com/in/matéo-castel-898a38196,2023,43.1257311,5.9304919,Underground tekno
+289,SBERNINI,Chloé,Aix-en-Provence,Content Editor FR,https://linkedin.com/in/chloé-sbernini-communication,2024,43.5298424,5.4474738,Voyage Privé
+290,Lapiere,David,Paris,Chargé de contenu SEO,https://linkedin.com/in/david-lapiere-94a6691a6,2023,48.8588897,2.320041,Startperf
+291,Shili,Youssef,Mantes-la-Jolie,Data manager / Responsable système embarqué,https://linkedin.com/in/youssefshili,2023,48.9891971,1.7140683,RATP Cap Île-de-France
+292,Cochefert,Victorine,La Seyne-sur-Mer,Aucun Poste,https://linkedin.com/in/victorine-cochefert-322481204,2024,43.1007714,5.8788948,Aucune
+293,Roulin,Mathilde,Toulon,Chargée de communication et marketing,https://linkedin.com/in/mathilde-roulin,2023,43.1257311,5.9304919,France Énergies Marines
+294,AYME,Romain,Caromb,Auto-entrepreneur,https://linkedin.com/in/romain-ayme,2024,44.1111263,5.1078494,Romain AYME - Informatique
+295,KHLIFI,Jason,Le Muy,Responsable communication digitale,https://linkedin.com/in/jason-khlifi-628550224,2022,43.4713932,6.566111,AZURPAL TRANSPORTS
+296,Fournon,Nicolas,Draguignan,Formateur,https://linkedin.com/in/nicolasfournon,2009,43.5374662,6.4627333,B.Factory School
+297,Vessellier,Sarah,Bordeaux,Directrice artistique & designer graphique,https://linkedin.com/in/sarah-vessellier-261262b6,2021,44.841225,-0.5800364,Aucune
+298,Hernandez,Tony,Toulon,Photographe Scolaire,https://linkedin.com/in/tony-hernandez-655b491b1,2023,43.1257311,5.9304919,LABORATOIRE DELMAS
+299,Poirier,Cédric,,Coordonnateur culturel,https://linkedin.com/in/cédric-poirier-ba27b099,2016,61.0666922,-107.991707,Ville de Rouyn-Noranda
+300,MADI SAID,Soulaïmana,Toulon,System Engineer & DevOps,https://linkedin.com/in/soula-madi-said,2022,43.1257311,5.9304919,Sopra Steria
+301,Fernandez,Clara,Vallauris,Chargée de communication digitale,https://linkedin.com/in/clara-fdez,2023,43.5761001,7.05859,Université de Nîmes
+302,Zahi,Camélia,Sarzay,Chargée de projet numérique,https://linkedin.com/in/camélia-zahi-9220b21a4,2024,46.603354,1.8883335,Avantage numérique
+303,BIHL,Zoé,Nice,Cheffe de projet marketing,https://linkedin.com/in/zoé-bihl-7a38b1193,2024,43.7009358,7.2683912,Éditions Robert Laffont
+304,Kermorgant,Anaëlle,Paris,Chargée de communication,https://linkedin.com/in/anaëlle-kermorgant-10b0231b2,2024,48.8588897,2.320041,Fleurus Éditions
+305,Bruckmann,Elise,Strasbourg,Graphiste & Video Content,https://linkedin.com/in/elise-bruckmann-796485151,2023,48.584614,7.7507127,Pitchy
+306,PABLO,Maxime,Pierrefeu-du-Var,Responsable communications,https://linkedin.com/in/maxime-pablo-764589203,2022,43.2272615,6.14307,VOLLEY PRADETAN GARDEEN
+307,Pautier,Coline,Arles,"Chargée des publics, des actions culturelles et du protocole",https://linkedin.com/in/coline-pautier,2023,43.6776223,4.6309653,"Festival Les Suds, à Arles"
+308,Maylié,Tatiana,Toulon,UX/UI Designer ,https://linkedin.com/in/tatiana-m-698a0815a,2023,43.1257311,5.9304919,Marine Nationale
+309,Laignel,Amandine,Château-Gontier-sur-Mayenne,Data analyst Junior,https://linkedin.com/in/amandine-laignel-6b2a59198,2024,47.8263058,-0.7066665,V and B
+310,Coulon,Benjamin,Toulon,Communications manager,https://linkedin.com/in/benjamin-coulon99,2023,43.1257311,5.9304919,Caf de l'Hérault
+311,Kluczynski,Dorian,Le Muy,Graphiste,https://linkedin.com/in/dorian-kluczynski-58a4401a1,2024,43.4713932,6.566111,Mairie de Toulon
+312,Sauleek,Jessica,Sarzay,Designer Web,https://linkedin.com/in/jessica-sauleek-480176163,2023,46.603354,1.8883335,Vistalid
+313,Gueit,Cindy,Montréal,Fondatrice,https://linkedin.com/in/cindy-gueit-b0a2b2141,2017,45.5031824,-73.5698065,Atelier Saturne
+314,JALISS 🎨,Fayrouz,Paris,Gestion de relation client,https://linkedin.com/in/fayrouz-jaliss-221189109,2022,48.8588897,2.320041,Verisure
+315,Errico,Carla,Saint-Cyr-sur-Mer,Conseiller commercial,https://linkedin.com/in/carla-errico-5a361a192,2023,43.1810087,5.711516,FONDS DE SOLIDARITE DES SOCIETAIRES DE LA MACIF
+316,Orlando,Ugo,Sarzay,Data Analyst,https://linkedin.com/in/ugo-orlando-32130b188,2024,46.603354,1.8883335,Aix-Marseille University
+317,Ferreira,Telmo,Marignane,Data Manager,https://linkedin.com/in/telmo-ferreira-34b42122a,2022,43.4162193,5.2145269,Voisins Vigilants et Solidaires®
+318,PESTRE,Quentin,Toulon,Auto-entreprise : création du site RECYCLED MARKET,https://linkedin.com/in/quentinpestre,2022,43.1257311,5.9304919,RECYCLED MARKET
+319,Lorthiois,Camille,Cherbourg-en-Cotentin,Responsable Management des Opérations,https://linkedin.com/in/camille-lorthiois-25569a151,2023,49.6425343,-1.6249565,NAVAL GROUP
+320,Bosselut,Jade,La Valette-du-Var,Graphiste,https://linkedin.com/in/jade-bosselut,2022,43.1378245,5.9834654,Région Sud - Provence-Alpes-Côte d'Azur
+321,Debat-Dupré,Dionis,Levallois-Perret,Beauty Pack Creation/Innovation Project Manager,https://linkedin.com/in/dionis-debat,2023,48.892956,2.2881683,Extreme Group
+322,Tisselin,Maxence,Metz,Chargé de communication et de missions web,https://linkedin.com/in/maxence-tisselin-801854188,2022,49.1196964,6.1763552,LE MET'
+323,Lecointe,Guillaume,Six-Fours-les-Plages,Infographiste,https://linkedin.com/in/guillaume-lecointe-587349146,2021,43.0935105,5.8393953,Exail
+324,Loubat,Caroline,Cogolin,Chargée de communication,https://linkedin.com/in/caroline-loubat,2023,43.25,6.53659,E.Leclerc
+325,saude,fabian,Marseille,Chef de service numérique / image,https://linkedin.com/in/fabian-saude-39848247,2015,43.2961743,5.3699525,Mairie de Toulon
+326,Gabelle,Thomas,Toulon,Consultant | Formateur | Facilitateur,https://linkedin.com/in/thomasgabelle,2013,43.1257311,5.9304919,Thomas Gabelle
+327,Ben Nasr,Farah,Marseille,Chef de projet digital,https://linkedin.com/in/farah-ben-nasr,2021,43.2961743,5.3699525,Orange Business
+328,concas,maxime,Charenton-le-Pont,Coach Agile / Product Management,https://linkedin.com/in/maximeconcas,2007,48.8198479,2.4159508,Zen Value
+329,Garcia,Mathis,Sarzay,3D Graphic Designer,https://linkedin.com/in/mathis-garcia-12b843204,2024,46.603354,1.8883335,Aucune
+330,Millon,Camille,Marche-en-Famenne,Cheffe de projet digitale,https://linkedin.com/in/camille-millon-4567b717b,2023,50.1862277,5.3134155,"LESPRATIQUES, Organisme de Formation certifié et d'ingénierie pédagogique"
+331,BEAL,Rémy,Lyon,UI / UX Designer - Web Design,https://linkedin.com/in/rémy-beal-47a6639a,2023,45.7578137,4.8320114,GL events Exhibitions
+332,Grigy,Julia,San Pawl il-Baħar,CRM executive,https://linkedin.com/in/julia-grigy,2023,35.9311442,14.3951627,BENKO DIGITAL
+333,NUVOLI,Benjamin,Hyères,Communications specialist,https://linkedin.com/in/benjaminnuvoli,2019,43.1202573,6.1301614,CréaStud
+334,Lépinay,Agnès,Nantes,Directrice Artistique indépendante,https://linkedin.com/in/agneslepinay,2016,47.2186371,-1.5541362,Studio Indil
+335,Ben Hassine,Myriam,تونس,Gérante à kiatou.tn,https://linkedin.com/in/myriam-ben-hassine-748526217,2010,36.8002068,10.1857757,Aucune
+336,De Tremeuge,Sylvain,Nice,Responsable acquisition e-commerce ,https://linkedin.com/in/sylvain-de-tremeuge-b40494136,2020,43.7009358,7.2683912,Chullanka
+337,Poccard,Cyril,Quint-Fonsegrives,Développeur Full Stack,https://linkedin.com/in/cyril-poccard-599369160,2021,43.5854856,1.528301,Demain un autre jour
+338,Bouslama,Kamel,Paris,Head of Product & Growth,https://linkedin.com/in/kamelbouslama,2008,48.8588897,2.320041,Entrepreneurial Projects 
+339,Avellan,Yoann,Toulon,PDG,https://linkedin.com/in/yoann-avellan-7bb150196,2020,43.1257311,5.9304919,La boîte à pâtes
+340,SBERNINI,David,Toulon,Freelance en création de contenus digitaux et print,https://linkedin.com/in/david-sbernini,2022,43.1257311,5.9304919,DS Services Pro - Communication
+341,LAM CHOK SING,Léo,Cruchten,Application Release Manager,https://linkedin.com/in/léo-l-825382214,2023,49.8158683,6.1296751,Clearstream
+342,Pierrot,Alice,Rayol-Canadel-sur-Mer,Chargée de Communication Digitale et Multimédia,https://linkedin.com/in/alice-pierrot,2024,43.1591343,6.4705918,Domaine du Rayol
+343,Bavré,Claire,Paris,Directrice de clientèle digital ,https://linkedin.com/in/claire-bavre,2018,48.8588897,2.320041,HighCo Group
+344,BAHI,Kamilia,Paris,Chargée des flux logistiques,https://linkedin.com/in/kamilia-bahi-7503ba169,2023,48.8588897,2.320041,Christian Dior Couture
+345,IMPERATO,Pauline,Toulon,Graphic designer,https://linkedin.com/in/paulineimperato,2018,43.1257311,5.9304919,CORPOP.design graphique
+346,Tardieu,Nicolas,Champs-sur-Marne,Assistant technicien son à la Cité de la musique - Philharmonie de Paris,https://linkedin.com/in/nicolastardieupro,2021,48.8526892,2.6027219,Philharmonie de Paris
+347,Miloua,Nadir,Toulon,Ingénieur de données,https://linkedin.com/in/nadir-miloua-252558211,2024,43.1257311,5.9304919,ALTEN
+348,Aguilar,Lola,Toulon,Chargée d'activité relation clients et partenariats,https://linkedin.com/in/lola-aguilar-8b56521b9,2023,43.1257311,5.9304919,"Ports Rade de Toulon, CCI Var"
+349,Bousquet,Marion,Mende,Chargée de communication,https://linkedin.com/in/marion-bousquet,2023,44.5180226,3.4991057,Moulin de Colagne
+350,Triki,Ghazi,,Technical Director,https://linkedin.com/in/ghazitriki,2008,33.8439408,9.400138,RIADVICE
+351,Mortier,Mehdi,Sarzay,Directeur du développement et de la communication,https://linkedin.com/in/mehdi-mortier,2016,46.603354,1.8883335,Publicis Activ
+352,Ganbold,Uchka,La Valette-du-Var,UX/UI designer,https://linkedin.com/in/uchka-ganbold-488105184,2022,43.1378245,5.9834654,Malt
+353,Plouzeau Moulard,Charlotte,Chartres,Chargée de Communication Interne,https://linkedin.com/in/charlotte-plouzeau-moulard-766a02199,2023,48.4438601,1.4881434,Novo Nordisk
+354,PASQUALE 🚀,Laury,Chambéry,"CEO, artistic director & UI/UX Designer",https://linkedin.com/in/laury-pasquale,2013,45.5662672,5.9203636,Les Deux Dandys
+355,LOMBART,Gaétane,Hyères,Conseillère entreprise,https://linkedin.com/in/gaétane-lombart-98ab49112,2016,43.1202573,6.1301614,France Travail
+356,Jamnik,Nadia,Montréal,Senior Art Director and creative lead,https://linkedin.com/in/nadiajamnik,2009,45.5031824,-73.5698065,Blache Yong & Co.
+357,Bories,Pauline,Grenoble,Graphiste maquettiste,https://linkedin.com/in/pauline-bories-8759a110b,2018,45.1875602,5.7357819,Autour du Riz
+358,Tabariès,Alaric,La Seyne-sur-Mer,IA & data manager,https://linkedin.com/in/alarictabaries,2025,43.1007714,5.8788948,STRATIS | L’expert numérique du secteur public
+359,Marringhis Scalas ,Mandy,Toulon,Chargée de mission Évenementiel,https://linkedin.com/in/mandy-marringhis-scalas-817ba7177,2023,43.1257311,5.9304919,TVT Innovation
+360,Philippe,Elodie,Paris,Product Owner,https://linkedin.com/in/ephilippe,2011,48.8588897,2.320041,AG2R LA MONDIALE Épargne patrimoniale
+361,DESNOYÉS,Célia,Avignon,Adjoint Administratif Territorial Médiathèque et Pôle Éducation Enfance ,https://linkedin.com/in/céliadesnoyés,2022,43.9492493,4.8059012,mairie de pernes les fontaines
+362,Sicard,Margot,Sarzay,Responsable marketing,https://linkedin.com/in/margot-sicard,2022,46.603354,1.8883335,DigitecPharma by IntecMedia
+363,Gross,Brian,Nice,Développeur front-end,https://linkedin.com/in/brian-gross-267940211,2016,43.7009358,7.2683912,WiziShop
+364,Beluze,Hugo,Quincey,Aucun Poste,https://linkedin.com/in/hugo-beluze-155883132,2019,47.118711,4.9691044,Aucune
+365,PAYSANT-LE ROUX,Rémi,Cherbourg-en-Cotentin,Chef de projet,https://linkedin.com/in/remiplr,2008,49.6425343,-1.6249565,Les Maîtres Laitiers du Cotentin
+366,Doumenge,Anne-Sophie,Paris,UX Designer,https://linkedin.com/in/anne-sophie-doumenge,2021,48.8588897,2.320041,Mobsuccess Group
+367,Tardy,Gaelle,Aix-en-Provence,Responsable OmniCanal,https://linkedin.com/in/tardy,2009,43.5298424,5.4474738,JOTT (Just Over The Top)
+368,NARDY ,Emma,Sarzay,Chargée de communication,https://linkedin.com/in/emma-nardy-17058618b,2022,46.603354,1.8883335,RAMPAL LATOUR
+369,Michel,Alexis,Montréal,Stratège médias sociaux,https://linkedin.com/in/alexis-michel-web,2017,45.5031824,-73.5698065,Alexis Michel
+370,IKAUNO,Nicolas,Uvea,Adjoint au Responsable de Centre Technique,https://linkedin.com/in/nicolas-ikauno,2012,-13.2820419,-176.1740224,France Télévisions
+371,Julliand,Nicolas,Nîmes,Gérant Champ social formation et évaluation,https://linkedin.com/in/nicolasjuliand,2011,43.8374249,4.3600687,Champ Social
+372,Zizzo,Laura,La Valette-du-Var,Aucun Poste,https://linkedin.com/in/laura-zizzo-ab655a204,2022,43.1378245,5.9834654,Aucune
+373,Mabille,Laura,Marseille,Fondatrice,https://linkedin.com/in/lauramabille,2014,43.2961743,5.3699525,Laura Mabille
+374,Droz,julie,Toulon,Unity Artist,https://linkedin.com/in/julie-droz-352b58175,2022,43.1257311,5.9304919,Homa
+375,Calloch,Lucas,千代田区,Coordinateur communication,https://linkedin.com/in/lucas-calloch,2022,35.6812546,139.766706,Ambassade de France au Japon
+376,Biancheri,Julien,Antibes,Chargé de communication,https://linkedin.com/in/julien-biancheri-983232217,2023,43.5813878,7.1236966,Limpact
+377,Piron,Clara,Toulon,Assistante communication,https://linkedin.com/in/clara-piron-587b71194,2022,43.1257311,5.9304919,CPAM du Var (Assurance Maladie)
+378,Bonnaud,Marie Laure,Les Pennes-Mirabeau,Independent Trainer in Generative AI & Prompt Engineering,https://linkedin.com/in/mlbonnaud,2018,43.4098822,5.3090324,Increasi Academy
+379,Le Borgne,Guillaume,Toulouse,► Creative Design Leader / Airbus Commercial Aircraft (Marketing/Sales),https://linkedin.com/in/guillaume-le-borgne-2a81148b,2017,43.6044638,1.4442433,Airbus
+380,MARRON,Garance,Montpellier,Community Manager,https://linkedin.com/in/garance-marron-782862170,2023,43.6112422,3.8767337,Cabesto Montagne
+381,Sanquer,Eva,Toulon,Chargée de projets audiovisuels ,https://linkedin.com/in/evasnq,2023,43.1257311,5.9304919,Mise en Boîte Production
+382,Nicolas,Coline,Villefranche-sur-Mer,Accueil,https://linkedin.com/in/coline-nicolas-1b91121a2,2022,43.7042317,7.309969,Fragonard Parfumeur
+383,Lelievre,Kevin,Hyères,Président ,https://linkedin.com/in/kevin-lelievre-83887546,2013,43.1202573,6.1301614,PROTRACEUR
+384,belgacem,Dalel,Toulon,Développeuse web prestashop,https://linkedin.com/in/dalel-belgacem-268a471b4,2016,43.1257311,5.9304919,Trust
+385,SEBAG,Guillaume,,Freelance Marketing Consultant,https://linkedin.com/in/guillaume-sebag,2018,61.0666922,-107.991707,Guillaume SEBAG
+386,Bentrad,Nizar,Marseille,Ibexa Practice Leader,https://linkedin.com/in/nizar-bentrad-41b64326,2013,43.2961743,5.3699525,Almavia CX
+387,Ait Ouarham,Yassine,Saint-Cloud,Gérant,https://linkedin.com/in/yassine-ait-ouarham-33727914b,2007,48.8437412,2.219344,TRAFFIC SERVICES
+388,Gavache,Maël,Sachseln,VR Engineer ,https://linkedin.com/in/mael-gavache,2022,46.7985624,8.2319736,All Here
+389,Janicot,David,Colmar,Freelance - Good Luck Production,https://linkedin.com/in/david-janicot-a008841b3,2020,48.0777517,7.3579641,Good Luck Productions
+390,Ranger,Lucie,Saint-Cyr-sur-Mer,Content Manager,https://linkedin.com/in/lucie-ranger-3a717a1b9,2022,43.1810087,5.711516,DigitecPharma by IntecMedia
+391,Adolphe,Emilie,Fréjus,Assistante de direction,https://linkedin.com/in/emilie-adolphe-494993178,2022,43.4330308,6.7360182,Capfun
+392,Laaraybi,Nina,Paris,Directrice du pôle créateurs de contenu,https://linkedin.com/in/nina-laaraybi-65a852151,2020,48.8588897,2.320041,Marmeladz
+393,Madjri,Florian,Paris,Directeur artistique,https://linkedin.com/in/florian-madjri-152b46172,2020,48.8588897,2.320041,Publicis Groupe
+394,Bourdelais,Aurelien,Paris,Head of UX — VML France,https://linkedin.com/in/aurelienbourdelais,2007,48.8588897,2.320041,VML
+395,Lemort Bastiani,Quentin,Sarzay,Growth Marketing Inbound Paid B2C,https://linkedin.com/in/quentin-lemort-bastiani-a23797155,2022,46.603354,1.8883335,Lokki
+396,Casimiri,Sarah,Toulon,Chargée de développement,https://linkedin.com/in/sarah-casimiri-7384451a4,2022,43.1257311,5.9304919,Entreprise et Découverte
+397,Margas,Louise,Aix-en-Provence,Conseillère en stratégie digitale et entrepreneuriat,https://linkedin.com/in/louise-margas,2022,43.5298424,5.4474738,LiveMentor
+398,Farenc,Léa,Marseille,Social Media Manager,https://linkedin.com/in/lea-farenc-39a389199,2022,43.2961743,5.3699525,Madygood
+399,Carteyrade,Alice,Paris,Digital Communication Officer – Concours Général Agricole / Paris International Agricultural Show,https://linkedin.com/in/alice-carteyrade,2021,48.8588897,2.320041,Comexposium
+400,Moussaoui ,Atif,Paris,Product Owner,https://linkedin.com/in/atif-moussaoui-consultant-amoa,2013,48.8588897,2.320041,Orange
+401,MICHEL 🎥,Teddy,Toulon,Vidéaste - Cadreur/Monteur,https://linkedin.com/in/teddy-michel-🎥-6761b017b,2022,43.1257311,5.9304919,Icademie International
+402,Carles,Ludovic,Cannes,Graphiste,https://linkedin.com/in/ludoviccarles,2022,43.5515198,7.0134418,Smart Good Things
+403,ABOU-WAKIL,BOUKIL,Bagnols-sur-Cèze,Vendeur Produits Techniques,https://linkedin.com/in/boukil-abou-wakil-918a48150,2020,44.160481,4.6235831,Fnac
+404,FRELIGER,Alexandre,Nice,Head of Communication,https://linkedin.com/in/alexandrefreliger,2006,43.7009358,7.2683912,Ekoï
+405,Granes,Naomi,Le Thor,graphic designer,https://linkedin.com/in/naomi-granes-b650761a3,2023,43.928823,4.9945784,ALL4GREEN
+406,LUPIN,Betty,Toulon,Motion Design Project Manager,https://linkedin.com/in/betty-lupin,2023,43.1257311,5.9304919,COMMLAB Marine nationale
+407,JAMALI,Yasmine,Lyon,SharePoint Online and Power Platform Developer,https://linkedin.com/in/yasmine-jamali-75a441155,2022,45.7578137,4.8320114,Orange Business
+408,Bailly,Flavie,Paris,Community & Content Manager,https://linkedin.com/in/flavie-bailly-72094818a,2024,48.8588897,2.320041,Smart Duck
+409,Pauillac,Camille,Saint-Mandé,Community Experience Manager,https://linkedin.com/in/camillepauillac,2010,48.8432434,2.4159739,Ubisoft
+410,Henicher,Lucas,Paris,Créateur de contenu,https://linkedin.com/in/lucas-henicher-991458177,2022,48.8588897,2.320041,Aucune
+411,Souque,Jérémie,Sarzay,CEO - Founder,https://linkedin.com/in/jérémie-souque,2022,46.603354,1.8883335,Irysa
+412,VINCENT,Lucas,Toulon,Consultant SEO,https://linkedin.com/in/lucasvincent-fr,2023,43.1257311,5.9304919,Lucas Vincent - www.lucasvincent.fr
+413,Maurel,Morgane,Toulon,Chargé des relations clientèle,https://linkedin.com/in/morgane-maurel-8010abb5,2016,43.1257311,5.9304919,FUNÉUP
+414,Seranne,Nicolas,Lyon,"Co-fondateur, Formateur, Prestataire & Conseiller formation",https://linkedin.com/in/nicolas-seranne,2014,45.7578137,4.8320114,Startivia
+415,Enjolras,Laura,Villeurbanne,Ingénieur d’études,https://linkedin.com/in/laura-enjolras-806763157,2022,45.7733573,4.8868454,Micropole
+416,Godart,Audrey,Avignon,Fondatrice – Badhaus Production | Agent & productrice artistique,https://linkedin.com/in/audrey-godart,2013,43.9492493,4.8059012,BADHAUS Production
+417,Pasbecq,Florentine,Valenciennes,UX/UI designer,https://linkedin.com/in/florentine-pasbecq-5a892a187,2022,50.3579317,3.5234846,Agence web Microproxy
+418,Adaoust,Maxime,Nantes,Product Director Cegid Wittyfit,https://linkedin.com/in/maximeadaoust,2011,47.2186371,-1.5541362,Cegid
+419,LACAILLE,Fabian,Nice,Infographiste 3D,https://linkedin.com/in/fabian-lacaille,2022,43.7009358,7.2683912,Aucune
+420,BOBO-EDAH,Sèvy,Toulon,Référent de projets et numérique,https://linkedin.com/in/sèvyboboedah,2022,43.1257311,5.9304919,FACE VAR
+421,Ughetto,Anthony,Marseille,Graphiste - Motion Designer,https://linkedin.com/in/antough,2020,43.2961743,5.3699525,Région Sud - Provence-Alpes-Côte d'Azur
+422,Jourdon,Thibaud,Toulon,Fondateur,https://linkedin.com/in/thibaud-jourdon-b28213175,2022,43.1257311,5.9304919,Le Petit Cuistot
+423,OSSARD,Mégann,Toulon,Assistante de communication,https://linkedin.com/in/mégann-o-849b8b188,2022,43.1257311,5.9304919,CPAM du Var (Assurance Maladie)
+424,Gomes,Lucia,Toulon,Auto-entrepreneuse en communication,https://linkedin.com/in/lucia-gomes8,2021,43.1257311,5.9304919,Lucia Gomes
+425,Valery,Marie,La Garde,Travailleur indépendant,https://linkedin.com/in/marie-valery-3b5017174,2022,43.8301121,6.5572147,Aucune
+426,Moueza,Shaïla,,Content Moderator,https://linkedin.com/in/shaïla-moueza-390169195,2021,61.0666922,-107.991707,TP
+427,Nolot,Lauriane,Camps-la-Source,Sportive de haut niveau Kitefoil,https://linkedin.com/in/lauriane-nolot-30b199134,2021,43.3851189,6.0957509,Fédération Française de Voile
+428,Allons,Fanny,Cuers,Chargée de Communication Digitale,https://linkedin.com/in/fanny-allons-6028a2156,2021,43.2372099,6.072772,RACINE SAP
+429,Nieuwenhuysen,Theo,Paris,Product Data Analyst,https://linkedin.com/in/theo-nieuwenhuysen,2022,48.8588897,2.320041,Leboncoin.fr
+430,"Ordner, SSM",Luc,Vancouver,Senior Digital Project Manager,https://linkedin.com/in/luc-ordner-6a8440107,2015,49.2608724,-123.113952,tms
+431,Harcourt,Lucas,La Valette-du-Var,Agent d’inventaire,https://linkedin.com/in/lucas-harcourt-8b95701b1,2020,43.1378245,5.9834654,DG INVENTAIRES
+432,Chevalier,Jean-Pierre,Lyon,Chef de Projet CRM,https://linkedin.com/in/jpchevalier,2009,45.7578137,4.8320114,Eudonet
+433,ANLI CHEIK,Meïmouna,Sada,"Chargée de mission Information, Communication, Documentation",https://linkedin.com/in/meïmouna-communication-digitale-web-marketing,2022,-12.8518289,45.0993169,Maoré Ouvoimoja | Centre de Ressources Politique de la Ville
+434,Husson,Lionel,Toulon,Product Owner Digital,https://linkedin.com/in/lionel-husson-98a00477,2001,43.1257311,5.9304919,AGPM
+435,HAMDI,Myriam,Aix-en-Provence,Cheffe de projet marketing opérationnel,https://linkedin.com/in/myriam-hamdi,2022,43.5298424,5.4474738,Oz Marketing Solutions
+436,CEBERIO,Chloé,Sarzay,Directrice des opérations,https://linkedin.com/in/chloé-ceberio-2b2936100,2020,46.603354,1.8883335,Digitalised
+437,Exposito,Kelly,Toulon,Infographiste Designer Multimédia,https://linkedin.com/in/kelly-exposito-137910197,2023,43.1257311,5.9304919,Marine Nationale
+438,Duhamel,Maxime,Rouen,Chef de projet ERP / AMOA - Projets Informatiques,https://linkedin.com/in/maxime-duhamel-98225787,2013,49.4404591,1.0939658,Ouest Isol & Ventil
+439,Nonon,Erwan,Charleville-Mézières,Co-fondateur,https://linkedin.com/in/erwan-nonon,2022,49.7735712,4.7206939,Art de la lame
+440,LEGRAIN,Olivier,Le Pradet,Associé gérant,https://linkedin.com/in/olivier-legrain-615704bb,2011,43.1037608,6.0223774,Restaurant La Voile
+441,ZEMNI,Habib,Paris,Tracking & CDP Senior Consultant ,https://linkedin.com/in/habibzemni,2020,48.8588897,2.320041,Equancy | Groupe EDG
+442,Pons,Fiona,Paris,Web Analyst,https://linkedin.com/in/fiona-pons,2022,48.8588897,2.320041,Quitoque
+443,Desiles,Yoann,Sarzay,UI/Graphic Designer,https://linkedin.com/in/yoann-desiles,2019,46.603354,1.8883335,Cellublue
+444,Vastra,Yoann,Istres,Chargé de communication ,https://linkedin.com/in/yoann-vastra,2008,43.5139051,4.9884323,Ville de Fos-sur-Mer
+445,Jouanne,Sacha,Monaco,Journaliste Reporter d'Images,https://linkedin.com/in/sacha-jouanne-a0a683136,2022,43.7323492,7.4276832,TVMonaco
+446,Gastou,Marie,Avignon,CMO ( chief marketing officer ) ,https://linkedin.com/in/marie-gastou-850578193,2022,43.9492493,4.8059012,Lium
+447,Mollard,Erwan,Montréal,"Senior Product Manager, Growth",https://linkedin.com/in/erwanmollard,2011,45.5031824,-73.5698065,Talent.com
+448,Sarrette,Lili,Toulon,Graphiste / Photographe,https://linkedin.com/in/lili-sarrette-490565193,2021,43.1257311,5.9304919,fancybijoux
+449,PANZA,Stéphane,Toulon,Chargé de communication (PAO / Vidéaste / Intégrateur Web / Graphiste print),https://linkedin.com/in/stephane-panza,2016,43.1257311,5.9304919,OTIADA
+450,Chaari,Farah,Sarzay,Lead Analytics Consultant,https://linkedin.com/in/farah-chaari-839a91159,2021,46.603354,1.8883335,Piano
+451,BATAILLY,Laurine,Sarzay,Cheffe de projet Web,https://linkedin.com/in/laurine-batailly,2023,46.603354,1.8883335,digiSchool group
+452,Guerder,Quentin,Caen,UX/UI Designer,https://linkedin.com/in/quentin-guerder-14000,2022,49.1813403,-0.3635615,FITECO
+453,Jourdan,Philippe,Luxembourg,Student @Alyra ,https://linkedin.com/in/jourdanphilippe,2013,49.5999681,6.1342493,"Alyra, l'école blockchain & IA"
+454,Donadio,Oriane,Aix-en-Provence,UI/UX Designer for Atos (SICS),https://linkedin.com/in/oriane-donadio-b1b456109,2021,43.5298424,5.4474738,Human design Group
+455,Vasvija,Kadiric,Geislingen an der Steige,Aucun Poste,https://linkedin.com/in/kadiric-vasvija-257a621b1,2018,48.6218033,9.8372796,Aucune
+456,SAHBI,Idriss,Paris,Chargé de communication digitale,https://linkedin.com/in/idriss-sahbi-1563ab69,2011,48.8588897,2.320041,Omicrone
+457,Odasso,Léa,Toulon,Chargée de mission marketing,https://linkedin.com/in/lea-odasso,2021,43.1257311,5.9304919,Edgard & Cooper  | B Corp
+458,Ratsi,Christophe,Montréal,Conseiller communication et marketing numérique,https://linkedin.com/in/christophe-ratsi,2014,45.5031824,-73.5698065,Université de Montréal
+459,Croquet,Camille,Grenoble,Développeuse web full-stack,https://linkedin.com/in/camille-croquet,2016,45.1875602,5.7357819,WIZBII
+460,TROCQ,Yoann,Toulon,Producer of Institutional and Advertising films,https://linkedin.com/in/yoann-trocq-9b3429ab,2019,43.1257311,5.9304919,"YTProd - Société de production vidéo, photo et télépilote de drone"
+461,RIOU,Adèle,Valence,Référente Enfance et Périscolaire,https://linkedin.com/in/adèle-riou,2021,44.9332277,4.8920811,Numérian
+462,Ganfoud,Aymen,Sarzay,Product designer,https://linkedin.com/in/aymenganfoud,2011,46.603354,1.8883335,ADIE
+463,Chessa,Loris,Sarzay,Co-founder - Executive & Product Lead,https://linkedin.com/in/loris-chessa-a7b549171,2021,46.603354,1.8883335,Polarity Labs
+464,M.,Alexandre,Besançon,"Project Manager, EV Charger product",https://linkedin.com/in/alexandremarx,2007,47.2380222,6.0243622,Voqa
+465,Ondet,Quentin,Toulon,Développeur web,https://linkedin.com/in/quentinondet,2016,43.1257311,5.9304919,Akkodis
+466,Bitard ☀️,Marius,Paris,Consultant SEO Senior,https://linkedin.com/in/marius-bitard-☀️-b71714198,2022,48.8588897,2.320041,Primelis
+467,Calleya,Julie,Toulon,Assistante d'exploitation audiovisuelle,https://linkedin.com/in/julie-calleya-5b616113a,2017,43.1257311,5.9304919,Atlantis Télévision
+468,Le Blanc,Quentin,Toulon,Créateur de contenu - Photographe / Vidéaste,https://linkedin.com/in/quentin-leblanc,2021,43.1257311,5.9304919,RUSH CLUB
+469,Toppi,Alexandre,Nice,Assistant manager,https://linkedin.com/in/alexandre-toppi,2009,43.7009358,7.2683912,Jlb Création
+470,Chapput,Guillyan,Bordeaux,Analytics Consultant,https://linkedin.com/in/guillyan-chapput-aa564a109,2020,44.841225,-0.5800364,Yuri & Neil
+471,Plante,Adrien,Montreuil,Directeur artistique,https://linkedin.com/in/adrien-plante,2010,48.8623357,2.4412184,CASIMEX SAS
+472,Minost,Christophe,Paris,Experience Design Team Leader,https://linkedin.com/in/christopheminost,2009,48.8588897,2.320041,Sage
+473,Saule,Margaux,Toulon,Assistante communication,https://linkedin.com/in/margaux-saule-668b19108,2019,43.1257311,5.9304919,Odalia | Prévention et Santé au Travail 🩺🦺
+474,FADLI,Nour,Marseille,Operations manager,https://linkedin.com/in/nour-fadli,2019,43.2961743,5.3699525,Entreprise Nouira
+475,Valgalier,Noémie,Sarzay,Digital Marketing Manager,https://linkedin.com/in/noémie-valgalier,2021,46.603354,1.8883335,HomniCity
+476,Perez,Anne,Arles,Réceptionniste-concierge,https://linkedin.com/in/anne-perez-809678aa,2014,43.6776223,4.6309653,Les Maisons d'Arles
+477,Guiol,Manon,Sarzay,Brand Content Strategist & Creative Producer Freelance,https://linkedin.com/in/manonguiol,2013,46.603354,1.8883335,Aucune
+478,FLOC'H,Adeline,Rennes,Assistante polyvalente,https://linkedin.com/in/adeline-floc-h-27688b1ab,2019,48.1113387,-1.6800198,Cercle Paul Bert
+479,Agarrado Estupiña,Jorge,Barcelona,Aucun Poste,https://linkedin.com/in/jorge-agarrado-estupiña-153b36154,2020,41.3825802,2.177073,Aucune
+480,Genty,Arnaud,Lyon,Lead UX & UI Design | CEO & Founder,https://linkedin.com/in/arnaudgenty,2007,45.7578137,4.8320114,Stash
+481,lesa,marie,Lyon,Aucun Poste,https://linkedin.com/in/marie-lesa-3936b717a,2025,45.7578137,4.8320114,Aucune
+482,Abdrabba,Mohamed khalil,Toulon,Gerant,https://linkedin.com/in/mohamed-khalil-abdrabba-424b94146,2007,43.1257311,5.9304919,World cadeaux
+483,Karimi,Omar,Aouint Yghomane عوينة يغمان,Aucun Poste,https://linkedin.com/in/omar-karimi-75a263175,2018,28.3347722,-10.3713379,Aucune
+484,Frontin,Laura,Buis-les-Baronnies,Chargée de communication,https://linkedin.com/in/laura-frontin-50b300172,2021,44.2767853,5.2747917,LA VIE SAUVAGE
+485,Acquaviva,Bruno,Paris,Directeur Agence Paris,https://linkedin.com/in/brunoacquaviva,2008,48.8588897,2.320041,ACSEO
+486,BAHO,Wassila,Marseille,Responsable Tender Office,https://linkedin.com/in/wassila-baho-1239421b0,2018,43.2961743,5.3699525,Gi Group Holding
+487,BAKO,Ousmane,Toulon,Coordinateur pédagogique,https://linkedin.com/in/ousmane-bako-16567745,2006,43.1257311,5.9304919,Icademie International
+488,Habault,Antonin,Toulon,Communication Manager,https://linkedin.com/in/antoninhabault,2023,43.1257311,5.9304919,Littoral Sport Academy [Officiel]
+489,Lamberet,Jessica,Épinal,Conseillère de livraison ,https://linkedin.com/in/jessica-lamberet,2011,48.1747684,6.4503643,Groupe JMJ
+490,AVOINET,David,Esvres,Chargé de Terrain,https://linkedin.com/in/david-avoinet-132923154,2010,47.2845819,0.7861713,Smice
+491,LERICHE,Alexandre,Marignane,Responsable communications,https://linkedin.com/in/alexandre-leriche-0277215a,2012,43.4162193,5.2145269,ODEL Evasion
+492,Kessal,Yassine,Paris,Senior MarTech Consultant / Software Engineer,https://linkedin.com/in/yassine-kessal,2021,48.8588897,2.320041,LineUP7
+493,Fragu,Kilian,Toulon,Co-fondateur,https://linkedin.com/in/kilian-fragu-01813711b,2012,43.1257311,5.9304919,The Birdies
+494,IPERTY,Vaitea,Marseille,Chef d'entreprise,https://linkedin.com/in/vaitea-iperty-95213b146,2010,43.2961743,5.3699525,La Web Rédactrice
+495,Mazin,Thibault,Aix-en-Provence,Chef de Projet Marketing Digital,https://linkedin.com/in/thibault-mazin-97601484,2017,43.5298424,5.4474738,HighCo DATA France
+496,Cavercorort,Arckantos,,Aucun Poste,https://linkedin.com/in/arckantos-cavercorort-773603166,2019,20.3333331,-103.6666671,Aucune
+497,Blanc,Julien,Marseille,Responsable SEO,https://linkedin.com/in/julien-blanc-jlnblnc,2013,43.2961743,5.3699525,Ekstend Consulting
+498,Thiam,Abdou Aziz,Sarzay,Digital strategy manager,https://linkedin.com/in/abdou-aziz-thiam-aa1b1814b,2019,46.603354,1.8883335,DIGITA SKILLS
+499,Carette,Valentine,Sarzay,Attachée marketing & communication,https://linkedin.com/in/valentine-carette,2022,46.603354,1.8883335,BENE INOX
+500,Benyahia,Mebrouk,Paris,Chef de projet,https://linkedin.com/in/mebrouk,2017,48.8588897,2.320041,CGI
+501,Joucla,Hugo,Marseille,Infographiste,https://linkedin.com/in/hugo-joucla,2022,43.2961743,5.3699525,Département des Bouches-du-Rhône
+502,lamp,Brian,,Aucun Poste,https://linkedin.com/in/brian-lamp-237884153,2012,-27.7758659,-67.171292,Aucune
+503,M.,Marie_A,Paris,Head Hunter,https://linkedin.com/in/marie-a-m-696580149,2014,48.8588897,2.320041,Independant
+504,B.,Lila,Ollioules,Secrétaire,https://linkedin.com/in/lila-b-337a251a9,2019,43.1397205,5.8483538,Résidence l'Age d'Or
+505,Scholly,🍀 François,La Ciotat,CTO,https://linkedin.com/in/françois-scholly,2008,43.1758591,5.6062495,DEFIT
+506,Chenbah,Yassin,Paris,UX Designer,https://linkedin.com/in/yassin-chenbah,2019,48.8588897,2.320041,Almavia CX
+507,Serrano,Marie,Toulouse,Chargée de communication,https://linkedin.com/in/rimastronaute,2022,43.6044638,1.4442433,BYG4lab France
+508,Di Palma,Jessica,Perpignan,Responsable administratif,https://linkedin.com/in/jessica-di-palma-a95173109,2008,42.6985304,2.8953121,Foster Academy
+509,Auvray,Arnaud,Bègles,Responsable technique,https://linkedin.com/in/arnaudauvray,2011,44.8074559,-0.5488542,Mediatech-Streamlike
+510,Escoriza,Matthieu,Toulon,Collaborateur au Cabinet du Président,https://linkedin.com/in/escoriza,2008,43.1257311,5.9304919,Toulon Provence Méditerranée
+511,Lachesnaye,Emmanuel,Six-Fours-les-Plages,Développeur web React JS,https://linkedin.com/in/emmanuel-lachesnaye-a92051146,2017,43.0935105,5.8393953,Nonli
+512,Boscher,Guillaume,Littleborough,Backend developer,https://linkedin.com/in/guillaumeboscher,2012,53.6410537,-2.0914019,Podcast.co
+513,kiruchkine,philippe,Limoges,Aucun Poste,https://linkedin.com/in/philippe-kiruchkine-7546a032,2018,45.8354243,1.2644847,Aucune
+514,Pérou,Timothy,Aix-en-Provence,Directeur des systèmes d'information,https://linkedin.com/in/timothyperou,2012,43.5298424,5.4474738,Groupe Hevea
+515,gonzalez gomez,tatianna,Santo Domingo de la Capilla,Aucun Poste,https://linkedin.com/in/tatianna-gonzalez-gomez-810549141,2018,-6.25,-78.833333,Aucune
+516,galli,gigi,Roma,Aucun Poste,https://linkedin.com/in/gigi-galli-2a866b134,2023,41.8933203,12.4829321,Aucune
+517,Breand,Morgane,Marseille,Aucun Poste,https://linkedin.com/in/morgane-breand-070239112,2017,43.2961743,5.3699525,Aucune
+518,Alioui,Sonia,Les Pennes-Mirabeau,Testeur QA logiciels Agile,https://linkedin.com/in/1837022a,2012,43.4098822,5.3090324,SOFTWAY MEDICAL
+519,Bouyer,Anne-Lise,Sarzay,Product Manager,https://linkedin.com/in/anne-lise-bouyer,2010,46.603354,1.8883335,Aucune
+520,Ben Amor,Anouar,Lyon,Président co-fondateur,https://linkedin.com/in/anouar-ben-amor-b780ab31,2012,45.7578137,4.8320114,Bongoo Café
+521,Palmeirao,Sergio,São Paulo,Email Marketing & Deliverability Expert | CRM & Automation Strategist | Founder at SmartSol,https://linkedin.com/in/sergio-palmeirao-2ba51a26,2009,-23.5506507,-46.6333824,SmartSol
+522,Vanier,Olivier,Toulon,Innovation & AI - Project Manager,https://linkedin.com/in/oliviervanier,2008,43.1257311,5.9304919,CHANEL
+523,Henry,Marine,Paris,Ingénieur étude AO,https://linkedin.com/in/marine-henry,2005,48.8588897,2.320041,SOFTEAM
+524,Isidore,Florent,Marseille,Founder,https://linkedin.com/in/florentisidore,2013,43.2961743,5.3699525,Tilipix
+525,MAHAMDI,Mehdi,Carouge,Business Development Manager,https://linkedin.com/in/mehdi-mahamdi,2007,46.1846691,6.1396839,EPAM Systems
+526,Alves,Sébastien,Paris,Features & Services Activation Manager / SFCC,https://linkedin.com/in/sebastienalves,2009,48.8588897,2.320041,Parfums Christian Dior
+527,FRANCHUM,Thomas,Paris,Equipier Polyvalent,https://linkedin.com/in/thomas-franchum-8708625a,2013,48.8588897,2.320041,Sushi Shop
+528,Colomba,Valentin,Brignoles,Réalisateur - Monteur - Motion designer,https://linkedin.com/in/valentin-colomba-913275b3,2014,43.4064401,6.0616452,COLOMBA VALENTIN
+529,Gasbayet,Julien,Clermont-Ferrand,Conception et développement web,https://linkedin.com/in/juliengasbayet,2015,45.7774551,3.0819427,Aucune
+530,Doki-Thonon,Matthieu,Mougins,Lead front-end developper,https://linkedin.com/in/matthieu-doki-thonon,2009,43.6008898,6.9963543,Alcmeon
+531,Perronet,Martin,Marseille,Assistant marketing,https://linkedin.com/in/martin-perronet-40590531,2014,43.2961743,5.3699525,Biocentric - A Bruker Company
+532,PATEJ,Mathieu,Toulon,Chef de projet Digital,https://linkedin.com/in/mathieupatej,2019,43.1257311,5.9304919,Novactive - filiale du Groupe Nextedia
+533,Brunet,Benjamin,Paris,IBC - Head of Retail & Media Performance ,https://linkedin.com/in/benjaminbrunet,2011,48.8588897,2.320041,Danone
+534,D.,Arnaud,Montpellier,Tech lead / expert IT,https://linkedin.com/in/arnaud-d-5b933597,2014,43.6112422,3.8767337,Crédit Agricole Technologies et Services
+535,Amsellem,Aude,Bandol,Présidente,https://linkedin.com/in/aude-amsellem-88721717,2008,43.1357717,5.7523647,Time Break®
+536,Cipiripi,Cipiripi,Доње Комарице,Aucun Poste,https://linkedin.com/in/cipiripi-cipiripi-17a8b7144,2015,44.0243229,21.0765743,Aucune
+537,Delré,Guillaume,Rocbaron,Technical Lead / Symfony Senior Developer,https://linkedin.com/in/guillaumedelre,2008,43.3040144,6.0910097,France Medias Monde
+538,De la torre,Laura,Barcelona,Aucun Poste,https://linkedin.com/in/laura-de-la-torre-48b667145,2020,41.3825802,2.177073,Aucune
+539,Hamanda,Farra,City of Westminster,General Manager,https://linkedin.com/in/farra-hamanda-75742558,2013,51.5074456,-0.1277653,Mouse Tail Coffee
+540,Gassin,Laura,Montpellier,Art Director,https://linkedin.com/in/lauragassin,2012,43.6112422,3.8767337,Axeptio
+541,Rampillon,Soline,Toulouse,PO Obsolescence et Sobriété Numérique,https://linkedin.com/in/solinerampillon,2010,43.6044638,1.4442433,Centre National d'Études Spatiales
+542,Turquay,Stéphane,Zürich,Principal Product Manager - Web Core Product & Monetization,https://linkedin.com/in/stephaneturquay,2013,47.3744489,8.5410422,Smallpdf
+543,Bonache,Jennifer,Toulon,Conseiller commercial des particuliers,https://linkedin.com/in/jennifer-bonache-31221718,2012,43.1257311,5.9304919,Crédit Agricole Provence Côte d'Azur
+544,JOUAT,Nathalie,Sarzay,Responsable communications,https://linkedin.com/in/nathalie-jouat-9875a929,2007,46.603354,1.8883335,La Roque Saint Christophe
+545,Bollache,Sébastien,Massy,Directeur de Projet Senior | Release Train Engineer | Lead IA/Delivery,https://linkedin.com/in/sebastienbollache,2009,48.730158,2.2766735,OPEN
+546,Abraldes,Rafael,Paris,Chef de Projet : Responsable Emailing / Gestion BDD Canal Mail,https://linkedin.com/in/rafael-abraldes-5078b417,2009,48.8588897,2.320041,Canal Mail
+547,David,Benjamin,Grenoble,Owner,https://linkedin.com/in/benjamindavid,2008,45.1875602,5.7357819,Dukt
+548,Grias,Murielle,Nantes,Professeur des écoles,https://linkedin.com/in/murielle-grias-00221745,2008,47.2186371,-1.5541362,Cloud Consulting
+549,Thouron,Clément,Paris,SEO Manager,https://linkedin.com/in/clement-thouron,2009,48.8588897,2.320041,Doctrine
+550,Matmati,Amine,Melbourne,Staff Technical Program Manager,https://linkedin.com/in/aminematmati,2012,-37.9645582,145.2488822,Canva
+551,Secco,Romain,Toulon,"Senior Product Designer, Wero",https://linkedin.com/in/romainsecco,2007,43.1257311,5.9304919,EPI Company
+552,Libbrecht,Florent,Troyes,Responsable du parcours en alternance Développement Web du BUT MMI,https://linkedin.com/in/florent-l-44571718,2010,48.2971626,4.0746257,IUT de Troyes
+553,AOURIK,Abdeslam,Lyon,"Dirigeant fondateur, Digitz, Digital Outsourcing Agency",https://linkedin.com/in/abdeslamaourik,2008,45.7578137,4.8320114,Digitz
+554,Mansour,Hatem,Lille,Développeur Full Stack - Freelance,https://linkedin.com/in/hatem-mansour-24732518,2012,50.6365654,3.0635282,ADEO
+555,Lebeux,François,Noyal-sur-Vilaine,Software Engineer,https://linkedin.com/in/francoislebeux,2011,48.1140789,-1.5234735,iAdvize
+556,Fougeret,Amandine,Paris,Product Manager,https://linkedin.com/in/amandinefougeret,2009,48.8588897,2.320041,Maisons du Monde
+557,libap,hiba,Aouint Yghomane عوينة يغمان,Aucun Poste,https://linkedin.com/in/hiba-libap-3038b499,2020,28.3347722,-10.3713379,Aucune
+558,Piekło,Magdalena,Wrocław,Executive  |  Mindset  |  Team  |  Coaching  |  PCC ICF   |  Agile Mindset,https://linkedin.com/in/magdalena-pieklo,2007,51.1263106,16.9781963,Magdalena Piekło
+559,G.,Julia,Rambouillet,Chef de projet B2B et PIM,https://linkedin.com/in/roollia,2009,48.6452851,1.819207,Korben - Groupe Beaumanoir
+560,TISON,Paul,Toulon,Product Designer,https://linkedin.com/in/paul-tison-1790a3136,2009,43.1257311,5.9304919,Egerie
+561,C.,Achraf,Paris,Technical manager,https://linkedin.com/in/achrafchouk,2010,48.8588897,2.320041,Groupe Barrière
+562,Gautier,Martin,Mirabeau,Co-fondateur,https://linkedin.com/in/martin-gautier-68863330,2012,44.0580563,6.0638506,Agence de communication Loupiote
+563,De la casa,Jeremy,Sarzay,Senior Front-end developer ,https://linkedin.com/in/jeremydelacasa,2013,46.603354,1.8883335,Powder
+564,CELERIER,Laurent,Aix-en-Provence,Freelance Data Analyst,https://linkedin.com/in/laurent-celerier-694515136,2008,43.5298424,5.4474738,Aucune
+565,Bey,Allison,Bordeaux,Chef de projet & Responsable consumer care,https://linkedin.com/in/allisonbey,2015,44.841225,-0.5800364,Synchronized
+566,Arias meza,Daniela castillo,Hualqui,Aucun Poste,https://linkedin.com/in/daniela-castillo-arias-meza-681530142,2023,-36.9468566,-72.9338362,Aucune
+567,Amri,Walid,Reims,etudiant,https://linkedin.com/in/walid-amri-3a069813,2010,49.2577886,4.031926,ingémedia
+568,sarritzu,susanna,Casteddu/Cagliari,Aucun Poste,https://linkedin.com/in/susanna-sarritzu-a37b0950,2002,39.2171994,9.113311,Aucune
+569,Blanc,Rémi,Paris,Co-founder & Creative Director,https://linkedin.com/in/remiblanc,2009,48.8588897,2.320041,Potofu Studio
+570,LEGRAIN,Olivier,Marseille,Auto-entrepreneur dans l'événementiel,https://linkedin.com/in/olivier-legrain-5972aa25,2011,43.2961743,5.3699525,Olivier LEGRAIN
+571,Schneeberger,Bruno,Grenoble,Directeur Technique / CTO,https://linkedin.com/in/bruno-schneeberger-b0ab6616,2009,45.1875602,5.7357819,Made In Design
+572,Juillot,Franck,Le Creusot,Dirigeant d’entreprise,https://linkedin.com/in/franckjuillot,2010,46.8054064,4.4285961,DEIKO
+573,haddad,souad,Marseille,Aucun Poste,https://linkedin.com/in/souad-haddad-90031123,2011,43.2961743,5.3699525,Aucune
+574,Brunel,Manon,Marseille,Auto-entrepreneur,https://linkedin.com/in/manon-brunel-52697642,2012,43.2961743,5.3699525,Moon Waza Yo
+575,Amri,Walid,Paris,Développeur Symfony / React Js,https://linkedin.com/in/walid-amri-17baa833,2010,48.8588897,2.320041,Stime DSI Groupement Les Mousquetaires
+576,BRUNEL,Dimitri,Paris,SEO & GEO Manager,https://linkedin.com/in/seoconsultantdimitribrunel,2006,48.8588897,2.320041,Oscaro
+577,Doireau,Gary,Montréal,Directeur marketing,https://linkedin.com/in/doireaugary,2011,45.5031824,-73.5698065,Incube8 Games
+578,Rahal,Maya,ضهر الحرف,Country Director,https://linkedin.com/in/rahalmaya,2007,33.8750629,35.843409,Alfanar Venture Philanthropy
+579,CHIBANI,Mehdi,Lille,Pilote technique / Administrateur systèmes & réseaux,https://linkedin.com/in/chibani-mehdi,2017,50.6365654,3.0635282,Blancheporte
+580,Khezami,Safa,Lyon,Responsable projets et R&D,https://linkedin.com/in/safa-khezami,2016,45.7578137,4.8320114,Cabrilog
+581,Mohamed Amine,Gharbi,Marseille,Aucun Poste,https://linkedin.com/in/gharbi-mohamed-amine-53b8a218,2011,43.2961743,5.3699525,Aucune
+582,Lamine,Amine,Paris,Senior Product Designer & AI Explorer ,https://linkedin.com/in/lamineamine,2010,48.8588897,2.320041,Niji
+583,Manné,Nicolas,Toulon,Directeur de production,https://linkedin.com/in/nicolasmanne,2013,43.1257311,5.9304919,La Mama Studio
+584,WINTREBERT,Virginie,Sarzay,Head Of Production,https://linkedin.com/in/virginie-wintrebert-b0671b58,2007,46.603354,1.8883335,The Yard VFX
+585,Farhani,Hafedh,,Strategy Supervisor,https://linkedin.com/in/hafedh-farhani-a55b7922,2010,61.0666922,-107.991707,PHD
+586,Revol,Claudine,Gaillac,Traiteur pour groupes / Crêperie bio sur événements,https://linkedin.com/in/claudinerevol,2007,43.9016766,1.8967943,La Crépite
+587,Gelebart,Frederic,La Garnache,Expert média Digital senior chez Renault,https://linkedin.com/in/fgelebart,2008,46.891487,-1.8297437,Aditiks
+588,Citron,Josselin,Colombes,Chief Operating Officer,https://linkedin.com/in/citronj,2008,48.9227298,2.2543631,omyn
+589,Argentier,Alexandre,Nyon,eCommerce Tech Lead | Full Stack developer,https://linkedin.com/in/alexandreargentier,2009,46.3820585,6.2402791,Hublot
+590,couet,marc,Six-Fours-les-Plages,assistant video production editing,https://linkedin.com/in/marc-couet-7a2ab2110,2016,43.0935105,5.8393953,ViacomCBS Networks International
+591,Ghera,Jérôme,Toulon,Graphiste,https://linkedin.com/in/jeromeghera,2014,43.1257311,5.9304919,Aupa | Agence d'urbanisme Pays d'Aix - Durance
+592,Lupion,Yann,Paris,Senior UX Designer,https://linkedin.com/in/lupion,2005,48.8588897,2.320041,CHANEL
+593,GERMAN,Thomas,Nice,Product Owner,https://linkedin.com/in/germanthomas,2012,43.7009358,7.2683912,Caisses Sociales de Monaco
+594,Maisons,Daniel,Toulon,consultant,https://linkedin.com/in/daniel-maisons-575a8b65,1985,43.1257311,5.9304919,UNSS ACADEMIE de NICE
+595,FREY,Guillaume,Mulhouse,Chef de projet E-Commerce,https://linkedin.com/in/freyguillaume,2005,47.7467233,7.3389937,Ukoo
+596,Jamnik,Nadia,Paris,Aucun Poste,https://linkedin.com/in/nadia-jamnik-13b9207,2009,48.8588897,2.320041,Aucune
+597,Montignon,Marthe,Paris,Chargée de communication événementielle ,https://linkedin.com/in/marthemontignon,2015,48.8588897,2.320041,Indosuez Wealth Management
+598,Liénard,Jérémie,Paris,IT Specialist,https://linkedin.com/in/jeremielienard,2008,48.8588897,2.320041,Ambassade de France en Colombie
+599,T.,Camille,Laval,Cheffe de projet marketing digital,https://linkedin.com/in/camilletrihan,2015,48.0706687,-0.7734022,Groupe DIS
+600,Gandillon,Sylvain,Lyon,Project Manager,https://linkedin.com/in/sylvain-gandillon-17b1203,2006,45.7578137,4.8320114,Webcastor
+601,VIAL,Thomas,Paris,"Director, Software Engineering - Smart Watches (LVMH)",https://linkedin.com/in/tvial,2005,48.8588897,2.320041,TAG Heuer
+602,Tonnerre,Maxime,Paris,Lead Design System,https://linkedin.com/in/maximetonnerre,2011,48.8588897,2.320041,Orange
+603,Abel,Guillaume,Paris,User Experience Lead,https://linkedin.com/in/guillaumeabel,2004,48.8588897,2.320041,ADP
+604,Cunche,François,Sarzay,Head of Center of Excellence for accessibility & mobile apps,https://linkedin.com/in/fcunche,2011,46.603354,1.8883335,L'Oréal
+605,Breand,Morgane,Montréal,Directeur artistique Web,https://linkedin.com/in/morgane-breand,2017,45.5031824,-73.5698065,Hamak Marketing Numérique
+606,Thepaut,Marina,Nantes,Fondateur – Estesa,https://linkedin.com/in/marina-thepaut-5ab37a42,2007,47.2186371,-1.5541362,Estesa - www.estesa.fr
+607,Tosello,Olivier,Valbonne,Directeur technique & Co-fondateur,https://linkedin.com/in/oliviertosello,2011,43.641141,7.0086255,Attestis
+608,Dreydemy,Christian,Aix-en-Provence,Software Engineering Manager,https://linkedin.com/in/christiandreydemy,2012,43.5298424,5.4474738,Voyage Privé
+609,Michelat,Robin,Toulon,Chargé de projet web / Développeur senior,https://linkedin.com/in/robin-michelat-137934114,2007,43.1257311,5.9304919,COBALINK SAS
+610,Blancho,Alexandre,Antony,Chef de projet,https://linkedin.com/in/blancho,2008,48.753613,2.2958034,Stepnet Ingénierie
+611,Prigent,Mickaël,Barcelona,Senior Account Manager,https://linkedin.com/in/mprigent,2011,41.3825802,2.177073,Boats Group
+612,Papillon,Sébastien,Paris,Directeur des opérations,https://linkedin.com/in/papillonsebastien,2008,48.8588897,2.320041,DDB Paris
+613,Albiach,Thomas,Perpignan,Aucun Poste,https://linkedin.com/in/thomas-albiach-b756b435,2011,42.6985304,2.8953121,Aucune
+614,COTTI,Thibaut,Rillieux-la-Pape,Chef de projet Transformation Digitale,https://linkedin.com/in/thibautcotti,2006,45.823514,4.8994366,systhen
+615,Touenty,Samy,Paris,Aucun Poste,https://linkedin.com/in/samy-touenty-57057910,2009,48.8588897,2.320041,Aucune
+616,Rondot,Nathalie,Montréal,Chargée de projets web,https://linkedin.com/in/nathalierondot,2007,45.5031824,-73.5698065,Le Centre franco
+617,Berger,Yoann,Paris,"Réalisateur, Cadreur, Monteur",https://linkedin.com/in/yoannberger,2009,48.8588897,2.320041,Brainsonic
+618,Alonso,Kévin,Paris,Consultant,https://linkedin.com/in/kevinalonso,2009,48.8588897,2.320041,ARIATIS
+619,Fontana,Frédéric,Marseille,Conseiller marketing digital,https://linkedin.com/in/fredericfontana,2009,43.2961743,5.3699525,Chambre de Commerce et d'Industrie Marseille-Provence
+620,Deletombe,Laetitia,Nice,Communication digitale - Webdesign & Print - Gestion de projets,https://linkedin.com/in/laetitiadeletombe,2004,43.7009358,7.2683912,LD Boite
+621,Nicod,Adrien,Clermont-Ferrand,Freelance Senior Product Designer (UX UI) | Développeur Front-end,https://linkedin.com/in/adriennicod,2014,45.7774551,3.0819427,Aucune
+622,Krawczyk,Elie,Lyon,Head of Media Planning and Marketing Partnerships,https://linkedin.com/in/eliekraw,2009,45.7578137,4.8320114,emlyon business school
+623,Petitberghien,Thomas,Aix-en-Provence,Lead Product Manager,https://linkedin.com/in/thomaspetitberghien,2008,43.5298424,5.4474738,fulll
+624,Petagna,Maxime,Genève,"Delivery Management Director, Western Switzerland",https://linkedin.com/in/maxime-petagna,2009,46.2017559,6.1466014,Merkle DACH
+625,OUIZDI,Bouchra,Toulon,Success Learner,https://linkedin.com/in/bouchra-ouizdi-89773288,2017,43.1257311,5.9304919,Tuto.com
+626,Deschamps,François,Paris,Consultant Etudes & Développement Expert,https://linkedin.com/in/francoisdeschampsweb,2004,48.8588897,2.320041,ALTEN
+627,torta,paule,Bordeaux,Aucun Poste,https://linkedin.com/in/paule-torta-397aa3112,2011,44.841225,-0.5800364,Aucune
+628,Azaïz,Hanna,Paris,COO 1min30 TECH,https://linkedin.com/in/hannaazaiz,2013,48.8588897,2.320041,1min30
+629,Bourillot,Celine,Paris,Frontend Developer,https://linkedin.com/in/céline-bourillot,2012,48.8588897,2.320041,Wonderbly
+630,giordano,andrea,Momo,Aucun Poste,https://linkedin.com/in/andrea-giordano-b41944114,2010,45.58425,8.545997,Aucune
+631,BOURGEOIS THOMAS,Déborah,Aix-en-Provence,Product Owner & Growth Manager,https://linkedin.com/in/deborah-bourgeois,2009,43.5298424,5.4474738,FreewayTeam
+632,Bardet,Francois,Kraków,IT manager - Value stream,https://linkedin.com/in/francois-bardet-ab73a24,2007,50.0619474,19.9368564,Philip Morris International
+633,Serré,Nicolas,Grenoble,Lead Product Designer,https://linkedin.com/in/nicolaserre,2013,45.1875602,5.7357819,INFINIT
+634,Canot,Julien,Lyon,Founder & CEO,https://linkedin.com/in/juliencanot,2007,45.7578137,4.8320114,Agence kali
+635,Tranchant,Thomas,Marseille,"Chef de projet multimédia, Conseil en relations publiques et communication",https://linkedin.com/in/thomas-tranchant-6a38a954,2012,43.2961743,5.3699525,Auto-Entrepreneur
+636,Uhuli,Lori,Russi,Aucun Poste,https://linkedin.com/in/lori-uhuli-202a58112,2017,44.3640607,12.0590095,Aucune
+637,Mallet,Gaël,Tours,Fondateur,https://linkedin.com/in/gaelmallet,2011,47.3900474,0.6889268,BAZIXX
+638,Girard,Lionel,Sarzay,Consultant en performance opérationnelle,https://linkedin.com/in/lionelgi,2011,46.603354,1.8883335,Aucune
+639,Bossan,Mélody,Nice,Fondateur,https://linkedin.com/in/melodybossan,2006,43.7009358,7.2683912,Ethereal Moon / Starlight Melody
+640,Portuese,Michel,Bordeaux,Consultant spécialiste,https://linkedin.com/in/michelportuese,2005,44.841225,-0.5800364,Aubay
+641,Konteye,Aliou,Paris,Head of Factory @L'Oréal BeautyTech Accelerators,https://linkedin.com/in/aliou-konteye-b9704626,2009,48.8588897,2.320041,L'Oréal
+642,Alex,PANE,Toulon,hôte de caisse,https://linkedin.com/in/pane-alex-4216a6b7,2013,43.1257311,5.9304919,Carrefour
+643,Moch,Mathieu,Nantes,Réalisateur vidéo & richmedia / chef de projet vidéo,https://linkedin.com/in/mathieumoch,2010,47.2186371,-1.5541362,Département de Loire-Atlantique
+644,Gabarre,Laurent,Sarzay,Creative Developer,https://linkedin.com/in/laurent-gabarre-42b087a,2008,46.603354,1.8883335,Freelance
+645,ATZORI,Maxence,Lennox Head,Head of Product,https://linkedin.com/in/maxenceatzori,2011,-28.7910334,153.5878047,My Mirror - Online Psychology Solutions
+646,Collery,Sébastien,Bordeaux,Directeur Agence ekino Bordeaux,https://linkedin.com/in/sébastien-collery-4a986988,2009,44.841225,-0.5800364,ekino
+647,Rolando,Cedric,千代田区,Digital Artist,https://linkedin.com/in/neoyume,2010,35.6768601,139.7638947,Neoyume
+648,Le Guillou,Hadrien,Toulouse,Communication Advisor,https://linkedin.com/in/hleguillou,2012,43.6044638,1.4442433,Eurécia
+649,Zozima,Alice,Marseille,Aucun Poste,https://linkedin.com/in/alice-zozima-9811a417,2010,43.2961743,5.3699525,Aucune
+650,Woimant,Gwladys,Sarzay,IT Project Management Officer,https://linkedin.com/in/gwladys-woimant-1240b312,2010,46.603354,1.8883335,Groupe OCEA
+651,VINCENT,David,Paris,🔹 Tech & Product Strategist,https://linkedin.com/in/davidvincentfr,2008,48.8588897,2.320041,GOTOANDBUZZ
+652,Saugues,Florian,Montréal,Directeur des communications,https://linkedin.com/in/florian-saugues,2012,45.5031824,-73.5698065,Numana
+653,omar,yahia,,Aucun Poste,https://linkedin.com/in/yahia-omar-35a2a3b4,2007,26.2540493,29.2675469,Aucune
+654,Andjilani,Indi,Mamoudzou,"Chef de bureau Développement, Intégration et Applications Métiers",https://linkedin.com/in/iandjilani,2012,-12.7804136,45.2279761,DEPARTEMENT DE MAYOTTE
+655,Lecuyer,Marc,Lyon,Engagement Manager,https://linkedin.com/in/lecuyermarc,2008,45.7578137,4.8320114,Smile
+656,Guidot,Mickael,Paris,Fondateur,https://linkedin.com/in/mickaelguidot,2008,48.8588897,2.320041,ForGeorges
+657,Nicotra,Giovanni,La Bianca,Aucun Poste,https://linkedin.com/in/giovanni-nicotra-891ba4110,2004,42.8228682,12.7762635,Aucune
+658,Gousseau,Etienne,Lyon,Directeur conseil,https://linkedin.com/in/etiennegousseau,2007,45.7578137,4.8320114,Empirik
+659,CLEMENT,Pierre-François,Nantes,SRE,https://linkedin.com/in/likeyn,2012,47.2186371,-1.5541362,Univers
+660,Pachaud,Yannis,Tours,Aucun Poste,https://linkedin.com/in/yannispachaud,2010,47.3900474,0.6889268,Aucune
+661,Muñoz,Brenda,Ilobasco,Jefe de equipo,https://linkedin.com/in/brenda-muñoz-7b2884111,2020,13.8000382,-88.9140683,Citi
+662,Rosselin,Guillaume,Nantes,Assistant pédagogique des enseignements transversaux,https://linkedin.com/in/guillaume-rosselin-6b2a244,2008,47.2186371,-1.5541362,Nantes Université
+663,Goubet,Camille,North Vancouver,Project Manager – Digital Tools Solutions,https://linkedin.com/in/camillegoubet,2007,49.3206294,-123.0737925,iA Financial Group (Industrial Alliance)
+664,Durand,Wilfried,София,Founder / CEO,https://linkedin.com/in/wilfrieddurand,2008,42.6597571,23.3250266,Onvey
+665,Garcia Turcan,Irene,Levallois-Perret,Global Head of Web3 & Metaverse,https://linkedin.com/in/irenegarciaturcan,2004,48.892956,2.2881683,L'Oréal
+666,Percher,Madeline,Angers,Illustratrice et muraliste,https://linkedin.com/in/madeline-percher-5a22a96b,2015,47.4739884,-0.5515588,Mad Line
+667,FOURNON,Fanny,Draguignan,PDG,https://linkedin.com/in/dejeanfanny,2009,43.5374662,6.4627333,SAS Dejean Depannage Auto
+668,Béguin,Sophie,Saint-Mandé,Responsable technique - Authoreuse DVD/Blu-Ray/UHD,https://linkedin.com/in/sophie-béguin-64397490,2006,48.8432434,2.4159739,Com'On Screen
+669,Saint-Jours,Ludovic,Montpellier,Scrum master,https://linkedin.com/in/ludovic-saint-jours-4bb23926,2009,43.6112422,3.8767337,Gaming Innovation Group
+670,Bigeault,Julien,Montréal,Architecte logiciels,https://linkedin.com/in/julien-bigeault,2007,45.5031824,-73.5698065,Moment Factory
+671,Requien,charles,Marseille,Formateur,https://linkedin.com/in/charles-requien-94373328,2010,43.2961743,5.3699525,ACOPAD
+672,berger,karl,Haina (Kloster),Aucun Poste,https://linkedin.com/in/karl-berger-81575311a,2017,51.040421,8.990769,Aucune
+673,Schwartz,Jean-Philippe,Toulouse,Technical Lead,https://linkedin.com/in/jeanphilippeschwartz,2011,43.6044638,1.4442433,Consort Group
+674,Goubeaux,François,Angers,Business Analyst / Proxy Product Owner,https://linkedin.com/in/francoisgoubeaux,2007,47.4739884,-0.5515588,Harmonie Mutuelle
+675,Puig,Stephen,Perpignan,Co-fondateur,https://linkedin.com/in/stephenpuig,2008,42.6985304,2.8953121,Foster Academy
+676,Musch,Edouard,Mulhouse,Aucun Poste,https://linkedin.com/in/edouard-musch-549b7b5,1990,47.7467233,7.3389937,Aucune
+677,Parrochia,Adrien,Paris,Golang / Backend developer,https://linkedin.com/in/parrochia,2009,48.8588897,2.320041,Leboncoin.fr
+678,De Freitas Alves ✍️,Andreia,Roquebrune-Cap-Martin,Rédaction & Stratégie de contenu,https://linkedin.com/in/andreiadefreitasalves,2014,43.7641047,7.4565697,Les Mots Sobres
+679,Tosello,Marine,Sarzay,Responsable Digital,https://linkedin.com/in/marinetosello,2008,46.603354,1.8883335,Collection Rivages
+680,Bossan,Mathieu,Nice,Lead Developer,https://linkedin.com/in/mathieubossan,2008,43.7009358,7.2683912,Big Boss Studio
+681,WARTEL,Manoubia,Paris,Project leader à la filière monétique de BDDF Opérations,https://linkedin.com/in/manoubia-wartel-80048791,2009,48.8588897,2.320041,BNP Paribas
+682,P.,Clément,Aubagne,Directeur Marketing & Communication SolutionsCSE,https://linkedin.com/in/clementpeytavin,2007,43.2924385,5.5703031,Comexposium
+683,A.,Camille,Biarritz,Full Stack Developer,https://linkedin.com/in/camille-a-926598b,2009,43.4711438,-1.5527266,njuko
+684,KAPFER,Matthias,,Technical Delivery Manager,https://linkedin.com/in/matthias-kapfer-676939b6,2010,,,Appian France SARL
+685,Benichou,Adam,Marseille,Directeur artistique,https://linkedin.com/in/adambenichou,2010,43.2961743,5.3699525,Rugby Club Toulonnais
+686,BEAUMONT,Charles,Nantes,Litian,https://linkedin.com/in/charles-beaumont-b9a56412a,2012,47.2186371,-1.5541362,Litian
+687,Ghislain,Kodjo,Châteaurenard,Responsable marketing Web,https://linkedin.com/in/gkodjo,2015,43.8820448,4.85568,Digitalement Parlant
+688,Gaudin,Jérémy,Lyon,Directeur de l'expérience et de l'innovation,https://linkedin.com/in/jérémy-gaudin-a98a19a,2008,45.7578137,4.8320114,Sup de Pub
+689,Dillies,Guillaume,Marseille,Senior Sound Designer,https://linkedin.com/in/guillaumedillies,2011,43.2961743,5.3699525,Freelance à mon compte
+690,HUYNH,Rémy,Lyon,Directeur Delivery,https://linkedin.com/in/remy-huynh,2006,45.7578137,4.8320114,Horrea
+691,Cotton,René,Nice,CoFondateur et CTO,https://linkedin.com/in/cottonrene,2005,43.7009358,7.2683912,WiziShop
+692,zekovik,radomir,Paris,pedi,https://linkedin.com/in/radomir-zekovik-20a2418,2007,48.8588897,2.320041,Airedale by Modine
+693,Le Morvan,Benoit,Paris,Digital project director,https://linkedin.com/in/benoit-le-morvan-7656a37,2008,48.8588897,2.320041,DDB Paris
+694,- DIKTA,Muriel Pedro Belba,Martigues,Fondatrice,https://linkedin.com/in/murielpedrobelba,2014,43.4057279,5.0548176,DIKTA.FR - Créations artisanales affirmées et inclusives - Made in Marseille
+695,Lepage,Thomas,Marseille,Fondateur,https://linkedin.com/in/thomaslepage,2007,43.2961743,5.3699525,Mediamoov
+696,DELGADO,Jean-Pierre,Paris,Senior Account Manager,https://linkedin.com/in/jeanpierredelgado,2010,48.8588897,2.320041,RTB House
+697,Nichini,Stanislas,Dublin,Software Development Manager,https://linkedin.com/in/stanislasnichini,2009,53.3493795,-6.2605593,Amazon Web Services (AWS)
+698,scaduto,enzo,Marseille,Aucun Poste,https://linkedin.com/in/enzo-scaduto-1881a12b,2014,43.2961743,5.3699525,Aucune
+699,Vigneron,Antonin,Marseille,Owner,https://linkedin.com/in/314interactive,2007,43.2961743,5.3699525,314 Interactive
+700,Hammami,Sarra,Ottawa,Product Designer | UX Designer,https://linkedin.com/in/sarrahammami,2010,45.4208777,-75.6901106,Mantu
+701,Leroy,Jocelyn,Montréal,Concepteur rédacteur,https://linkedin.com/in/jocelyn-leroy-900a1720,2007,45.5031824,-73.5698065,Republik
+702,Gonon,Florentin,Paris,Senior Brand Content & Copywriter,https://linkedin.com/in/florentingonon,2015,48.8588897,2.320041,ManoMano
+703,Faulconnier,Cédric,Paris,Chief Operating Officer,https://linkedin.com/in/cédric-faulconnier-0235879,2007,48.8588897,2.320041,FURIOUS SQUAD
+704,Weber,Vincent,Paris,Freelance,https://linkedin.com/in/vincent-weber-047565a,2007,48.8588897,2.320041,Gerfo
+705,ERCAN,Recep,La Crau,Fondateur,https://linkedin.com/in/recep-ercan,2012,43.1497034,6.0737053,La Web Company
+706,Kelifa,Romain,เทศบาลนครเชียงใหม่,Senior Software Engineer,https://linkedin.com/in/romainkelifa,2009,18.7882778,98.9858802,Polar Bear IT
+707,Lamy,Sandro,Sarzay,Formateur PAO,https://linkedin.com/in/sandro-lamy-b4b5ba29,2009,46.603354,1.8883335,sandrolamy.com
+708,Blondeau,Jeremy,Aix-en-Provence,CTO - Co-gérant & associé,https://linkedin.com/in/jeremy-blondeau-ab37192a,2012,43.5298424,5.4474738,LE TEMPS DES TRAVAUX .COM
+709,BOTTON,Deborah,Paris,Freelance SEO Senior Consultant,https://linkedin.com/in/dbotton,2011,48.8588897,2.320041,epokhe.consulting
+710,Peguin,Adrien,Bouc-Bel-Air,Systeme d’information ,https://linkedin.com/in/adrienpeguin,2009,43.4511819,5.4127848,IUT d'Aix Marseille
+711,Cheikh,Ines,نابل,Infographiste,https://linkedin.com/in/ines-cheikh-4787781a,2010,36.4512897,10.7355915,TELEVISION TUNISIENNE
+712,Blin,Alexandre,Bordeaux,UI Developer,https://linkedin.com/in/alexandre-blin-755a1621,2014,44.841225,-0.5800364,Capgemini
+713,CAMPO,Camille,Aix-en-Provence,Conseillère Fidélisation,https://linkedin.com/in/camillecampo,2014,43.5298424,5.4474738,Groupe SeLoger
+714,Schneider,Eric,Strasbourg,Créatif Marketing (Graphiste),https://linkedin.com/in/eric-schneider-a8258913,2005,48.584614,7.7507127,Les Grands Chais de France
+715,busier,jean,Toulouse,Aucun Poste,https://linkedin.com/in/jean-busier-131b68127,2012,43.6044638,1.4442433,Aucune
+716,CULDAUT,Simon,Praha,Senior Graphic Designer,https://linkedin.com/in/simon-culdaut,2010,50.0874654,14.4212535,Aucune
+717,Mario,Lucia,Agrigento,Aucun Poste,https://linkedin.com/in/lucia-mario-77582698,2013,37.3122991,13.57465,Aucune
+718,TRINH,Trang,Marseille,Reporter Stagiaire,https://linkedin.com/in/trang-trinh-5a725218,2011,43.2961743,5.3699525,"Faculté de Droit de Toulon, USTV"
+719,LUPERINI,Romain,Montpellier,Directeur Conseil Delivery,https://linkedin.com/in/romainluperini,2008,43.6112422,3.8767337,CGI
+720,Duquerroy,Jean-Philippe,Courbevoie,Product Marketing Manager,https://linkedin.com/in/jpduquerroy,2007,48.8953328,2.2561602,Lefebvre Dalloz Logiciels & Services
+721,POULET,Emilie Maéva,Marseille,Rédactrice web,https://linkedin.com/in/emilie-maéva-poulet-91429ab,2009,43.2961743,5.3699525,Online Commerce Partners
+722,Peyron,Alexandre,La Chardie,"Co-fondateur, CTO",https://linkedin.com/in/alexandrepeyron,2012,45.5565011,3.694883,NovelClass
+723,Dassonval,Julien,Paris,Freelance Digital Executive Producer • Founder of WADP,https://linkedin.com/in/jdassonval,2007,48.8588897,2.320041,We Are Digital Producers
+724,Lopez,Mercedes,,Aucun Poste,https://linkedin.com/in/mercedes-lopez-597085126,2018,12.3506436,-85.7841006,Aucune
+725,bartoldi,nicolas,Sarzay,Aucun Poste,https://linkedin.com/in/franceout,2009,46.603354,1.8883335,Aucune
+726,Vernon,Camille,Toulon,Freelance Graphic and Web Designer,https://linkedin.com/in/vernoncamille,2014,43.1257311,5.9304919,Camille Vernon Auto Entrepreneur
+727,robert,gerar,Nice,Aucun Poste,https://linkedin.com/in/gerar-robert-19891342,2012,43.7009358,7.2683912,Aucune
+728,Rubeillon,Camille,Montréal,Experience Design Director,https://linkedin.com/in/camillerubeillon,2008,45.5031824,-73.5698065,Valtech
+729,Khennouf,Sophia,Sarzay,Client Advisor,https://linkedin.com/in/sophiakhennouf,2016,46.603354,1.8883335,Louis Vuitton
+730,Ghorbani,Bijan,,Founder & Master Storyteller,https://linkedin.com/in/bghorbani,2012,52.865196,-7.9794599,Bijan.io
+731,Vantomme,Pierre,Barcelona,Technical Manager / Product Owner,https://linkedin.com/in/pierre-vantomme,2007,41.3825802,2.177073,Epotam
+732,Lin,"Virginie ""SHOo""",Wellington,"Concept & Texture Artist, Graphics Designer",https://linkedin.com/in/virginieshoolin,2006,-41.2887953,174.7772114,Weta Digital
+733,Provost,Jean-Pierre,Montréal,Product Owner,https://linkedin.com/in/jpprovost,2007,45.5031824,-73.5698065,Desjardins
+734,Lascombes,Alexa,Toulouse,Google Cloud Platform Project Manager & Scrum Master,https://linkedin.com/in/alexalorimer,2014,43.6044638,1.4442433,Accenture
+735,Deléglise,🐙 François,Lyon,Directeur de la communication,https://linkedin.com/in/🐙-françois-deléglise-5b97a053,2012,45.7578137,4.8320114,Wanadev
+736,Clerc,Stéphane,Villeneuve-d'Ascq,Projects & UX Manager - Customer Experience,https://linkedin.com/in/stéphane-clerc-07aa2917,2007,50.6193174,3.1314002,DECATHLON FRANCE
+737,MARIN,Franck,Biot,Président,https://linkedin.com/in/franck-marin-35445117,2007,43.6270041,7.0989546,Radioactiv'It
+738,Benvenuti,Sophie,,Conseillère à la qualité de la pratique,https://linkedin.com/in/sophie-benvenuti,2015,61.0666922,-107.991707,Ordre des urbanistes du Québec
+739,Durand-Senja,Coralie,Toulon,Responsable communication,https://linkedin.com/in/coraliedurand,2009,43.1257311,5.9304919,Odalia | Prévention et Santé au Travail 🩺🦺
+740,Durand,Alban,Derby,Software Developer,https://linkedin.com/in/alban-durand,2012,52.9142235,-1.4719885,NetMonkeys Ltd
+741,Tressens,Anthony,Marseille,SEO responsible - Web Marketing - Traffic Manager,https://linkedin.com/in/anthony-tressens-49b6ba59,2013,43.2961743,5.3699525,Decostock
+742,Cuisnier,Romain,Paris,Consultant Technique Senior Solutions Digitales,https://linkedin.com/in/romain-cuisnier-a4235530,2009,48.8588897,2.320041,ekino
+743,Brunel,Sebastien,Saint-Étienne,Freelance,https://linkedin.com/in/sbrunel,2011,45.4401467,4.3873058,Freelance Web Design and Web Development
+744,SURIANO,Alexandre,Hyères,Head of Products,https://linkedin.com/in/alexandre-suriano-5106a825,2011,43.1202573,6.1301614,LA BOITE IMMO
+745,Juhel,Anne-Laure,Paris,Chef de Projet Digital,https://linkedin.com/in/ajuhel,2011,48.8588897,2.320041,Auto-entrepreneur
+746,Messaoudi,Salma,Paris,Graphiste - web designer,https://linkedin.com/in/salma-messaoudi-27a2381b,2010,48.8588897,2.320041,Groupe RAMKEY O.M.M.
+747,Tandou,Clémence,Toulon,Consultante éditoriale : stratégie et rédaction de contenus,https://linkedin.com/in/clemence-tandou,2015,43.1257311,5.9304919,Com'Clem
+748,Grall,Nathanaël,Marseille,Community Manager,https://linkedin.com/in/ngrall,2013,43.2961743,5.3699525,YOU ART LUCKY
+749,de la Peña,Laura,Nice,UI Design / Figma Instructor,https://linkedin.com/in/delapenalaura,2008,43.7009358,7.2683912,"e-artsup, l’école de la passion créative"
+750,Nowicki,Julien,Avignon,Senior Product Designer,https://linkedin.com/in/juliennowicki,2008,43.9492493,4.8059012,Julien Nowicki
+751,Brosseau,Hubert,Sarzay,Responsable Data Factory,https://linkedin.com/in/hubertbrosseau,2008,46.603354,1.8883335,FDJ UNITED
+752,Vieules PMP,Vincent,Boston,Program Manager,https://linkedin.com/in/vincentvieules,2007,52.9776561,-0.0237985,New Balance
+753,ERAZMUS,Arnaud,Paris,Responsable de la Communication Digitale,https://linkedin.com/in/arnauderazmus,2010,48.8588897,2.320041,AKEO (Officiel France)
+754,Tord,Patrice,Sarzay,Growth Marketing Manager,https://linkedin.com/in/patrice-tord,2006,46.603354,1.8883335,Bulldozer
+755,Assous,Tiffany,Paris,Consultante Technique Junior,https://linkedin.com/in/tiffany-assous-b3276a12,2010,48.8588897,2.320041,FullSIX Groupe
+756,Ruiz uriarte,Jose,Bilbao,gerente,https://linkedin.com/in/jose-ruiz-uriarte-08a3a7118,2004,43.2630018,-2.9350039,University of Deusto
+757,Mouren,Amelie,Toulon,Consultant en marketing Web,https://linkedin.com/in/ameliemourenprojectmanager,2005,43.1257311,5.9304919,Aucune
+758,Andrianasolo,Joro,Antananarivo,Freelance Virtual Assistant & Digital Services Manager,https://linkedin.com/in/joro-andrianasolo,2009,-18.9100122,47.5255809,Tananao
+759,Friscia,Lucas,Toulon,Dirigeant,https://linkedin.com/in/lucasfriscia,2010,43.1257311,5.9304919,Tech It Real
+760,Jodry,Benoit,Gières,CGI Artist,https://linkedin.com/in/benoit-jodry-45b708b1,2014,45.1798245,5.7904194,Aucune
+761,alex,gigi,Putten,Aucun Poste,https://linkedin.com/in/gigi-alex-77926aa8,2016,52.2434979,5.6343227,Aucune
+762,Tixier Lamaison,Thomas,Paris,Directeur de Production Web,https://linkedin.com/in/thomastixierlamaison,2011,48.8588897,2.320041,Indépendant
+763,FAUCON,Guillaume,Bordeaux,Product Owner & Product Manager (Squad Poker - Tooling & Game Integrity),https://linkedin.com/in/guillaumefaucon,2013,44.841225,-0.5800364,Betclic Group
+764,jouhrie,elisa,Aouint Yghomane عوينة يغمان,Aucun Poste,https://linkedin.com/in/elisa-jouhrie-a7172833,1990,28.3347722,-10.3713379,Aucune
+765,Gandelin,Julien,Longueuil,Founder & Editor-in-Chief,https://linkedin.com/in/julien-gandelin-63a12b7,2007,45.521906,-73.4644578,Ici On Aime Inc.
+766,OUGIER,Laurianne,Sarzay,Ingénieur d'études et de développement,https://linkedin.com/in/laurianne-ougier-7458732b,2011,46.603354,1.8883335,AÉSIO mutuelle
+767,Tarek,El Khamsa,Marseille,Aucun Poste,https://linkedin.com/in/el-khamsa-tarek-46135130,2011,43.2961743,5.3699525,Aucune
+768,Seon,Magali,Mougins,IT Project Manager,https://linkedin.com/in/magali-seon-059b0345,2013,43.6008898,6.9963543,Orange Business
+769,dublin,tobias,Grabostów,Aucun Poste,https://linkedin.com/in/tobias-dublin-63a549106,2016,51.4721678,19.3460637,Aucune
+770,Plaire,Loic,Gosford,Lead Design System Engineer,https://linkedin.com/in/loicplaire,2005,-33.44,151.3261111,Deputy
+771,fabre,laurianne,Marseille,Aucun Poste,https://linkedin.com/in/laurianne-fabre-7306852a,2014,43.2961743,5.3699525,Aucune
+772,Abbagnano,Michele,Roma,Aucun Poste,https://linkedin.com/in/michele-abbagnano-588875129,2012,41.8933203,12.4829321,Aucune
+773,Richez,Solange,Paris,Rédactrice web,https://linkedin.com/in/solange-richez-375b544b,2013,48.8588897,2.320041,greatcontent.fr
+774,Guiral,Michael,Châteaugay,Technical Lead,https://linkedin.com/in/michael-guiral,2007,45.8502246,3.0850695,Mikros Animation
+775,Vuarrier,Maxime,Paris,Co-Founder,https://linkedin.com/in/maximevuarrier,2005,48.8588897,2.320041,Cypok Média
+776,Rakotomanana,Estelle,Toulouse,Fondatrice ✦ Agence de conseil en stratégie digitale & design d'expérience,https://linkedin.com/in/estellerakotomanana,2007,43.6044638,1.4442433,olona design
+777,THIERY,Raphaël,Wellington,Senior Camera TD,https://linkedin.com/in/raphaelthiery,2007,-41.2887953,174.7772114,Wētā FX
+778,Decomble,Benoit,Köln,Team Lead UX Mobile & Shop,https://linkedin.com/in/bdecomble,2007,50.938361,6.959974,REWE digital
+779,Ghrab,Sahar,Paris,Full-stack Developer,https://linkedin.com/in/saharghrab,2016,48.8588897,2.320041,NIQ for Digital Commerce
+780,Aidh,Souaad,,"Regional Head of Digital, SEA, Middle East & India",https://linkedin.com/in/souaad-aidh,2007,25.0742823,55.1885387,Nord Anglia Education
+781,Manacorda,Mélissa,Aix-en-Provence,Responsable Marketing & Event,https://linkedin.com/in/mmanacorda,2012,43.5298424,5.4474738,ESCAET
+782,Bangoura,Sheikh  mohamed,,Aucun Poste,https://linkedin.com/in/sheikh-mohamed-bangoura-778a09122,2011,29.2733964,47.4979476,Aucune
+783,Arnaud,Pauline,Nice,Senior Product Designer,https://linkedin.com/in/paulinearnaud,2012,43.7009358,7.2683912,Welcome to the Jungle France
+784,Vaillant,Henri,Nice,Co-fondateur & Consultant Branding / Contenu,https://linkedin.com/in/henrivaillant,2011,43.7009358,7.2683912,Brainf!
+785,Lacassagne, Renaud  ,Paris,Customer Strategy & Design,https://linkedin.com/in/renaudlacassagne,2010,48.8588897,2.320041,Deloitte
+786,Lacoste,Maxime,Sarzay,Senior UI/UX Designer ,https://linkedin.com/in/maxlacoste,2008,46.603354,1.8883335,Aucune
+787,Ben Haj Yahia,Sarah,Paris,Directrice de clientèle,https://linkedin.com/in/sarahbhy,2011,48.8588897,2.320041,RedShift (Groupe Sedona)
+788,Hoffschir,Olivier,Strasbourg,Product Manager,https://linkedin.com/in/olivierhoffschir,2007,48.584614,7.7507127,ARTE
+789,Hadid,Karim 🌳,Sydney,Co-Founder,https://linkedin.com/in/karimhadid,2007,-33.8698439,151.2082848,Treely
+790,Biemans,Renaud,Clermont-Ferrand,Président,https://linkedin.com/in/renaudbiemans,2008,45.7774551,3.0819427,FAITS D'ARMES
+791,Harbaoui ,Aymen,Marseille,Consultant numérique et formateur ,https://linkedin.com/in/aymen-h-9a73148,2008,43.2961743,5.3699525,Aucune
+792,Scholtus,Séverine,Sarzay,Senior Acquisition & Tracking Manager,https://linkedin.com/in/severinescholtus,2009,46.603354,1.8883335,AXA Partners
+793,HACENE 🚀,Morad,Sarzay,Directeur de projet digital - agence kali,https://linkedin.com/in/moradhacene,2007,46.603354,1.8883335,Agence kali
+794,VINOT ☀,Manon,Toulouse,Web Project Manager (on assignment at Airbus),https://linkedin.com/in/manonvinot,2015,43.6044638,1.4442433,REGIE-PORTAGE.FR
+795,Piacentino,Stéphane,Paris,Monteur / Infographiste,https://linkedin.com/in/stéphane-piacentino-17417a54,2010,48.8588897,2.320041,Aucune
+796,Borreda,Vincent,Toulouse,Head of Digital Division,https://linkedin.com/in/vincentborreda,2012,43.6044638,1.4442433,AgoraVita
+797,Courbiere,Yann,Nice,Directeur de projet,https://linkedin.com/in/yann-c-8a469818,2010,43.7009358,7.2683912,Skilld
+798,Cléguer,Marion,Lyon,Webmaster éditorial ,https://linkedin.com/in/marioncleguer,2012,45.7578137,4.8320114,Université Lumière Lyon 2
+799,jl,jlx,Châlons-sur-Vesle,Aucun Poste,https://linkedin.com/in/jlx-jl-76675734,2005,49.2893549,3.9182096,Aucune
+800,Cramer,Cédric,Paris,Ingénieur d'études et développement,https://linkedin.com/in/cédric-cramer-5a3594105,2010,48.8588897,2.320041,NCR Retail
+801,Ballester,Nicolas,Marseille,Design Manager,https://linkedin.com/in/nicolas-ballester-6827231a,2009,43.2961743,5.3699525,KEDGE Business School
+802,Ribes,David,Bidart,CTO,https://linkedin.com/in/dribes,2009,43.4391702,-1.5898909,njuko
+803,MAGGIORE,Alexandre,Marseille,Responsable artistique,https://linkedin.com/in/alexandre-maggiore,2005,43.2961743,5.3699525,Métropole Aix-Marseille-Provence
+804,del aguila,alfonso,Vargas Guerra,Aucun Poste,https://linkedin.com/in/alfonso-del-aguila-203781106,2018,-6.8699697,-75.0458515,Aucune
+805,Jourdan,Philippe,Lyon,Spécialiste Café,https://linkedin.com/in/philippe-jourdan-378b072a,2012,45.7578137,4.8320114,Nestlé Nespresso SA
+806,bodat,diane,Paris,Aucun Poste,https://linkedin.com/in/diane-bodat-41031527,2011,48.8588897,2.320041,Aucune
+807,Vénérosy,Laurent,Montréal,Senior Art Director,https://linkedin.com/in/laurentvenerosy,2008,45.5031824,-73.5698065,REF Digital
+808,Gastin,Emilie,Paris,Coordinatrice de projet,https://linkedin.com/in/emiliegastin,2012,48.8588897,2.320041,Disneyland Paris
+809,Bourgeois,Christophe,Barcelona,Sales Development Manager for SAP,https://linkedin.com/in/christophebourgeois,2009,41.3825802,2.177073,TP
+810,VERTIGES,Agence,Marseille,Aucun Poste,https://linkedin.com/in/agence-vertiges-4362621b,2010,43.2961743,5.3699525,Aucune
+811,ARRICCA,Simon,Sallanches,Photographe,https://linkedin.com/in/simon-arricca-aa98bbb2,2016,45.9361246,6.6302551,Photographe Freelance
+812,xcx,cxc,,sdds,https://linkedin.com/in/cxc-xcx-32596b2,1984,-11.8775768,17.5691241,sdsd
+813,karim,arbi,Québec,sécurite privee,https://linkedin.com/in/arbi-karim-a9a52144,2010,46.8137431,-71.2084061,Prévention Noctis
+814,eguillor del campo,iskander,Bilbao,Aucun Poste,https://linkedin.com/in/iskander-eguillor-del-campo-213bb319,2002,43.2630018,-2.9350039,Aucune
+815,Gautier,Vincent,Paris,Business Analyst & Digital project manager ,https://linkedin.com/in/vincent-gautier-75243b4,2007,48.8588897,2.320041,Elengy
+816,Millard,Loic,Sarzay,Aucun Poste,https://linkedin.com/in/loic-millard-401a361a,2014,46.603354,1.8883335,Aucune
+817,Brochier,Benoit,Nice,Frontend Web Developer,https://linkedin.com/in/benoitbrochier,2007,43.7009358,7.2683912,Orange Business
+818,Fourel,Damien,Genève,Senior Digital Consultant - Executive Producer,https://linkedin.com/in/fourel,2006,46.2017559,6.1466014,XPlord
+819,Toulon,Alexandre,Toulon,Chef de projet technique / Product Owner,https://linkedin.com/in/alexandre-toulon,2007,43.1257311,5.9304919,ESQUALIBUR (Groupe Foncia)
+820,Aidh,Tewfik,Paris,Head of Social Media,https://linkedin.com/in/tewfikaidh,2007,48.8588897,2.320041,FullSIX Groupe
+821,Hell,Sébastien,Montréal,Producteur Experientiel,https://linkedin.com/in/sebhell,2007,45.5031824,-73.5698065,Rodeo FX
+822,foret,sophie,Nice,Dirigeante et wedding planner,https://linkedin.com/in/sophie-foret-707abb26,2011,43.7009358,7.2683912,Les Mariages de Sophie - Voeux de bonheur
+823,Remacle,Romain.,Paris,Propriétaire,https://linkedin.com/in/romain-remacle-b548a228,2005,48.8588897,2.320041,La Note Rouge
+824,DAUPRAT,Maxime,Saint-Priest,Ouvrier agricole,https://linkedin.com/in/maximedauprat,2013,44.7177,4.54685,SARL TOUTPAM - LES PLANTES DE LA VALLOIRE
+825,Schneider,Audrey,Toulon,Fondatrice,https://linkedin.com/in/audrey-schneider-19662746,2013,43.1257311,5.9304919,Studio Baya Toulon
+826,Riehl,David,Saint-Raphaël,Designer Freelance,https://linkedin.com/in/david-riehl-863092133,2017,43.4255303,6.7694244,RD
+827,Fantini,Denis,Grenoble,Service Qualité,https://linkedin.com/in/denis-fantini-35652465,2013,45.1875602,5.7357819,Federal Mogul
+828,Roesslinger 🥨,Jonathan,Mulhouse,Dirigeant,https://linkedin.com/in/jonathanroesslinger,2007,47.7467233,7.3389937,Menuiserie 2R
+829,Melaika,Chakib,Sarzay,Scrum master | Director technical project management,https://linkedin.com/in/chakibmelaika,2011,46.603354,1.8883335,WebMD
+830,Brucelle,Cédric,Nantes,Directeur conseil,https://linkedin.com/in/cbrucelle,2007,47.2186371,-1.5541362,B17 Communication
+831,Dupont,Elodie,Brochon,Analyste fonctionnelle,https://linkedin.com/in/elodiegarnier,2008,47.2384611,4.9716529,-
+832,Blanchard,Julien,Le Mans,Data Analyst,https://linkedin.com/in/jblanchard974,2008,48.0073849,0.1967849,UpYourBizz
+833,chewawa,chewawa,Aouint Yghomane عوينة يغمان,Aucun Poste,https://linkedin.com/in/chewawa-chewawa-7a74466,1997,28.3347722,-10.3713379,Aucune
+834,Bouchet,François,Paris,UX Consultant,https://linkedin.com/in/françois-bouchet-232b345,2004,48.8588897,2.320041,projet en cours
+835,Zhang,Yongyong,Marseille,Aucun Poste,https://linkedin.com/in/yongyong-zhang-07568411,2009,43.2961743,5.3699525,Aucune
+836,Binda,Axel,Évian-les-Bains,Lead Frontend Engineer,https://linkedin.com/in/axelbinda,2008,46.400979,6.5897931,Raliance
+837,Hairion,Jory,Vitrolles,Consultant communication digitale,https://linkedin.com/in/jory-hairion-234706aa,2016,44.4347105,5.9496043,PBC
+838,REDON,JOHANNA,Sarzay,Consultante Senior Content Marketing / SEO éditorial / Brand Content / Influence & UGC,https://linkedin.com/in/johannaredon,2007,46.603354,1.8883335,Freelance
+839,Marin,Loïc,Montréal,Architecte de solution Web,https://linkedin.com/in/lomarin,2010,45.5031824,-73.5698065,Tink
+840,BIGNAN,Maïwenn,Avignon,Aucun Poste,https://linkedin.com/in/maïwenn-bignan-39961725,2011,43.9492493,4.8059012,Aucune
+841,Paba Ruiz,Aurélie,Nice,Chargée de campagnes e-mailing,https://linkedin.com/in/aureliepabaruiza5b876113,2009,43.7009358,7.2683912,Assuragency
+842,Boisbouvier,Pauline,,CEO & Cofounder,https://linkedin.com/in/paulineboisbouvier,2007,61.0666922,-107.991707,HINT
+843,Herrera,Marcelo,Ilobasco,Aucun Poste,https://linkedin.com/in/marcelo-herrera-73292798,2015,13.8000382,-88.9140683,Aucune
+844,R.,Philippe,Perpignan,Project Manager,https://linkedin.com/in/philipperigole,2008,42.6985304,2.8953121,Maxicours
+845,Vauthier,Florence,Toulon,Communications relations publiques,https://linkedin.com/in/florencevauthier,2010,43.1257311,5.9304919,1er régiment de chasseurs d'Afrique
+846,Grzybowski,Nicolas,Montpellier,Responsable technique,https://linkedin.com/in/nicolasgrzybowski,2009,43.6112422,3.8767337,PNR SAS
+847,Titouhi,Chaouki,Paris,Directeur artistique,https://linkedin.com/in/chaouki-titouhi-2a048814,2009,48.8588897,2.320041,Aucune
+848,Guennegou,Anthony,Toulon,Head of Product Manager,https://linkedin.com/in/anthonyhamo,2009,43.1257311,5.9304919,Carbo
+849,Phagaburu,Isabelle,Cherval,Etudes et développements,https://linkedin.com/in/isabelle-phagaburu-162a7a25,2007,45.4039367,0.3756199,SEI | Groupe LKS
+850,Chellet,Brice,Toulouse,Directeur adjoint - Co-fondateur Cartographit & Nixial,https://linkedin.com/in/bricechellet,2011,43.6044638,1.4442433,NIXIAL - Société d'Ingénierie en Développement Java et Cybersécurité
+851,Granger,Francois,Rueil-Malmaison,Responsable Technologie de Production Audiovisuelle (Production Technology Manager),https://linkedin.com/in/frgranger,2012,48.87778,2.1802832,Paramount
+852,B.,Florent,Agen,Agent indépendant,https://linkedin.com/in/flobonacorsi,2013,44.2015827,0.6176112,Mellone & Gastaldi Properties
+853,SPECQUE,Jessica,Nantes,Cheffe de Groupe Digital,https://linkedin.com/in/jessica-specque,2006,47.2186371,-1.5541362,Publicis Activ
+854,HADJ AMEUR,Wajdi,Montpellier,Directeur Technique,https://linkedin.com/in/wajdihadjameur,2009,43.6112422,3.8767337,Agence La Jungle
+855,Guillouet,Florian,Lille,Technicien Support Fonctionnel,https://linkedin.com/in/florianguillouet,2010,50.6365654,3.0635282,Octime
+856,Descatoire,Jérémy,Saint-Brieuc,Infographiste,https://linkedin.com/in/jérémy-descatoire-0337781a,2010,48.5141134,-2.7603283,Office de Tourisme et des Congrès de la Baie de Saint-Brieuc
+857,Gambini,Nicolas,Marseille,Aucun Poste,https://linkedin.com/in/nicolas-gambini-a8894026,2006,43.2961743,5.3699525,Aucune
+858,Plaine,Riwal,Sarzay,Enseignant UI design,https://linkedin.com/in/riwal,2008,46.603354,1.8883335,École Intuit Lab
+859,Toucas,Rodolphe,上城区,Art photo and illustration teacher,https://linkedin.com/in/rodolphe-toucas-1b145938,2004,30.2489634,120.2052342,"High school, hanzghou"
+860,Lormier,Gaelle,Biarritz,Graphiste textile,https://linkedin.com/in/glormier,2017,43.4711438,-1.5527266,La Marque 64
+861,RAMSDAM-CARIGNANT,Arnaud,Sarzay,Product Manager / Directeur de projet ,https://linkedin.com/in/arnaud-ramsdam-carignant-77356478,2013,46.603354,1.8883335,Listen too
+862,HERMI,Aymen,Sarzay,Product Lead - DSP,https://linkedin.com/in/aymen-hermi-6356463,2007,46.603354,1.8883335,Omniverse
+863,Marcon,Cedric,Toulon,CEO,https://linkedin.com/in/cedric-marcon-3a6b78128,2015,43.1257311,5.9304919,DEV2PUB
+864,Mateos,Nicolas,Paris,Aucun Poste,https://linkedin.com/in/nicolas-mateos-1478973,2007,48.8588897,2.320041,Aucune
+865,Hamdi,Amen,Sarzay,Chef de Projet IT,https://linkedin.com/in/amen-hamdi-7b6137106,2016,46.603354,1.8883335,we Prod
+866,Lagouarde,Lisiane,Toulouse,Consultante / Chef de projet e-commerce et PIM,https://linkedin.com/in/lisianelagouarde,2007,43.6044638,1.4442433,Clever Age
+867,dupuis,Ludovic,Paris,Sr. UX/UI Designer,https://linkedin.com/in/ludovic-dupuis-2a9b8a53,2014,48.8588897,2.320041,Voodoo
+868,Mauduit,Melissa,Aix-en-Provence,Graphic Designer,https://linkedin.com/in/melissamauduit,2014,43.5298424,5.4474738,McCANN Health Paris  | An IPG Health Company
+869,Kassi,Josias,Paris,Responsable SEO E-Commerce,https://linkedin.com/in/josias-kassi-411963a9,2016,48.8588897,2.320041,Inmac wstore
+870,Bonnivard,Damien,Sarzay,Chef de projet senior,https://linkedin.com/in/damienbonnivard,2010,46.603354,1.8883335,Orange Business
+871,Firmin,Cédric,Paris,Lead Product Data Analyst,https://linkedin.com/in/cfirmin,2011,48.8588897,2.320041,CANAL+ Group
+872,Marcou,Fabienne,Brive-la-Gaillarde,Entrepreneur,https://linkedin.com/in/fabiennelabrousse,2011,45.1584982,1.5332389,Atmosphère Location
+873,A.,Sandy,Accra,VP Brand & Community,https://linkedin.com/in/sandy-a-4aab6226,2005,5.5571096,-0.2012376,Kofa
+874,Tanguy,Rémi,Nantes,Responsable de la communication et du dialogue citoyen,https://linkedin.com/in/remitanguy,2009,47.2186371,-1.5541362,Mairie du Loroux-Bottereau
+875,Le Cuziat,camille,Nice,Responsable marketing & infographie,https://linkedin.com/in/camille-l-7981a5119,2019,43.7009358,7.2683912,MANE
+876,Cordier-Lassalle,Arthur,Sarzay,Global Creative Director - Growth/Marketing,https://linkedin.com/in/artcl,2014,46.603354,1.8883335,Gameloft
+877,Dupire,Guillaume,Montréal,Senior Product Owner E-commerce,https://linkedin.com/in/guillaumedupire,2010,45.5031824,-73.5698065,Decathlon
+878,Hakimi,Naomi,Marrakech ⵎⵕⵕⴰⴽⵯⵛ مراكش,Chargée de Mission Action Culturelle,https://linkedin.com/in/naomi-hakimi,2018,31.6258257,-7.9891608,Institut français du Maroc
+879,Abbate,Jean Sébastien,Nice,Président,https://linkedin.com/in/jean-sébastien-abbate-10827b84,2007,43.7009358,7.2683912,DESIGN2WEB
+880,.M,Marianne,Marseille,Product Owner,https://linkedin.com/in/marianne-meyer-web,2012,43.2961743,5.3699525,SOFTWAY MEDICAL
