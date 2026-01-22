@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form
+from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form, Query
+from typing import Optional
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from .database import engine, Base, get_db
@@ -61,6 +62,28 @@ def read_stages(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_stages(db, skip=skip, limit=limit)
 
 
+@app.get("/stages/search", response_model=schemas.PaginatedStages)
+def search_stages(
+    q: Optional[str] = Query(None),
+    type: Optional[str] = Query(None, alias="type"),
+    city: Optional[str] = Query(None),
+    enterprise: Optional[str] = Query(None),
+    skip: int = 0,
+    limit: int = 25,
+    db: Session = Depends(get_db),
+):
+    total, items = crud.search_stages(
+        db,
+        q=q,
+        type_filter=type,
+        city=city,
+        enterprise=enterprise,
+        skip=skip,
+        limit=limit,
+    )
+    return {"total": total, "items": items}
+
+
 @app.get("/stages/count")
 def count_stages(db: Session = Depends(get_db)):
     count = crud.count_stages(db)
@@ -93,6 +116,37 @@ def delete_stage(stage_id: int, db: Session = Depends(get_db)):
     return {"message": "Stage supprimé"}
 
 
+@app.get("/stages/{stage_id}/related-alumnis", response_model=list[schemas.Alumni])
+def get_stage_related_alumnis(
+    stage_id: int,
+    threshold: int = Query(
+        70, ge=0, le=100, description="Score de similarité minimum (0-100)"
+    ),
+    db: Session = Depends(get_db),
+):
+    """
+    Retourne les alumnis travaillant dans une entreprise similaire au stage (fuzzy matching)
+
+    Args:
+        stage_id: ID du stage
+        threshold: Score minimum de similarité (défaut: 70%)
+
+    Returns:
+        Liste d'alumnis à contacter
+    """
+    stage = crud.get_stage(db, stage_id=stage_id)
+    if stage is None:
+        raise HTTPException(status_code=404, detail="Stage non trouvé")
+
+    if not stage.entreprise:
+        return []
+
+    alumnis = crud.find_matching_alumnis(
+        db, company=stage.entreprise, threshold=threshold
+    )
+    return alumnis
+
+
 # ========== ENDPOINTS ALUMNIS ==========
 @app.post("/alumnis/", response_model=schemas.Alumni)
 def create_alumni(alumni: schemas.AlumniCreate, db: Session = Depends(get_db)):
@@ -102,6 +156,17 @@ def create_alumni(alumni: schemas.AlumniCreate, db: Session = Depends(get_db)):
 @app.get("/alumnis/", response_model=list[schemas.Alumni])
 def read_alumnis(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_alumnis(db, skip=skip, limit=limit)
+
+
+@app.get("/alumnis/search", response_model=schemas.PaginatedAlumnis)
+def search_alumnis(
+    q: Optional[str] = Query(None),
+    skip: int = 0,
+    limit: int = 25,
+    db: Session = Depends(get_db),
+):
+    total, items = crud.search_alumnis(db, q=q, skip=skip, limit=limit)
+    return {"total": total, "items": items}
 
 
 @app.get("/alumnis/{alumni_id}", response_model=schemas.Alumni)
@@ -130,6 +195,35 @@ def delete_alumni(alumni_id: int, db: Session = Depends(get_db)):
     return {"message": "Alumni supprimé"}
 
 
+# ========== ENDPOINTS STATISTIQUES ==========
+@app.get("/stats/companies")
+def get_grouped_companies(threshold: int = Query(85), db: Session = Depends(get_db)):
+    """
+    Retourne le top 5 des entreprises regroupées par similarité (fuzzy matching)
+
+    Args:
+        threshold: score minimum pour regrouper (défaut 85%)
+
+    Returns:
+        Liste: [{"nom": "Orange", "count": 15, "variations": ["Orange", "Orange Business"]}, ...]
+    """
+    return crud.get_grouped_companies_stats(db, threshold=threshold)
+
+
+@app.get("/stats/jobs")
+def get_grouped_jobs(threshold: int = Query(80), db: Session = Depends(get_db)):
+    """
+    Retourne le top 12 des métiers regroupés par similarité (fuzzy matching)
+
+    Args:
+        threshold: score minimum pour regrouper (défaut 80%)
+
+    Returns:
+        Liste: [{"nom": "Développeur Web", "count": 25, "variations": [...]}, ...]
+    """
+    return crud.get_grouped_jobs_stats(db, threshold=threshold)
+
+
 # ========== ENDPOINTS INSCRITS SOIREE ==========
 @app.post("/inscrits-soiree/", response_model=schemas.InscritSoiree)
 def create_inscription_soiree(
@@ -156,6 +250,16 @@ def read_inscrits_soiree(
 def count_inscrits_soiree(db: Session = Depends(get_db)):
     count = crud.count_inscrits_soiree(db)
     return {"count": count}
+
+
+@app.put("/inscrits-soiree/{inscrit_id}", response_model=schemas.InscritSoiree)
+def update_inscription_soiree(
+    inscrit_id: int, inscrit: schemas.InscritSoireeCreate, db: Session = Depends(get_db)
+):
+    updated = crud.update_inscrit_soiree(db, inscrit_id=inscrit_id, inscrit=inscrit)
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Inscription non trouvée")
+    return updated
 
 
 @app.delete("/inscrits-soiree/{inscrit_id}")

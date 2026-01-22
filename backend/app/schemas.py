@@ -1,19 +1,19 @@
 from pydantic import BaseModel, EmailStr
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 
 
 # ========== Stages ==========
 class StageBase(BaseModel):
-    stage_id_externe: str
+    stage_id_externe: Optional[str] = None
     titre: str
     ville: str
-    pays: str
+    pays: Optional[str] = None
     type: str  # "Stage" ou "Alternance"
     entreprise: str
-    date_publication: datetime
-    texte: str
-    url: str
+    date_publication: Optional[datetime] = None
+    texte: Optional[str] = None
+    url: Optional[str] = None
 
 
 class StageCreate(StageBase):
@@ -26,6 +26,11 @@ class Stage(StageBase):
 
     class Config:
         from_attributes = True
+
+
+class PaginatedStages(BaseModel):
+    total: int
+    items: List[Stage]
 
 
 # ========== Alumnis ==========
@@ -50,6 +55,11 @@ class Alumni(AlumniBase):
 
     class Config:
         from_attributes = True
+
+
+class PaginatedAlumnis(BaseModel):
+    total: int
+    items: List[Alumni]
 
 
 # ========== Inscrits Soirée ==========

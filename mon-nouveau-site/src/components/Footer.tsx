@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="relative bg-bleu-fonce text-white py-10 px-[5%] grid grid-cols-[1fr_auto_1fr] items-center gap-5">

@@ -1,7 +1,12 @@
 /**
  * Utilitaires pour le calcul des statistiques du Dashboard
  * Cette couche métier est séparée du composant React pour garder le code propre
+ * 
+ * IMPORTANT: Pour les entreprises et métiers, utiliser les endpoints backend /stats/companies et /stats/jobs
+ * qui appliquent le fuzzy matching pour regrouper les variantes (ex: "Orange" + "Orange Business")
  */
+
+const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 interface Alumni {
   latitude: number;
@@ -159,15 +164,31 @@ export function countCities(alumnis: Alumni[]): number {
 
 /**
  * Calcule le top 5 des entreprises avec pourcentages
+ * NOUVELLE VERSION: utilise l'endpoint backend avec fuzzy matching
  */
-export function calculateTopCompanies(alumnis: Alumni[]): EntrepriseStats[] {
+export async function calculateTopCompanies(alumnis: Alumni[]): Promise<EntrepriseStats[]> {
   const total = alumnis.length;
+  
+  try {
+    // Appel à l'endpoint backend avec fuzzy matching
+    const response = await fetch(`${API_BASE}/stats/companies?threshold=85`);
+    if (response.ok) {
+      const grouped = await response.json();
+      return grouped.map((item: any) => ({
+        nom: item.nom,
+        count: item.count,
+        percentage: ((item.count / total) * 100).toFixed(1)
+      }));
+    }
+  } catch (err) {
+    console.error("Erreur lors du calcul des top entreprises:", err);
+  }
+  
+  // Fallback: calcul client-side classique
   const entrepriseCount = new Map<string, number>();
-
   alumnis.forEach((alumni) => {
     if (alumni.entreprise && alumni.entreprise.trim()) {
       const entreprise = alumni.entreprise.trim();
-      // Ignorer "Aucune" ou variations
       if (entreprise.toLowerCase() !== "aucune") {
         entrepriseCount.set(entreprise, (entrepriseCount.get(entreprise) || 0) + 1);
       }
@@ -216,8 +237,26 @@ function normalizeJobTitle(poste: string): string | null {
 
 /**
  * Calcule le word cloud des métiers
+ * NOUVELLE VERSION: utilise l'endpoint backend avec fuzzy matching
  */
-export function calculateJobWordCloud(alumnis: Alumni[]): MetierStats[] {
+export async function calculateJobWordCloud(alumnis: Alumni[]): Promise<MetierStats[]> {
+  try {
+    // Appel à l'endpoint backend avec fuzzy matching
+    const response = await fetch(`${API_BASE}/stats/jobs?threshold=80`);
+    if (response.ok) {
+      const grouped = await response.json();
+      const maxCount = grouped[0]?.count ?? 1;
+      return grouped.map((item: any) => ({
+        nom: item.nom,
+        count: item.count,
+        size: Math.min(32, 14 + (item.count / maxCount) * 20)
+      }));
+    }
+  } catch (err) {
+    console.error("Erreur lors du calcul du word cloud:", err);
+  }
+  
+  // Fallback: calcul client-side avec normalisation locale
   const postes = new Map<string, number>();
 
   // Compter les postes valides
@@ -309,16 +348,22 @@ export function calculateFranceAbroad(alumnis: Alumni[]): FranceAbroadStats {
 
 /**
  * Calcule toutes les statistiques du Dashboard
+ * ASYNC: calcule entreprises et métiers avec fuzzy matching backend
  */
-export function calculateAllStats(alumnis: Alumni[]): DashboardStats {
+export async function calculateAllStats(alumnis: Alumni[]): Promise<DashboardStats> {
   const total = alumnis.length;
+
+  const [topEntreprises, wordCloud] = await Promise.all([
+    calculateTopCompanies(alumnis),
+    calculateJobWordCloud(alumnis)
+  ]);
 
   return {
     total,
     villesUniques: countCities(alumnis),
     paysUniques: countCountries(alumnis),
-    topEntreprises: calculateTopCompanies(alumnis),
-    wordCloud: calculateJobWordCloud(alumnis),
+    topEntreprises,
+    wordCloud,
     topVilles: calculateTopCities(alumnis),
     franceAbroad: calculateFranceAbroad(alumnis),
   };

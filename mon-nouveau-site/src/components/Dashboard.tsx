@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { calculateAllStats } from "../utils/statsHelper";
 import DistributionChart from "./DistributionChart";
 
@@ -19,9 +19,67 @@ interface DashboardProps {
   alumnis: Alumni[];
 }
 
+interface EntrepriseStats {
+  nom: string;
+  count: number;
+  percentage: string;
+}
+
+interface MetierStats {
+  nom: string;
+  count: number;
+  size: number;
+}
+
+interface VilleStats {
+  nom: string;
+  count: number;
+  percentage: string;
+}
+
+interface FranceAbroadStats {
+  france: number;
+  abroad: number;
+  percentageFrance: string;
+  percentageAbroad: string;
+}
+
+interface DashboardStats {
+  total: number;
+  villesUniques: number;
+  paysUniques: number;
+  topEntreprises: EntrepriseStats[];
+  wordCloud: MetierStats[];
+  topVilles: VilleStats[];
+  franceAbroad: FranceAbroadStats;
+}
+
 export default function Dashboard({ alumnis }: DashboardProps) {
-  // Calcul des statistiques via le helper
-  const stats = useMemo(() => calculateAllStats(alumnis), [alumnis]);
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadStats = async () => {
+      setLoading(true);
+      try {
+        const result = await calculateAllStats(alumnis);
+        setStats(result);
+      } catch (err) {
+        console.error("Erreur calcul stats:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadStats();
+  }, [alumnis]);
+
+  if (loading || !stats) {
+    return (
+      <div className="py-8 px-4 max-w-7xl mx-auto dark:bg-slate-950 min-h-screen flex items-center justify-center">
+        <div className="text-bleu-fonce dark:text-bleu-clair text-xl">Chargement des statistiques...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-8 px-4 max-w-7xl mx-auto dark:bg-slate-950 min-h-screen">
