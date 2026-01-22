@@ -3,6 +3,28 @@ from datetime import datetime
 from app.database import Base
 
 
+class Stage(Base):
+    __tablename__ = "stages"
+
+    id = Column(Integer, primary_key=True, index=True)
+    stage_id_externe = Column(
+        String, unique=True, index=True, nullable=False
+    )  # ID du site scrappé
+    titre = Column(String, nullable=False)
+    ville = Column(String, nullable=False)
+    pays = Column(String, nullable=False)
+    type = Column(String, nullable=False)  # "Stage" ou "Alternance"
+    entreprise = Column(String, nullable=False)
+    date_publication = Column(
+        DateTime, nullable=False
+    )  # Pas de default, doit être fourni
+    date_creation = Column(
+        DateTime, default=datetime.utcnow, nullable=False
+    )  # Généré automatiquement
+    texte = Column(String, nullable=False)
+    url = Column(String, nullable=False)
+
+
 class Alumnis(Base):
     __tablename__ = "alumnis"
 

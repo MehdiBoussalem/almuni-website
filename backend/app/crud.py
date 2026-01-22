@@ -2,6 +2,59 @@ from sqlalchemy.orm import Session
 from . import models, schemas
 
 
+# ========== STAGES ==========
+def get_stage(db: Session, stage_id: int):
+    return db.query(models.Stage).filter(models.Stage.id == stage_id).first()
+
+
+def get_stage_by_external_id(db: Session, stage_id_externe: str):
+    return (
+        db.query(models.Stage)
+        .filter(models.Stage.stage_id_externe == stage_id_externe)
+        .first()
+    )
+
+
+def get_stages(db: Session, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Stage)
+        .order_by(models.Stage.date_publication.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def create_stage(db: Session, stage: schemas.StageCreate):
+    db_stage = models.Stage(**stage.model_dump())
+    db.add(db_stage)
+    db.commit()
+    db.refresh(db_stage)
+    return db_stage
+
+
+def update_stage(db: Session, stage_id: int, stage: schemas.StageCreate):
+    db_stage = get_stage(db, stage_id)
+    if db_stage:
+        for key, value in stage.model_dump().items():
+            setattr(db_stage, key, value)
+        db.commit()
+        db.refresh(db_stage)
+    return db_stage
+
+
+def delete_stage(db: Session, stage_id: int):
+    db_stage = get_stage(db, stage_id)
+    if db_stage:
+        db.delete(db_stage)
+        db.commit()
+    return db_stage
+
+
+def count_stages(db: Session):
+    return db.query(models.Stage).count()
+
+
 # ========== ALUMNIS ==========
 def get_alumni(db: Session, alumni_id: int):
     return db.query(models.Alumnis).filter(models.Alumnis.id == alumni_id).first()

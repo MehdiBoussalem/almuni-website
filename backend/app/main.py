@@ -24,6 +24,8 @@ origins = [
     "http://alumni-ingemedia.net",
     "http://www.alumni-ingemedia.net",
     "http://37.59.115.57",
+    "http://localhost:5173",  # Vite dev server
+    "http://127.0.0.1:5173",  # Vite dev server (alternative)
 ]
 
 app.add_middleware(
@@ -38,6 +40,57 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {"message": "Bienvenue sur l'API Alumni!"}
+
+
+# ========== ENDPOINTS STAGES ==========
+@app.post("/stages/", response_model=schemas.Stage)
+def create_stage(stage: schemas.StageCreate, db: Session = Depends(get_db)):
+    # Vérifier si l'id externe existe déjà
+    existing = crud.get_stage_by_external_id(
+        db, stage_id_externe=stage.stage_id_externe
+    )
+    if existing:
+        raise HTTPException(
+            status_code=400, detail="Ce stage avec cet ID externe existe déjà"
+        )
+    return crud.create_stage(db=db, stage=stage)
+
+
+@app.get("/stages/", response_model=list[schemas.Stage])
+def read_stages(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_stages(db, skip=skip, limit=limit)
+
+
+@app.get("/stages/count")
+def count_stages(db: Session = Depends(get_db)):
+    count = crud.count_stages(db)
+    return {"count": count}
+
+
+@app.get("/stages/{stage_id}", response_model=schemas.Stage)
+def read_stage(stage_id: int, db: Session = Depends(get_db)):
+    stage = crud.get_stage(db, stage_id=stage_id)
+    if stage is None:
+        raise HTTPException(status_code=404, detail="Stage non trouvé")
+    return stage
+
+
+@app.put("/stages/{stage_id}", response_model=schemas.Stage)
+def update_stage(
+    stage_id: int, stage: schemas.StageCreate, db: Session = Depends(get_db)
+):
+    updated = crud.update_stage(db, stage_id=stage_id, stage=stage)
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Stage non trouvé")
+    return updated
+
+
+@app.delete("/stages/{stage_id}")
+def delete_stage(stage_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_stage(db, stage_id=stage_id)
+    if deleted is None:
+        raise HTTPException(status_code=404, detail="Stage non trouvé")
+    return {"message": "Stage supprimé"}
 
 
 # ========== ENDPOINTS ALUMNIS ==========

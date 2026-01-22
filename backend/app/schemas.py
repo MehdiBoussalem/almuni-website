@@ -3,6 +3,31 @@ from typing import Optional
 from datetime import datetime
 
 
+# ========== Stages ==========
+class StageBase(BaseModel):
+    stage_id_externe: str
+    titre: str
+    ville: str
+    pays: str
+    type: str  # "Stage" ou "Alternance"
+    entreprise: str
+    date_publication: datetime
+    texte: str
+    url: str
+
+
+class StageCreate(StageBase):
+    pass
+
+
+class Stage(StageBase):
+    id: int
+    date_creation: datetime
+
+    class Config:
+        from_attributes = True
+
+
 # ========== Alumnis ==========
 class AlumniBase(BaseModel):
     nom: str
