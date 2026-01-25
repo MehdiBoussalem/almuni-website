@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       {/* Section Hero (Banner) */}
-      <section className="relative flex flex-col justify-center items-center h-[50vh] w-full px-8 pb-14 text-center -mt-[86px] bg-[url('./public/assets/home-hero.jpg')] bg-cover bg-[center_35%] bg-no-repeat">
+      <section className="relative flex flex-col justify-center items-center h-[50vh] w-full px-8 pb-14 text-center -mt-[86px] bg-[url('/assets/home-hero.jpg')] bg-cover bg-[center_35%] bg-no-repeat">
   
         {/* Overlay dégradé pour la lisibilité et la transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

@@ -19,8 +19,8 @@ interface Alumni {
   pays?: string;
 }
 
-// Base de l'API FastAPI (pas de préfixe /api sur ce backend)
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+// Base de l'API FastAPI - proxy via Apache en production
+const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/";
 
 type TabType = "map" | "dashboard";
 

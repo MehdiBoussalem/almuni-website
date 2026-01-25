@@ -16,7 +16,7 @@ const Tshirt = () => {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const API_URL = 'http://127.0.0.1:8000';
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/';
 
   // Charger les tshirts au montage du composant
   useEffect(() => {

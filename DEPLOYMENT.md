@@ -12,10 +12,17 @@
 
 ## 🟢 État actuel du déploiement
 
-**Date**: 13 janvier 2026  
-**Status**: ✅ **Production en HTTPS - Entièrement Fonctionnel**  
+**Date**: 25 janvier 2026  
+**Status**: ✅ **Production en HTTPS - React + Backend à jour**  
 **IP**: 37.59.115.57  
 **Domaine**: alumni-ingemedia.net (DNS ✅ Correct)
+
+### Versions actuelles:
+- **Frontend**: React 18 (Vite) - Build compilé et déployé ✅
+- **Backend**: FastAPI + Uvicorn sur port 8000 ✅
+- **Node.js**: 22.22.0 (LTS) ✅
+- **Python**: 3.13 ✅
+- **Database**: SQLite (alumni.db) ✅
 
 ### URLs actuelles:
 - Frontend: `https://alumni-ingemedia.net/`
@@ -66,8 +73,27 @@
 ✓ Ubuntu/Debian installé
 ✓ Apache2 installé avec modules proxy et rewrite
 ✓ Python 3.13 avec pip
+✓ Node.js 22.22.0 (LTS) installé
 ✓ Certbot et python3-certbot-apache installés
 ```
+
+### 2. Frontend React (Redéploiement - 25 janvier 2026)
+**Technologie**: React 18 + Vite + TypeScript + Tailwind CSS
+
+✅ **Compilé et déployé**:
+```bash
+# Build React en production
+npm run build
+
+# Copie du dossier dist/ vers DocumentRoot Apache
+sudo cp -r dist/* /home/adminstg/almuni-website/
+```
+
+✅ **Corrections effectuées**:
+- ✓ Chemin image hero: `./public/assets/home-hero.jpg` → `/assets/home-hero.jpg`
+- ✓ URLs API: `http://127.0.0.1:8000` → `/api/` (proxy Apache)
+- ✓ Fichier `.env.production` avec `VITE_API_URL=/api`
+- ✓ Mise à jour de 9 fichiers sources
 
 ### 2. Configuration Apache VirtualHost
 **Fichier**: `/etc/apache2/sites-available/almuni.conf`
@@ -119,13 +145,15 @@ sudo systemctl status apache2 # active (running)
 
 ```bash
 ✓ Python virtualenv créé
-✓ Toutes les dépendances installées:
+✓ Toutes les dépendances installées (pip install -r requirements.txt):
   - fastapi
   - uvicorn
   - sqlalchemy
   - python-dotenv
   - email-validator
   - faker
+  - geopy (géolocalisation)
+  - rapidfuzz (fuzzy matching pour stats)
   - (+ autres)
 ```
 
@@ -240,6 +268,24 @@ sudo certbot renew --dry-run
 
 ## 📝 Commandes utiles
 
+### Build et Déploiement du Frontend
+```bash
+# Aller au dossier du projet React
+cd /home/adminstg/almuni-website/mon-nouveau-site
+
+# Installer les dépendances
+npm install
+
+# Builder en production
+npm run build
+
+# Copier les fichiers compilés vers Apache
+sudo cp -r dist/* /home/adminstg/almuni-website/
+
+# Recharger Apache (sans arrêt du service)
+sudo systemctl reload apache2
+```
+
 ### Gestion du service API
 ```bash
 # Statut
@@ -313,7 +359,51 @@ curl https://alumni-ingemedia.net/api/alumnis/1
 
 ## 🐛 Troubleshooting
 
-### Problème: "Connection refused" sur l'API
+### Problème: "Failed to load resource: net::ERR_CONNECTION_REFUSED" sur l'API
+
+**Cause**: Le frontend essaie d'appeler `http://127.0.0.1:8000` directement au lieu du proxy Apache.
+
+**Solution**:
+1. Vérifier le fichier `.env.production`:
+```bash
+cat /home/adminstg/almuni-website/mon-nouveau-site/.env.production
+# Doit contenir: VITE_API_URL=/api
+```
+
+2. Recompiler le React:
+```bash
+cd /home/adminstg/almuni-website/mon-nouveau-site
+npm run build
+sudo cp -r dist/* /home/adminstg/almuni-website/
+sudo systemctl reload apache2
+```
+
+3. Vérifier que les appels passent par `/api/`:
+```bash
+# Via proxy Apache (depuis le navigateur):
+curl https://alumni-ingemedia.net/api/alumnis/
+
+# L'API répond? ✅ C'est bon!
+```
+
+### Problème: Image hero ne charge pas sur la page Home
+
+**Cause**: En développement, le chemin était `./public/assets/home-hero.jpg`, mais en production, il doit être `/assets/home-hero.jpg`.
+
+**Solution**:
+```bash
+# Vérifier que le fichier existe:
+ls -la /home/adminstg/almuni-website/assets/home-hero.jpg
+
+# Corriger dans src/pages/Home.tsx:
+# Avant: bg-[url('./public/assets/home-hero.jpg')]
+# Après: bg-[url('/assets/home-hero.jpg')]
+
+# Recompiler:
+npm run build && sudo cp -r dist/* /home/adminstg/almuni-website/
+```
+
+### Problème: API ne répond pas
 ```bash
 # Vérifier que le service tourne
 sudo systemctl status almuni-api.service
@@ -424,22 +514,27 @@ df -h
 
 ## 🎯 Résumé du déploiement
 
-### ✅ COMPLÉTÉ
+### ✅ COMPLÉTÉ (25 janvier 2026)
 1. ✅ DNS corrigé (37.59.115.57) - Propagation confirmée
 2. ✅ SSL généré et installé via Let's Encrypt
 3. ✅ Apache configuré avec HTTPS + Proxy API
 4. ✅ Redirection HTTP → HTTPS activée
 5. ✅ API backend fonctionnelle en HTTPS
 6. ✅ Renouvellement SSL automatique
+7. ✅ React compilé et déployé (25/01/2026)
+8. ✅ Chemins d'images corrigés
+9. ✅ URLs d'API corrigées (localhost → /api/)
+10. ✅ Node.js 22 installé
 
 ### 📍 Production Status
 
-| Composant | Status | URL |
-|-----------|--------|-----|
-| Frontend | ✅ | https://alumni-ingemedia.net |
-| API | ✅ | https://alumni-ingemedia.net/api/ |
-| SSL Cert | ✅ | Valid until 2026-04-13 |
-| Auto Renew | ✅ | certbot.timer active |
+| Composant | Status | URL | Notes |
+|-----------|--------|-----|-------|
+| Frontend React | ✅ | https://alumni-ingemedia.net | Build du 25/01, Vite |
+| API FastAPI | ✅ | https://alumni-ingemedia.net/api/ | Port 8000, Uvicorn |
+| SSL Cert | ✅ | Valid until 2026-04-13 | Let's Encrypt |
+| Auto Renew | ✅ | certbot.timer active | Tous les 90 jours |
+| Database | ✅ | SQLite alumni.db | Persistante |
 | HTTP → HTTPS | ✅ | 301 Redirect |
 
 ### 🚀 Prêt pour la production
@@ -453,6 +548,29 @@ Le site **alumni-ingemedia.net** est maintenant opérationnel en **HTTPS** avec:
 
 ---
 
-**Dernière mise à jour**: 13 janvier 2026 (SSL ✅ Complété)  
+**Dernière mise à jour**: 25 janvier 2026 (React redéployé + URLs d'API corrigées)  
+**Responsable déploiement**: Mehdi Boussalem  
+**Email support**: mehdiboussalem95@gmail.com
+
+---
+
+## 📋 Fichiers modifiés lors du redéploiement (25 janvier 2026)
+
+### Frontend React
+- ✅ [src/pages/Home.tsx](src/pages/Home.tsx) - Image hero path corrigé
+- ✅ [src/pages/Soiree.tsx](src/pages/Soiree.tsx) - API URL mise à jour
+- ✅ [src/pages/Stage.tsx](src/pages/Stage.tsx) - API URL mise à jour
+- ✅ [src/pages/Tshirt.tsx](src/pages/Tshirt.tsx) - API URL mise à jour
+- ✅ [src/pages/NotreReseau.tsx](src/pages/NotreReseau.tsx) - API URL mise à jour
+- ✅ [src/pages/admin/AdminAlumnis.tsx](src/pages/admin/AdminAlumnis.tsx) - API URL mise à jour
+- ✅ [src/pages/admin/AdminDashboard.tsx](src/pages/admin/AdminDashboard.tsx) - API URL mise à jour
+- ✅ [src/pages/admin/AdminStages.tsx](src/pages/admin/AdminStages.tsx) - API URL mise à jour
+- ✅ [src/pages/admin/AdminInscriptions.tsx](src/pages/admin/AdminInscriptions.tsx) - API URL mise à jour
+- ✅ [src/utils/statsHelper.ts](src/utils/statsHelper.ts) - API URL mise à jour
+- ✅ [.env.production](.env.production) - Créé avec `VITE_API_URL=/api`
+
+---
+
+**Dernière mise à jour**: 25 janvier 2026 (React redéployé + URLs d'API corrigées)  
 **Responsable déploiement**: Mehdi Boussalem  
 **Email support**: mehdiboussalem95@gmail.com

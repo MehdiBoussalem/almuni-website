@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-// Backend FastAPI sans préfixe /api
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+// Backend FastAPI - proxy via Apache en production
+const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/";
 const MAX_PLACES = 0;
 
 export default function Soiree() {

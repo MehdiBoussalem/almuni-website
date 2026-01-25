@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AdminNav from "../../components/admin/AdminNav";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/";
 
 interface Inscrit {
   id: number;
