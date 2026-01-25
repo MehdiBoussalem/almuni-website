@@ -32,6 +32,7 @@ class Alumnis(Base):
     nom = Column(String, index=True, nullable=False)
     prenom = Column(String, index=True, nullable=False)
     ville = Column(String, nullable=True)
+    pays = Column(String, nullable=True)
     poste = Column(String, nullable=True)
     linkedin = Column(String, nullable=True)
     promo = Column(String, nullable=True)

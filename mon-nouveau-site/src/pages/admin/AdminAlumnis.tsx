@@ -10,6 +10,7 @@ interface Alumni {
   nom: string;
   prenom: string;
   ville?: string;
+  pays?: string;
   poste?: string;
   entreprise?: string;
   promo?: string;
@@ -29,6 +30,7 @@ export default function AdminAlumnis() {
     poste: "",
     entreprise: "",
     ville: "",
+    pays: "",
     promo: "",
     linkedin: "",
   });
@@ -70,6 +72,7 @@ export default function AdminAlumnis() {
     poste?: string;
     entreprise?: string;
     ville?: string;
+    pays?: string;
     promo?: string;
     linkedin?: string;
   }) => {
@@ -85,7 +88,7 @@ export default function AdminAlumnis() {
       });
       if (res.ok) {
         setShowAddModal(false);
-        setAddForm({ nom: "", prenom: "", poste: "", entreprise: "", ville: "", promo: "", linkedin: "" });
+        setAddForm({ nom: "", prenom: "", poste: "", entreprise: "", ville: "", pays: "", promo: "", linkedin: "" });
         fetchAlumnis();
       }
     } catch (err) {
@@ -182,6 +185,7 @@ export default function AdminAlumnis() {
                     <th className="px-6 py-3 text-left">Poste</th>
                     <th className="px-6 py-3 text-left">Entreprise</th>
                     <th className="px-6 py-3 text-left">Ville</th>
+                    <th className="px-6 py-3 text-left">Pays</th>
                     <th className="px-6 py-3 text-left">Promo</th>
                     <th className="px-6 py-3 text-center">LinkedIn</th>
                     <th className="px-6 py-3 text-center">Actions</th>
@@ -195,6 +199,7 @@ export default function AdminAlumnis() {
                       <td className="px-6 py-3">{alumni.poste || "-"}</td>
                       <td className="px-6 py-3">{alumni.entreprise || "-"}</td>
                       <td className="px-6 py-3">{alumni.ville || "-"}</td>
+                      <td className="px-6 py-3">{alumni.pays || "-"}</td>
                       <td className="px-6 py-3">{alumni.promo || "-"}</td>
                       <td className="px-6 py-3 text-center">
                         {alumni.linkedin ? (
@@ -261,7 +266,7 @@ export default function AdminAlumnis() {
                     nom: addForm.nom.trim(),
                     prenom: addForm.prenom.trim(),
                   };
-                  ["poste", "entreprise", "ville", "promo", "linkedin"].forEach((k) => {
+                  ["poste", "entreprise", "ville", "pays", "promo", "linkedin"].forEach((k) => {
                     const v = (addForm as any)[k]?.trim();
                     if (v) payload[k] = v;
                   });
@@ -309,6 +314,15 @@ export default function AdminAlumnis() {
                       value={addForm.ville}
                       onChange={(e) => setAddForm({ ...addForm, ville: e.target.value })}
                       className="w-full px-3 py-2 border rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-700 mb-1">Pays</label>
+                    <input
+                      value={addForm.pays}
+                      onChange={(e) => setAddForm({ ...addForm, pays: e.target.value })}
+                      className="w-full px-3 py-2 border rounded-lg"
+                      placeholder="France"
                     />
                   </div>
                   <div>
@@ -396,6 +410,14 @@ export default function AdminAlumnis() {
                     <input
                       value={editForm.ville || ""}
                       onChange={(e) => setEditForm({ ...editForm, ville: e.target.value })}
+                      className="w-full px-3 py-2 border rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-700 mb-1">Pays</label>
+                    <input
+                      value={editForm.pays || ""}
+                      onChange={(e) => setEditForm({ ...editForm, pays: e.target.value })}
                       className="w-full px-3 py-2 border rounded-lg"
                     />
                   </div>

@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Evenement from './pages/Evenement.tsx';
 import NotreReseau from './pages/NotreReseau';
 import ArchivesIndex from './pages/ArchivesIndex';
-import PromoPage from './pages/PromoPage';
+import Alumni from './pages/Alumni';
 import Tshirt from './pages/Tshirt';
 import Soiree from './pages/Soiree';
 import StagePage from './pages/Stage';
@@ -33,7 +33,7 @@ function AppRoutes() {
           <Route path="/notre-reseau" element={<NotreReseau />} />
           <Route path="/stages" element={<StagePage />} />
           <Route path="/archives" element={<ArchivesIndex />} />
-          <Route path="/archives/:year" element={<PromoPage />} />
+          <Route path="/archives/:year" element={<Alumni />} />
           <Route path="/tshirt" element={<Tshirt />} />
           <Route path="/soiree" element={<Soiree />} />
 

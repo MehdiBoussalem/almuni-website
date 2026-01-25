@@ -8,6 +8,9 @@ interface Tshirt {
 }
 
 const Tshirt = () => {
+  // Constante pour afficher/cacher le formulaire d'upload
+  const SHOW_UPLOAD_FORM = false;
+
   const [tshirts, setTshirts] = useState<Tshirt[]>([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
@@ -97,84 +100,86 @@ const Tshirt = () => {
   return (
     <main className="max-w-[1200px] mx-auto py-8 px-4">
       {/* Section Upload */}
-      <section className="bg-gradient-to-br from-bleu-fonce to-bordeau text-white py-12 px-8 rounded-2xl mb-12 shadow-[0_8px_24px_rgba(0,0,0,0.15)]">
-        <h1 className="font-title text-[2.5rem] mb-4 text-center tracking-[2px]">
-          Partagez votre Tshirt Alumni !
-        </h1>
-        <p className="text-center text-lg mb-8 opacity-95">
-          Uploadez une photo de votre tshirt Alumni et rejoignez la galerie.
-        </p>
+      {SHOW_UPLOAD_FORM && (
+        <section className="bg-gradient-to-br from-bleu-fonce to-bordeau text-white py-12 px-8 rounded-2xl mb-12 shadow-[0_8px_24px_rgba(0,0,0,0.15)]">
+          <h1 className="font-title font-bold text-[2.5rem] mb-4 text-center tracking-[2px]">
+            Partagez votre Tshirt Alumni !
+          </h1>
+          <p className="text-center text-lg mb-8 opacity-95">
+            Uploadez une photo de votre tshirt Alumni et rejoignez la galerie.
+          </p>
 
-        <form
-          onSubmit={handleUpload}
-          className="max-w-[600px] mx-auto bg-white/10 p-8 rounded-xl backdrop-blur-[10px]"
-        >
-          <div className="mb-6">
-            <label htmlFor="nom" className="block mb-2 font-semibold text-[0.95rem]">
-              Nom *
-            </label>
-            <input
-              type="text"
-              id="nom"
-              name="nom"
-              placeholder="Votre nom"
-              required
-              className="w-full py-3 px-3 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
-            />
-          </div>
-
-          <div className="mb-6">
-            <label htmlFor="prenom" className="block mb-2 font-semibold text-[0.95rem]">
-              Prénom *
-            </label>
-            <input
-              type="text"
-              id="prenom"
-              name="prenom"
-              placeholder="Votre prénom"
-              required
-              className="w-full py-3 px-3 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
-            />
-          </div>
-
-          <div className="mb-6">
-            <label htmlFor="photo" className="block mb-2 font-semibold text-[0.95rem]">
-              Photo de votre tshirt *
-            </label>
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              accept="image/*"
-              required
-              className="w-full py-2 px-2 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base cursor-pointer transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
-            />
-            <small className="block mt-2 text-sm opacity-90">
-              Formats acceptés: JPG, PNG, WebP (max 5MB)
-            </small>
-          </div>
-
-          <button
-            type="submit"
-            disabled={uploading}
-            className="w-full py-4 px-8 bg-white text-bleu-fonce border-none rounded-lg text-lg font-bold cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)] active:translate-y-0"
+          <form
+            onSubmit={handleUpload}
+            className="max-w-[600px] mx-auto bg-white/10 p-8 rounded-xl backdrop-blur-[10px]"
           >
-            {uploading ? (
-              <>
-                <i className="mdi mdi-loading mdi-spin"></i> Upload en cours...
-              </>
-            ) : (
-              <>
-                <i className="mdi mdi-upload"></i> Uploader mon tshirt
-              </>
-            )}
-          </button>
-        </form>
-      </section>
+            <div className="mb-6">
+              <label htmlFor="nom" className="block mb-2 font-semibold text-[0.95rem]">
+                Nom *
+              </label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Votre nom"
+                required
+                className="w-full py-3 px-3 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label htmlFor="prenom" className="block mb-2 font-semibold text-[0.95rem]">
+                Prénom *
+              </label>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                placeholder="Votre prénom"
+                required
+                className="w-full py-3 px-3 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label htmlFor="photo" className="block mb-2 font-semibold text-[0.95rem]">
+                Photo de votre tshirt *
+              </label>
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                required
+                className="w-full py-2 px-2 border-2 border-white/30 rounded-lg bg-white/90 text-[#333] text-base cursor-pointer transition-all focus:outline-none focus:border-white focus:bg-white focus:shadow-[0_0_0_3px_rgba(255,255,255,0.2)]"
+              />
+              <small className="block mt-2 text-sm opacity-90">
+                Formats acceptés: JPG, PNG, WebP (max 5MB)
+              </small>
+            </div>
+
+            <button
+              type="submit"
+              disabled={uploading}
+              className="w-full py-4 px-8 bg-white text-bleu-fonce border-none rounded-lg text-lg font-bold cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)] active:translate-y-0"
+            >
+              {uploading ? (
+                <>
+                  <i className="mdi mdi-loading mdi-spin"></i> Upload en cours...
+                </>
+              ) : (
+                <>
+                  <i className="mdi mdi-upload"></i> Uploader mon tshirt
+                </>
+              )}
+            </button>
+          </form>
+        </section>
+      )}
 
       {/* Section Galerie */}
       <section className="gallery-section mt-12">
-        <h2 className="font-title text-[2rem] mb-4 text-center text-bleu-fonce tracking-widest">
+        <h2 className="font-title font-bold text-[2rem] mb-4 text-center text-bleu-fonce tracking-widest">
           Galerie des Tshirts
         </h2>
         <p className="text-center text-[#666] mb-8 text-lg">
@@ -219,7 +224,7 @@ const Tshirt = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl mb-2 text-bleu-fonce font-bold">
+                  <h3 className="font-h3 text-xl mb-2 text-bleu-fonce font-bold">
                     {tshirt.prenom} {tshirt.nom}
                   </h3>
                 </div>

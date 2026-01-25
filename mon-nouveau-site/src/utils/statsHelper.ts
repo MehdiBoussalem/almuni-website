@@ -46,6 +46,12 @@ interface FranceAbroadStats {
   percentageAbroad: string;
 }
 
+interface PaysStats {
+  nom: string;
+  count: number;
+  percentage: string;
+}
+
 interface DashboardStats {
   total: number;
   villesUniques: number;
@@ -53,6 +59,7 @@ interface DashboardStats {
   topEntreprises: EntrepriseStats[];
   wordCloud: MetierStats[];
   topVilles: VilleStats[];
+  topPays: PaysStats[];
   franceAbroad: FranceAbroadStats;
 }
 
@@ -294,19 +301,25 @@ export async function calculateJobWordCloud(alumnis: Alumni[]): Promise<MetierSt
 }
 
 /**
- * Calcule le top 5 des villes en France
+ * Calcule le top 5 des villes (utilise le champ pays enrichi)
  */
 export function calculateTopCities(alumnis: Alumni[]): VilleStats[] {
   const total = alumnis.length || 1;
   const villesFrance = new Map<string, number>();
 
   alumnis.forEach((alumni) => {
-    if (alumni.ville && alumni.latitude && alumni.longitude) {
-      const lat = alumni.latitude;
-      const lng = alumni.longitude;
-      // France métropolitaine
-      if (lat >= 41 && lat <= 51 && lng >= -5 && lng <= 10) {
+    // Utiliser le champ pays enrichi si disponible
+    if (alumni.ville && (alumni.pays === "France" || (!alumni.pays && alumni.latitude && alumni.longitude))) {
+      // Si pays = "France" ou pas de pays mais coordonnées en France
+      if (alumni.pays === "France") {
         villesFrance.set(alumni.ville, (villesFrance.get(alumni.ville) || 0) + 1);
+      } else if (!alumni.pays && alumni.latitude && alumni.longitude) {
+        const lat = alumni.latitude;
+        const lng = alumni.longitude;
+        // France métropolitaine
+        if (lat >= 41 && lat <= 51 && lng >= -5 && lng <= 10) {
+          villesFrance.set(alumni.ville, (villesFrance.get(alumni.ville) || 0) + 1);
+        }
       }
     }
   });
@@ -318,14 +331,43 @@ export function calculateTopCities(alumnis: Alumni[]): VilleStats[] {
 }
 
 /**
- * Calcule le nombre d'alumnis en France vs à l'étranger
+ * Calcule le top 5 des pays (utilise le champ pays enrichi)
+ */
+export function calculateTopCountries(alumnis: Alumni[]): PaysStats[] {
+  const total = alumnis.length || 1;
+  const paysCount = new Map<string, number>();
+
+  alumnis.forEach((alumni) => {
+    if (alumni.pays && alumni.pays.trim()) {
+      const pays = alumni.pays.trim();
+      paysCount.set(pays, (paysCount.get(pays) || 0) + 1);
+    }
+  });
+
+  return Array.from(paysCount.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([nom, count]) => ({ nom, count, percentage: ((count / total) * 100).toFixed(1) }));
+}
+
+/**
+ * Calcule le nombre d'alumnis en France vs à l'étranger (utilise le champ pays enrichi)
  */
 export function calculateFranceAbroad(alumnis: Alumni[]): FranceAbroadStats {
   let france = 0;
   let abroad = 0;
 
   alumnis.forEach((alumni) => {
-    if (alumni.latitude && alumni.longitude) {
+    // Utiliser d'abord le champ pays enrichi
+    if (alumni.pays) {
+      if (alumni.pays === "France") {
+        france++;
+      } else {
+        abroad++;
+      }
+    }
+    // Fallback sur détection par coordonnées
+    else if (alumni.latitude && alumni.longitude) {
       const lat = alumni.latitude;
       const lng = alumni.longitude;
       // France métropolitaine
@@ -365,6 +407,7 @@ export async function calculateAllStats(alumnis: Alumni[]): Promise<DashboardSta
     topEntreprises,
     wordCloud,
     topVilles: calculateTopCities(alumnis),
+    topPays: calculateTopCountries(alumnis),
     franceAbroad: calculateFranceAbroad(alumnis),
   };
 }

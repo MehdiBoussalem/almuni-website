@@ -27,13 +27,13 @@ export default function AdminDashboard() {
     try {
       setLoading(true);
       const res = await fetch(`${API_BASE}/alumnis/?limit=1`);
-      const alumnis = await res.json();
+      await res.json();
       
       const stagesRes = await fetch(`${API_BASE}/stages/?limit=1`);
-      const stages = await stagesRes.json();
+      await stagesRes.json();
 
       const inscritsRes = await fetch(`${API_BASE}/inscrits-soiree/?limit=1`);
-      const inscrits = await inscritsRes.json();
+      await inscritsRes.json();
 
       // Récupérer les counts
       const alumniCountRes = await fetch(`${API_BASE}/alumnis/?limit=10000`);

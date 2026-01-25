@@ -106,7 +106,7 @@ export default function Soiree() {
 
     try {
       // Vérification frontend : est-ce complet ?
-      const countRes = await fetch(`${API_URL}/inscrits-soiree/count`);
+      const countRes = await fetch(`${API_BASE}/inscrits-soiree/count`);
       if (countRes.ok) {
         const countData = await countRes.json();
         if (countData.count >= MAX_PLACES && MAX_PLACES > 0) {
@@ -172,7 +172,7 @@ export default function Soiree() {
     <main className="flex-1 bg-[#f4f7f6] py-8">
       <div className="max-w-6xl mx-auto px-4">
         <section className="text-center mb-8">
-          <h1 className="font-title text-bleu-fonce text-4xl md:text-5xl mb-4 uppercase tracking-wide">
+          <h1 className="font-title font-bold text-bleu-fonce text-4xl md:text-5xl mb-4 uppercase tracking-wide">
             La grande soirée finale — Informations & inscription
           </h1>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
@@ -185,7 +185,7 @@ export default function Soiree() {
               <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              <h3 className="font-title text-2xl uppercase tracking-wide m-0">Lieu de la soirée</h3>
+              <h3 className="font-   text-2xl uppercase tracking-wide m-0">Lieu de la soirée</h3>
             </div>
             <p className="text-xl font-semibold mt-2 mb-1">Domaine de La Baratonne</p>
             <p className="text-base opacity-90 mb-0.5">1640 Rte d'Hyères</p>
@@ -197,14 +197,14 @@ export default function Soiree() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-4 items-start">
             {/* Programme Column */}
             <div className="bg-white rounded-xl p-5 shadow-lg">
-              <h3 className="font-title text-bleu-fonce text-2xl text-center mb-6 uppercase tracking-wide">
+              <h3 className="font-h3 font-bold text-bleu-fonce text-2xl text-center mb-6 uppercase tracking-wide">
                 Programme de la soirée
               </h3>
               
               {/* Timeline */}
               <ul className="relative space-y-6 pl-8" aria-label="Programme de la soirée">
                 {/* Timeline vertical line */}
-                <div className="absolute left-[15px] top-[10px] bottom-[10px] w-0.5 bg-gradient-to-b from-bleu-clair to-bordeau"></div>
+                <div className="font-h3 absolute left-[15px] top-[10px] bottom-[10px] w-0.5 bg-gradient-to-b from-bleu-clair to-bordeau"></div>
                 
                 {[
                   { time: "20:30", title: "Accueil", desc: "Bienvenue et photos de groupe." },
@@ -218,7 +218,7 @@ export default function Soiree() {
                     
                     <div className="flex-shrink-0 w-16 text-rouge font-bold text-lg">{item.time}</div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-800 text-lg mb-1">{item.title}</h4>
+                      <h4 className="font-h3 font-bold text-gray-800 text-lg mb-1">{item.title}</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </li>
@@ -226,34 +226,34 @@ export default function Soiree() {
               </ul>
 
               <p className="mt-6 text-gray-600 text-sm text-center">
-                Tenue décontractée — L'accès se fait sur inscription uniquement.
+            L'accès se fait sur inscription uniquement.
               </p>
             </div>
 
             {/* Form Column */}
             <aside className="bg-white rounded-xl p-5 shadow-lg border border-gray-100" aria-labelledby="inscription-title">
-              <h2 id="inscription-title" className="font-title text-bleu-fonce text-2xl mb-3 uppercase tracking-wide">
+              <h2 id="inscription-title" className="font-h3 font-title font-bold text-bleu-fonce text-2xl mb-3 uppercase tracking-wide">
                 Inscription à la soirée
               </h2>
 
               {/* Places Info */}
-              <p className="font-bold mb-2 text-sm">
-                {isClosed ? (
-                  <span className="text-gray-500">Les inscriptions sont fermées</span>
-                ) : placesRemaining !== null ? (
-                  isFull ? (
-                    <span className="text-gray-500">Complet ! (0 places restantes)</span>
+              {!isClosed && (
+                <p className="font-bold mb-2 text-sm">
+                  {placesRemaining !== null ? (
+                    isFull ? (
+                      <span className="text-gray-500">Complet ! (0 places restantes)</span>
+                    ) : (
+                      <span className="text-rouge">{placesRemaining} places restantes sur {MAX_PLACES}</span>
+                    )
                   ) : (
-                    <span className="text-rouge">{placesRemaining} places restantes sur {MAX_PLACES}</span>
-                  )
-                ) : (
-                  <span className="text-gray-500">Chargement des places...</span>
-                )}
-              </p>
+                    <span className="text-gray-500">Chargement des places...</span>
+                  )}
+                </p>
+              )}
 
               {isClosed ? (
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                  <h3 className="font-semibold text-lg mb-2">Inscriptions fermées</h3>
+                  <h3 className="font-h3 font-bold text-lg mb-2">Inscriptions fermées</h3>
                   <p className="text-sm text-gray-600 mb-2">
                     Nous sommes désolés, les inscriptions pour cette soirée sont actuellement fermées.
                   </p>

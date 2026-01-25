@@ -11,8 +11,9 @@ export default {
         rouge: '#DE1251',
       },
       fontFamily: {
-        title: ['"Bebas Neue"', 'sans-serif'],
+        title: ['"Bebas Neue"', 'sans-serif','bold'],
         body: ['Montserrat', 'sans-serif'],
+        h3: ['Montserrat', 'sans-serif'],
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(135deg, rgba(177, 26, 95, 0.75), rgba(53, 95, 155, 0.75))',

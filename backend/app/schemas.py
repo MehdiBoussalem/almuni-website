@@ -38,6 +38,7 @@ class AlumniBase(BaseModel):
     nom: str
     prenom: str
     ville: Optional[str] = None
+    pays: Optional[str] = None
     poste: Optional[str] = None
     linkedin: Optional[str] = None
     promo: Optional[str] = None

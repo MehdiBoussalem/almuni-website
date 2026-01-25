@@ -47,7 +47,7 @@ const DistributionChart = ({ stats }: DistributionChartProps) => {
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg flex flex-col items-center justify-center">
-      <h3 className="font-title text-xl text-bleu-fonce dark:text-bleu-clair mb-6 uppercase tracking-wide">Répartition Géographique</h3>
+      <h3 className="font-h3 font-bold text-xl text-bleu-fonce dark:text-bleu-clair mb-6 uppercase tracking-wide">Répartition Géographique</h3>
 
       <div className="relative mb-6">
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>

@@ -35,6 +35,10 @@ export default function NotreReseau() {
   const [error, setError] = useState<string>("");
   const [showRemovalForm, setShowRemovalForm] = useState<boolean>(false);
   const [showRegistrationForm, setShowRegistrationForm] = useState<boolean>(false);
+  const [showCityFilter, setShowCityFilter] = useState<boolean>(false);
+  const [showCityAlumnis, setShowCityAlumnis] = useState<boolean>(false);
+  const [selectedCity, setSelectedCity] = useState<string>("");
+  const [cityAlumnis, setCityAlumnis] = useState<Alumni[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [searchResults, setSearchResults] = useState<Alumni[]>([]);
   const [removalForm, setRemovalForm] = useState({
@@ -90,24 +94,53 @@ export default function NotreReseau() {
     return new L.DivIcon({ html, className: "", iconSize: new L.Point(40, 40) });
   };
 
-  // Construit le HTML du popup en Tailwind inline
+  // Construit le HTML du popup pour correspondre au design "Card" de l'image
+  // Construit le HTML du popup pour correspondre au design "Card" de l'image
+ // Construit le HTML du popup
   const buildPopupContent = (alumni: Alumni) => {
-    const entrepriseInfo = alumni.entreprise ? `chez <strong>${alumni.entreprise}</strong>` : "";
+    // Bouton LinkedIn style "Outline"
+    // - bg-white (fond blanc)
+    // - text-[#0078a8] (texte bleu)
+    // - border border-[#0078a8] (bordure bleue)
     const linkedinButton = alumni.linkedin
-      ? `<a href="${alumni.linkedin}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-[#0A66C2] text-white font-semibold text-sm shadow-sm transition hover:bg-[#084298] no-underline">`+
-        `<span class="text-lg" aria-hidden="true">🔗</span> Profil LinkedIn</a>`
+      ? `<a href="${alumni.linkedin}" target="_blank" rel="noopener noreferrer" 
+            class="flex items-center justify-center gap-2 w-full bg-white border border-[#0078a8] text-[#0078a8] font-bold py-2.5 rounded-lg transition-colors no-underline mt-4 text-sm hover:bg-[#f0f9ff]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            Profil LinkedIn
+         </a>`
       : "";
 
+    // Le HTML complet
     return `
-      <div class="bg-bleu-fonce text-white text-center px-4 py-5 space-y-2">
-        <h4 class="font-title text-xl tracking-wide leading-tight m-0">${alumni.prenom} ${alumni.nom}</h4>
-        <span class="inline-block text-xs bg-bordeau px-3 py-1 rounded-full font-semibold">Promo ${alumni.promo}</span>
-      </div>
-      <div class="p-4 text-center">
-        ${alumni.poste ? `<div class="font-bold text-rouge text-base mb-1">${alumni.poste}</div>` : ""}
-        ${entrepriseInfo ? `<div class="text-gray-600 text-sm mb-3">${entrepriseInfo}</div>` : ""}
-        ${alumni.ville ? `<div class="text-gray-500 text-sm border-t border-gray-200 pt-3 mt-2">📍 Basé(e) à ${alumni.ville}</div>` : ""}
-        ${linkedinButton ? `<div class="mt-3 pt-3 border-t border-gray-200 flex justify-center">${linkedinButton}</div>` : ""}
+      <div class="font-sans min-w-[280px]">
+        <div class="bg-[#2c5282] pt-8 pb-6 px-4 text-center relative">
+           <h3 class="font-title text-3xl font-bold text-white uppercase leading-none mb-3 tracking-wide m-0 drop-shadow-sm">
+             ${alumni.prenom} ${alumni.nom}
+           </h3>
+           <div class="inline-block bg-[#be123c] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm tracking-wider uppercase">
+             Promo ${alumni.promo}
+           </div>
+        </div>
+
+        <div class="bg-white px-6 py-6 text-center">
+           <div class="text-[#e11d48] font-bold text-lg leading-tight mb-1">
+             ${alumni.poste || "Poste non renseigné"}
+           </div>
+           
+           <div class="text-gray-500 text-sm font-medium mb-5">
+             chez <strong class="text-gray-800 text-base">${alumni.entreprise || "..."}</strong>
+           </div>
+
+           <div class="flex items-center justify-center gap-3 mb-2 opacity-80">
+             <div class="h-[1px] w-6 bg-gray-300"></div>
+             <div class="text-gray-500 text-xs font-semibold flex items-center gap-1 whitespace-nowrap">
+               <span style="color: #e11d48; font-size:14px;">📍</span> Basé(e) à ${alumni.ville || "N/A"}
+             </div>
+             <div class="h-[1px] w-6 bg-gray-300"></div>
+           </div>
+
+           ${linkedinButton}
+        </div>
       </div>
     `;
   };
@@ -179,7 +212,13 @@ export default function NotreReseau() {
 
           const circle = L.circleMarker([jitterLat, jitterLng], markerOptions);
           const popupContent = buildPopupContent(alumni);
-          circle.bindPopup(popupContent);
+          circle.bindPopup(popupContent, {
+            className: "custom-alumni-popup",
+            minWidth: 300,
+            maxWidth: 320,
+            closeButton: true,
+            autoPanPadding: [50, 50],
+          });
 
           circle.on("mouseover", function (this: L.CircleMarker) {
             this.setStyle({ radius: 9, fillOpacity: 1, color: "#355F9B" });
@@ -241,28 +280,211 @@ export default function NotreReseau() {
   }, [searchTerm, alumnis]);
 
   const handleSelectAlumni = (alumni: Alumni) => {
-    setSearchTerm(`${alumni.prenom} ${alumni.nom}`);
-    setSearchResults([]);
     if (mapRef.current) {
       const marker = markerIndexRef.current.get(buildAlumniKey(alumni));
       if (marker) {
         clusterRef.current?.zoomToShowLayer(marker, () => {
           mapRef.current?.flyTo(marker.getLatLng(), 12);
           marker.openPopup();
+          // Mettre à jour le state APRÈS que le zoom et la popup soient complétés
+          setTimeout(() => {
+            setSearchTerm(`${alumni.prenom} ${alumni.nom}`);
+            setSearchResults([]);
+          }, 500);
         });
       } else if (alumni.latitude && alumni.longitude) {
         mapRef.current.flyTo([alumni.latitude, alumni.longitude], 12);
+        // Mettre à jour le state après le vol
+        setTimeout(() => {
+          setSearchTerm(`${alumni.prenom} ${alumni.nom}`);
+          setSearchResults([]);
+        }, 500);
       }
     }
   };
 
+  // Récupère les villes groupées par pays (France en premier, villes triées par nombre d'alumni)
+  const getCitiesByCountry = () => {
+    const groupedByCountry: { [key: string]: Set<string> } = {};
+    alumnis.forEach((a) => {
+      if (a.ville) {
+        const country = a.pays || "France";
+        if (!groupedByCountry[country]) {
+          groupedByCountry[country] = new Set();
+        }
+        groupedByCountry[country].add(a.ville);
+      }
+    });
+
+    // Convertir en objet avec arrays triés par nombre d'alumni
+    const result: { [key: string]: string[] } = {};
+    let countries = Object.keys(groupedByCountry);
+    
+    // Mettre la France en premier
+    countries = countries.sort((a, b) => {
+      if (a === "France") return -1;
+      if (b === "France") return 1;
+      return a.localeCompare(b);
+    });
+    
+    countries.forEach((country) => {
+      const cities = Array.from(groupedByCountry[country]);
+      // Trier les villes par nombre d'alumni décroissant
+      cities.sort((cityA, cityB) => {
+        const countA = alumnis.filter((a) => a.ville === cityA).length;
+        const countB = alumnis.filter((a) => a.ville === cityB).length;
+        return countB - countA; // Décroissant
+      });
+      result[country] = cities;
+    });
+    
+    return result;
+  };
+
+  // Gère la sélection d'une ville
+  const handleSelectCity = (city: string) => {
+    setSelectedCity(city);
+    const filtered = alumnis.filter((a) => a.ville === city);
+    setCityAlumnis(filtered);
+    setShowCityFilter(false);
+    setShowCityAlumnis(true);
+  };
+
   return (
     <div className="py-12 px-[5%] max-w-[1400px] mx-auto w-full">
+      {/* Modal de filtre par ville */}
+      {showCityFilter && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9998] p-4">
+          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full">
+            <h3 className="font-h3 font-bold text-2xl text-bleu-fonce mb-6">Sélectionner une ville</h3>
+
+            <div className="max-h-96 overflow-y-auto space-y-4">
+              {Object.entries(getCitiesByCountry()).map(([country, cities]) => (
+                <div key={country}>
+                  <h4 className="font-h3 font-bold text-bleu-fonce text-lg mb-3 flex items-center gap-2">
+                    <span>🌍</span> {country}
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 ml-4">
+                    {cities.map((city) => (
+                      <button
+                        key={`${country}-${city}`}
+                        onClick={() => handleSelectCity(city)}
+                        className="text-left px-3 py-2 bg-gray-50 hover:bg-bleu-clair/30 text-bleu-fonce font-semibold rounded-lg transition-colors border border-gray-200 text-sm"
+                      >
+                        {city} <span className="text-gray-500 text-xs ml-1">({alumnis.filter((a) => a.ville === city).length})</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setShowCityFilter(false)}
+              className="w-full mt-6 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg font-semibold transition-colors"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal affichant les alumni d'une ville */}
+      {showCityAlumnis && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9998] p-4">
+          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full">
+            <h3 className="font-h3 font-bold text-2xl text-bleu-fonce mb-2">Alumni à {selectedCity}</h3>
+            <p className="text-gray-600 mb-6">{cityAlumnis.length} alumni trouvé(s)</p>
+
+            <div className="max-h-96 overflow-y-auto space-y-3">
+              {cityAlumnis.map((alumni, idx) => (
+                <div
+                  key={`${alumni.nom}-${alumni.prenom}-${idx}`}
+                  className="flex items-start justify-between p-4 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+                >
+                  <div className="flex-1">
+                    <h4 className="font-h3 font-bold text-bleu-fonce">
+                      {alumni.prenom} {alumni.nom}
+                    </h4>
+                    <p className="text-sm text-gray-600">Promo {alumni.promo}</p>
+                    {alumni.poste && <p className="text-sm text-rouge font-semibold">{alumni.poste}</p>}
+                    {alumni.entreprise && <p className="text-sm text-gray-700">chez {alumni.entreprise}</p>}
+                  </div>
+                  {alumni.linkedin && (
+                    <a
+                      href={alumni.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-4 px-3 py-2 bg-[#0077b5] hover:bg-[#005e8e] text-white rounded-lg text-sm font-semibold transition-colors flex items-center gap-1"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      LinkedIn
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-3 mt-6">
+              <button
+                onClick={() => setShowCityAlumnis(false)}
+                className="flex-1 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg font-semibold transition-colors"
+              >
+                Fermer
+              </button>
+              <button
+                onClick={() => {
+                  setShowCityAlumnis(false);
+                  setShowCityFilter(true);
+                }}
+                className="flex-1 px-4 py-2 bg-bleu-fonce hover:bg-bleu-fonce/80 text-white rounded-lg font-semibold transition-colors"
+              >
+                Autre ville
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Styles globaux pour surcharger Leaflet */}
+      <style>{`
+        /* Supprime le padding et background par défaut du wrapper Leaflet */
+        .custom-alumni-popup .leaflet-popup-content-wrapper {
+          padding: 0 !important;
+          border-radius: 12px;
+          overflow: hidden;
+          background: white;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+          border: none;
+        }
+        /* Supprime les marges du content interne */
+        .custom-alumni-popup .leaflet-popup-content {
+          margin: 0 !important;
+          width: 100% !important;
+        }
+        /* Style de la croix de fermeture (blanche sur fond bleu) */
+        .custom-alumni-popup .leaflet-popup-close-button {
+          color: white !important;
+          top: 10px !important;
+          right: 10px !important;
+          font-size: 24px !important;
+          font-weight: 300 !important;
+          text-shadow: none !important;
+          opacity: 0.8;
+        }
+        .custom-alumni-popup .leaflet-popup-close-button:hover {
+          opacity: 1;
+          color: #fff !important;
+        }
+        /* Pointe de la bulle en bas */
+        .custom-alumni-popup .leaflet-popup-tip {
+          background: white;
+        }
+      `}</style>
       {/* Modal d'enregistrement */}
       {showRegistrationForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9998] p-4">
           <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full">
-            <h3 className="font-title text-2xl text-bleu-fonce mb-6">M'enregistrer dans l'annuaire</h3>
+            <h3 className="font-h3 text-2xl text-bleu-fonce mb-6">M'enregistrer dans l'annuaire</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="md:col-span-1">
@@ -378,7 +600,7 @@ export default function NotreReseau() {
       {showRemovalForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9998] p-4">
           <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full">
-            <h3 className="font-title text-2xl text-bleu-fonce mb-6">Me retirer de la base de données</h3>
+            <h3 className="font-h3 text-2xl text-bleu-fonce mb-6">Me retirer de la base de données</h3>
             
             <div className="space-y-4 mb-6">
               {/* Prénom */}
@@ -460,7 +682,7 @@ export default function NotreReseau() {
       {/* Header avec titre */}
       <div className="flex items-center justify-center mb-8 text-center">
         <div>
-          <h1 className="font-title text-[3rem] text-bleu-fonce tracking-[2px] leading-none mb-2">
+          <h1 className="font-title font-bold text-[3rem] text-bleu-fonce tracking-[2px] leading-none mb-2">
             NOTRE RÉSEAU ALUMNI
           </h1>
           <h2 className="text-bordeau text-xl font-light">Retrouvez vos anciens camarades partout dans le monde</h2>
@@ -530,6 +752,14 @@ export default function NotreReseau() {
             </span>
             {error && <p className="text-sm text-red-600 mt-2 max-w-[220px]">{error}</p>}
           </div>
+
+          {/* Bouton Filtrer par ville - Sur la carte */}
+          <button
+            onClick={() => setShowCityFilter(true)}
+            className="absolute bottom-6 left-6 z-[500] bg-bleu-fonce hover:bg-bleu-fonce/80 text-white px-4 py-2.5 rounded-lg font-semibold transition-colors shadow-lg text-sm flex items-center gap-2"
+          >
+            <span>🏙️</span> Filtrer par ville
+          </button>
         </div>
 
         {/* Boutons d'action sous la carte */}
@@ -538,13 +768,13 @@ export default function NotreReseau() {
             onClick={() => setShowRegistrationForm(true)}
             className="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors"
           >
-            M'enregistrer
+            Faire partie du réseau
           </button>
           <button
             onClick={() => setShowRemovalForm(true)}
             className="bg-red-500 hover:bg-red-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors"
           >
-            Me retirer
+            Se retirer du réseau
           </button>
         </div>
       </div>

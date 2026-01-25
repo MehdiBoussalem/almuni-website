@@ -5,12 +5,13 @@ export default function ArchivesIndex() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="h-[36vh] px-8 py-12 mt-0 flex items-center justify-center text-center bg-gradient-to-br from-bordeau to-bleu-fonce">
-        <div>
-          <h1 className="font-title text-5xl md:text-[3.2rem] text-white tracking-wide">
+      <div className="h-[36vh] px-10 py-14 mt-0 flex items-center justify-center text-center bg-gradient-to-br from-bordeau to-bleu-fonce relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10" aria-hidden="true"></div>
+        <div className="relative z-10">
+          <h1 className="font-title font-bold text-5xl md:text-[3.2rem] text-white tracking-[0.08em] uppercase">
             Archives
           </h1>
-          <h2 className="text-white/95 text-lg mt-2">
+          <h2 className="font-sans font-light leading-normal text-white/95 text-[16.8px] mt-3 max-w-2xl mx-auto">
             Choisissez une année pour consulter la page correspondante.
           </h2>
         </div>
@@ -34,22 +35,16 @@ export default function ArchivesIndex() {
               <Link
                 key={year}
                 to={`/archives/${year}`}
-                className="flex flex-col bg-white rounded-xl no-underline text-inherit shadow-md transition-all duration-300 overflow-hidden relative border border-black/5 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(198,40,40,0.15)] hover:border-[rgba(198,40,40,0.2)] group"
+                className="flex flex-col bg-white rounded-xl no-underline text-inherit shadow-md transition-all duration-300 overflow-hidden relative border border-black/10 hover:-translate-y-1.5 hover:shadow-[0_10px_32px_rgba(198,40,40,0.18)] hover:border-[rgba(198,40,40,0.25)] group"
               >
-                <div className="p-6 flex flex-col items-center justify-center text-center h-full">
-                  <span className="font-title text-[2.5rem] font-bold text-bleu-fonce mb-1 transition-colors duration-300 group-hover:text-bordeau">
+                <div className="p-7 flex flex-col items-center justify-center text-center h-full">
+                  <span className="font-title text-[2.6rem] font-bold text-bleu-fonce mb-1 transition-colors duration-300 group-hover:text-bordeau">
                     {year}
                   </span>
-                  <span className="text-sm text-gray-600 uppercase tracking-wider mb-4">
+                  <span className="text-xs text-gray-500 uppercase tracking-[0.16em] mb-3">
                     Promotion
                   </span>
-                  <svg 
-                    className="w-6 h-6 text-bordeau opacity-0 -translate-x-2.5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
-                    fill="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                  </svg>
+                  <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-bordeau to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true"></div>
                 </div>
               </Link>
             ))}

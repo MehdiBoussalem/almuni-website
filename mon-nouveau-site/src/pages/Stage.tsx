@@ -216,15 +216,12 @@ export default function StagePage() {
     <div className="py-12 px-[5%] max-w-[1600px] mx-auto w-full">
       <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
         <div>
-          <p className="text-sm font-semibold text-rouge uppercase tracking-wide mb-1">
+          <p className="font-text-sm font-semibold text-rouge uppercase tracking-wide mb-1">
             Opportunités
           </p>
-          <h1 className="font-title text-3xl text-bleu-fonce">
+          <h1 className="font-title font-bold text-3xl text-bleu-fonce">
             Stages & Alternances
           </h1>
-          <p className="text-sm text-gray-600 mt-1">
-            Les offres enregistrées dans la base de données.
-          </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <div className="text-right text-sm text-gray-600">
@@ -344,7 +341,7 @@ export default function StagePage() {
                     </div>
 
                     <div className="flex-1 min-w-0 w-full">
-                      <h3 className="text-xl font-bold text-bleu-fonce leading-tight truncate mb-2">
+                      <h3 className="font-h3 text-xl font-bold text-bleu-fonce leading-tight truncate mb-2">
                         {stage.titre}
                       </h3>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600">

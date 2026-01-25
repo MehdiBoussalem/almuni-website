@@ -43,7 +43,7 @@ const Header = () => {
               className={`no-underline font-bold text-lg transition-colors ${
                 scrolled 
                   ? 'text-bleu-fonce dark:text-bleu-clair hover:text-rouge dark:hover:text-rouge' 
-                  : 'text-white hover:text-rouge'
+                  : 'text-white hover:text-bleu-fonce'
               }`}
             >
               Accueil
@@ -55,10 +55,10 @@ const Header = () => {
               className={`no-underline font-bold text-lg transition-colors ${
                 scrolled 
                   ? 'text-bleu-fonce dark:text-bleu-clair hover:text-rouge dark:hover:text-rouge' 
-                  : 'text-white hover:text-rouge'
+                  : 'text-white hover:text-bleu-fonce'
               }`}
             >
-              Alumni 2026
+              Édition 2026
             </Link>
           </li>
           <li>
@@ -67,7 +67,7 @@ const Header = () => {
               className={`no-underline font-bold text-lg transition-colors ${
                 scrolled 
                   ? 'text-bleu-fonce dark:text-bleu-clair hover:text-rouge dark:hover:text-rouge' 
-                  : 'text-white hover:text-rouge'
+                  : 'text-white hover:text-bleu-fonce'
               }`}
             >
               Notre réseau
@@ -79,10 +79,10 @@ const Header = () => {
               className={`no-underline font-bold text-lg transition-colors ${
                 scrolled 
                   ? 'text-bleu-fonce dark:text-bleu-clair hover:text-rouge dark:hover:text-rouge' 
-                  : 'text-white hover:text-rouge'
+                  : 'text-white hover:text-bleu-fonce'
               }`}
             >
-              Stages
+              Opportunités
             </Link>
           </li>
           <li>
@@ -91,7 +91,7 @@ const Header = () => {
               className={`no-underline font-bold text-lg transition-colors ${
                 scrolled 
                   ? 'text-bleu-fonce dark:text-bleu-clair hover:text-rouge dark:hover:text-rouge' 
-                  : 'text-white hover:text-rouge'
+                  : 'text-white hover:text-bleu-fonce'
               }`}
             >
               Archives
