@@ -22,9 +22,7 @@ export default function Evenement() {
               JOURNÉE ALUMNI
             </h1>
 
-            <p className="text-lg md:text-xl text-white/90 max-w-xl mb-10 leading-relaxed font-light uppercase tracking-wide">
-              Parcours, inspirations et évolutions dans les métiers du digital et des médias.
-            </p>
+           
 
             {/* Cartes d'info - bleues avec coins arrondis */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 w-full max-w-4xl">
@@ -72,14 +70,6 @@ export default function Evenement() {
 
         {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-6">
-        <section className="text-center mb-6">
-          <h2 className="font-h3 text-bleu-fonce text-2xl font-semibold mb-4 leading-snug">
-            Parcours, inspirations et évolutions dans les métiers du digital et des médias
-          </h2>
-          <p className="text-gray-600 text-base max-w-3xl mx-auto leading-relaxed">
-            Un espace d'échange entre anciens étudiants, étudiants actuels, enseignants et professionnels du secteur.
-          </p>
-        </section>
 
         <section id="programme" className="scroll-mt-24">
           <h3 className="font-h3 text-bleu-fonce text-xl font-semibold mb-6">Matinée</h3>
