@@ -780,7 +780,11 @@ export default function NotreReseau() {
       </div>
 
       <div className={activeTab === "dashboard" ? "block" : "hidden"}>
-        <Dashboard alumnis={alumnis} />
+        <Dashboard 
+          alumnis={alumnis}
+          onShowRegistration={() => setShowRegistrationForm(true)}
+          onShowRemoval={() => setShowRemovalForm(true)}
+        />
       </div>
     </div>
   );

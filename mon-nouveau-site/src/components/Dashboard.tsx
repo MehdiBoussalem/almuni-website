@@ -17,6 +17,8 @@ interface Alumni {
 
 interface DashboardProps {
   alumnis: Alumni[];
+  onShowRegistration?: () => void;
+  onShowRemoval?: () => void;
 }
 
 interface EntrepriseStats {
@@ -61,7 +63,7 @@ interface DashboardStats {
   franceAbroad: FranceAbroadStats;
 }
 
-export default function Dashboard({ alumnis }: DashboardProps) {
+export default function Dashboard({ alumnis, onShowRegistration, onShowRemoval }: DashboardProps) {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedMetier, setSelectedMetier] = useState<string | null>(null);
@@ -240,6 +242,28 @@ export default function Dashboard({ alumnis }: DashboardProps) {
           </div>
         </div>
       </div>
+
+      {/* Boutons d'action sous le dashboard */}
+      {(onShowRegistration || onShowRemoval) && (
+        <div className="flex flex-wrap justify-center gap-3 mt-6 mb-8">
+          {onShowRegistration && (
+            <button
+              onClick={onShowRegistration}
+              className="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors"
+            >
+              Faire partie du réseau
+            </button>
+          )}
+          {onShowRemoval && (
+            <button
+              onClick={onShowRemoval}
+              className="bg-red-500 hover:bg-red-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors"
+            >
+              Se retirer du réseau
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

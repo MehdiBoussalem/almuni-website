@@ -5,8 +5,8 @@ export default function ArchivesIndex() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="h-[36vh] px-10 py-14 mt-0 flex items-center justify-center text-center bg-gradient-to-br from-bordeau to-bleu-fonce relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" aria-hidden="true"></div>
+      <div className="relative h-[36vh] px-10 py-14 mt-0 flex items-center justify-center text-center bg-[url('/assets/archive.webp')] bg-cover bg-bottom overflow-hidden">
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true"></div>
         <div className="relative z-10">
           <h1 className="font-title font-bold text-5xl md:text-[3.2rem] text-white tracking-[0.08em] uppercase">
             Archives

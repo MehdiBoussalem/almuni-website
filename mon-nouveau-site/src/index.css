@@ -45,6 +45,20 @@
     animation: pulse-btn 2s infinite;
   }
 
+  /* Animation pour le bandeau défilant */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
   /* Animation pour le chargement (spin) */
   @keyframes mdi-spin {
     0% {
