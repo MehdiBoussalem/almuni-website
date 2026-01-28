@@ -112,7 +112,7 @@ export default function Evenement() {
               <div className="flex gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <div className="text-rouge font-bold text-lg">09h30</div>
-                  <img src="https://placehold.co/80x80" alt="Melvin Barraud" className="w-20 h-20 rounded-full object-cover" />
+                  <img src="/assets/conf_1.jpg" alt="Melvin Barraud" className="w-20 h-20 rounded-full object-cover" />
                 </div>
                 <div className="flex-1 pr-10">
                   <h3 className="font-h3 text-gray-800 text-xl font-semibold mb-2">Melvin Barraud</h3>
@@ -126,7 +126,7 @@ export default function Evenement() {
               <div className="flex gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <div className="text-rouge font-bold text-lg">10h00</div>
-                  <img src="https://placehold.co/80x80" alt="François Cunche" className="w-20 h-20 rounded-full object-cover" />
+                  <img src="/assets/conf_2.jpg" alt="François Cunche" className="w-20 h-20 rounded-full object-cover" />
                 </div>
                 <div className="flex-1 pr-10">
                   <h3 className="font-h3 text-gray-800 text-xl font-semibold mb-2">François Cunche</h3>
@@ -156,7 +156,7 @@ export default function Evenement() {
               <div className="flex gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <div className="text-rouge font-bold text-lg">10h45</div>
-                  <img src="https://placehold.co/80x80" alt="Cathelyne van Winsen" className="w-20 h-20 rounded-full object-cover" />
+                  <img src="/assets/conf_3.jpg" alt="Cathelyne van Winsen" className="w-20 h-20 rounded-full object-cover" />
                 </div>
                 <div className="flex-1 pr-10">
                   <h3 className="font-h3 text-gray-800 text-xl font-semibold mb-2">Cathelyne van Winsen</h3>
@@ -170,7 +170,7 @@ export default function Evenement() {
               <div className="flex gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <div className="text-rouge font-bold text-lg">11h20</div>
-                  <img src="https://placehold.co/80x80" alt="Clément Meucci" className="w-20 h-20 rounded-full object-cover" />
+                  <img src="/assets/conf_4.jpg" alt="Clément Meucci" className="w-20 h-20 rounded-full object-cover" />
                 </div>
                 <div className="flex-1 pr-10">
                   <h3 className="font-h3 text-gray-800 text-xl font-semibold mb-2">Clément Meucci</h3>
@@ -184,7 +184,7 @@ export default function Evenement() {
               <div className="flex gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <div className="text-rouge font-bold text-lg">11h50</div>
-                  <img src="https://placehold.co/80x80" alt="Cyril Arnaud" className="w-20 h-20 rounded-full object-cover" />
+                  <img src="/assets/conf_5.jpg" alt="Cyril Arnaud" className="w-20 h-20 rounded-full object-cover" />
                 </div>
                 <div className="flex-1 pr-10">
                   <h3 className="font-h3 text-gray-800 text-xl font-semibold mb-2">Cyril Arnaud</h3>
