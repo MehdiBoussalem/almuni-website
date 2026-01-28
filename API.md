@@ -5,8 +5,10 @@
 2. [Endpoints Alumni](#endpoints-alumni)
 3. [Endpoints Inscriptions Soirée](#endpoints-inscriptions-soirée)
 4. [Endpoints T-Shirts](#endpoints-tshirts)
-5. [Gestion des erreurs](#gestion-des-erreurs)
-6. [Exemples de requêtes](#exemples-de-requêtes)
+5. [Endpoints Stages](#endpoints-stages)
+6. [Endpoints Statistiques](#endpoints-statistiques)
+7. [Gestion des erreurs](#gestion-des-erreurs)
+8. [Exemples de requêtes](#exemples-de-requêtes)
 
 ---
 
@@ -412,6 +414,86 @@ curl -X POST "https://alumni-ingemedia.net/api/tshirts/" \
   "date_commande": "2026-01-18T08:45:00Z"
 }
 ```
+
+---
+
+## 💼 Endpoints Stages
+
+### Liste tous les stages
+
+```http
+GET /api/stages/
+```
+
+**Paramètres de requête**:
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| `limit` | integer | Nombre max de stages (défaut: 100) |
+| `offset` | integer | Décalage pour pagination (défaut: 0) |
+
+**Exemple de réponse**:
+```json
+[
+  {
+    "id": 1,
+    "titre": "Développeur Full Stack",
+    "entreprise": "Tech Solutions",
+    "ville": "Paris",
+    "description": "Stage de 6 mois...",
+    "date_publication": "2026-01-20T10:00:00Z"
+  }
+]
+```
+
+### Recherche de stages
+
+```http
+GET /api/stages/search
+```
+
+**Paramètres de requête**:
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| `q` | string | Recherche globale (titre, desc) |
+| `city` | string | Filtrer par ville |
+| `enterprise` | string | Filtrer par entreprise |
+| `type` | string | Type de contrat (Stage, Alternance) |
+
+---
+
+## 📊 Endpoints Statistiques
+
+### Stats par Entreprise
+
+```http
+GET /api/stats/companies
+```
+
+Retourne le top des entreprises qui recrutent (basé sur les alumni et stages).
+
+**Exemple de réponse**:
+```json
+[
+  {
+    "nom": "Capgemini",
+    "count": 15,
+    "variations": ["Capgemini", "Capgemini Engineering"]
+  },
+  {
+    "nom": "Sopra Steria",
+    "count": 12,
+    "variations": ["Sopra"]
+  }
+]
+```
+
+### Stats par Métier
+
+```http
+GET /api/stats/jobs
+```
+
+Retourne le top des métiers exercés par les alumni.
 
 ---
 

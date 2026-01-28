@@ -2,428 +2,129 @@
 
 ## 📑 Table des matières
 1. [Vue d'ensemble](#vue-densemble)
-2. [Pages du site](#pages-du-site)
-3. [Fonctionnalités](#fonctionnalités)
-4. [Guide utilisateur](#guide-utilisateur)
-5. [Architecture technique](#architecture-technique)
-6. [Gestion des données](#gestion-des-données)
+2. [Architecture Applicative](#architecture-applicative)
+3. [Fonctionnalités & Pages](#fonctionnalités--pages)
+4. [Guide Utilisateur](#guide-utilisateur)
+5. [Gestion des Données](#gestion-des-données)
+6. [Administration](#administration)
 
 ---
 
 ## 🌐 Vue d'ensemble
 
-**Alumni Ingemedia** est un site web communautaire pour les anciens et actuels étudiants de l'UFR Ingémédia. Le site permet :
-- La consultation des informations du réseau alumni
-- L'inscription aux événements (soirées, ateliers)
-- La gestion de commandes de T-shirts
-- La consultation des archives par promotion
-- L'accès au réseau professionnel
+**Alumni Ingemedia** est une application web moderne (SPA) conçue pour fédérer la communauté des étudiants et anciens de l'UFR Ingémédia.
 
-### Informations du site
-- **URL**: https://alumni-ingemedia.net
-- **Type**: Site statique + API REST
-- **Technologie Frontend**: HTML5, CSS3, JavaScript vanilla
-- **Technologie Backend**: FastAPI (Python)
-- **Base de données**: SQLite
+### Points Clés
+- **Type**: Single Page Application (SPA)
+- **Frontend**: React 18 + Vite (Haute performance)
+- **Backend**: API REST FastAPI (Python)
+- **Sécurité**: HTTPS, Validation des données stricte
 
 ---
 
-## 📄 Pages du site
+## 🏗️ Architecture Applicative
 
-### 1. **Accueil** (`index.html`)
-**URL**: https://alumni-ingemedia.net/
+L'application est divisée en deux parties distinctes qui communiquent via API.
 
-**Contenu**:
-- Hero banner avec logo alumni
-- Présentation générale du réseau
-- Information sur la mission d'Ingémédia ALUMNI
-- Navigation vers les autres sections
+### Frontend (`mon-nouveau-site`)
+Le frontend gère toute l'interface utilisateur et la logique de navigation.
+- **Routing**: `react-router-dom` gère la navigation sans rechargement de page.
+- **État**: Gestion d'état local et contextuel pour la fluidité.
+- **Styles**: `Tailwind CSS` pour un design responsive et moderne.
+- **Cartes**: `Leaflet` pour la géolocalisation des offres de stages.
 
-**Fichiers associés**:
-- `styles/index.css` - Styling
-- `js/index.js` - Interactivité
-
----
-
-### 2. **Événement 2026** (`pages/evenement.html`)
-**URL**: https://alumni-ingemedia.net/pages/evenement.html
-
-**Contenu**:
-- Détails de l'événement 2026
-- Date, lieu, programme
-- Informations pratiques
-
-**Fichiers associés**:
-- `styles/evenement.css`
-- `js/index.js`
+### Backend (`backend`)
+Le backend expose une API RESTful documentée ([API.md](API.md)).
+- **Serveur**: `Uvicorn` (ASGI) pour des performances asynchrones élevées.
+- **Framework**: `FastAPI` avec validation automatique Pydantic.
+- **Base de données**: `SQLite` avec ORM `SQLAlchemy`.
 
 ---
 
-### 3. **Soirée Alumni** (`pages/soiree.html`)
-**URL**: https://alumni-ingemedia.net/pages/soiree.html
+## 📱 Fonctionnalités & Pages
 
-**Fonctionnalités**:
-- 📝 **Formulaire d'inscription** aux soirées
-- 🎫 Gestion des inscriptions en temps réel
-- 📊 Suivi des participants
+### 1. **Accueil** (`/`)
+Point d'entrée de l'application. Présente les dernières actualités et l'accès rapide aux sections.
+- Hero banner dynamique.
+- Aperçu des derniers événements.
 
-**Données collectées**:
-- Nom
-- Email
-- Numéro de téléphone
-- Date de participation
+### 2. **Notre Réseau** (`/notre-reseau`)
+Annuaire interactif des alumni.
+- **Recherche**: Par nom, promo, entreprise, poste.
+- **Filtres**: Facettes dynamiques.
+- **Fiches profils**: Détails complets sur chaque alumni.
 
-**Fichiers associés**:
-- `styles/soiree.css`
-- `js/soiree.js` - Gestion du formulaire et appels API
+### 3. **Stages & Carrières** (`/stages`)
+[NOUVEAU] Plateforme d'offres de stages et d'emplois.
+- **Carte interactive**: Visualisation des offres sur une carte.
+- **Matching**: Algorithme de suggestion basé sur les compétences.
+- **Lien Alumni**: Voir les anciens travaillant dans l'entreprise proposant le stage.
 
-**Endpoints API utilisés**:
-```
-POST /api/inscrits-soiree/  - Créer une inscription
-GET /api/inscrits-soiree/   - Lister les inscriptions
-```
+### 4. **Soirée Alumni** (`/soiree`)
+Gestion des événements annuels.
+- Formulaire d'inscription temps réel.
+- Compteur de places restantes.
+- Informations logistiques.
 
----
+### 5. **Boutique T-Shirts** (`/tshirt`)
+Espace communautaire et boutique.
+- Galerie photos des promotions passées.
+- Commande de goodies (T-shirts, hoodies).
+- Upload de photos par les étudiants.
 
-### 4. **T-Shirts** (`pages/tshirt.html`)
-**URL**: https://alumni-ingemedia.net/pages/tshirt.html
-
-**Fonctionnalités**:
-- � Upload de photos de T-shirts personnalisés créés par les étudiants
-- 🖼️ Galerie photo affichant tous les T-shirts uploadés
-- 👤 Identification du créateur (nom, prénom)
-
-**Données collectées**:
-- Nom du créateur
-- Prénom du créateur
-- Photo du T-shirt (JPEG, PNG, WebP - max 5MB)
-- Date d'upload (automatique)
-
-**Fichiers associés**:
-- `styles/tshirt.css`
-- `js/tshirt.js` - Gestion de l'upload et affichage de la galerie
-- `backend/uploads/tshirts/` - Stockage des images uploadées
-
-**Endpoints API utilisés**:
-```
-POST /api/tshirts/              - Upload une photo de T-shirt (multipart/form-data)
-GET /api/tshirts/               - Récupérer tous les T-shirts pour la galerie
-GET /api/tshirts/{tshirt_id}    - Récupérer un T-shirt spécifique
-DELETE /api/tshirts/{tshirt_id} - Supprimer un T-shirt
-DELETE /api/tshirts/            - Supprimer tous les T-shirts
-```
+### 6. **Archives** (`/archives`)
+Historique des promotions depuis 2015.
+- Photos de classe.
+- Listes des étudiants par année.
+- Projets marquants.
 
 ---
 
-### 5. **Notre Réseau** (`pages/notre-reseau.html`)
-**URL**: https://alumni-ingemedia.net/pages/notre-reseau.html
+## 👥 Guide Utilisateur
 
-**Fonctionnalités**:
-- 👥 Annuaire des alumni
-- 🔍 Recherche par promotion
-- 📊 Statistiques du réseau
+### Rechercher un ancien étudiant
+1. Aller dans la section **"Notre Réseau"**.
+2. Utiliser la barre de recherche principale.
+3. Affiner avec les filtres à gauche (Année, Secteur).
 
-**Fichiers associés**:
-- `styles/notre-reseau.css`
-- `js/notre-reseau.js` - Recherche et filtrage
-- `backend/app/models.py` - Modèle Alumni
+### Trouver un stage
+1. Aller dans **"Offres de Stages"**.
+2. Parcourir la liste ou la carte.
+3. Cliquer sur une offre pour voir le détail.
+4. Si un alumni travaille dans l'entreprise, son contact apparaîtra dans "Contacts suggérés".
 
-**Endpoints API utilisés**:
-```
-GET /api/alumnis/               - Lister tous les alumni
-GET /api/alumnis/?limit=100     - Pagination
-GET /api/alumnis/{id}           - Détails d'un alumni
-```
-
----
-
-### 6. **Archives** (`pages/archives/index.html`)
-**URL**: https://alumni-ingemedia.net/pages/archives/
-
-**Contenu**:
-- 📚 Fiches par promotion (2015-2025)
-- 🎓 Statistiques par année
-- 🏆 Événements passés
-
-**Pages disponibles**:
-- `alumni-2015.html` à `alumni-2025.html` - Une page par promotion
-- `index.html` - Page d'index
-
-**Fichiers associés**:
-- `styles/archives.css`
+### Commander un T-Shirt
+1. Aller dans **"Boutique"**.
+2. Sélectionner le modèle et la taille.
+3. Valider le formulaire.
+4. Un email de confirmation récapitulatif est envoyé (simulation).
 
 ---
 
-### 7. **Événements en Direct** (`pages/live.html`)
-**URL**: https://alumni-ingemedia.net/pages/live.html
+## 💾 Gestion des Données
 
-**Fonctionnalités**:
-- 📡 Retransmission en direct (optional)
-- 💬 Chat/Commentaires
-- 🎥 Vidéo en streaming
+### Modèle de Données (SQLite)
+La base de données `alumni.db` contient :
+- `alumnis`: Profils complets.
+- `stages`: Offres d'emploi/stage.
+- `inscrits_soiree`: Participants aux événements.
+- `tshirts`: Commandes et galerie photo.
 
-**Fichiers associés**:
-- `styles/live.css`
-
----
-
-## 🎯 Fonctionnalités principales
-
-### 1. **Gestion des Inscriptions**
-- Formulaires d'inscription aux événements
-- Validation des données
-- Stockage en base de données
-- Confirmation par email (optionnel)
-
-### 2. **Gestion des Alumni**
-- Annuaire des anciens étudiants
-- Recherche et filtrage
-- Import/Export de données
-
-**Commandes disponibles**:
-```bash
-# Importer les alumni depuis JSON
-python backend/import_alumnis_json.py
-
-# Exporter les inscrits
-python backend/export_inscrits.py
-```
-
-
-### 3. **Responsive Design**
-- Tous les styles sont optimisés pour mobile
-- Breakpoints : 320px, 768px, 1024px, 1440px
+### Import/Export
+Des scripts Python dans `backend/` permettent la maintenance :
+- `import_alumnis_csv.py`: Import en masse depuis CSV.
+- `export_inscrits.py`: Export des listes d'élus.
+- `clean_alumni_data.py`: Nettoyage et déduplication.
 
 ---
 
-## 👥 Guide utilisateur
+## 🔐 Administration
 
-### Pour les visiteurs
-
-#### 1. Consulter le réseau alumni
-1. Aller sur **Notre réseau**
-2. Parcourir l'annuaire des alumni
-3. Utiliser la barre de recherche pour trouver des personnes
-
-#### 2. S'inscrire à une soirée
-1. Aller sur **Soirée Alumni**
-2. Remplir le formulaire avec :
-   - Nom complet
-   - Email
-   - Téléphone
-3. Cliquer sur "S'inscrire"
-4. Confirmation affichée à l'écran
-
-#### 3. Partager une photo de T-shirt
-1. Aller sur **T-Shirts**
-2. Remplir le formulaire avec :
-   - Nom
-   - Prénom
-   - Description (optionnelle)
-   - Sélectionner une photo du T-shirt
-3. Cliquer sur "Uploader"
-4. La photo apparaît dans la galerie
-
-#### 4. Consulter les archives
-1. Cliquer sur **Archives** dans le menu
-2. Sélectionner une année (2015-2025)
-3. Consulter les informations de la promotion
+Une section admin (`/admin`) permet de gérer le contenu (accès restreint).
+- Validation des offres de stages.
+- Modération des photos importées.
+- Gestion des fiches alumni.
 
 ---
 
-## 🏗️ Architecture technique
-
-### Structure des fichiers
-
-```
-almuni-website/
-├── index.html                    # Page d'accueil
-├── pages/
-│   ├── evenement.html
-│   ├── soiree.html
-│   ├── tshirt.html
-│   ├── notre-reseau.html
-│   ├── live.html
-│   └── archives/
-│       ├── index.html
-│       ├── alumni-2015.html
-│       └── ... alumni-YYYY.html
-├── styles/                       # Feuilles CSS
-├── js/                          # Scripts JavaScript
-│   ├── index.js
-│   ├── soiree.js
-│   ├── tshirt.js
-│   └── notre-reseau.js
-├── backend/                     # API FastAPI
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── crud.py
-│   │   └── database.py
-│   ├── requirements.txt
-│   └── alumni.db               # Base de données SQLite
-├── assets/                      # Ressources (images, logo)
-└── webscaping/                 # Scripts de web scraping
-```
-
-### Stack technique
-
-| Composant | Technologie | Version |
-|-----------|-------------|---------|
-| **Frontend** | HTML5, CSS3, JavaScript | -
-| **Backend** | FastAPI | Python 3.x |
-| **Base de données** | SQLite | -
-| **Serveur web** | Apache2 | 2.x |
-| **SSL/HTTPS** | Let's Encrypt | Certbot |
-| **Déploiement** | Linux (Ubuntu) | -
-
----
-
-## 💾 Gestion des données
-
-### Base de données SQLite
-
-**Fichier**: `backend/alumni.db`
-
-**Modèles disponibles**:
-
-#### 1. Alumni
-```python
-id: int (primary key)
-nom: str
-prenom: str
-email: str
-telephone: str
-promotion: int (year)
-entreprise: str
-poste: str
-description: str
-```
-
-#### 2. Inscriptions Soirée
-```python
-id: int (primary key)
-nom: str
-email: str
-telephone: str
-date_inscription: datetime
-confirmed: bool
-```
-
-#### 3. T-Shirts (Galerie photos)
-```python
-id: int (primary key)
-nom: str
-prenom: str
-image_path: str
-upload_date: datetime
-description: str (optional)
-```
-
-### Import/Export de données
-
-#### Import d'alumni
-```bash
-cd backend
-python import_alumnis_json.py
-```
-Importe les données depuis un fichier JSON vers la base SQLite.
-
-#### Export des inscrits
-```bash
-cd backend
-python export_inscrits.py
-```
-Exporte les inscriptions aux soirées en CSV ou Excel.
-
-### Web Scraping
-```bash
-cd webscaping
-python clean_alumni_data.py
-```
-Nettoie et formate les données alumni importées.
-
----
-
-## 🔐 Sécurité et SSL
-
-### Certificat SSL
-- **Provider**: Let's Encrypt
-- **Domaines**: alumni-ingemedia.net, www.alumni-ingemedia.net
-- **Valide jusqu'à**: 13 avril 2026
-- **Renouvellement**: Automatique (Certbot)
-
-### Redirection HTTPS
-Tous les accès HTTP sont redirigés automatiquement vers HTTPS.
-
----
-
-## 📊 Design et styling
-
-### Palette de couleurs
-| Couleur | Hex | Utilisation |
-|---------|-----|-----------|
-| Bleu foncé | `#355F9B` | Titres, headers |
-| Bleu clair | `#7AC9F2` | Accents, boutons |
-| Bordeaux | `#B11A5F` | Highlights |
-| Rouge | `#DE1251` | Erreurs, alertes |
-
-### Typographie
-- **Titres**: BEBAS NEUE REGULAR
-- **Texte**: Montserrat (Light, Bold)
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints: 320px, 768px, 1024px, 1440px
-- Toutes les images sont optimisées
-
----
-
-## 🚀 Déploiement
-
-Pour des informations détaillées sur le déploiement, voir [DEPLOYMENT.md](DEPLOYMENT.md).
-
-Résumé:
-- 🌐 Serveur: 37.59.115.57
-- 🔌 Port: 443 (HTTPS)
-- 📡 API: Port 8000 (Uvicorn)
-- 🔒 Certificat: Let's Encrypt
-
----
-
-## 📞 Support et maintenance
-
-### Fichiers importants
-- [README.md](README.md) - Informations générales
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Guide de déploiement
-- [API.md](API.md) - Documentation API détaillée
-
-### Logs
-```bash
-# Logs Apache
-sudo tail -f /var/log/apache2/almuni-error.log
-sudo tail -f /var/log/apache2/almuni-access.log
-
-# Logs Uvicorn
-journalctl -u almuni -f
-```
-
-### Commandes utiles
-```bash
-# Redémarrer l'API
-sudo systemctl restart almuni
-
-# Vérifier le statut
-sudo systemctl status almuni
-
-# Renouveler le certificat SSL
-sudo certbot renew
-
-# Redémarrer Apache
-sudo systemctl restart apache2
-```
-
----
-
-**Dernière mise à jour**: 18 janvier 2026
+**Documentation mise à jour le 28 janvier 2026**
