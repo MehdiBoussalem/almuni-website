@@ -106,7 +106,17 @@ Le site sera accessible sur `http://localhost:5173`.
 
 ---
 
-## 📚 Documentation
+## 📝 To Do List
+
+- [ ] Faire le responsive (🚨 **URGENT**)
+- [ ] Rajouter des scripts de scrapping entreprise
+- [ ] Faire un cron job pour automatiser les scrapping d'entreprise
+- [ ] Rajouter des alumnis dans la BDD avec PhantomBuster (Voir Mr Ben Amor)
+- [ ] Sécuriser l'API
+
+---
+
+## �📚 Documentation
 
 Pour plus de détails, consultez les guides spécifiques :
 
@@ -116,7 +126,7 @@ Pour plus de détails, consultez les guides spécifiques :
 
 ---
 
-## 📞 Support
+## ✍️ Auteurs
 
-Pour toute question technique ou fonctionnelle :
-- **Responsable** : Mehdi Boussalem
+- Mehdi Boussalem
+- Cherif Miloua
