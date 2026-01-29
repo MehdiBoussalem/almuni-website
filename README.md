@@ -84,6 +84,10 @@ almuni-website/
 - Ajouter un formulaire de désinscription alumni
 - Ajouter l'archive 2026
 - Sécuriser l'API
+- Faire le responsive
+- Utiliser phantombuster pour rajouter des alumnis dans la bdd via la liste des étudiants
+- Rajouter des entreprises dans le scraping
+- Automatiser les scrapings avec un cron job
 
 ---
 
